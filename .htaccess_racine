@@ -1,0 +1,7 @@
+RewriteEngine on
+
+
+
+#Domaine 1
+RewriteCond %{HTTP_HOST} ^yesorlandofl\.com$
+RewriteRule ^(.*)$ /www/$1 [L]
