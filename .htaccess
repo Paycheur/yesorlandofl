@@ -10,9 +10,11 @@ RewriteRule ^search/s_(.*)/c_(.*)$  /page_search.php?EX=searchLink&style=$1&city
 RewriteRule ^search/s_(.*)$  /page_search.php?EX=searchLink&style=$1 [L]
 RewriteRule ^search/c_(.*)$  /page_search.php?EX=searchLink&city=$1 [L]
 RewriteRule ^property/([0-9]{1,})$  /page_search.php?EX=searchLink&id=$1 [L]
-RewriteRule ^search$  /page_search.php [L]
+RewriteRule ^search$  page_search.php [L]
 
 RewriteRule ^dashboard  /page_dashboard.php [L]
 RewriteRule ^logout  /page_dashboard.php?EX=logout [L]
 
 RewriteRule ^login  /page_login.php [L]
+
+RewriteRule ^index  /page_index.php [L]

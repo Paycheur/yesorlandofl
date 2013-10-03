@@ -18,6 +18,6 @@ require ('Mod/Db/DbFavorite.mod.php');
 
 //lib
 require ('Lib/tools.lib.php');
-require ('Lib/Facebook/base_facebook.php');
-require ('Lib/Facebook/facebook.php');
+/*require ('Lib/Facebook/base_facebook.php');
+require ('Lib/Facebook/facebook.php');*/
 ?>
