@@ -1,158 +1,139 @@
-/* ========================================================================
- * Bootstrap: scrollspy.js v3.0.0
- * http://twbs.github.com/bootstrap/javascript.html#scrollspy
- * ========================================================================
- * Copyright 2012 Twitter, Inc.
+/**
+ * cbpScroller.js v1.0.0
+ * http://www.codrops.com
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * Licensed under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
  *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * ======================================================================== */
+ * Copyright 2013, Codrops
+ * http://www.codrops.com
+ */
+;( function( window ) {
 
+  'use strict';
 
-+function ($) { "use strict";
+  var docElem = window.document.documentElement;
 
-  // SCROLLSPY CLASS DEFINITION
-  // ==========================
+  function getViewportH() {
+    var client = docElem['clientHeight'],
+      inner = window['innerHeight'];
 
-  function ScrollSpy(element, options) {
-    var href
-    var process  = $.proxy(this.process, this)
-
-    this.$element       = $(element).is('body') ? $(window) : $(element)
-    this.$body          = $('body')
-    this.$scrollElement = this.$element.on('scroll.bs.scroll-spy.data-api', process)
-    this.options        = $.extend({}, ScrollSpy.DEFAULTS, options)
-    this.selector       = (this.options.target
-      || ((href = $(element).attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) //strip for ie7
-      || '') + ' .nav li > a'
-    this.offsets        = $([])
-    this.targets        = $([])
-    this.activeTarget   = null
-
-    this.refresh()
-    this.process()
+    if( client < inner )
+      return inner;
+    else
+      return client;
   }
 
-  ScrollSpy.DEFAULTS = {
-    offset: 10
+  function scrollY() {
+    return window.pageYOffset || docElem.scrollTop;
   }
 
-  ScrollSpy.prototype.refresh = function () {
-    var offsetMethod = this.$element[0] == window ? 'offset' : 'position'
+  // http://stackoverflow.com/a/5598797/989439
+  function getOffset( el ) {
+    var offsetTop = 0, offsetLeft = 0;
+    do {
+      if ( !isNaN( el.offsetTop ) ) {
+        offsetTop += el.offsetTop;
+      }
+      if ( !isNaN( el.offsetLeft ) ) {
+        offsetLeft += el.offsetLeft;
+      }
+    } while( el = el.offsetParent )
 
-    this.offsets = $([])
-    this.targets = $([])
-
-    var self     = this
-    var $targets = this.$body
-      .find(this.selector)
-      .map(function () {
-        var $el   = $(this)
-        var href  = $el.data('target') || $el.attr('href')
-        var $href = /^#\w/.test(href) && $(href)
-
-        return ($href
-          && $href.length
-          && [[ $href[offsetMethod]().top + (!$.isWindow(self.$scrollElement.get(0)) && self.$scrollElement.scrollTop()), href ]]) || null
-      })
-      .sort(function (a, b) { return a[0] - b[0] })
-      .each(function () {
-        self.offsets.push(this[0])
-        self.targets.push(this[1])
-      })
-  }
-
-  ScrollSpy.prototype.process = function () {
-    var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset
-    var scrollHeight = this.$scrollElement[0].scrollHeight || this.$body[0].scrollHeight
-    var maxScroll    = scrollHeight - this.$scrollElement.height()
-    var offsets      = this.offsets
-    var targets      = this.targets
-    var activeTarget = this.activeTarget
-    var i
-
-    if (scrollTop >= maxScroll) {
-      return activeTarget != (i = targets.last()[0]) && this.activate(i)
-    }
-
-    for (i = offsets.length; i--;) {
-      activeTarget != targets[i]
-        && scrollTop >= offsets[i]
-        && (!offsets[i + 1] || scrollTop <= offsets[i + 1])
-        && this.activate( targets[i] )
+    return {
+      top : offsetTop,
+      left : offsetLeft
     }
   }
 
-  ScrollSpy.prototype.activate = function (target) {
-    this.activeTarget = target
+  function inViewport( el, h ) {
+    var elH = el.offsetHeight,
+      scrolled = scrollY(),
+      viewed = scrolled + getViewportH(),
+      elTop = getOffset(el).top,
+      elBottom = elTop + elH,
+      // if 0, the element is considered in the viewport as soon as it enters.
+      // if 1, the element is considered in the viewport only when it's fully inside
+      // value in percentage (1 >= h >= 0)
+      h = h || 0;
 
-    $(this.selector)
-      .parents('.active')
-      .removeClass('active')
+    return (elTop + elH * h) <= viewed && (elBottom) >= scrolled;
+  }
 
-    var selector = this.selector
-      + '[data-target="' + target + '"],'
-      + this.selector + '[href="' + target + '"]'
-
-    var active = $(selector)
-      .parents('li')
-      .addClass('active')
-
-    if (active.parent('.dropdown-menu').length)  {
-      active = active
-        .closest('li.dropdown')
-        .addClass('active')
+  function extend( a, b ) {
+    for( var key in b ) {
+      if( b.hasOwnProperty( key ) ) {
+        a[key] = b[key];
+      }
     }
-
-    active.trigger('activate')
+    return a;
   }
 
-
-  // SCROLLSPY PLUGIN DEFINITION
-  // ===========================
-
-  var old = $.fn.scrollspy
-
-  $.fn.scrollspy = function (option) {
-    return this.each(function () {
-      var $this   = $(this)
-      var data    = $this.data('bs.scrollspy')
-      var options = typeof option == 'object' && option
-
-      if (!data) $this.data('bs.scrollspy', (data = new ScrollSpy(this, options)))
-      if (typeof option == 'string') data[option]()
-    })
+  function cbpScroller( el, options ) {
+    this.el = el;
+    this.options = extend( this.defaults, options );
+    this._init();
   }
 
-  $.fn.scrollspy.Constructor = ScrollSpy
+  cbpScroller.prototype = {
+    defaults : {
+      // The viewportFactor defines how much of the appearing item has to be visible in order to trigger the animation
+      // if we'd use a value of 0, this would mean that it would add the animation class as soon as the item is in the viewport.
+      // If we were to use the value of 1, the animation would only be triggered when we see all of the item in the viewport (100% of it)
+      viewportFactor : 0.2
+    },
+    _init : function() {
+      if( Modernizr.touch ) return;
+      this.sections = Array.prototype.slice.call( this.el.querySelectorAll( '.cbp-so-section' ) );
+      this.didScroll = false;
 
+      var self = this;
+      // the sections already shown...
+      this.sections.forEach( function( el, i ) {
+        if( !inViewport( el ) ) {
+          classie.add( el, 'cbp-so-init' );
+        }
+      } );
 
-  // SCROLLSPY NO CONFLICT
-  // =====================
+      var scrollHandler = function() {
+          if( !self.didScroll ) {
+            self.didScroll = true;
+            setTimeout( function() { self._scrollPage(); }, 60 );
+          }
+        },
+        resizeHandler = function() {
+          function delayed() {
+            self._scrollPage();
+            self.resizeTimeout = null;
+          }
+          if ( self.resizeTimeout ) {
+            clearTimeout( self.resizeTimeout );
+          }
+          self.resizeTimeout = setTimeout( delayed, 200 );
+        };
 
-  $.fn.scrollspy.noConflict = function () {
-    $.fn.scrollspy = old
-    return this
+      window.addEventListener( 'scroll', scrollHandler, false );
+      window.addEventListener( 'resize', resizeHandler, false );
+    },
+    _scrollPage : function() {
+      var self = this;
+
+      this.sections.forEach( function( el, i ) {
+        if( inViewport( el, self.options.viewportFactor ) ) {
+          classie.add( el, 'cbp-so-animate' );
+        }
+        else {
+          // this add class init if it doesn't have it. This will ensure that the items initially in the viewport will also animate on scroll
+          classie.add( el, 'cbp-so-init' );
+
+          classie.remove( el, 'cbp-so-animate' );
+        }
+      });
+      this.didScroll = false;
+    }
   }
 
+  // add to global namespace
+  window.cbpScroller = cbpScroller;
 
-  // SCROLLSPY DATA-API
-  // ==================
-
-  $(window).on('load', function () {
-    $('[data-spy="scroll"]').each(function () {
-      var $spy = $(this)
-      $spy.scrollspy($spy.data())
-    })
-  })
-
-}(window.jQuery);
+} )( window );

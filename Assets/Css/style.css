@@ -9,7 +9,6 @@
  * Designed and built with all the love in the world by @mdo and @fat.
  */
 /*! normalize.css v2.1.0 | MIT License | git.io/normalize */
-/* line 11, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 article,
 aside,
 details,
@@ -24,70 +23,56 @@ section,
 summary {
   display: block;
 }
-/* line 30, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 audio,
 canvas,
 video {
   display: inline-block;
 }
-/* line 41, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 audio:not([controls]) {
   display: none;
   height: 0;
 }
-/* line 50, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 [hidden] {
   display: none;
 }
-/* line 64, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
-/* line 74, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 body {
   margin: 0;
 }
-/* line 86, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 a:focus {
   outline: thin dotted;
 }
-/* line 94, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 a:active,
 a:hover {
   outline: 0;
 }
-/* line 108, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
-/* line 117, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 abbr[title] {
   border-bottom: 1px dotted;
 }
-/* line 125, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 b,
 strong {
   font-weight: bold;
 }
-/* line 134, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 dfn {
   font-style: italic;
 }
-/* line 142, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 hr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
-/* line 152, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 mark {
   background: #ff0;
   color: #000;
 }
-/* line 161, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 code,
 kbd,
 pre,
@@ -95,19 +80,15 @@ samp {
   font-family: monospace, serif;
   font-size: 1em;
 }
-/* line 173, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 pre {
   white-space: pre-wrap;
 }
-/* line 181, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
-/* line 189, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 small {
   font-size: 80%;
 }
-/* line 197, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 sub,
 sup {
   font-size: 75%;
@@ -115,38 +96,30 @@ sup {
   position: relative;
   vertical-align: baseline;
 }
-/* line 205, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 sup {
   top: -0.5em;
 }
-/* line 209, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 sub {
   bottom: -0.25em;
 }
-/* line 221, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 img {
   border: 0;
 }
-/* line 229, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 svg:not(:root) {
   overflow: hidden;
 }
-/* line 241, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 figure {
   margin: 0;
 }
-/* line 253, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
-/* line 264, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 legend {
   border: 0;
   padding: 0;
 }
-/* line 275, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 button,
 input,
 select,
@@ -155,17 +128,14 @@ textarea {
   font-size: 100%;
   margin: 0;
 }
-/* line 289, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 button,
 input {
   line-height: normal;
 }
-/* line 301, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 button,
 select {
   text-transform: none;
 }
-/* line 314, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -173,146 +143,119 @@ input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
 }
-/* line 326, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 button[disabled],
 html input[disabled] {
   cursor: default;
 }
-/* line 336, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
   padding: 0;
 }
-/* line 348, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 input[type="search"] {
   -webkit-appearance: textfield;
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
-/* line 360, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
-/* line 369, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
-/* line 380, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 textarea {
   overflow: auto;
   vertical-align: top;
 }
-/* line 393, C:\wamp\www\portfolio-group\less\bootstrap\normalize.less */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 @media print {
-  /* line 8, C:\wamp\www\portfolio-group\less\bootstrap\print.less */
   * {
     text-shadow: none !important;
     color: #000 !important;
     background: transparent !important;
     box-shadow: none !important;
   }
-  /* line 15, C:\wamp\www\portfolio-group\less\bootstrap\print.less */
   a,
   a:visited {
     text-decoration: underline;
   }
-  /* line 20, C:\wamp\www\portfolio-group\less\bootstrap\print.less */
   a[href]:after {
     content: " (" attr(href) ")";
   }
-  /* line 24, C:\wamp\www\portfolio-group\less\bootstrap\print.less */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
-  /* line 29, C:\wamp\www\portfolio-group\less\bootstrap\print.less */
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
     content: "";
   }
-  /* line 35, C:\wamp\www\portfolio-group\less\bootstrap\print.less */
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
-  /* line 41, C:\wamp\www\portfolio-group\less\bootstrap\print.less */
   thead {
     display: table-header-group;
   }
-  /* line 45, C:\wamp\www\portfolio-group\less\bootstrap\print.less */
   tr,
   img {
     page-break-inside: avoid;
   }
-  /* line 50, C:\wamp\www\portfolio-group\less\bootstrap\print.less */
   img {
     max-width: 100% !important;
   }
   @page  {
     margin: 2cm .5cm;
   }
-  /* line 58, C:\wamp\www\portfolio-group\less\bootstrap\print.less */
   p,
   h2,
   h3 {
     orphans: 3;
     widows: 3;
   }
-  /* line 65, C:\wamp\www\portfolio-group\less\bootstrap\print.less */
   h2,
   h3 {
     page-break-after: avoid;
   }
-  /* line 71, C:\wamp\www\portfolio-group\less\bootstrap\print.less */
   .navbar {
     display: none;
   }
-  /* line 75, C:\wamp\www\portfolio-group\less\bootstrap\print.less */
   .table td,
   .table th {
     background-color: #fff !important;
   }
-  /* line 82, C:\wamp\www\portfolio-group\less\bootstrap\print.less */
   .btn > .caret,
   .dropup > .btn > .caret {
     border-top-color: #000 !important;
   }
-  /* line 86, C:\wamp\www\portfolio-group\less\bootstrap\print.less */
   .label {
     border: 1px solid #000;
   }
-  /* line 90, C:\wamp\www\portfolio-group\less\bootstrap\print.less */
   .table {
     border-collapse: collapse !important;
   }
-  /* line 94, C:\wamp\www\portfolio-group\less\bootstrap\print.less */
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important;
   }
 }
-/* line 9, C:\wamp\www\portfolio-group\less\bootstrap\scaffolding.less */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 17, C:\wamp\www\portfolio-group\less\bootstrap\scaffolding.less */
 html {
   font-size: 62.5%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-/* line 22, C:\wamp\www\portfolio-group\less\bootstrap\scaffolding.less */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -320,7 +263,6 @@ body {
   color: #333333;
   background-color: #eeeeee;
 }
-/* line 31, C:\wamp\www\portfolio-group\less\bootstrap\scaffolding.less */
 input,
 button,
 select,
@@ -329,53 +271,43 @@ textarea {
   font-size: inherit;
   line-height: inherit;
 }
-/* line 44, C:\wamp\www\portfolio-group\less\bootstrap\scaffolding.less */
 a {
-  color: #20396c;
+  color: #202020;
   text-decoration: none;
 }
-/* line 48, C:\wamp\www\portfolio-group\less\bootstrap\scaffolding.less */
 a:hover,
 a:focus {
-  color: #0f1a31;
+  color: #000000;
   text-decoration: underline;
 }
-/* line 53, C:\wamp\www\portfolio-group\less\bootstrap\scaffolding.less */
 a:focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-/* line 61, C:\wamp\www\portfolio-group\less\bootstrap\scaffolding.less */
 img {
   vertical-align: middle;
 }
-/* line 66, C:\wamp\www\portfolio-group\less\bootstrap\scaffolding.less */
 .img-responsive {
   display: inline-block;
   max-width: 100%;
   height: auto;
 }
-/* line 73, C:\wamp\www\portfolio-group\less\bootstrap\scaffolding.less */
 .img-rounded {
   border-radius: 6px;
 }
-/* line 81, C:\wamp\www\portfolio-group\less\bootstrap\scaffolding.less */
 .img-circle {
   border-radius: 500px;
 }
-/* line 89, C:\wamp\www\portfolio-group\less\bootstrap\scaffolding.less */
 hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
   border-top: 1px solid #eeeeee;
 }
-/* line 9, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 p {
   margin: 0 0 10px;
 }
-/* line 12, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 .lead {
   margin-bottom: 20px;
   font-size: 16.099999999999998px;
@@ -383,56 +315,43 @@ p {
   line-height: 1.4;
 }
 @media (min-width: 768px) {
-  /* line 18, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
   .lead {
     font-size: 21px;
   }
 }
-/* line 28, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 small {
   font-size: 85%;
 }
-/* line 31, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 cite {
   font-style: normal;
 }
-/* line 34, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 .text-muted {
   color: #999999;
 }
-/* line 35, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 .text-primary {
-  color: #20396c;
+  color: #202020;
 }
-/* line 36, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 .text-warning {
   color: #c09853;
 }
-/* line 37, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 .text-danger {
   color: #b94a48;
 }
-/* line 38, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 .text-success {
   color: #468847;
 }
-/* line 39, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 .text-info {
   color: #3a87ad;
 }
-/* line 42, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 .text-left {
   text-align: left;
 }
-/* line 43, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 .text-right {
   text-align: right;
 }
-/* line 44, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 .text-center {
   text-align: center;
 }
-/* line 50, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 h1,
 h2,
 h3,
@@ -449,7 +368,6 @@ h6,
   font-weight: 500;
   line-height: 1.1;
 }
-/* line 55, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 h1 small,
 h2 small,
 h3 small,
@@ -466,120 +384,98 @@ h6 small,
   line-height: 1;
   color: #999999;
 }
-/* line 62, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 h1,
 h2,
 h3 {
   margin-top: 20px;
   margin-bottom: 10px;
 }
-/* line 68, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 h4,
 h5,
 h6 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-/* line 75, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 h1,
 .h1 {
   font-size: 38px;
 }
-/* line 76, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 h2,
 .h2 {
   font-size: 32px;
 }
-/* line 77, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 h3,
 .h3 {
   font-size: 24px;
 }
-/* line 78, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 h4,
 .h4 {
   font-size: 18px;
 }
-/* line 79, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 h5,
 .h5 {
   font-size: 14px;
 }
-/* line 80, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 h6,
 .h6 {
   font-size: 12px;
 }
-/* line 82, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 h1 small,
 .h1 small {
   font-size: 24px;
 }
-/* line 83, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 h2 small,
 .h2 small {
   font-size: 18px;
 }
-/* line 84, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 h3 small,
 .h3 small,
 h4 small,
 .h4 small {
   font-size: 14px;
 }
-/* line 91, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 .page-header {
   padding-bottom: 9px;
   margin: 40px 0 20px;
   border-bottom: 1px solid #eeeeee;
 }
-/* line 103, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 ul,
 ol {
   margin-top: 0;
   margin-bottom: 10px;
 }
-/* line 107, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 ul ul,
 ol ul,
 ul ol,
 ol ol {
   margin-bottom: 0;
 }
-/* line 116, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 .list-unstyled {
   padding-left: 0;
   list-style: none;
 }
-/* line 121, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 .list-inline {
   padding-left: 0;
   list-style: none;
 }
-/* line 123, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 .list-inline > li {
   display: inline-block;
   padding-left: 5px;
   padding-right: 5px;
 }
-/* line 131, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 dl {
   margin-bottom: 20px;
 }
-/* line 134, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 dt,
 dd {
   line-height: 1.428571429;
 }
-/* line 138, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 dt {
   font-weight: bold;
 }
-/* line 141, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 dd {
   margin-left: 0;
 }
-/* line 146, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 .dl-horizontal dt {
   float: left;
   width: 160px;
@@ -589,12 +485,10 @@ dd {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-/* line 153, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 .dl-horizontal dd {
   *zoom: 1;
   margin-left: 180px;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .dl-horizontal dd:before,
 .dl-horizontal dd:after {
   content: " ";
@@ -604,11 +498,9 @@ dd {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .dl-horizontal dd:after {
   clear: both;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .dl-horizontal dd:before,
 .dl-horizontal dd:after {
   content: " ";
@@ -618,48 +510,39 @@ dd {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .dl-horizontal dd:after {
   clear: both;
 }
-/* line 163, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 abbr[title],
 abbr[data-original-title] {
   cursor: help;
   border-bottom: 1px dotted #999999;
 }
-/* line 169, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 abbr.initialism {
   font-size: 90%;
   text-transform: uppercase;
 }
-/* line 175, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 blockquote {
   padding: 10px 20px;
   margin: 0 0 20px;
   border-left: 5px solid #eeeeee;
 }
-/* line 179, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 blockquote p {
   font-size: 17.5px;
   font-weight: 300;
   line-height: 1.25;
 }
-/* line 184, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 blockquote p:last-child {
   margin-bottom: 0;
 }
-/* line 187, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 blockquote small {
   display: block;
   line-height: 1.428571429;
   color: #999999;
 }
-/* line 191, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 blockquote small:before {
   content: '\2014 \00A0';
 }
-/* line 197, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 blockquote.pull-right {
   float: right;
   padding-right: 15px;
@@ -667,39 +550,32 @@ blockquote.pull-right {
   border-right: 5px solid #eeeeee;
   border-left: 0;
 }
-/* line 203, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 blockquote.pull-right p,
 blockquote.pull-right small {
   text-align: right;
 }
-/* line 208, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 blockquote.pull-right small:before {
   content: '';
 }
-/* line 211, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 blockquote.pull-right small:after {
   content: '\00A0 \2014';
 }
-/* line 219, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 q:before,
 q:after,
 blockquote:before,
 blockquote:after {
   content: "";
 }
-/* line 227, C:\wamp\www\portfolio-group\less\bootstrap\type.less */
 address {
   display: block;
   margin-bottom: 20px;
   font-style: normal;
   line-height: 1.428571429;
 }
-/* line 7, C:\wamp\www\portfolio-group\less\bootstrap\code.less */
 code,
 pre {
   font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 }
-/* line 13, C:\wamp\www\portfolio-group\less\bootstrap\code.less */
 code {
   padding: 2px 4px;
   font-size: 90%;
@@ -708,7 +584,6 @@ code {
   white-space: nowrap;
   border-radius: 4px;
 }
-/* line 23, C:\wamp\www\portfolio-group\less\bootstrap\code.less */
 pre {
   display: block;
   padding: 9.5px;
@@ -722,11 +597,9 @@ pre {
   border: 1px solid #cccccc;
   border-radius: 4px;
 }
-/* line 37, C:\wamp\www\portfolio-group\less\bootstrap\code.less */
 pre.prettyprint {
   margin-bottom: 20px;
 }
-/* line 42, C:\wamp\www\portfolio-group\less\bootstrap\code.less */
 pre code {
   padding: 0;
   color: inherit;
@@ -734,18 +607,15 @@ pre code {
   background-color: transparent;
   border: 0;
 }
-/* line 52, C:\wamp\www\portfolio-group\less\bootstrap\code.less */
 .pre-scrollable {
   max-height: 340px;
   overflow-y: scroll;
 }
-/* line 6, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
 .container {
   margin-right: auto;
   margin-left: auto;
   *zoom: 1;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .container:before,
 .container:after {
   content: " ";
@@ -755,11 +625,9 @@ pre code {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .container:after {
   clear: both;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .container:before,
 .container:after {
   content: " ";
@@ -769,15 +637,12 @@ pre code {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .container:after {
   clear: both;
 }
-/* line 11, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
 .row {
   *zoom: 1;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .row:before,
 .row:after {
   content: " ";
@@ -787,11 +652,9 @@ pre code {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .row:after {
   clear: both;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .row:before,
 .row:after {
   content: " ";
@@ -801,23 +664,19 @@ pre code {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .row:after {
   clear: both;
 }
 @media (min-width: 768px) {
-  /* line 455, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   .row {
     margin-left: -15px;
     margin-right: -15px;
   }
 }
-/* line 461, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .row .row {
   margin-left: -15px;
   margin-right: -15px;
 }
-/* line 16, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
 .col-1,
 .col-2,
 .col-3,
@@ -859,7 +718,6 @@ pre code {
   padding-left: 15px;
   padding-right: 15px;
 }
-/* line 67, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
 .col-1,
 .col-2,
 .col-3,
@@ -874,60 +732,46 @@ pre code {
 .col-12 {
   float: left;
 }
-/* line 81, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
 .col-1 {
   width: 8.333333333333332%;
 }
-/* line 82, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
 .col-2 {
   width: 16.666666666666664%;
 }
-/* line 83, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
 .col-3 {
   width: 25%;
 }
-/* line 84, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
 .col-4 {
   width: 33.33333333333333%;
 }
-/* line 85, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
 .col-5 {
   width: 41.66666666666667%;
 }
-/* line 86, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
 .col-6 {
   width: 50%;
 }
-/* line 87, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
 .col-7 {
   width: 58.333333333333336%;
 }
-/* line 88, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
 .col-8 {
   width: 66.66666666666666%;
 }
-/* line 89, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
 .col-9 {
   width: 75%;
 }
-/* line 90, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
 .col-10 {
   width: 83.33333333333334%;
 }
-/* line 91, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
 .col-11 {
   width: 91.66666666666666%;
 }
-/* line 92, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
 .col-12 {
   width: 100%;
 }
 @media (min-width: 768px) {
-  /* line 96, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .container {
     max-width: 728px;
   }
-  /* line 100, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-1,
   .col-sm-2,
   .col-sm-3,
@@ -942,193 +786,146 @@ pre code {
   .col-sm-12 {
     float: left;
   }
-  /* line 114, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-1 {
     width: 8.333333333333332%;
   }
-  /* line 115, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-2 {
     width: 16.666666666666664%;
   }
-  /* line 116, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-3 {
     width: 25%;
   }
-  /* line 117, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-4 {
     width: 33.33333333333333%;
   }
-  /* line 118, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-5 {
     width: 41.66666666666667%;
   }
-  /* line 119, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-6 {
     width: 50%;
   }
-  /* line 120, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-7 {
     width: 58.333333333333336%;
   }
-  /* line 121, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-8 {
     width: 66.66666666666666%;
   }
-  /* line 122, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-9 {
     width: 75%;
   }
-  /* line 123, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-10 {
     width: 83.33333333333334%;
   }
-  /* line 124, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-11 {
     width: 91.66666666666666%;
   }
-  /* line 125, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-12 {
     width: 100%;
   }
-  /* line 128, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-push-1 {
     left: 8.333333333333332%;
   }
-  /* line 129, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-push-2 {
     left: 16.666666666666664%;
   }
-  /* line 130, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-push-3 {
     left: 25%;
   }
-  /* line 131, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-push-4 {
     left: 33.33333333333333%;
   }
-  /* line 132, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-push-5 {
     left: 41.66666666666667%;
   }
-  /* line 133, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-push-6 {
     left: 50%;
   }
-  /* line 134, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-push-7 {
     left: 58.333333333333336%;
   }
-  /* line 135, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-push-8 {
     left: 66.66666666666666%;
   }
-  /* line 136, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-push-9 {
     left: 75%;
   }
-  /* line 137, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-push-10 {
     left: 83.33333333333334%;
   }
-  /* line 138, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-push-11 {
     left: 91.66666666666666%;
   }
-  /* line 140, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-pull-1 {
     right: 8.333333333333332%;
   }
-  /* line 141, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-pull-2 {
     right: 16.666666666666664%;
   }
-  /* line 142, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-pull-3 {
     right: 25%;
   }
-  /* line 143, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-pull-4 {
     right: 33.33333333333333%;
   }
-  /* line 144, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-pull-5 {
     right: 41.66666666666667%;
   }
-  /* line 145, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-pull-6 {
     right: 50%;
   }
-  /* line 146, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-pull-7 {
     right: 58.333333333333336%;
   }
-  /* line 147, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-pull-8 {
     right: 66.66666666666666%;
   }
-  /* line 148, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-pull-9 {
     right: 75%;
   }
-  /* line 149, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-pull-10 {
     right: 83.33333333333334%;
   }
-  /* line 150, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-pull-11 {
     right: 91.66666666666666%;
   }
-  /* line 153, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-offset-1 {
     margin-left: 8.333333333333332%;
   }
-  /* line 154, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-offset-2 {
     margin-left: 16.666666666666664%;
   }
-  /* line 155, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-offset-3 {
     margin-left: 25%;
   }
-  /* line 156, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-offset-4 {
     margin-left: 33.33333333333333%;
   }
-  /* line 157, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-offset-5 {
     margin-left: 41.66666666666667%;
   }
-  /* line 158, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-offset-6 {
     margin-left: 50%;
   }
-  /* line 159, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-offset-7 {
     margin-left: 58.333333333333336%;
   }
-  /* line 160, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-offset-8 {
     margin-left: 66.66666666666666%;
   }
-  /* line 161, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-offset-9 {
     margin-left: 75%;
   }
-  /* line 162, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-offset-10 {
     margin-left: 83.33333333333334%;
   }
-  /* line 163, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-sm-offset-11 {
     margin-left: 91.66666666666666%;
   }
 }
 @media (min-width: 992px) {
-  /* line 168, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .container {
     max-width: 940px;
   }
-  /* line 171, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-1,
   .col-lg-2,
   .col-lg-3,
@@ -1143,208 +940,158 @@ pre code {
   .col-lg-12 {
     float: left;
   }
-  /* line 185, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-1 {
     width: 8.333333333333332%;
   }
-  /* line 186, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-2 {
     width: 16.666666666666664%;
   }
-  /* line 187, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-3 {
     width: 25%;
   }
-  /* line 188, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-4 {
     width: 33.33333333333333%;
   }
-  /* line 189, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-5 {
     width: 41.66666666666667%;
   }
-  /* line 190, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-6 {
     width: 50%;
   }
-  /* line 191, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-7 {
     width: 58.333333333333336%;
   }
-  /* line 192, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-8 {
     width: 66.66666666666666%;
   }
-  /* line 193, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-9 {
     width: 75%;
   }
-  /* line 194, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-10 {
     width: 83.33333333333334%;
   }
-  /* line 195, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-11 {
     width: 91.66666666666666%;
   }
-  /* line 196, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-12 {
     width: 100%;
   }
-  /* line 199, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-push-1 {
     left: 8.333333333333332%;
   }
-  /* line 200, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-push-2 {
     left: 16.666666666666664%;
   }
-  /* line 201, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-push-3 {
     left: 25%;
   }
-  /* line 202, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-push-4 {
     left: 33.33333333333333%;
   }
-  /* line 203, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-push-5 {
     left: 41.66666666666667%;
   }
-  /* line 204, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-push-6 {
     left: 50%;
   }
-  /* line 205, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-push-7 {
     left: 58.333333333333336%;
   }
-  /* line 206, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-push-8 {
     left: 66.66666666666666%;
   }
-  /* line 207, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-push-9 {
     left: 75%;
   }
-  /* line 208, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-push-10 {
     left: 83.33333333333334%;
   }
-  /* line 209, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-push-11 {
     left: 91.66666666666666%;
   }
-  /* line 211, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-pull-1 {
     right: 8.333333333333332%;
   }
-  /* line 212, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-pull-2 {
     right: 16.666666666666664%;
   }
-  /* line 213, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-pull-3 {
     right: 25%;
   }
-  /* line 214, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-pull-4 {
     right: 33.33333333333333%;
   }
-  /* line 215, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-pull-5 {
     right: 41.66666666666667%;
   }
-  /* line 216, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-pull-6 {
     right: 50%;
   }
-  /* line 217, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-pull-7 {
     right: 58.333333333333336%;
   }
-  /* line 218, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-pull-8 {
     right: 66.66666666666666%;
   }
-  /* line 219, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-pull-9 {
     right: 75%;
   }
-  /* line 220, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-pull-10 {
     right: 83.33333333333334%;
   }
-  /* line 221, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-pull-11 {
     right: 91.66666666666666%;
   }
-  /* line 224, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-offset-1 {
     margin-left: 8.333333333333332%;
   }
-  /* line 225, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-offset-2 {
     margin-left: 16.666666666666664%;
   }
-  /* line 226, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-offset-3 {
     margin-left: 25%;
   }
-  /* line 227, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-offset-4 {
     margin-left: 33.33333333333333%;
   }
-  /* line 228, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-offset-5 {
     margin-left: 41.66666666666667%;
   }
-  /* line 229, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-offset-6 {
     margin-left: 50%;
   }
-  /* line 230, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-offset-7 {
     margin-left: 58.333333333333336%;
   }
-  /* line 231, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-offset-8 {
     margin-left: 66.66666666666666%;
   }
-  /* line 232, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-offset-9 {
     margin-left: 75%;
   }
-  /* line 233, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-offset-10 {
     margin-left: 83.33333333333334%;
   }
-  /* line 234, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .col-lg-offset-11 {
     margin-left: 91.66666666666666%;
   }
 }
 @media (min-width: 1200px) {
-  /* line 239, C:\wamp\www\portfolio-group\less\bootstrap\grid.less */
   .container {
     max-width: 1170px;
   }
 }
-/* line 6, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 table {
   max-width: 100%;
   background-color: transparent;
 }
-/* line 10, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 th {
   text-align: left;
 }
-/* line 18, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 .table {
   width: 100%;
   margin-bottom: 20px;
 }
-/* line 26, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 .table thead > tr > th,
 .table tbody > tr > th,
 .table tfoot > tr > th,
@@ -1356,11 +1103,9 @@ th {
   vertical-align: top;
   border-top: 1px solid #dddddd;
 }
-/* line 36, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 .table thead > tr > th {
   vertical-align: bottom;
 }
-/* line 44, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 .table caption + thead tr:first-child th,
 .table colgroup + thead tr:first-child th,
 .table thead:first-child tr:first-child th,
@@ -1369,15 +1114,12 @@ th {
 .table thead:first-child tr:first-child td {
   border-top: 0;
 }
-/* line 50, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 .table tbody + tbody {
   border-top: 2px solid #dddddd;
 }
-/* line 55, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 .table .table {
   background-color: #eeeeee;
 }
-/* line 70, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 .table-condensed thead > tr > th,
 .table-condensed tbody > tr > th,
 .table-condensed tfoot > tr > th,
@@ -1386,11 +1128,9 @@ th {
 .table-condensed tfoot > tr > td {
   padding: 5px;
 }
-/* line 83, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 .table-bordered {
   border: 1px solid #dddddd;
 }
-/* line 89, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 .table-bordered > thead > tr > th,
 .table-bordered > tbody > tr > th,
 .table-bordered > tfoot > tr > th,
@@ -1399,28 +1139,23 @@ th {
 .table-bordered > tfoot > tr > td {
   border: 1px solid #dddddd;
 }
-/* line 106, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 .table-striped > tbody > tr:nth-child(odd) > td,
 .table-striped > tbody > tr:nth-child(odd) > th {
   background-color: #f9f9f9;
 }
-/* line 123, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th {
   background-color: #f5f5f5;
 }
-/* line 137, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 table col[class^="col-"] {
   float: none;
   display: table-column;
 }
-/* line 144, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 table td[class^="col-"],
 table th[class^="col-"] {
   float: none;
   display: table-cell;
 }
-/* line 161, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 .table > thead > tr > td.active,
 .table > tbody > tr > td.active,
 .table > tfoot > tr > td.active,
@@ -1435,7 +1170,6 @@ table th[class^="col-"] {
 .table > tfoot > tr.active > th {
   background-color: #f5f5f5;
 }
-/* line 167, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 .table > thead > tr > td.success,
 .table > tbody > tr > td.success,
 .table > tfoot > tr > td.success,
@@ -1451,7 +1185,6 @@ table th[class^="col-"] {
   background-color: #dff0d8;
   border-color: #d6e9c6;
 }
-/* line 174, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 .table > thead > tr > td.danger,
 .table > tbody > tr > td.danger,
 .table > tfoot > tr > td.danger,
@@ -1467,7 +1200,6 @@ table th[class^="col-"] {
   background-color: #f2dede;
   border-color: #eed3d7;
 }
-/* line 181, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 .table > thead > tr > td.warning,
 .table > tbody > tr > td.warning,
 .table > tfoot > tr > td.warning,
@@ -1483,34 +1215,29 @@ table th[class^="col-"] {
   background-color: #fcf8e3;
   border-color: #fbeed5;
 }
-/* line 193, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 .table-hover > tbody > tr > td.success:hover,
 .table-hover > tbody > tr > th.success:hover,
 .table-hover > tbody > tr.success:hover > td {
   background-color: #d0e9c6;
   border-color: #c9e2b3;
 }
-/* line 199, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 .table-hover > tbody > tr > td.danger:hover,
 .table-hover > tbody > tr > th.danger:hover,
 .table-hover > tbody > tr.danger:hover > td {
   background-color: #ebcccc;
   border-color: #e6c1c7;
 }
-/* line 205, C:\wamp\www\portfolio-group\less\bootstrap\tables.less */
 .table-hover > tbody > tr > td.warning:hover,
 .table-hover > tbody > tr > th.warning:hover,
 .table-hover > tbody > tr.warning:hover > td {
   background-color: #faf2cc;
   border-color: #f8e5be;
 }
-/* line 10, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 fieldset {
   padding: 0;
   margin: 0;
   border: 0;
 }
-/* line 16, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 legend {
   display: block;
   width: 100%;
@@ -1522,19 +1249,16 @@ legend {
   border: 0;
   border-bottom: 1px solid #e5e5e5;
 }
-/* line 28, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 label {
   display: inline-block;
   margin-bottom: 5px;
   font-weight: bold;
 }
-/* line 38, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 input[type="search"] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 43, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 input[type="radio"],
 input[type="checkbox"] {
   margin: 4px 0 0;
@@ -1543,22 +1267,18 @@ input[type="checkbox"] {
 
   line-height: normal;
 }
-/* line 51, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 input[type="file"] {
   display: block;
 }
-/* line 56, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 select[multiple],
 select[size] {
   height: auto;
 }
-/* line 62, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 select optgroup {
   font-size: inherit;
   font-style: inherit;
   font-family: inherit;
 }
-/* line 69, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
@@ -1566,28 +1286,22 @@ input[type="checkbox"]:focus {
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-/* line 79, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   height: auto;
 }
-/* line 57, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .form-control:-moz-placeholder {
   color: #999999;
 }
-/* line 58, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .form-control::-moz-placeholder {
   color: #999999;
 }
-/* line 59, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .form-control:-ms-input-placeholder {
   color: #999999;
 }
-/* line 60, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .form-control::-webkit-input-placeholder {
   color: #999999;
 }
-/* line 117, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 .form-control {
   display: block;
   width: 100%;
@@ -1605,29 +1319,24 @@ input[type="number"]::-webkit-inner-spin-button {
   -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
-/* line 132, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 .form-control:focus {
   border-color: rgba(82, 168, 236, 0.8);
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
 }
-/* line 142, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 .form-control[disabled],
 .form-control[readonly],
 fieldset[disabled] .form-control {
   cursor: not-allowed;
   background-color: #eeeeee;
 }
-/* line 150, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 textarea.form-control {
   height: auto;
 }
-/* line 161, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 .form-group {
   margin-bottom: 15px;
 }
-/* line 170, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 .radio,
 .checkbox {
   display: block;
@@ -1637,7 +1346,6 @@ textarea.form-control {
   padding-left: 20px;
   vertical-align: middle;
 }
-/* line 178, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 .radio label,
 .checkbox label {
   display: inline;
@@ -1645,7 +1353,6 @@ textarea.form-control {
   font-weight: normal;
   cursor: pointer;
 }
-/* line 185, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 .radio input[type="radio"],
 .radio-inline input[type="radio"],
 .checkbox input[type="checkbox"],
@@ -1653,12 +1360,10 @@ textarea.form-control {
   float: left;
   margin-left: -20px;
 }
-/* line 192, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 .radio + .radio,
 .checkbox + .checkbox {
   margin-top: -5px;
 }
-/* line 198, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 .radio-inline,
 .checkbox-inline {
   display: inline-block;
@@ -1668,13 +1373,11 @@ textarea.form-control {
   font-weight: normal;
   cursor: pointer;
 }
-/* line 207, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 .radio-inline + .radio-inline,
 .checkbox-inline + .checkbox-inline {
   margin-top: 0;
   margin-left: 10px;
 }
-/* line 221, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 .input-large {
   height: 45px;
   padding: 10px 16px;
@@ -1682,7 +1385,6 @@ textarea.form-control {
   line-height: 1.33;
   border-radius: 6px;
 }
-/* line 228, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 .input-small {
   height: 30px;
   padding: 5px 10px;
@@ -1690,123 +1392,102 @@ textarea.form-control {
   line-height: 1.5;
   border-radius: 3px;
 }
-/* line 237, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 select.input-large {
   height: 45px;
   line-height: 45px;
 }
-/* line 241, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 select.input-small {
   height: 30px;
   line-height: 30px;
 }
-/* line 247, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 textarea.input-large,
 textarea.input-small {
   height: auto;
 }
-/* line 525, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .has-warning .help-block,
 .has-warning .control-label {
   color: #c09853;
 }
-/* line 530, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .has-warning .form-control {
   padding-right: 32px;
   border-color: #c09853;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
-/* line 534, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .has-warning .form-control:focus {
   border-color: #a47e3c;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e;
 }
-/* line 541, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .has-warning .input-group-addon {
   color: #c09853;
   border-color: #c09853;
   background-color: #fcf8e3;
 }
-/* line 525, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .has-error .help-block,
 .has-error .control-label {
   color: #b94a48;
 }
-/* line 530, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .has-error .form-control {
   padding-right: 32px;
   border-color: #b94a48;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
-/* line 534, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .has-error .form-control:focus {
   border-color: #953b39;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
 }
-/* line 541, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .has-error .input-group-addon {
   color: #b94a48;
   border-color: #b94a48;
   background-color: #f2dede;
 }
-/* line 525, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .has-success .help-block,
 .has-success .control-label {
   color: #468847;
 }
-/* line 530, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .has-success .form-control {
   padding-right: 32px;
   border-color: #468847;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
-/* line 534, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .has-success .form-control:focus {
   border-color: #356635;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
 }
-/* line 541, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .has-success .input-group-addon {
   color: #468847;
   border-color: #468847;
   background-color: #dff0d8;
 }
-/* line 277, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 .help-block {
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
   color: #737373;
 }
-/* line 291, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 .form-inline .form-control,
 .form-inline .radio,
 .form-inline .checkbox {
   display: inline-block;
 }
-/* line 296, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 .form-inline .radio,
 .form-inline .checkbox {
   margin-top: 0;
   margin-bottom: 0;
 }
-/* line 309, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 .form-horizontal .control-label,
 .form-horizontal .radio-inline,
 .form-horizontal .checkbox-inline {
   padding-top: 9px;
 }
-/* line 316, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 .form-horizontal .form-group {
   *zoom: 1;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .form-horizontal .form-group:before,
 .form-horizontal .form-group:after {
   content: " ";
@@ -1816,11 +1497,9 @@ textarea.input-small {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .form-horizontal .form-group:after {
   clear: both;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .form-horizontal .form-group:before,
 .form-horizontal .form-group:after {
   content: " ";
@@ -1830,29 +1509,24 @@ textarea.input-small {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .form-horizontal .form-group:after {
   clear: both;
 }
 @media (min-width: 768px) {
-  /* line 455, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   .form-horizontal .form-group {
     margin-left: -15px;
     margin-right: -15px;
   }
 }
-/* line 461, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .form-horizontal .form-group .row {
   margin-left: -15px;
   margin-right: -15px;
 }
 @media (min-width: 768px) {
-  /* line 323, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
   .form-horizontal .control-label {
     text-align: right;
   }
 }
-/* line 10, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -1872,26 +1546,22 @@ textarea.input-small {
   -o-user-select: none;
   user-select: none;
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn:focus {
   outline: thin dotted #333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
-/* line 29, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn:hover,
 .btn:focus {
   color: #ffffff;
   text-decoration: none;
 }
-/* line 35, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn:active,
 .btn.active {
   outline: 0;
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-/* line 41, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn.disabled,
 .btn[disabled],
 fieldset[disabled] .btn {
@@ -1902,21 +1572,18 @@ fieldset[disabled] .btn {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-/* line 56, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn-default {
   color: #ffffff;
-  background-color: #474949;
-  border-color: #474949;
+  background-color: #828282;
+  border-color: #828282;
 }
-/* line 371, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .btn-default:hover,
 .btn-default:focus,
 .btn-default:active,
 .btn-default.active {
-  background-color: #3a3c3c;
-  border-color: #2e2f2f;
+  background-color: #757575;
+  border-color: #696969;
 }
-/* line 382, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .btn-default.disabled,
 .btn-default[disabled],
 fieldset[disabled] .btn-default,
@@ -1932,24 +1599,21 @@ fieldset[disabled] .btn-default:active,
 .btn-default.disabled.active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
-  background-color: #474949;
-  border-color: #474949;
+  background-color: #828282;
+  border-color: #828282;
 }
-/* line 59, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn-primary {
   color: #ffffff;
-  background-color: #20396c;
-  border-color: #20396c;
+  background-color: #202020;
+  border-color: #202020;
 }
-/* line 371, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary.active {
-  background-color: #1a2f58;
-  border-color: #142445;
+  background-color: #131313;
+  border-color: #060606;
 }
-/* line 382, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .btn-primary.disabled,
 .btn-primary[disabled],
 fieldset[disabled] .btn-primary,
@@ -1965,16 +1629,14 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #20396c;
-  border-color: #20396c;
+  background-color: #202020;
+  border-color: #202020;
 }
-/* line 63, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn-warning {
   color: #ffffff;
   background-color: #b58411;
   border-color: #b58411;
 }
-/* line 371, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .btn-warning:hover,
 .btn-warning:focus,
 .btn-warning:active,
@@ -1982,7 +1644,6 @@ fieldset[disabled] .btn-primary.active {
   background-color: #9e730f;
   border-color: #86620d;
 }
-/* line 382, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .btn-warning.disabled,
 .btn-warning[disabled],
 fieldset[disabled] .btn-warning,
@@ -2001,13 +1662,11 @@ fieldset[disabled] .btn-warning.active {
   background-color: #b58411;
   border-color: #b58411;
 }
-/* line 67, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn-danger {
   color: #ffffff;
   background-color: #ed1d24;
   border-color: #ed1d24;
 }
-/* line 371, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .btn-danger:hover,
 .btn-danger:focus,
 .btn-danger:active,
@@ -2015,7 +1674,6 @@ fieldset[disabled] .btn-warning.active {
   background-color: #df1219;
   border-color: #c71016;
 }
-/* line 382, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .btn-danger.disabled,
 .btn-danger[disabled],
 fieldset[disabled] .btn-danger,
@@ -2034,13 +1692,11 @@ fieldset[disabled] .btn-danger.active {
   background-color: #ed1d24;
   border-color: #ed1d24;
 }
-/* line 71, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn-success {
   color: #ffffff;
   background-color: #5cb85c;
   border-color: #5cb85c;
 }
-/* line 371, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .btn-success:hover,
 .btn-success:focus,
 .btn-success:active,
@@ -2048,7 +1704,6 @@ fieldset[disabled] .btn-danger.active {
   background-color: #4cae4c;
   border-color: #449d44;
 }
-/* line 382, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .btn-success.disabled,
 .btn-success[disabled],
 fieldset[disabled] .btn-success,
@@ -2067,13 +1722,11 @@ fieldset[disabled] .btn-success.active {
   background-color: #5cb85c;
   border-color: #5cb85c;
 }
-/* line 75, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn-info {
   color: #ffffff;
   background-color: #0db9a4;
   border-color: #0db9a4;
 }
-/* line 371, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .btn-info:hover,
 .btn-info:focus,
 .btn-info:active,
@@ -2081,7 +1734,6 @@ fieldset[disabled] .btn-success.active {
   background-color: #0ba18f;
   border-color: #0a897a;
 }
-/* line 382, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .btn-info.disabled,
 .btn-info[disabled],
 fieldset[disabled] .btn-info,
@@ -2100,14 +1752,12 @@ fieldset[disabled] .btn-info.active {
   background-color: #0db9a4;
   border-color: #0db9a4;
 }
-/* line 84, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn-link {
-  color: #20396c;
+  color: #202020;
   font-weight: normal;
   cursor: pointer;
   border-radius: 0;
 }
-/* line 90, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn-link,
 .btn-link:active,
 .btn-link[disabled],
@@ -2116,21 +1766,18 @@ fieldset[disabled] .btn-link {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-/* line 97, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn-link,
 .btn-link:hover,
 .btn-link:focus,
 .btn-link:active {
   border-color: transparent;
 }
-/* line 103, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn-link:hover,
 .btn-link:focus {
-  color: #0f1a31;
+  color: #000000;
   text-decoration: underline;
   background-color: transparent;
 }
-/* line 111, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn-link[disabled]:hover,
 fieldset[disabled] .btn-link:hover,
 .btn-link[disabled]:focus,
@@ -2138,14 +1785,12 @@ fieldset[disabled] .btn-link:focus {
   color: #333333;
   text-decoration: none;
 }
-/* line 123, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn-large {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33;
   border-radius: 6px;
 }
-/* line 129, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn-small,
 .btn-mini {
   padding: 5px 10px;
@@ -2153,46 +1798,37 @@ fieldset[disabled] .btn-link:focus {
   line-height: 1.5;
   border-radius: 3px;
 }
-/* line 136, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn-mini {
   padding: 3px 5px;
 }
-/* line 144, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn-block {
   display: block;
   width: 100%;
   padding-left: 0;
   padding-right: 0;
 }
-/* line 152, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 .btn-block + .btn-block {
   margin-top: 5px;
 }
-/* line 160, C:\wamp\www\portfolio-group\less\bootstrap\buttons.less */
 input[type="submit"].btn-block,
 input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%;
 }
-/* line 10, C:\wamp\www\portfolio-group\less\bootstrap\component-animations.less */
 .fade {
   opacity: 0;
   -webkit-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
 }
-/* line 13, C:\wamp\www\portfolio-group\less\bootstrap\component-animations.less */
 .fade.in {
   opacity: 1;
 }
-/* line 18, C:\wamp\www\portfolio-group\less\bootstrap\component-animations.less */
 .collapse {
   display: none;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\component-animations.less */
 .collapse.in {
   display: block;
 }
-/* line 24, C:\wamp\www\portfolio-group\less\bootstrap\component-animations.less */
 .collapsing {
   position: relative;
   height: 0;
@@ -2200,43 +1836,36 @@ input[type="button"].btn-block {
   -webkit-transition: height 0.35s ease;
   transition: height 0.35s ease;
 }
-/* line 7, C:\wamp\www\portfolio-group\less\bootstrap\input-groups.less */
 .input-group {
   position: relative;
   display: table;
   border-collapse: separate;
 }
-/* line 13, C:\wamp\www\portfolio-group\less\bootstrap\input-groups.less */
 .input-group.col {
   float: none;
   padding-left: 0;
   padding-right: 0;
 }
-/* line 19, C:\wamp\www\portfolio-group\less\bootstrap\input-groups.less */
 .input-group .form-control {
   width: 100%;
   margin-bottom: 0;
 }
-/* line 27, C:\wamp\www\portfolio-group\less\bootstrap\input-groups.less */
 .input-group-addon,
 .input-group-btn,
 .input-group .form-control {
   display: table-cell;
 }
-/* line 32, C:\wamp\www\portfolio-group\less\bootstrap\input-groups.less */
 .input-group-addon:not(:first-child):not(:last-child),
 .input-group-btn:not(:first-child):not(:last-child),
 .input-group .form-control:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
-/* line 37, C:\wamp\www\portfolio-group\less\bootstrap\input-groups.less */
 .input-group-addon,
 .input-group-btn {
   width: 1%;
   white-space: nowrap;
   vertical-align: middle;
 }
-/* line 46, C:\wamp\www\portfolio-group\less\bootstrap\input-groups.less */
 .input-group-addon {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -2250,24 +1879,20 @@ input[type="button"].btn-block {
   border: 1px solid #cccccc;
   border-radius: 4px;
 }
-/* line 58, C:\wamp\www\portfolio-group\less\bootstrap\input-groups.less */
 .input-group-addon.input-small {
   padding: 5px 10px;
   font-size: 12px;
   border-radius: 3px;
 }
-/* line 63, C:\wamp\www\portfolio-group\less\bootstrap\input-groups.less */
 .input-group-addon.input-large {
   padding: 10px 16px;
   font-size: 18px;
   border-radius: 6px;
 }
-/* line 70, C:\wamp\www\portfolio-group\less\bootstrap\input-groups.less */
 .input-group-addon input[type="radio"],
 .input-group-addon input[type="checkbox"] {
   margin-top: 0;
 }
-/* line 77, C:\wamp\www\portfolio-group\less\bootstrap\input-groups.less */
 .input-group .form-control:first-child,
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
@@ -2276,11 +1901,9 @@ input[type="button"].btn-block {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
-/* line 84, C:\wamp\www\portfolio-group\less\bootstrap\input-groups.less */
 .input-group-addon:first-child {
   border-right: 0;
 }
-/* line 87, C:\wamp\www\portfolio-group\less\bootstrap\input-groups.less */
 .input-group .form-control:last-child,
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
@@ -2289,29 +1912,23 @@ input[type="button"].btn-block {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
-/* line 94, C:\wamp\www\portfolio-group\less\bootstrap\input-groups.less */
 .input-group-addon:last-child {
   border-left: 0;
 }
-/* line 100, C:\wamp\www\portfolio-group\less\bootstrap\input-groups.less */
 .input-group-btn {
   position: relative;
   white-space: nowrap;
 }
-/* line 104, C:\wamp\www\portfolio-group\less\bootstrap\input-groups.less */
 .input-group-btn > .btn {
   position: relative;
 }
-/* line 107, C:\wamp\www\portfolio-group\less\bootstrap\input-groups.less */
 .input-group-btn > .btn + .btn {
   margin-left: -4px;
 }
-/* line 111, C:\wamp\www\portfolio-group\less\bootstrap\input-groups.less */
 .input-group-btn > .btn:hover,
 .input-group-btn > .btn:active {
   z-index: 2;
 }
-/* line 8, C:\wamp\www\portfolio-group\less\bootstrap\dropdowns.less */
 .caret {
   display: inline-block;
   width: 0;
@@ -2323,11 +1940,9 @@ input[type="button"].btn-block {
   border-left: 4px solid transparent;
   content: "";
 }
-/* line 22, C:\wamp\www\portfolio-group\less\bootstrap\dropdowns.less */
 .dropdown {
   position: relative;
 }
-/* line 28, C:\wamp\www\portfolio-group\less\bootstrap\dropdowns.less */
 .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -2347,19 +1962,16 @@ input[type="button"].btn-block {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box;
 }
-/* line 47, C:\wamp\www\portfolio-group\less\bootstrap\dropdowns.less */
 .dropdown-menu.pull-right {
   right: 0;
   left: auto;
 }
-/* line 53, C:\wamp\www\portfolio-group\less\bootstrap\dropdowns.less */
 .dropdown-menu .divider {
   height: 1px;
   margin: 9px 0;
   overflow: hidden;
   background-color: #e5e5e5;
 }
-/* line 58, C:\wamp\www\portfolio-group\less\bootstrap\dropdowns.less */
 .dropdown-menu > li > a {
   display: block;
   padding: 3px 20px;
@@ -2369,41 +1981,37 @@ input[type="button"].btn-block {
   color: #333333;
   white-space: nowrap;
 }
-/* line 72, C:\wamp\www\portfolio-group\less\bootstrap\dropdowns.less */
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   text-decoration: none;
   color: #ffffff;
-  background-color: #1a2f58;
-  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#20396c), to(#1a2f58));
-  background-image: -webkit-linear-gradient(top, #20396c, 0%, #1a2f58, 100%);
-  background-image: -moz-linear-gradient(top, #20396c 0%, #1a2f58 100%);
-  background-image: linear-gradient(to bottom, #20396c 0%, #1a2f58 100%);
+  background-color: #131313;
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#202020), to(#131313));
+  background-image: -webkit-linear-gradient(top, #202020, 0%, #131313, 100%);
+  background-image: -moz-linear-gradient(top, #202020 0%, #131313 100%);
+  background-image: linear-gradient(to bottom, #202020 0%, #131313 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff20396c', endColorstr='#ff1a2f58', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff202020', endColorstr='#ff131313', GradientType=0);
 }
-/* line 83, C:\wamp\www\portfolio-group\less\bootstrap\dropdowns.less */
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,
 .dropdown-menu > .active > a:focus {
   color: #ffffff;
   text-decoration: none;
   outline: 0;
-  background-color: #1a2f58;
-  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#20396c), to(#1a2f58));
-  background-image: -webkit-linear-gradient(top, #20396c, 0%, #1a2f58, 100%);
-  background-image: -moz-linear-gradient(top, #20396c 0%, #1a2f58 100%);
-  background-image: linear-gradient(to bottom, #20396c 0%, #1a2f58 100%);
+  background-color: #131313;
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#202020), to(#131313));
+  background-image: -webkit-linear-gradient(top, #202020, 0%, #131313, 100%);
+  background-image: -moz-linear-gradient(top, #202020 0%, #131313 100%);
+  background-image: linear-gradient(to bottom, #202020 0%, #131313 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff20396c', endColorstr='#ff1a2f58', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff202020', endColorstr='#ff131313', GradientType=0);
 }
-/* line 97, C:\wamp\www\portfolio-group\less\bootstrap\dropdowns.less */
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
 .dropdown-menu > .disabled > a:focus {
   color: #999999;
 }
-/* line 105, C:\wamp\www\portfolio-group\less\bootstrap\dropdowns.less */
 .dropdown-menu > .disabled > a:hover,
 .dropdown-menu > .disabled > a:focus {
   text-decoration: none;
@@ -2412,15 +2020,12 @@ input[type="button"].btn-block {
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   cursor: not-allowed;
 }
-/* line 119, C:\wamp\www\portfolio-group\less\bootstrap\dropdowns.less */
 .open > .dropdown-menu {
   display: block;
 }
-/* line 124, C:\wamp\www\portfolio-group\less\bootstrap\dropdowns.less */
 .open > a {
   outline: 0;
 }
-/* line 131, C:\wamp\www\portfolio-group\less\bootstrap\dropdowns.less */
 .dropdown-header {
   display: block;
   padding: 3px 20px;
@@ -2428,7 +2033,6 @@ input[type="button"].btn-block {
   line-height: 1.428571429;
   color: #999999;
 }
-/* line 143, C:\wamp\www\portfolio-group\less\bootstrap\dropdowns.less */
 .dropdown-backdrop {
   position: fixed;
   left: 0;
@@ -2437,31 +2041,26 @@ input[type="button"].btn-block {
   top: 0;
   z-index: 990;
 }
-/* line 154, C:\wamp\www\portfolio-group\less\bootstrap\dropdowns.less */
 .pull-right > .dropdown-menu {
   right: 0;
   left: auto;
 }
-/* line 166, C:\wamp\www\portfolio-group\less\bootstrap\dropdowns.less */
 .dropup .caret,
 .navbar-fixed-bottom .dropdown .caret {
   border-top: 0;
   border-bottom: 4px solid #000000;
   content: "";
 }
-/* line 172, C:\wamp\www\portfolio-group\less\bootstrap\dropdowns.less */
 .dropup .dropdown-menu,
 .navbar-fixed-bottom .dropdown .dropdown-menu {
   top: auto;
   bottom: 100%;
   margin-bottom: 1px;
 }
-/* line 8, C:\wamp\www\portfolio-group\less\bootstrap\list-group.less */
 .list-group {
   margin-bottom: 20px;
   padding-left: 0;
 }
-/* line 17, C:\wamp\www\portfolio-group\less\bootstrap\list-group.less */
 .list-group-item {
   position: relative;
   display: block;
@@ -2470,62 +2069,50 @@ input[type="button"].btn-block {
   background-color: #ffffff;
   border: 1px solid #dddddd;
 }
-/* line 27, C:\wamp\www\portfolio-group\less\bootstrap\list-group.less */
 .list-group-item:first-child {
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
 }
-/* line 30, C:\wamp\www\portfolio-group\less\bootstrap\list-group.less */
 .list-group-item:last-child {
   margin-bottom: 0;
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
 }
-/* line 36, C:\wamp\www\portfolio-group\less\bootstrap\list-group.less */
 .list-group-item > .badge {
   float: right;
   margin-right: -15px;
 }
-/* line 45, C:\wamp\www\portfolio-group\less\bootstrap\list-group.less */
 .list-group-item-heading {
   margin-top: 0;
   margin-bottom: 5px;
 }
-/* line 49, C:\wamp\www\portfolio-group\less\bootstrap\list-group.less */
 .list-group-item-text {
   margin-bottom: 0;
   line-height: 1.3;
 }
-/* line 60, C:\wamp\www\portfolio-group\less\bootstrap\list-group.less */
 a.list-group-item .list-group-item-heading {
   color: #333333;
 }
-/* line 63, C:\wamp\www\portfolio-group\less\bootstrap\list-group.less */
 a.list-group-item .list-group-item-text {
   color: #555555;
 }
-/* line 68, C:\wamp\www\portfolio-group\less\bootstrap\list-group.less */
 a.list-group-item:hover,
 a.list-group-item:focus {
   text-decoration: none;
   background-color: #f5f5f5;
 }
-/* line 75, C:\wamp\www\portfolio-group\less\bootstrap\list-group.less */
 a.list-group-item.active {
   z-index: 2;
   color: #ffffff;
-  background-color: #20396c;
-  border-color: #20396c;
+  background-color: #202020;
+  border-color: #202020;
 }
-/* line 82, C:\wamp\www\portfolio-group\less\bootstrap\list-group.less */
 a.list-group-item.active .list-group-item-heading {
   color: inherit;
 }
-/* line 85, C:\wamp\www\portfolio-group\less\bootstrap\list-group.less */
 a.list-group-item.active .list-group-item-text {
-  color: #7f9dd9;
+  color: #868686;
 }
-/* line 7, C:\wamp\www\portfolio-group\less\bootstrap\panels.less */
 .panel {
   padding: 15px;
   margin-bottom: 20px;
@@ -2535,24 +2122,19 @@ a.list-group-item.active .list-group-item-text {
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
-/* line 16, C:\wamp\www\portfolio-group\less\bootstrap\panels.less */
 .panel .list-group {
   margin: 15px -15px -15px;
 }
-/* line 19, C:\wamp\www\portfolio-group\less\bootstrap\panels.less */
 .panel .list-group .list-group-item {
   border-width: 1px 0;
 }
-/* line 23, C:\wamp\www\portfolio-group\less\bootstrap\panels.less */
 .panel .list-group .list-group-item:first-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
-/* line 27, C:\wamp\www\portfolio-group\less\bootstrap\panels.less */
 .panel .list-group .list-group-item:last-child {
   border-bottom: 0;
 }
-/* line 35, C:\wamp\www\portfolio-group\less\bootstrap\panels.less */
 .panel-heading {
   margin: -15px -15px 15px;
   padding: 10px 15px;
@@ -2561,14 +2143,12 @@ a.list-group-item.active .list-group-item-text {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
-/* line 45, C:\wamp\www\portfolio-group\less\bootstrap\panels.less */
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 17.5px;
   font-weight: 500;
 }
-/* line 53, C:\wamp\www\portfolio-group\less\bootstrap\panels.less */
 .panel-footer {
   margin: 15px -15px -15px;
   padding: 10px 15px;
@@ -2577,57 +2157,46 @@ a.list-group-item.active .list-group-item-text {
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
 }
-/* line 63, C:\wamp\www\portfolio-group\less\bootstrap\panels.less */
 .panel-primary {
-  border-color: #20396c;
+  border-color: #202020;
 }
-/* line 65, C:\wamp\www\portfolio-group\less\bootstrap\panels.less */
 .panel-primary .panel-heading {
   color: #ffffff;
-  background-color: #20396c;
-  border-color: #20396c;
+  background-color: #202020;
+  border-color: #202020;
 }
-/* line 71, C:\wamp\www\portfolio-group\less\bootstrap\panels.less */
 .panel-success {
   border-color: #d6e9c6;
 }
-/* line 73, C:\wamp\www\portfolio-group\less\bootstrap\panels.less */
 .panel-success .panel-heading {
   color: #468847;
   background-color: #dff0d8;
   border-color: #d6e9c6;
 }
-/* line 79, C:\wamp\www\portfolio-group\less\bootstrap\panels.less */
 .panel-warning {
   border-color: #fbeed5;
 }
-/* line 81, C:\wamp\www\portfolio-group\less\bootstrap\panels.less */
 .panel-warning .panel-heading {
   color: #c09853;
   background-color: #fcf8e3;
   border-color: #fbeed5;
 }
-/* line 87, C:\wamp\www\portfolio-group\less\bootstrap\panels.less */
 .panel-danger {
   border-color: #eed3d7;
 }
-/* line 89, C:\wamp\www\portfolio-group\less\bootstrap\panels.less */
 .panel-danger .panel-heading {
   color: #b94a48;
   background-color: #f2dede;
   border-color: #eed3d7;
 }
-/* line 95, C:\wamp\www\portfolio-group\less\bootstrap\panels.less */
 .panel-info {
   border-color: #bce8f1;
 }
-/* line 97, C:\wamp\www\portfolio-group\less\bootstrap\panels.less */
 .panel-info .panel-heading {
   color: #3a87ad;
   background-color: #d9edf7;
   border-color: #bce8f1;
 }
-/* line 7, C:\wamp\www\portfolio-group\less\bootstrap\wells.less */
 .well {
   min-height: 20px;
   padding: 19px;
@@ -2638,22 +2207,18 @@ a.list-group-item.active .list-group-item-text {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
-/* line 15, C:\wamp\www\portfolio-group\less\bootstrap\wells.less */
 .well blockquote {
   border-color: #ddd;
   border-color: rgba(0, 0, 0, 0.15);
 }
-/* line 22, C:\wamp\www\portfolio-group\less\bootstrap\wells.less */
 .well-large {
   padding: 24px;
   border-radius: 6px;
 }
-/* line 26, C:\wamp\www\portfolio-group\less\bootstrap\wells.less */
 .well-small {
   padding: 9px;
   border-radius: 3px;
 }
-/* line 6, C:\wamp\www\portfolio-group\less\bootstrap\close.less */
 .close {
   float: right;
   font-size: 21px;
@@ -2664,7 +2229,6 @@ a.list-group-item.active .list-group-item-text {
   opacity: 0.2;
   filter: alpha(opacity=20);
 }
-/* line 15, C:\wamp\www\portfolio-group\less\bootstrap\close.less */
 .close:hover,
 .close:focus {
   color: #000000;
@@ -2673,7 +2237,6 @@ a.list-group-item.active .list-group-item-text {
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
-/* line 26, C:\wamp\www\portfolio-group\less\bootstrap\close.less */
 button.close {
   padding: 0;
   cursor: pointer;
@@ -2681,14 +2244,12 @@ button.close {
   border: 0;
   -webkit-appearance: none;
 }
-/* line 9, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav {
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
   *zoom: 1;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .nav:before,
 .nav:after {
   content: " ";
@@ -2698,11 +2259,9 @@ button.close {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .nav:after {
   clear: both;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .nav:before,
 .nav:after {
   content: " ";
@@ -2712,32 +2271,26 @@ button.close {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .nav:after {
   clear: both;
 }
-/* line 15, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav > li {
   position: relative;
   display: block;
 }
-/* line 19, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav > li > a {
   position: relative;
   display: block;
   padding: 10px 15px;
 }
-/* line 23, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
   background-color: #eeeeee;
 }
-/* line 31, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav > li.disabled > a {
   color: #999999;
 }
-/* line 34, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav > li.disabled > a:hover,
 .nav > li.disabled > a:focus {
   color: #999999;
@@ -2745,53 +2298,44 @@ button.close {
   background-color: transparent;
   cursor: not-allowed;
 }
-/* line 46, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav.open > a,
 .nav.open > a:hover,
 .nav.open > a:focus {
   color: #ffffff;
-  background-color: #20396c;
-  border-color: #20396c;
+  background-color: #202020;
+  border-color: #202020;
 }
-/* line 52, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav.open > a .caret,
 .nav.open > a:hover .caret,
 .nav.open > a:focus .caret {
   border-top-color: #ffffff;
   border-bottom-color: #ffffff;
 }
-/* line 61, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav > .pull-right {
   float: right;
 }
-/* line 66, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav .nav-divider {
   height: 1px;
   margin: 9px 0;
   overflow: hidden;
   background-color: #e5e5e5;
 }
-/* line 76, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-tabs {
   border-bottom: 1px solid #dddddd;
 }
-/* line 78, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-tabs > li {
   float: left;
   margin-bottom: -1px;
 }
-/* line 84, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-tabs > li > a {
   margin-right: 2px;
   line-height: 1.428571429;
   border: 1px solid transparent;
   border-radius: 4px 4px 0 0;
 }
-/* line 89, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-tabs > li > a:hover {
   border-color: #eeeeee;
 }
-/* line 96, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
@@ -2801,90 +2345,71 @@ button.close {
   border-bottom-color: transparent;
   cursor: default;
 }
-/* line 108, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-tabs.nav-justified {
   width: 100%;
   border-bottom: 0;
 }
-/* line 162, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-tabs.nav-justified > li {
   float: none;
   display: table-cell;
   width: 1%;
 }
-/* line 166, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-tabs.nav-justified > li > a {
   text-align: center;
 }
-/* line 175, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-tabs.nav-justified > li > a {
   border-bottom: 1px solid #dddddd;
   margin-right: 0;
 }
-/* line 181, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-tabs.nav-justified > .active > a {
   border-bottom-color: #eeeeee;
 }
-/* line 118, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-pills > li {
   float: left;
 }
-/* line 122, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-pills > li > a {
   border-radius: 5px;
 }
-/* line 125, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-pills > li + li {
   margin-left: 2px;
 }
-/* line 131, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-pills > li.active > a,
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #ffffff;
-  background-color: #20396c;
+  background-color: #202020;
 }
-/* line 144, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-stacked > li {
   float: none;
 }
-/* line 146, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-stacked > li + li {
   margin-top: 2px;
   margin-left: 0;
 }
-/* line 160, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-justified {
   width: 100%;
 }
-/* line 162, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-justified > li {
   float: none;
   display: table-cell;
   width: 1%;
 }
-/* line 166, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-justified > li > a {
   text-align: center;
 }
-/* line 173, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-tabs-justified {
   border-bottom: 0;
 }
-/* line 175, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-tabs-justified > li > a {
   border-bottom: 1px solid #dddddd;
   margin-right: 0;
 }
-/* line 181, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-tabs-justified > .active > a {
   border-bottom-color: #eeeeee;
 }
-/* line 191, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .tabbable {
   *zoom: 1;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .tabbable:before,
 .tabbable:after {
   content: " ";
@@ -2894,11 +2419,9 @@ button.close {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .tabbable:after {
   clear: both;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .tabbable:before,
 .tabbable:after {
   content: " ";
@@ -2908,37 +2431,30 @@ button.close {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .tabbable:after {
   clear: both;
 }
-/* line 196, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .tab-content > .tab-pane,
 .pill-content > .pill-pane {
   display: none;
 }
-/* line 202, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .tab-content > .active,
 .pill-content > .active {
   display: block;
 }
-/* line 213, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav .caret {
-  border-top-color: #20396c;
-  border-bottom-color: #20396c;
+  border-top-color: #202020;
+  border-bottom-color: #202020;
 }
-/* line 217, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav a:hover .caret {
-  border-top-color: #0f1a31;
-  border-bottom-color: #0f1a31;
+  border-top-color: #000000;
+  border-bottom-color: #000000;
 }
-/* line 223, C:\wamp\www\portfolio-group\less\bootstrap\navs.less */
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
-/* line 6, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar {
   position: relative;
   min-height: 50px;
@@ -2949,7 +2465,6 @@ button.close {
   border-radius: 4px;
   *zoom: 1;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .navbar:before,
 .navbar:after {
   content: " ";
@@ -2959,11 +2474,9 @@ button.close {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .navbar:after {
   clear: both;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .navbar:before,
 .navbar:after {
   content: " ";
@@ -2973,16 +2486,13 @@ button.close {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .navbar:after {
   clear: both;
 }
-/* line 22, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-nav {
   margin-top: 10px;
   margin-bottom: 15px;
 }
-/* line 27, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-nav > li > a {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -2990,35 +2500,29 @@ button.close {
   line-height: 20px;
   border-radius: 4px;
 }
-/* line 33, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-nav > li > a:hover,
 .navbar-nav > li > a:focus {
   color: #333333;
   background-color: transparent;
 }
-/* line 40, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-nav > .active > a,
 .navbar-nav > .active > a:hover,
 .navbar-nav > .active > a:focus {
   color: #555555;
   background-color: #d5d5d5;
 }
-/* line 48, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-nav > .disabled > a,
 .navbar-nav > .disabled > a:hover,
 .navbar-nav > .disabled > a:focus {
   color: #cccccc;
   background-color: transparent;
 }
-/* line 58, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-nav.pull-right {
   width: 100%;
 }
-/* line 70, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-static-top {
   border-radius: 0;
 }
-/* line 75, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   position: fixed;
@@ -3027,16 +2531,13 @@ button.close {
   z-index: 1030;
   border-radius: 0;
 }
-/* line 83, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-fixed-top {
   top: 0;
 }
-/* line 86, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-fixed-bottom {
   bottom: 0;
   margin-bottom: 0;
 }
-/* line 98, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-brand {
   display: block;
   max-width: 200px;
@@ -3049,14 +2550,12 @@ button.close {
   color: #777777;
   text-align: center;
 }
-/* line 109, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-brand:hover,
 .navbar-brand:focus {
   color: #5e5e5e;
   text-decoration: none;
   background-color: transparent;
 }
-/* line 118, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-toggle {
   position: absolute;
   top: 9px;
@@ -3068,12 +2567,10 @@ button.close {
   border: 1px solid #dddddd;
   border-radius: 4px;
 }
-/* line 129, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-toggle:hover,
 .navbar-toggle:focus {
   background-color: #dddddd;
 }
-/* line 135, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-toggle .icon-bar {
   display: block;
   width: 22px;
@@ -3081,142 +2578,116 @@ button.close {
   background-color: #cccccc;
   border-radius: 1px;
 }
-/* line 142, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-toggle .icon-bar + .icon-bar {
   margin-top: 4px;
 }
-/* line 148, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-form {
   margin-top: 8px;
   margin-bottom: 8px;
 }
-/* line 291, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 .navbar-form .form-control,
 .navbar-form .radio,
 .navbar-form .checkbox {
   display: inline-block;
 }
-/* line 296, C:\wamp\www\portfolio-group\less\bootstrap\forms.less */
 .navbar-form .radio,
 .navbar-form .checkbox {
   margin-top: 0;
   margin-bottom: 0;
 }
-/* line 156, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-nav > li > .dropdown-menu {
   margin-top: 0;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-/* line 162, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-fixed-bottom .navbar-nav > li > .dropdown-menu {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-/* line 170, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-nav > .dropdown > a:hover .caret,
 .navbar-nav > .dropdown > a:focus .caret {
   border-top-color: #333333;
   border-bottom-color: #333333;
 }
-/* line 178, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-nav > .open > a,
 .navbar-nav > .open > a:hover,
 .navbar-nav > .open > a:focus {
   background-color: #d5d5d5;
   color: #555555;
 }
-/* line 183, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-nav > .open > a .caret,
 .navbar-nav > .open > a:hover .caret,
 .navbar-nav > .open > a:focus .caret {
   border-top-color: #555555;
   border-bottom-color: #555555;
 }
-/* line 189, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-nav > .dropdown > a .caret {
   border-top-color: #777777;
   border-bottom-color: #777777;
 }
-/* line 196, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-nav.pull-right > li > .dropdown-menu,
 .navbar-nav > li > .dropdown-menu.pull-right {
   left: auto;
   right: 0;
 }
-/* line 207, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-inverse {
-  background-color: #20396c;
+  background-color: #202020;
 }
-/* line 210, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-inverse .navbar-brand {
   color: #eeeeee;
 }
-/* line 212, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
   color: #ffffff;
   background-color: transparent;
 }
-/* line 219, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-inverse .navbar-text {
   color: #999999;
 }
-/* line 224, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-inverse .navbar-nav > li > a {
   color: #eeeeee;
 }
-/* line 227, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
   color: #ffffff;
   background-color: transparent;
 }
-/* line 234, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
   color: #ffffff;
-  background-color: #142445;
+  background-color: #060606;
 }
-/* line 242, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-inverse .navbar-nav > .disabled > a,
 .navbar-inverse .navbar-nav > .disabled > a:hover,
 .navbar-inverse .navbar-nav > .disabled > a:focus {
   color: #444444;
   background-color: transparent;
 }
-/* line 252, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-inverse .navbar-toggle {
   border-color: #333333;
 }
-/* line 254, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
   background-color: #333333;
 }
-/* line 258, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-inverse .navbar-toggle .icon-bar {
   background-color: #ffffff;
 }
-/* line 266, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
-  background-color: #142445;
+  background-color: #060606;
   color: #ffffff;
 }
-/* line 273, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-inverse .navbar-nav > .dropdown > a:hover .caret {
   border-top-color: #ffffff;
   border-bottom-color: #ffffff;
 }
-/* line 277, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-inverse .navbar-nav > .dropdown > a .caret {
   border-top-color: #eeeeee;
   border-bottom-color: #eeeeee;
 }
-/* line 285, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-inverse .navbar-nav > .open > a .caret,
 .navbar-inverse .navbar-nav > .open > a:hover .caret,
 .navbar-inverse .navbar-nav > .open > a:focus .caret {
@@ -3224,94 +2695,76 @@ button.close {
   border-bottom-color: #ffffff;
 }
 @media screen and (min-width: 768px) {
-  /* line 301, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
   .navbar-brand {
     float: left;
     margin-left: -15px;
     margin-right: 5px;
   }
-  /* line 306, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
   .navbar-nav {
     float: left;
     margin-top: 0;
     margin-bottom: 0;
   }
-  /* line 312, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
   .navbar-nav > li {
     float: left;
   }
-  /* line 314, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
   .navbar-nav > li > a {
     border-radius: 0;
   }
-  /* line 319, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
   .navbar-nav.pull-right {
     float: right;
     width: auto;
   }
-  /* line 326, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
   .navbar-toggle {
     position: relative;
     top: auto;
     left: auto;
     display: none;
   }
-  /* line 332, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
   .nav-collapse.collapse {
     display: block !important;
     height: auto !important;
     overflow: visible !important;
   }
 }
-/* line 346, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-btn {
   margin-top: 8px;
 }
-/* line 356, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-text {
   float: left;
   padding: 0 15px;
   margin-top: 15px;
   margin-bottom: 15px;
 }
-/* line 369, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-link {
   color: #777777;
 }
-/* line 371, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-link:hover {
   color: #333333;
 }
-/* line 377, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-inverse .navbar-link {
   color: #eeeeee;
 }
-/* line 379, C:\wamp\www\portfolio-group\less\bootstrap\navbar.less */
 .navbar-inverse .navbar-link:hover {
   color: #ffffff;
 }
-/* line 6, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn .caret {
   border-top-color: #ffffff;
 }
-/* line 9, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .dropup .btn .caret {
   border-bottom-color: #ffffff;
 }
-/* line 14, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group,
 .btn-group-vertical {
   position: relative;
   display: inline-block;
   vertical-align: middle;
 }
-/* line 19, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group > .btn,
 .btn-group-vertical > .btn {
   position: relative;
   float: left;
 }
-/* line 23, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group > .btn:hover,
 .btn-group-vertical > .btn:hover,
 .btn-group > .btn:focus,
@@ -3320,15 +2773,12 @@ button.close {
 .btn-group-vertical > .btn:active {
   z-index: 2;
 }
-/* line 32, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group .btn + .btn {
   margin-left: -1px;
 }
-/* line 37, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-toolbar {
   *zoom: 1;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .btn-toolbar:before,
 .btn-toolbar:after {
   content: " ";
@@ -3338,11 +2788,9 @@ button.close {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .btn-toolbar:after {
   clear: both;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .btn-toolbar:before,
 .btn-toolbar:after {
   content: " ";
@@ -3352,167 +2800,134 @@ button.close {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .btn-toolbar:after {
   clear: both;
 }
-/* line 40, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-toolbar .btn-group {
   float: left;
 }
-/* line 46, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-toolbar > .btn + .btn,
 .btn-toolbar > .btn-group + .btn,
 .btn-toolbar > .btn + .btn-group,
 .btn-toolbar > .btn-group + .btn-group {
   margin-left: 5px;
 }
-/* line 53, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
   border-radius: 0;
 }
-/* line 58, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group > .btn:first-child {
   margin-left: 0;
 }
-/* line 60, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
-/* line 65, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group > .btn:last-child:not(:first-child),
 .btn-group > .dropdown-toggle:not(:first-child) {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
-/* line 71, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group > .btn-group {
   float: left;
 }
-/* line 74, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
   border-radius: 0;
 }
-/* line 78, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group > .btn-group:first-child > .btn:last-child,
 .btn-group > .btn-group:first-child > .dropdown-toggle {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
-/* line 83, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group > .btn-group:last-child > .btn:first-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
-/* line 88, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group .dropdown-toggle:active,
 .btn-group.open .dropdown-toggle {
   outline: 0;
 }
-/* line 99, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group > .btn + .dropdown-toggle {
   padding-left: 8px;
   padding-right: 8px;
 }
-/* line 103, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group > .btn-large + .dropdown-toggle {
   padding-left: 12px;
   padding-right: 12px;
 }
-/* line 110, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group.open .dropdown-toggle {
   -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
-/* line 116, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn .caret {
   margin-left: 0;
 }
-/* line 120, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-large .caret {
   border-width: 5px;
 }
-/* line 124, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .dropup .btn-large .caret {
   border-bottom-width: 5px;
 }
-/* line 132, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group-vertical > .btn {
   display: block;
   float: none;
   width: 100%;
   max-width: 100%;
 }
-/* line 137, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group-vertical > .btn + .btn {
   margin-top: -1px;
 }
-/* line 142, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group-vertical .btn:not(:first-child):not(:last-child) {
   border-radius: 0;
 }
-/* line 145, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group-vertical .btn:first-child {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-/* line 148, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group-vertical .btn:last-child {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
-/* line 157, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group-justified {
   display: table;
   width: 100%;
   table-layout: fixed;
 }
-/* line 161, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group-justified .btn {
   float: none;
   display: table-cell;
   width: 1%;
 }
-/* line 170, C:\wamp\www\portfolio-group\less\bootstrap\button-groups.less */
 .btn-group[data-toggle="buttons"] > .btn > input[type="radio"],
 .btn-group[data-toggle="buttons"] > .btn > input[type="checkbox"] {
   display: none;
 }
-/* line 6, C:\wamp\www\portfolio-group\less\bootstrap\breadcrumbs.less */
 .breadcrumb {
   padding: 8px 15px;
   margin-bottom: 20px;
   list-style: none;
-  background-color: #f5f5f5;
+  background-color: #fbfbfb;
   border-radius: 4px;
 }
-/* line 12, C:\wamp\www\portfolio-group\less\bootstrap\breadcrumbs.less */
 .breadcrumb > li {
   display: inline-block;
 }
-/* line 14, C:\wamp\www\portfolio-group\less\bootstrap\breadcrumbs.less */
 .breadcrumb > li + li:before {
   content: "/\00a0";
   padding: 0 5px;
   color: #cccccc;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\breadcrumbs.less */
 .breadcrumb > .active {
   color: #999999;
 }
-/* line 4, C:\wamp\www\portfolio-group\less\bootstrap\pagination.less */
 .pagination {
   display: inline-block;
   padding-left: 0;
   margin: 20px 0;
   border-radius: 4px;
 }
-/* line 10, C:\wamp\www\portfolio-group\less\bootstrap\pagination.less */
 .pagination > li {
   display: inline;
 }
-/* line 12, C:\wamp\www\portfolio-group\less\bootstrap\pagination.less */
 .pagination > li > a,
 .pagination > li > span {
   float: left;
@@ -3523,33 +2938,28 @@ button.close {
   border: 1px solid #dddddd;
   border-left-width: 0;
 }
-/* line 23, C:\wamp\www\portfolio-group\less\bootstrap\pagination.less */
 .pagination > li:first-child > a,
 .pagination > li:first-child > span {
   border-left-width: 1px;
   border-bottom-left-radius: 4px;
   border-top-left-radius: 4px;
 }
-/* line 30, C:\wamp\www\portfolio-group\less\bootstrap\pagination.less */
 .pagination > li:last-child > a,
 .pagination > li:last-child > span {
   border-bottom-right-radius: 4px;
   border-top-right-radius: 4px;
 }
-/* line 37, C:\wamp\www\portfolio-group\less\bootstrap\pagination.less */
 .pagination > li > a:hover,
 .pagination > li > a:focus,
 .pagination > .active > a,
 .pagination > .active > span {
   background-color: #f5f5f5;
 }
-/* line 43, C:\wamp\www\portfolio-group\less\bootstrap\pagination.less */
 .pagination > .active > a,
 .pagination > .active > span {
   color: #999999;
   cursor: default;
 }
-/* line 50, C:\wamp\www\portfolio-group\less\bootstrap\pagination.less */
 .pagination > .disabled > span,
 .pagination > .disabled > a,
 .pagination > .disabled > a:hover,
@@ -3558,43 +2968,36 @@ button.close {
   background-color: #ffffff;
   cursor: not-allowed;
 }
-/* line 67, C:\wamp\www\portfolio-group\less\bootstrap\pagination.less */
 .pagination-large > li > a,
 .pagination-large > li > span {
   padding: 10px 16px;
   font-size: 18px;
 }
-/* line 73, C:\wamp\www\portfolio-group\less\bootstrap\pagination.less */
 .pagination-large > li:first-child > a,
 .pagination-large > li:first-child > span {
   border-bottom-left-radius: 6px;
   border-top-left-radius: 6px;
 }
-/* line 79, C:\wamp\www\portfolio-group\less\bootstrap\pagination.less */
 .pagination-large > li:last-child > a,
 .pagination-large > li:last-child > span {
   border-bottom-right-radius: 6px;
   border-top-right-radius: 6px;
 }
-/* line 90, C:\wamp\www\portfolio-group\less\bootstrap\pagination.less */
 .pagination-small > li > a,
 .pagination-small > li > span {
   padding: 5px 10px;
   font-size: 12px;
 }
-/* line 96, C:\wamp\www\portfolio-group\less\bootstrap\pagination.less */
 .pagination-small > li:first-child > a,
 .pagination-small > li:first-child > span {
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px;
 }
-/* line 102, C:\wamp\www\portfolio-group\less\bootstrap\pagination.less */
 .pagination-small > li:last-child > a,
 .pagination-small > li:last-child > span {
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px;
 }
-/* line 6, C:\wamp\www\portfolio-group\less\bootstrap\pager.less */
 .pager {
   padding-left: 0;
   margin: 20px 0;
@@ -3602,7 +3005,6 @@ button.close {
   text-align: center;
   *zoom: 1;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .pager:before,
 .pager:after {
   content: " ";
@@ -3612,11 +3014,9 @@ button.close {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .pager:after {
   clear: both;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .pager:before,
 .pager:after {
   content: " ";
@@ -3626,15 +3026,12 @@ button.close {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .pager:after {
   clear: both;
 }
-/* line 12, C:\wamp\www\portfolio-group\less\bootstrap\pager.less */
 .pager li {
   display: inline;
 }
-/* line 14, C:\wamp\www\portfolio-group\less\bootstrap\pager.less */
 .pager li > a,
 .pager li > span {
   display: inline-block;
@@ -3643,23 +3040,19 @@ button.close {
   border: 1px solid #dddddd;
   border-radius: 15px;
 }
-/* line 23, C:\wamp\www\portfolio-group\less\bootstrap\pager.less */
 .pager li > a:hover,
 .pager li > a:focus {
   text-decoration: none;
   background-color: #f5f5f5;
 }
-/* line 31, C:\wamp\www\portfolio-group\less\bootstrap\pager.less */
 .pager .next > a,
 .pager .next > span {
   float: right;
 }
-/* line 38, C:\wamp\www\portfolio-group\less\bootstrap\pager.less */
 .pager .previous > a,
 .pager .previous > span {
   float: left;
 }
-/* line 45, C:\wamp\www\portfolio-group\less\bootstrap\pager.less */
 .pager .disabled > a,
 .pager .disabled > a:hover,
 .pager .disabled > a:focus,
@@ -3668,11 +3061,9 @@ button.close {
   background-color: #ffffff;
   cursor: not-allowed;
 }
-/* line 11, C:\wamp\www\portfolio-group\less\bootstrap\modals.less */
 .modal-open {
   overflow: hidden;
 }
-/* line 16, C:\wamp\www\portfolio-group\less\bootstrap\modals.less */
 .modal {
   display: none;
   overflow: auto;
@@ -3684,7 +3075,6 @@ button.close {
   left: 0;
   z-index: 1040;
 }
-/* line 28, C:\wamp\www\portfolio-group\less\bootstrap\modals.less */
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
   -ms-transform: translate(0, -25%);
@@ -3694,13 +3084,11 @@ button.close {
   -o-transition: -o-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
 }
-/* line 32, C:\wamp\www\portfolio-group\less\bootstrap\modals.less */
 .modal.fade.in .modal-dialog {
   -webkit-transform: translate(0, 0);
   -ms-transform: translate(0, 0);
   transform: translate(0, 0);
 }
-/* line 36, C:\wamp\www\portfolio-group\less\bootstrap\modals.less */
 .modal-dialog {
   margin-left: auto;
   margin-right: auto;
@@ -3708,7 +3096,6 @@ button.close {
   padding: 10px;
   z-index: 1050;
 }
-/* line 45, C:\wamp\www\portfolio-group\less\bootstrap\modals.less */
 .modal-content {
   position: relative;
   background-color: #ffffff;
@@ -3720,7 +3107,6 @@ button.close {
   background-clip: padding-box;
   outline: none;
 }
-/* line 58, C:\wamp\www\portfolio-group\less\bootstrap\modals.less */
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -3730,37 +3116,30 @@ button.close {
   z-index: 1030;
   background-color: #000000;
 }
-/* line 67, C:\wamp\www\portfolio-group\less\bootstrap\modals.less */
 .modal-backdrop.fade {
   opacity: 0;
   filter: alpha(opacity=0);
 }
-/* line 68, C:\wamp\www\portfolio-group\less\bootstrap\modals.less */
 .modal-backdrop.fade.in {
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
-/* line 73, C:\wamp\www\portfolio-group\less\bootstrap\modals.less */
 .modal-header {
   padding: 15px;
   border-bottom: 1px solid #e5e5e5;
   min-height: 16.428571429px;
 }
-/* line 79, C:\wamp\www\portfolio-group\less\bootstrap\modals.less */
 .modal-header .close {
   margin-top: -2px;
 }
-/* line 84, C:\wamp\www\portfolio-group\less\bootstrap\modals.less */
 .modal-title {
   margin: 0;
   line-height: 1.428571429;
 }
-/* line 91, C:\wamp\www\portfolio-group\less\bootstrap\modals.less */
 .modal-body {
   position: relative;
   padding: 20px;
 }
-/* line 97, C:\wamp\www\portfolio-group\less\bootstrap\modals.less */
 .modal-footer {
   margin-top: 15px;
   padding: 19px 20px 20px;
@@ -3768,7 +3147,6 @@ button.close {
   border-top: 1px solid #e5e5e5;
   *zoom: 1;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .modal-footer:before,
 .modal-footer:after {
   content: " ";
@@ -3778,11 +3156,9 @@ button.close {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .modal-footer:after {
   clear: both;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .modal-footer:before,
 .modal-footer:after {
   content: " ";
@@ -3792,25 +3168,20 @@ button.close {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .modal-footer:after {
   clear: both;
 }
-/* line 105, C:\wamp\www\portfolio-group\less\bootstrap\modals.less */
 .modal-footer .btn + .btn {
   margin-left: 5px;
   margin-bottom: 0;
 }
-/* line 110, C:\wamp\www\portfolio-group\less\bootstrap\modals.less */
 .modal-footer .btn-group .btn + .btn {
   margin-left: -1px;
 }
-/* line 114, C:\wamp\www\portfolio-group\less\bootstrap\modals.less */
 .modal-footer .btn-block + .btn-block {
   margin-left: 0;
 }
 @media screen and (min-width: 768px) {
-  /* line 122, C:\wamp\www\portfolio-group\less\bootstrap\modals.less */
   .modal-dialog {
     left: 50%;
     right: auto;
@@ -3818,13 +3189,11 @@ button.close {
     padding-top: 30px;
     padding-bottom: 30px;
   }
-  /* line 129, C:\wamp\www\portfolio-group\less\bootstrap\modals.less */
   .modal-content {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   }
 }
-/* line 7, C:\wamp\www\portfolio-group\less\bootstrap\tooltip.less */
 .tooltip {
   position: absolute;
   z-index: 1030;
@@ -3835,32 +3204,26 @@ button.close {
   opacity: 0;
   filter: alpha(opacity=0);
 }
-/* line 16, C:\wamp\www\portfolio-group\less\bootstrap\tooltip.less */
 .tooltip.in {
   opacity: 1;
   filter: alpha(opacity=100);
 }
-/* line 17, C:\wamp\www\portfolio-group\less\bootstrap\tooltip.less */
 .tooltip.top {
   margin-top: -3px;
   padding: 5px 0;
 }
-/* line 18, C:\wamp\www\portfolio-group\less\bootstrap\tooltip.less */
 .tooltip.right {
   margin-left: 3px;
   padding: 0 5px;
 }
-/* line 19, C:\wamp\www\portfolio-group\less\bootstrap\tooltip.less */
 .tooltip.bottom {
   margin-top: 3px;
   padding: 5px 0;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\tooltip.less */
 .tooltip.left {
   margin-left: -3px;
   padding: 0 5px;
 }
-/* line 24, C:\wamp\www\portfolio-group\less\bootstrap\tooltip.less */
 .tooltip-inner {
   max-width: 200px;
   padding: 3px 8px;
@@ -3870,7 +3233,6 @@ button.close {
   background-color: rgba(0, 0, 0, 0.9);
   border-radius: 4px;
 }
-/* line 35, C:\wamp\www\portfolio-group\less\bootstrap\tooltip.less */
 .tooltip-arrow {
   position: absolute;
   width: 0;
@@ -3878,7 +3240,6 @@ button.close {
   border-color: transparent;
   border-style: solid;
 }
-/* line 43, C:\wamp\www\portfolio-group\less\bootstrap\tooltip.less */
 .tooltip.top .tooltip-arrow {
   bottom: 0;
   left: 50%;
@@ -3886,21 +3247,18 @@ button.close {
   border-width: 5px 5px 0;
   border-top-color: rgba(0, 0, 0, 0.9);
 }
-/* line 50, C:\wamp\www\portfolio-group\less\bootstrap\tooltip.less */
 .tooltip.top-left .tooltip-arrow {
   bottom: 0;
   left: 5px;
   border-width: 5px 5px 0;
   border-top-color: rgba(0, 0, 0, 0.9);
 }
-/* line 56, C:\wamp\www\portfolio-group\less\bootstrap\tooltip.less */
 .tooltip.top-right .tooltip-arrow {
   bottom: 0;
   right: 5px;
   border-width: 5px 5px 0;
   border-top-color: rgba(0, 0, 0, 0.9);
 }
-/* line 62, C:\wamp\www\portfolio-group\less\bootstrap\tooltip.less */
 .tooltip.right .tooltip-arrow {
   top: 50%;
   left: 0;
@@ -3908,7 +3266,6 @@ button.close {
   border-width: 5px 5px 5px 0;
   border-right-color: rgba(0, 0, 0, 0.9);
 }
-/* line 69, C:\wamp\www\portfolio-group\less\bootstrap\tooltip.less */
 .tooltip.left .tooltip-arrow {
   top: 50%;
   right: 0;
@@ -3916,7 +3273,6 @@ button.close {
   border-width: 5px 0 5px 5px;
   border-left-color: rgba(0, 0, 0, 0.9);
 }
-/* line 76, C:\wamp\www\portfolio-group\less\bootstrap\tooltip.less */
 .tooltip.bottom .tooltip-arrow {
   top: 0;
   left: 50%;
@@ -3924,21 +3280,18 @@ button.close {
   border-width: 0 5px 5px;
   border-bottom-color: rgba(0, 0, 0, 0.9);
 }
-/* line 83, C:\wamp\www\portfolio-group\less\bootstrap\tooltip.less */
 .tooltip.bottom-left .tooltip-arrow {
   top: 0;
   left: 5px;
   border-width: 0 5px 5px;
   border-bottom-color: rgba(0, 0, 0, 0.9);
 }
-/* line 89, C:\wamp\www\portfolio-group\less\bootstrap\tooltip.less */
 .tooltip.bottom-right .tooltip-arrow {
   top: 0;
   right: 5px;
   border-width: 0 5px 5px;
   border-bottom-color: rgba(0, 0, 0, 0.9);
 }
-/* line 6, C:\wamp\www\portfolio-group\less\bootstrap\popovers.less */
 .popover {
   position: absolute;
   top: 0;
@@ -3959,23 +3312,18 @@ button.close {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   white-space: normal;
 }
-/* line 28, C:\wamp\www\portfolio-group\less\bootstrap\popovers.less */
 .popover.top {
   margin-top: -10px;
 }
-/* line 29, C:\wamp\www\portfolio-group\less\bootstrap\popovers.less */
 .popover.right {
   margin-left: 10px;
 }
-/* line 30, C:\wamp\www\portfolio-group\less\bootstrap\popovers.less */
 .popover.bottom {
   margin-top: 10px;
 }
-/* line 31, C:\wamp\www\portfolio-group\less\bootstrap\popovers.less */
 .popover.left {
   margin-left: -10px;
 }
-/* line 34, C:\wamp\www\portfolio-group\less\bootstrap\popovers.less */
 .popover-title {
   margin: 0;
   padding: 8px 14px;
@@ -3986,11 +3334,9 @@ button.close {
   border-bottom: 1px solid #ebebeb;
   border-radius: 5px 5px 0 0;
 }
-/* line 45, C:\wamp\www\portfolio-group\less\bootstrap\popovers.less */
 .popover-content {
   padding: 9px 14px;
 }
-/* line 54, C:\wamp\www\portfolio-group\less\bootstrap\popovers.less */
 .popover .arrow,
 .popover .arrow:after {
   position: absolute;
@@ -4000,16 +3346,13 @@ button.close {
   border-color: transparent;
   border-style: solid;
 }
-/* line 64, C:\wamp\www\portfolio-group\less\bootstrap\popovers.less */
 .popover .arrow {
   border-width: 11px;
 }
-/* line 67, C:\wamp\www\portfolio-group\less\bootstrap\popovers.less */
 .popover .arrow:after {
   border-width: 10px;
   content: "";
 }
-/* line 73, C:\wamp\www\portfolio-group\less\bootstrap\popovers.less */
 .popover.top .arrow {
   left: 50%;
   margin-left: -11px;
@@ -4018,7 +3361,6 @@ button.close {
   border-top-color: rgba(0, 0, 0, 0.25);
   bottom: -11px;
 }
-/* line 80, C:\wamp\www\portfolio-group\less\bootstrap\popovers.less */
 .popover.top .arrow:after {
   content: " ";
   bottom: 1px;
@@ -4026,7 +3368,6 @@ button.close {
   border-bottom-width: 0;
   border-top-color: #ffffff;
 }
-/* line 88, C:\wamp\www\portfolio-group\less\bootstrap\popovers.less */
 .popover.right .arrow {
   top: 50%;
   left: -11px;
@@ -4035,7 +3376,6 @@ button.close {
   border-right-color: #999999;
   border-right-color: rgba(0, 0, 0, 0.25);
 }
-/* line 95, C:\wamp\www\portfolio-group\less\bootstrap\popovers.less */
 .popover.right .arrow:after {
   content: " ";
   left: 1px;
@@ -4043,7 +3383,6 @@ button.close {
   border-left-width: 0;
   border-right-color: #ffffff;
 }
-/* line 103, C:\wamp\www\portfolio-group\less\bootstrap\popovers.less */
 .popover.bottom .arrow {
   left: 50%;
   margin-left: -11px;
@@ -4052,7 +3391,6 @@ button.close {
   border-bottom-color: rgba(0, 0, 0, 0.25);
   top: -11px;
 }
-/* line 110, C:\wamp\www\portfolio-group\less\bootstrap\popovers.less */
 .popover.bottom .arrow:after {
   content: " ";
   top: 1px;
@@ -4060,7 +3398,6 @@ button.close {
   border-top-width: 0;
   border-bottom-color: #ffffff;
 }
-/* line 119, C:\wamp\www\portfolio-group\less\bootstrap\popovers.less */
 .popover.left .arrow {
   top: 50%;
   right: -11px;
@@ -4069,7 +3406,6 @@ button.close {
   border-left-color: #999999;
   border-left-color: rgba(0, 0, 0, 0.25);
 }
-/* line 126, C:\wamp\www\portfolio-group\less\bootstrap\popovers.less */
 .popover.left .arrow:after {
   content: " ";
   right: 1px;
@@ -4077,7 +3413,6 @@ button.close {
   border-left-color: #ffffff;
   bottom: -10px;
 }
-/* line 9, C:\wamp\www\portfolio-group\less\bootstrap\alerts.less */
 .alert {
   padding: 15px 35px 15px 15px;
   margin-bottom: 20px;
@@ -4086,79 +3421,63 @@ button.close {
   border: 1px solid #fbeed5;
   border-radius: 4px;
 }
-/* line 18, C:\wamp\www\portfolio-group\less\bootstrap\alerts.less */
 .alert h4 {
   margin-top: 0;
   color: inherit;
 }
-/* line 24, C:\wamp\www\portfolio-group\less\bootstrap\alerts.less */
 .alert hr {
   border-top-color: #f8e5be;
 }
-/* line 28, C:\wamp\www\portfolio-group\less\bootstrap\alerts.less */
 .alert .alert-link {
   font-weight: bold;
   color: #a47e3c;
 }
-/* line 34, C:\wamp\www\portfolio-group\less\bootstrap\alerts.less */
 .alert .close {
   position: relative;
   top: -2px;
   right: -21px;
   color: inherit;
 }
-/* line 42, C:\wamp\www\portfolio-group\less\bootstrap\alerts.less */
 .alert > p,
 .alert > ul {
   margin-bottom: 0;
 }
-/* line 46, C:\wamp\www\portfolio-group\less\bootstrap\alerts.less */
 .alert > p + p {
   margin-top: 5px;
 }
-/* line 54, C:\wamp\www\portfolio-group\less\bootstrap\alerts.less */
 .alert-success {
   background-color: #dff0d8;
   border-color: #d6e9c6;
   color: #468847;
 }
-/* line 354, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .alert-success hr {
   border-top-color: #c9e2b3;
 }
-/* line 357, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .alert-success .alert-link {
   color: #356635;
 }
-/* line 57, C:\wamp\www\portfolio-group\less\bootstrap\alerts.less */
 .alert-danger {
   background-color: #f2dede;
   border-color: #eed3d7;
   color: #b94a48;
 }
-/* line 354, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .alert-danger hr {
   border-top-color: #e6c1c7;
 }
-/* line 357, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .alert-danger .alert-link {
   color: #953b39;
 }
-/* line 60, C:\wamp\www\portfolio-group\less\bootstrap\alerts.less */
 .alert-info {
   background-color: #d9edf7;
   border-color: #bce8f1;
   color: #3a87ad;
 }
-/* line 354, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .alert-info hr {
   border-top-color: #a6e1ec;
 }
-/* line 357, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .alert-info .alert-link {
   color: #2d6987;
 }
-/* line 11, C:\wamp\www\portfolio-group\less\bootstrap\thumbnails.less */
 .thumbnail,
 .img-thumbnail {
   padding: 4px;
@@ -4169,69 +3488,55 @@ button.close {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\thumbnails.less */
 .thumbnail {
   display: block;
 }
-/* line 23, C:\wamp\www\portfolio-group\less\bootstrap\thumbnails.less */
 .thumbnail > img,
 .img-thumbnail {
   display: inline-block;
   max-width: 100%;
   height: auto;
 }
-/* line 29, C:\wamp\www\portfolio-group\less\bootstrap\thumbnails.less */
 a.thumbnail:hover,
 a.thumbnail:focus {
-  border-color: #20396c;
+  border-color: #202020;
 }
-/* line 35, C:\wamp\www\portfolio-group\less\bootstrap\thumbnails.less */
 .thumbnail > img {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 39, C:\wamp\www\portfolio-group\less\bootstrap\thumbnails.less */
 .thumbnail .caption {
   padding: 9px;
   color: #333333;
 }
-/* line 10, C:\wamp\www\portfolio-group\less\bootstrap\media.less */
 .media,
 .media-body {
   overflow: hidden;
   zoom: 1;
 }
-/* line 17, C:\wamp\www\portfolio-group\less\bootstrap\media.less */
 .media,
 .media .media {
   margin-top: 15px;
 }
-/* line 21, C:\wamp\www\portfolio-group\less\bootstrap\media.less */
 .media:first-child {
   margin-top: 0;
 }
-/* line 26, C:\wamp\www\portfolio-group\less\bootstrap\media.less */
 .media-object {
   display: block;
 }
-/* line 31, C:\wamp\www\portfolio-group\less\bootstrap\media.less */
 .media-heading {
   margin: 0 0 5px;
 }
-/* line 40, C:\wamp\www\portfolio-group\less\bootstrap\media.less */
 .media > .pull-left {
   margin-right: 10px;
 }
-/* line 43, C:\wamp\www\portfolio-group\less\bootstrap\media.less */
 .media > .pull-right {
   margin-left: 10px;
 }
-/* line 53, C:\wamp\www\portfolio-group\less\bootstrap\media.less */
 .media-list {
   padding-left: 0;
   list-style: none;
 }
-/* line 5, C:\wamp\www\portfolio-group\less\bootstrap\labels.less */
 .label {
   display: inline;
   padding: .25em .6em;
@@ -4245,7 +3550,6 @@ a.thumbnail:focus {
   background-color: #999999;
   border-radius: .25em;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\labels.less */
 .label[href]:hover,
 .label[href]:focus {
   color: #ffffff;
@@ -4253,43 +3557,34 @@ a.thumbnail:focus {
   cursor: pointer;
   background-color: #808080;
 }
-/* line 32, C:\wamp\www\portfolio-group\less\bootstrap\labels.less */
 .label-danger {
   background-color: #ed1d24;
 }
-/* line 398, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .label-danger[href]:hover,
 .label-danger[href]:focus {
   background-color: #c71016;
 }
-/* line 36, C:\wamp\www\portfolio-group\less\bootstrap\labels.less */
 .label-success {
   background-color: #5cb85c;
 }
-/* line 398, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .label-success[href]:hover,
 .label-success[href]:focus {
   background-color: #449d44;
 }
-/* line 40, C:\wamp\www\portfolio-group\less\bootstrap\labels.less */
 .label-warning {
   background-color: #b58411;
 }
-/* line 398, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .label-warning[href]:hover,
 .label-warning[href]:focus {
   background-color: #86620d;
 }
-/* line 44, C:\wamp\www\portfolio-group\less\bootstrap\labels.less */
 .label-info {
   background-color: #0db9a4;
 }
-/* line 398, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .label-info[href]:hover,
 .label-info[href]:focus {
   background-color: #0a897a;
 }
-/* line 7, C:\wamp\www\portfolio-group\less\bootstrap\badges.less */
 .badge {
   display: inline-block;
   min-width: 10px;
@@ -4304,83 +3599,67 @@ a.thumbnail:focus {
   background-color: #999999;
   border-radius: 10px;
 }
-/* line 22, C:\wamp\www\portfolio-group\less\bootstrap\badges.less */
 .badge:empty {
   display: none;
 }
-/* line 29, C:\wamp\www\portfolio-group\less\bootstrap\badges.less */
 a.badge:hover,
 a.badge:focus {
   color: #ffffff;
   text-decoration: none;
   cursor: pointer;
 }
-/* line 38, C:\wamp\www\portfolio-group\less\bootstrap\badges.less */
 .btn .badge {
   position: relative;
   top: -1px;
 }
-/* line 44, C:\wamp\www\portfolio-group\less\bootstrap\badges.less */
 a.list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: #20396c;
+  color: #202020;
   background-color: #ffffff;
 }
-/* line 49, C:\wamp\www\portfolio-group\less\bootstrap\badges.less */
 .nav-pills > li > a > .badge {
   margin-left: 3px;
 }
 @-webkit-keyframes progress-bar-stripes {
-  /* line 11, C:\wamp\www\portfolio-group\less\bootstrap\progress-bars.less */
   from {
     background-position: 40px 0;
   }
-  /* line 12, C:\wamp\www\portfolio-group\less\bootstrap\progress-bars.less */
   to {
     background-position: 0 0;
   }
 }
 @-moz-keyframes progress-bar-stripes {
-  /* line 17, C:\wamp\www\portfolio-group\less\bootstrap\progress-bars.less */
   from {
     background-position: 40px 0;
   }
-  /* line 18, C:\wamp\www\portfolio-group\less\bootstrap\progress-bars.less */
   to {
     background-position: 0 0;
   }
 }
 @-ms-keyframes progress-bar-stripes {
-  /* line 23, C:\wamp\www\portfolio-group\less\bootstrap\progress-bars.less */
   from {
     background-position: 40px 0;
   }
-  /* line 24, C:\wamp\www\portfolio-group\less\bootstrap\progress-bars.less */
   to {
     background-position: 0 0;
   }
 }
 @-o-keyframes progress-bar-stripes {
-  /* line 29, C:\wamp\www\portfolio-group\less\bootstrap\progress-bars.less */
   from {
     background-position: 0 0;
   }
-  /* line 30, C:\wamp\www\portfolio-group\less\bootstrap\progress-bars.less */
   to {
     background-position: 40px 0;
   }
 }
 @keyframes progress-bar-stripes {
-  /* line 35, C:\wamp\www\portfolio-group\less\bootstrap\progress-bars.less */
   from {
     background-position: 40px 0;
   }
-  /* line 36, C:\wamp\www\portfolio-group\less\bootstrap\progress-bars.less */
   to {
     background-position: 0 0;
   }
 }
-/* line 45, C:\wamp\www\portfolio-group\less\bootstrap\progress-bars.less */
 .progress {
   overflow: hidden;
   height: 20px;
@@ -4390,7 +3669,6 @@ a.list-group-item.active > .badge,
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
-/* line 55, C:\wamp\www\portfolio-group\less\bootstrap\progress-bars.less */
 .progress-bar {
   float: left;
   width: 0%;
@@ -4398,22 +3676,20 @@ a.list-group-item.active > .badge,
   font-size: 12px;
   color: #ffffff;
   text-align: center;
-  background-color: #20396c;
+  background-color: #202020;
   -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   -webkit-transition: width 0.6s ease;
   transition: width 0.6s ease;
 }
-/* line 68, C:\wamp\www\portfolio-group\less\bootstrap\progress-bars.less */
 .progress-striped .progress-bar {
-  background-color: #20396c;
+  background-color: #202020;
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-size: 40px 40px;
 }
-/* line 74, C:\wamp\www\portfolio-group\less\bootstrap\progress-bars.less */
 .progress.active .progress-bar {
   -webkit-animation: progress-bar-stripes 2s linear infinite;
   -moz-animation: progress-bar-stripes 2s linear infinite;
@@ -4421,11 +3697,9 @@ a.list-group-item.active > .badge,
   -o-animation: progress-bar-stripes 2s linear infinite;
   animation: progress-bar-stripes 2s linear infinite;
 }
-/* line 88, C:\wamp\www\portfolio-group\less\bootstrap\progress-bars.less */
 .progress-bar-danger {
   background-color: #ed1d24;
 }
-/* line 418, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .progress-striped .progress-bar-danger {
   background-color: #ed1d24;
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
@@ -4433,11 +3707,9 @@ a.list-group-item.active > .badge,
   background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
-/* line 93, C:\wamp\www\portfolio-group\less\bootstrap\progress-bars.less */
 .progress-bar-success {
   background-color: #5cb85c;
 }
-/* line 418, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .progress-striped .progress-bar-success {
   background-color: #5cb85c;
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
@@ -4445,11 +3717,9 @@ a.list-group-item.active > .badge,
   background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
-/* line 98, C:\wamp\www\portfolio-group\less\bootstrap\progress-bars.less */
 .progress-bar-warning {
   background-color: #b58411;
 }
-/* line 418, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .progress-striped .progress-bar-warning {
   background-color: #b58411;
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
@@ -4457,11 +3727,9 @@ a.list-group-item.active > .badge,
   background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
-/* line 103, C:\wamp\www\portfolio-group\less\bootstrap\progress-bars.less */
 .progress-bar-info {
   background-color: #0db9a4;
 }
-/* line 418, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .progress-striped .progress-bar-info {
   background-color: #0db9a4;
   background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
@@ -4469,49 +3737,40 @@ a.list-group-item.active > .badge,
   background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
-/* line 7, C:\wamp\www\portfolio-group\less\bootstrap\accordion.less */
 .accordion {
   margin-bottom: 20px;
 }
-/* line 12, C:\wamp\www\portfolio-group\less\bootstrap\accordion.less */
 .accordion-group {
   margin-bottom: 2px;
   border: 1px solid #e5e5e5;
   border-radius: 4px;
 }
-/* line 17, C:\wamp\www\portfolio-group\less\bootstrap\accordion.less */
 .accordion-heading {
   border-bottom: 0;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\accordion.less */
 .accordion-heading .accordion-toggle {
   display: block;
   padding: 8px 15px;
   cursor: pointer;
 }
-/* line 28, C:\wamp\www\portfolio-group\less\bootstrap\accordion.less */
 .accordion-inner {
   padding: 9px 15px;
   border-top: 1px solid #e5e5e5;
 }
-/* line 7, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel {
   position: relative;
 }
-/* line 11, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-inner {
   position: relative;
   overflow: hidden;
   width: 100%;
 }
-/* line 16, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-inner > .item {
   display: none;
   position: relative;
   -webkit-transition: 0.6s ease-in-out left;
   transition: 0.6s ease-in-out left;
 }
-/* line 22, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
   display: inline-block;
@@ -4519,45 +3778,36 @@ a.list-group-item.active > .badge,
   height: auto;
   line-height: 1;
 }
-/* line 29, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-inner > .active,
 .carousel-inner > .next,
 .carousel-inner > .prev {
   display: block;
 }
-/* line 33, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-inner > .active {
   left: 0;
 }
-/* line 37, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-inner > .next,
 .carousel-inner > .prev {
   position: absolute;
   top: 0;
   width: 100%;
 }
-/* line 44, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-inner > .next {
   left: 100%;
 }
-/* line 47, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-inner > .prev {
   left: -100%;
 }
-/* line 50, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-inner > .next.left,
 .carousel-inner > .prev.right {
   left: 0;
 }
-/* line 55, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-inner > .active.left {
   left: -100%;
 }
-/* line 58, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-inner > .active.right {
   left: 100%;
 }
-/* line 67, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-control {
   position: absolute;
   top: 0;
@@ -4571,7 +3821,6 @@ a.list-group-item.active > .badge,
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
-/* line 82, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-control.left {
   background-color: rgba(0, 0, 0, 0.0001);
   background-image: -webkit-gradient(linear, 0% top, 100% top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.0001)));
@@ -4582,7 +3831,6 @@ a.list-group-item.active > .badge,
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
   background-color: transparent;
 }
-/* line 86, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-control.right {
   left: auto;
   right: 0;
@@ -4595,7 +3843,6 @@ a.list-group-item.active > .badge,
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
   background-color: transparent;
 }
-/* line 94, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-control:hover,
 .carousel-control:focus {
   color: #ffffff;
@@ -4603,7 +3850,6 @@ a.list-group-item.active > .badge,
   opacity: 0.9;
   filter: alpha(opacity=90);
 }
-/* line 102, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-control .glyphicon,
 .carousel-control .icon-prev,
 .carousel-control .icon-next {
@@ -4618,15 +3864,12 @@ a.list-group-item.active > .badge,
   margin-left: -10px;
   font-family: serif;
 }
-/* line 118, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-control .icon-prev:before {
   content: '\2039';
 }
-/* line 123, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-control .icon-next:before {
   content: '\203a';
 }
-/* line 131, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-indicators {
   position: absolute;
   bottom: 10px;
@@ -4638,7 +3881,6 @@ a.list-group-item.active > .badge,
   list-style: none;
   text-align: center;
 }
-/* line 142, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-indicators li {
   display: inline-block;
   width: 10px;
@@ -4649,14 +3891,12 @@ a.list-group-item.active > .badge,
   border-radius: 10px;
   cursor: pointer;
 }
-/* line 152, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-indicators .active {
   margin: 0;
   width: 12px;
   height: 12px;
   background-color: #ffffff;
 }
-/* line 163, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-caption {
   position: absolute;
   left: 15%;
@@ -4669,12 +3909,10 @@ a.list-group-item.active > .badge,
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
-/* line 174, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
 .carousel-caption .btn {
   text-shadow: none;
 }
 @media screen and (min-width: 768px) {
-  /* line 184, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
   .carousel-control .glyphicon,
   .carousel-control .icon-prev,
   .carousel-control .icon-next {
@@ -4684,18 +3922,15 @@ a.list-group-item.active > .badge,
     margin-left: -15px;
     font-size: 30px;
   }
-  /* line 195, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
   .carousel-caption {
     left: 20%;
     right: 20%;
     padding-bottom: 30px;
   }
-  /* line 202, C:\wamp\www\portfolio-group\less\bootstrap\carousel.less */
   .carousel-indicators {
     bottom: 20px;
   }
 }
-/* line 6, C:\wamp\www\portfolio-group\less\bootstrap\jumbotron.less */
 .jumbotron {
   padding: 30px;
   margin-bottom: 30px;
@@ -4705,22 +3940,18 @@ a.list-group-item.active > .badge,
   color: inherit;
   background-color: #eeeeee;
 }
-/* line 14, C:\wamp\www\portfolio-group\less\bootstrap\jumbotron.less */
 .jumbotron h1 {
   line-height: 1;
   color: inherit;
 }
-/* line 18, C:\wamp\www\portfolio-group\less\bootstrap\jumbotron.less */
 .jumbotron p {
   line-height: 1.4;
 }
 @media screen and (min-width: 768px) {
-  /* line 22, C:\wamp\www\portfolio-group\less\bootstrap\jumbotron.less */
   .jumbotron {
     padding: 50px 60px;
     border-radius: 6px;
   }
-  /* line 25, C:\wamp\www\portfolio-group\less\bootstrap\jumbotron.less */
   .jumbotron h1 {
     font-size: 63px;
   }
@@ -4733,7 +3964,6 @@ a.list-group-item.active > .badge,
 }*/
 @font-face {
   font-family: "Charis SIL";
-  src: url(../fonts/CharisSIL/CharisSIL/CharisSILB.eot);
   src: local('Charis SIL Bold'), url(../fonts/CharisSIL/CharisSIL/CharisSILB.ttf) format("truetype");
   font-weight: bold;
 }
@@ -4746,7 +3976,6 @@ a.list-group-item.active > .badge,
 }*/
 @font-face {
   font-family: "Charis SIL";
-  src: url(../fonts/CharisSIL/CharisSIL/CharisSILBI.eot);
   src: local('Charis SIL Bold Italic'), url(../fonts/CharisSIL/CharisSIL/CharisSILBI.ttf) format("truetype");
   font-weight: bold;
   font-style: italic;
@@ -4758,7 +3987,6 @@ a.list-group-item.active > .badge,
  * Copyright 2013 bootstrap-select
  * Licensed under the MIT license
  */
-/* line 8, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group,
 .bootstrap-select.btn-group[class*="span"] {
   float: none;
@@ -4766,54 +3994,43 @@ a.list-group-item.active > .badge,
   margin-bottom: 10px;
   margin-left: 0;
 }
-/* line 15, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .form-search .bootstrap-select.btn-group,
 .form-inline .bootstrap-select.btn-group,
 .form-horizontal .bootstrap-select.btn-group {
   margin-bottom: 0;
 }
-/* line 21, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group.pull-right,
 .bootstrap-select.btn-group[class*="span"].pull-right,
 .row-fluid .bootstrap-select.btn-group[class*="span"].pull-right {
   float: right;
 }
-/* line 27, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .input-append .bootstrap-select.btn-group {
   margin-left: -1px;
 }
-/* line 31, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .input-prepend .bootstrap-select.btn-group {
   margin-right: -1px;
 }
-/* line 35, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select:not([class*="span"]) {
   width: 220px;
 }
-/* line 39, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select {
   /*width: 220px\9; IE8 and below*/
 
 }
-/* line 44, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select > .btn {
   width: 100%;
 }
-/* line 48, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .error .bootstrap-select .btn {
   border: 1px solid #b94a48;
 }
-/* line 52, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.show-menu-arrow.open > .btn {
   z-index: 1001;
 }
-/* line 56, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select .btn:focus {
   outline: thin dotted #333333 !important;
   outline: 5px auto -webkit-focus-ring-color !important;
   outline-offset: -2px;
 }
-/* line 62, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group .btn .filter-option {
   overflow: hidden;
   position: absolute;
@@ -4821,32 +4038,26 @@ a.list-group-item.active > .badge,
   right: 25px;
   text-align: left;
 }
-/* line 70, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group .btn .caret {
   position: absolute;
   right: 12px;
 }
-/* line 75, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group > .disabled,
 .bootstrap-select.btn-group .dropdown-menu li.disabled > a {
   cursor: not-allowed;
 }
-/* line 80, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group > .disabled:focus {
   outline: none !important;
 }
-/* line 84, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group[class*="span"] .btn {
   width: 100%;
 }
-/* line 88, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group .dropdown-menu {
   min-width: 100%;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 95, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group .dropdown-menu.inner {
   position: static;
   border: 0;
@@ -4859,62 +4070,49 @@ a.list-group-item.active > .badge,
   -moz-box-shadow: none;
   box-shadow: none;
 }
-/* line 108, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group .dropdown-menu dt {
   display: block;
   padding: 3px 20px;
   cursor: default;
 }
-/* line 114, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group .div-contain {
   overflow: hidden;
 }
-/* line 118, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group .dropdown-menu li {
   position: relative;
 }
-/* line 122, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group .dropdown-menu li > a.opt {
   padding-left: 35px;
 }
-/* line 126, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group .dropdown-menu li > a {
   cursor: pointer;
 }
-/* line 130, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group .dropdown-menu li > dt small {
   font-weight: normal;
 }
-/* line 134, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group.show-tick .dropdown-menu li.selected a i.check-mark {
   display: inline-block;
   position: absolute;
   right: 15px;
   margin-top: 2.5px;
 }
-/* line 141, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group .dropdown-menu li a i.check-mark {
   display: none;
 }
-/* line 145, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group.show-tick .dropdown-menu li a span.text {
   margin-right: 34px;
 }
-/* line 149, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group .dropdown-menu li small {
   padding-left: 0.5em;
 }
-/* line 153, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group .dropdown-menu li:not(.disabled) > a:hover small,
 .bootstrap-select.btn-group .dropdown-menu li:not(.disabled) > a:focus small {
   color: #64b1d8;
   color: rgba(255, 255, 255, 0.4);
 }
-/* line 159, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.btn-group .dropdown-menu li > dt small {
   font-weight: normal;
 }
-/* line 163, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.show-menu-arrow .dropdown-toggle:before {
   content: '';
   display: inline-block;
@@ -4927,7 +4125,6 @@ a.list-group-item.active > .badge,
   left: 9px;
   display: none;
 }
-/* line 176, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.show-menu-arrow .dropdown-toggle:after {
   content: '';
   display: inline-block;
@@ -4939,7 +4136,6 @@ a.list-group-item.active > .badge,
   left: 10px;
   display: none;
 }
-/* line 188, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.show-menu-arrow.dropup .dropdown-toggle:before {
   bottom: auto;
   top: -3px;
@@ -4947,29 +4143,24 @@ a.list-group-item.active > .badge,
   border-bottom: 0;
   border-top-color: rgba(0, 0, 0, 0.2);
 }
-/* line 196, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.show-menu-arrow.dropup .dropdown-toggle:after {
   bottom: auto;
   top: -3px;
   border-top: 6px solid #ffffff;
   border-bottom: 0;
 }
-/* line 203, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.show-menu-arrow.pull-right .dropdown-toggle:before {
   right: 12px;
   left: auto;
 }
-/* line 207, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.show-menu-arrow.pull-right .dropdown-toggle:after {
   right: 13px;
   left: auto;
 }
-/* line 212, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .bootstrap-select.show-menu-arrow.open > .dropdown-toggle:before,
 .bootstrap-select.show-menu-arrow.open > .dropdown-toggle:after {
   display: block;
 }
-/* line 217, C:\wamp\www\portfolio-group\less\bootstrap-select.less */
 .mobile-device {
   position: absolute;
   top: 0;
@@ -4981,16 +4172,16 @@ a.list-group-item.active > .badge,
 }
 /* Gloabal
 -------------------------------------------------- */
-/* line 8, C:\wamp\www\portfolio-group\less\style.less */
 html {
   height: 100%;
+  -webkit-font-smoothing: antialiased;
 }
-/* line 11, C:\wamp\www\portfolio-group\less\style.less */
 body {
+  background-color: #f5f5f5;
   background-image: url(../img/pw_maze_white.png);
   height: 100%;
+  padding-top: 50px;
 }
-/* line 15, C:\wamp\www\portfolio-group\less\style.less */
 *,
 *:before,
 *:after {
@@ -4998,28 +4189,51 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\style.less */
-img {
+.modal-backdrop {
+  z-index: 8;
+}
+.modal {
+  z-index: 9;
+}
+img,
+iframe {
   max-width: 100%;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.blue {
+  color: #20396c;
+}
+label {
+  font-weight: normal;
+}
+/*.btn-default, .btn-default:hover {
+  color:#999;
+}*/
 /* Nav bar
 -------------------------------------------------- */
-/* line 26, C:\wamp\www\portfolio-group\less\style.less */
 .navbar-inverse .navbar-brand {
   padding: 0 15px;
-  z-index: 10;
+  z-index: 9;
   position: relative;
   max-width: none;
 }
-/* line 31, C:\wamp\www\portfolio-group\less\style.less */
 .navbar-inverse .navbar-brand a:hover {
   text-decoration: none;
 }
-/* line 34, C:\wamp\www\portfolio-group\less\style.less */
+.navbar-nav {
+  font-size: 12px;
+}
 .navbar-toggle {
   z-index: 99;
 }
-/* line 38, C:\wamp\www\portfolio-group\less\style.less */
+.navbar-toggle {
+  z-index: 99;
+}
 .navbar-nav > li.active a {
   -webkit-box-shadow: inset 0px -2px 0px 0px #ed1d24;
   box-shadow: inset 0px -2px 0px 0px #ed1d24;
@@ -5030,58 +4244,66 @@ img {
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 /* Special class on .container surrounding .navbar, used for positioning it into place. */
-/* line 53, C:\wamp\www\portfolio-group\less\style.less */
 .navbar-wrapper {
   position: relative;
-  z-index: 10;
+  z-index: 99;
 }
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
-/* Carousel base class */
-/* line 62, C:\wamp\www\portfolio-group\less\style.less */
-.carousel {
-  /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+.js .home-video {
+  display: none;
+  margin: 0 auto;
+  /*width: 640px;
+  left: 10%;
+  right: 10%;*/
 
-  margin-top: -90px;
 }
-/* Since positioning the image, we need to help out the caption */
-/* line 69, C:\wamp\www\portfolio-group\less\style.less */
-.carousel-caption {
-  z-index: 1;
-  top: 35%;
+.dropVid {
+  opacity: 1;
+  position: absolute;
+  -moz-animation-name: dropVid;
+  -moz-animation-iteration-count: once;
+  -moz-animation-timing-function: ease-in;
+  -moz-animation-duration: 1s;
+  -webkit-animation-delay: 0;
+  -webkit-animation-name: dropVid;
+  -webkit-animation-iteration-count: once;
+  -webkit-animation-timing-function: ease-in;
+  -webkit-animation-duration: 1s;
 }
-/* line 74, C:\wamp\www\portfolio-group\less\style.less */
-.carousel-caption.video {
-  top: 75px;
+@-moz-keyframes dropVid {
+  0% {
+    top: -600px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
 }
-/* Declare heights because of positioning of img element */
-/* line 79, C:\wamp\www\portfolio-group\less\style.less */
-.carousel .item {
-  height: 600px;
+@-webkit-keyframes dropVid {
+  0% {
+    top: -600px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
 }
-/* line 84, C:\wamp\www\portfolio-group\less\style.less */
-.carousel-control.right,
-.carousel-control.left {
-  background: none;
-  top: 50%;
-}
-/* line 88, C:\wamp\www\portfolio-group\less\style.less */
-.carousel-control.right:after,
-.carousel-control.left:after {
+/*.carousel-control.right:after,
+ .carousel-control.left:after {
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
 }
-/* line 94, C:\wamp\www\portfolio-group\less\style.less */
 .carousel-control.right:after {
-  content: "\f105";
+    content: "\f105";
 }
-/* line 97, C:\wamp\www\portfolio-group\less\style.less */
 .carousel-control.left:after {
-  content: "\f104";
-}
-/* line 102, C:\wamp\www\portfolio-group\less\style.less */
+    content: "\f104";
+}*/
 .bg-cover {
   background-position: center center;
   background-repeat: no-repeat;
@@ -5090,110 +4312,243 @@ img {
   -o-background-size: cover;
   background-size: cover;
 }
-/* line 110, C:\wamp\www\portfolio-group\less\style.less */
-.item.one {
-  background-image: url('../img/slide-bg-golf.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.ei-slider {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  height: 400px;
+  margin: 0 auto;
 }
-/* line 114, C:\wamp\www\portfolio-group\less\style.less */
-.item.two {
-  background-image: url('../img/slide-bg-com.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.ei-slider-loading {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  text-align: center;
+  line-height: 400px;
 }
-/* line 119, C:\wamp\www\portfolio-group\less\style.less */
-.item.three {
-  background-image: url('../img/slide-bg-health.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.ei-slider-large {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.ei-slider-large li {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+.ei-slider-large li img {
+  width: 100%;
+}
+.ei-slider-large iframe {
+  position: absolute;
+  left: 40%;
+  margin-left: 13%;
+  top: 0%;
+  z-index: 9999;
+}
+.ei-title {
+  position: absolute;
+  right: 50%;
+  margin-right: 13%;
+  top: 30%;
+}
+.ei-title h2,
+.ei-title h3 {
+  text-align: right;
+}
+.ei-title h2 {
+  font-size: 40px;
+  line-height: 50px;
+  font-style: italic;
+  color: white;
+}
+.ei-title h3 {
+  font-size: 70px;
+  line-height: 70px;
+  text-transform: uppercase;
+  color: white;
+}
+.ei-slider-thumbs,
+.ei-slider-thumbs[style] {
+  height: 13px;
+  margin: 0 auto;
+  position: relative;
+  top: -10px;
+  z-index: 99;
+  max-width: 1090px !important;
+}
+.ei-slider-thumbs li {
+  position: relative;
+  float: left;
+  height: 100%;
+}
+.ei-slider-thumbs li.ei-slider-element {
+  top: 0px;
+  position: absolute;
+  height: 100%;
+  z-index: 10;
+  text-indent: -9000px;
+  background: #000000;
+}
+/*.ei-slider-thumbs li.ei-slider-element[style] {
+	max-width: 136px !important;
+}*/
+.ei-slider-thumbs li a {
+  display: block;
+  text-indent: -9000px;
+  background: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.3), 0px 1px 0px 1px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.3), 0px 1px 0px 1px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.3), 0px 1px 0px 1px rgba(255, 255, 255, 0.5);
+  -webkit-transition: background 0.2s ease;
+  -moz-transition: background 0.2s ease;
+  -o-transition: background 0.2s ease;
+  -ms-transition: background 0.2s ease;
+  transition: background 0.2s ease;
+}
+.ei-slider-thumbs li a:hover {
+  background-color: #000000;
+}
+.ei-slider-thumbs li img {
+  position: absolute;
+  bottom: 50px;
+  opacity: 0;
+  z-index: 999;
+  max-width: 100%;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255, 255, 255, 0.3)));
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+}
+.ei-slider-thumbs li:hover img {
+  opacity: 1;
+  bottom: 13px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+@media screen and (max-width: 830px) {
+  .ei-title {
+    position: absolute;
+    right: 0px;
+    margin-right: 0px;
+    width: 100%;
+    text-align: center;
+    top: auto;
+    bottom: 10px;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px 0;
+  }
+  .ei-title h2,
+  .ei-title h3 {
+    text-align: center;
+  }
+  .ei-title h2 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .ei-title h3 {
+    font-size: 30px;
+    line-height: 40px;
+  }
 }
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 @media (min-width: 768px) {
   /* Navbar positioning foo */
-  /* line 133, C:\wamp\www\portfolio-group\less\style.less */
-  .navbar-wrapper {
-    margin-top: 20px;
-  }
   /* The navbar becomes detached from the top, so we round the corners */
-  /* line 137, C:\wamp\www\portfolio-group\less\style.less */
-  .navbar-wrapper .navbar {
-    border-radius: 4px;
-  }
 }
 /* homepage
 -------------------------------------------------- */
-/* line 146, C:\wamp\www\portfolio-group\less\style.less */
 .form-holder {
   background-color: white;
-  min-height: 140px;
-  padding: 2em 0;
-  margin-bottom: 40px;
+  min-height: 180px;
+  padding: 0;
   border-radius: 0px 0px 5px 5px;
   border-bottom: 1px solid #C6C7BA;
   border-right: 1px solid #C6C7BA;
   border-left: 1px solid #C6C7BA;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), inset 0 4px 0px rgba(0, 0, 0, 0.05);
 }
-/* line 159, C:\wamp\www\portfolio-group\less\style.less */
+.btn-white {
+  border: 1px solid #E2E2DE;
+}
+.btn-white:hover {
+  color: #333333;
+}
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-/* line 166, C:\wamp\www\portfolio-group\less\style.less */
+.input-number {
+  line-height: 24px;
+  width: 30%;
+  border: 0;
+  box-shadow: none;
+  height: 24px;
+  outline: none;
+}
+.input-number:focus {
+  outline: none;
+  box-shadow: none;
+}
 .qtyplus,
 .qtyminus {
   border-radius: 1000px;
-  border: 1px solid #20396c;
+  border: 1px solid #999999;
   background-color: white;
-  font-size: 16px;
-  width: 24px;
-  height: 24px;
+  font-size: 14px;
+  width: 18px;
+  height: 18px;
   font-weight: bold;
-  line-height: 22px;
+  line-height: 14px;
   display: block;
-  text-align: center;
+  text-align: left;
   float: right;
-  position: relative;
-  top: -29px;
+  position: absolute;
+  top: 0px;
   margin-right: 3px;
+  padding-left: 4px;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
 }
-/* line 182, C:\wamp\www\portfolio-group\less\style.less */
 .qtyplus:hover,
 .qtyminus:hover {
   text-decoration: none;
   color: white;
 }
-/* line 188, C:\wamp\www\portfolio-group\less\style.less */
-.qtyplus:hover {
-  background-color: #20396c;
-  border-color: #20396c;
+.qtyplus {
+  right: 20px;
 }
-/* line 193, C:\wamp\www\portfolio-group\less\style.less */
+.qtyminus {
+  right: 0;
+}
+.qtyplus:hover {
+  background-color: #202020;
+  border-color: #202020;
+}
 .qtyminus:hover {
   background-color: #ed1d24;
   border-color: #ed1d24;
 }
-/* line 199, C:\wamp\www\portfolio-group\less\style.less */
 .bootstrap-select.btn-group .btn .caret {
   top: 45%;
 }
@@ -5218,13 +4573,11 @@ input[type="range"]::-webkit-slider-thumb {
 }*/
 /* scaffolding */
 /* ----------- */
-/* line 228, C:\wamp\www\portfolio-group\less\style.less */
 .twitter-typeahead {
   width: 100%;
   display: block;
   border-radius: 5px;
 }
-/* line 233, C:\wamp\www\portfolio-group\less\style.less */
 .typeahead,
 .tt-query,
 .tt-hint {
@@ -5235,21 +4588,17 @@ input[type="range"]::-webkit-slider-thumb {
   line-height: 30px;*/
 
 }
-/* line 243, C:\wamp\www\portfolio-group\less\style.less */
 .typeahead {
   background-color: #fff;
 }
-/* line 249, C:\wamp\www\portfolio-group\less\style.less */
 .tt-query {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
-/* line 255, C:\wamp\www\portfolio-group\less\style.less */
 .tt-hint {
   color: #999999;
 }
-/* line 259, C:\wamp\www\portfolio-group\less\style.less */
 .tt-dropdown-menu {
   width: 100%;
   margin-top: 12px;
@@ -5264,25 +4613,30 @@ input[type="range"]::-webkit-slider-thumb {
   -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
-/* line 274, C:\wamp\www\portfolio-group\less\style.less */
 .tt-suggestion {
   padding: 3px 20px;
   font-size: 16px;
   line-height: 24px;
 }
-/* line 280, C:\wamp\www\portfolio-group\less\style.less */
 .tt-suggestion.tt-is-under-cursor {
   color: #fff;
-  background-color: #20396c;
+  background-color: #202020;
 }
-/* line 286, C:\wamp\www\portfolio-group\less\style.less */
 .tt-suggestion p {
   margin: 0;
 }
-/* line 290, C:\wamp\www\portfolio-group\less\style.less */
 .gist {
   font-size: 14px;
 }
+/*.breadcrumb-holder {
+  position: absolute;
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  left: 25%;
+  top:-70px;
+}
+*/
 /* example specific styles */
 /* ----------------------- */
 /*
@@ -5317,7 +4671,6 @@ input[type="range"]::-webkit-slider-thumb {
   text-align: right;
 }*/
 /*Homepage cols*/
-/* line 330, C:\wamp\www\portfolio-group\less\style.less */
 .width-15-per,
 .width-20-per,
 .width-10-per,
@@ -5332,40 +4685,31 @@ input[type="range"]::-webkit-slider-thumb {
   padding-left: 10px;
   padding-right: 10px;
 }
-/* line 345, C:\wamp\www\portfolio-group\less\style.less */
 .width-10-per {
   width: 10%;
 }
-/* line 346, C:\wamp\www\portfolio-group\less\style.less */
 .width-15-per {
   width: 15%;
 }
-/* line 347, C:\wamp\www\portfolio-group\less\style.less */
 .width-20-per {
   width: 20%;
 }
-/* line 348, C:\wamp\www\portfolio-group\less\style.less */
 .width-25-per {
   width: 25%;
 }
-/* line 349, C:\wamp\www\portfolio-group\less\style.less */
 .width-30-per {
   width: 30%;
 }
-/* line 350, C:\wamp\www\portfolio-group\less\style.less */
 .width-35-per {
   width: 35%;
 }
-/* line 351, C:\wamp\www\portfolio-group\less\style.less */
 .width-40-per {
   width: 40%;
 }
-/* line 352, C:\wamp\www\portfolio-group\less\style.less */
 .width-50-per {
   width: 50%;
 }
 @media (max-width: 979px) {
-  /* line 355, C:\wamp\www\portfolio-group\less\style.less */
   .width-15-per,
   .width-20-per,
   .width-10-per,
@@ -5377,114 +4721,170 @@ input[type="range"]::-webkit-slider-thumb {
     width: 100% !important;
   }
 }
-/* line 367, C:\wamp\www\portfolio-group\less\style.less */
+.section img {
+  max-width: none;
+  -webkit-transition: margin 0.5s ease;
+  -moz-transition: margin 0.5s ease;
+  -o-transition: margin 0.5s ease;
+  -ms-transition: margin 0.5s ease;
+  transition: margin 0.5s ease;
+}
+@media (min-width: 980px) {
+  .section img {
+    max-width: 460px;
+  }
+}
+@media (max-width: 979px) {
+  .section img {
+    min-width: 100%;
+  }
+}
+.section {
+  overflow: hidden;
+  -webkit-transition: width 0.5s ease,opacity 0.5s ease;
+  -moz-transition: width 0.5s ease,opacity 0.5s ease;
+  -o-transition: width 0.5s ease,opacity 0.5s ease;
+  -ms-transition: width 0.5s ease,opacity 0.5s ease;
+  transition: width 0.5s ease,opacity 0.5s ease;
+}
+.section.open {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -ms-transition: none;
+  transition: none;
+  -webkit-transform: none;
+}
+.section-header {
+  overflow: hidden;
+}
+@media (min-width: 980px) {
+  .sticky {
+    background-color: white;
+    overflow: hidden;
+    position: fixed;
+    top: 50px;
+    width: inherit;
+    max-width: 17%;
+  }
+}
+@media (min-width: 1880px) {
+  .sticky {
+    max-width: 12%;
+  }
+}
+@media (min-width: 980px) {
+  .section.width-40-per .sticky {
+    max-width: 34%;
+  }
+}
+@media (min-width: 1880px) {
+  .section.width-40-per .sticky {
+    max-width: 24.5%;
+  }
+}
 .section-title {
   font-size: 18px;
-  position: relative;
 }
-/* line 371, C:\wamp\www\portfolio-group\less\style.less */
 .section-title a {
   display: block;
   padding-top: 10px;
   padding-bottom: 10px;
+  color: #20396c;
   border-top: 2px solid #20396c;
   border-bottom: 1px solid #20396c;
 }
-/* line 377, C:\wamp\www\portfolio-group\less\style.less */
 .section-title a:hover {
   text-decoration: none;
 }
-/* line 382, C:\wamp\www\portfolio-group\less\style.less */
 .js .sub-nav {
   display: none;
 }
-/* line 385, C:\wamp\www\portfolio-group\less\style.less */
 .sub-nav {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-/* line 390, C:\wamp\www\portfolio-group\less\style.less */
 .sub-nav a {
   border-bottom: 1px dotted;
   display: block;
   padding-top: 5px;
   padding-bottom: 5px;
 }
-/* line 395, C:\wamp\www\portfolio-group\less\style.less */
 .sub-nav a:hover {
   text-decoration: none;
   color: #ed1d24;
 }
-/* line 400, C:\wamp\www\portfolio-group\less\style.less */
 .sub-nav li:last-child a {
   border: 0;
+  padding-bottom: 20px;
 }
-/* line 404, C:\wamp\www\portfolio-group\less\style.less */
 .article-title {
   font-size: 16px;
   margin: 0;
 }
-/* line 409, C:\wamp\www\portfolio-group\less\style.less */
 .article {
   border-bottom: 1px dotted;
   margin-bottom: 20px;
   padding-bottom: 20px;
 }
-/* line 413, C:\wamp\www\portfolio-group\less\style.less */
 .article:last-child {
   border: 0;
 }
-/* line 418, C:\wamp\www\portfolio-group\less\style.less */
 .section:last-child {
   border: 0;
 }
-/* line 421, C:\wamp\www\portfolio-group\less\style.less */
 #holder {
   position: relative;
 }
-/* line 425, C:\wamp\www\portfolio-group\less\style.less */
 #loadDivWrapper {
-  position: relative;
   width: 100%;
   left: 0px;
   position: absolute;
   z-index: 9;
   background-color: #fff;
-  border-top: 2px solid #20396c;
+  border-top: 2px solid #202020;
   height: auto;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
-/* line 436, C:\wamp\www\portfolio-group\less\style.less */
 #loadDiv {
   width: 100%;
 }
-/* line 440, C:\wamp\www\portfolio-group\less\style.less */
 #closeBtn {
   position: absolute;
   top: 5px;
   width: 36px;
   height: 36px;
   text-align: center;
-  border: 2px solid #20396c;
-  color: #20396c;
+  border: 2px solid #202020;
+  color: #202020;
   border-radius: 1000px;
   right: 5px;
   font-size: 24px;
   display: block;
 }
-/* line 452, C:\wamp\www\portfolio-group\less\style.less */
 #closeBtn:hover {
   color: white;
   cursor: pointer;
   text-decoration: none;
-  background-color: #20396c;
+  background-color: #202020;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
 }
-/* line 462, C:\wamp\www\portfolio-group\less\style.less */
+.badge-active {
+  background-color: #5cb85c;
+}
+.badge-hold {
+  background-color: #b58411;
+}
+.badge-inactive {
+  background-color: inherit;
+}
 .page-white {
   margin-top: 60px;
   background-color: #fff;
@@ -5493,26 +4893,35 @@ input[type="range"]::-webkit-slider-thumb {
   -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
-/* line 472, C:\wamp\www\portfolio-group\less\style.less */
+.social {
+  font-size: 18px;
+  line-height: 24px;
+  padding: 10px;
+  margin: 20px 0;
+}
+.social a {
+  color: #20396c;
+}
+.social a:hover {
+  text-decoration: none;
+}
 .bg-header {
   width: 100%;
   position: absolute;
   top: 0px;
   z-index: -9;
 }
-/* line 477, C:\wamp\www\portfolio-group\less\style.less */
 .bg-header img {
   width: 100%;
 }
-/* line 482, C:\wamp\www\portfolio-group\less\style.less */
 .property-type {
   background-image: url(../img/flag.png);
   background-repeat: no-repeat;
   background-position: left top;
   width: 63px;
   position: absolute;
-  top: 20px;
-  left: -12px;
+  top: -40px;
+  left: -26px;
   display: block;
   padding: 0;
   margin: 0;
@@ -5521,7 +4930,37 @@ input[type="range"]::-webkit-slider-thumb {
   min-height: 43px;
   line-height: 37px;
 }
-/* line 502, C:\wamp\www\portfolio-group\less\style.less */
+/* Tool Tip */
+#rangevalue {
+  color: white;
+  font-size: 10px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  display: block;
+  color: #fff;
+  margin: 20px 0;
+  position: relative;
+  left: 44.5%;
+  padding: 6px 12px;
+  border: 1px solid black;
+  -webkit-box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.2), 0px 2px 4px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.2), 0px 2px 4px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0px 1px 1px 0px rgba(255, 255, 255, 0.2), 0px 2px 4px 0px rgba(0, 0, 0, 0.4);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #222931), color-stop(100%, #181d21));
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  width: 18px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  top: -95px;
+}
 .search-property {
   overflow: hidden;
   position: relative;
@@ -5536,7 +4975,6 @@ input[type="range"]::-webkit-slider-thumb {
   box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2), inset 0px 1px 0px rgba(255, 255, 255, 0.5);
   color: white;
 }
-/* line 511, C:\wamp\www\portfolio-group\less\style.less */
 .search-property:hover {
   background-color: rgba(0, 0, 0, 0.7);
   -webkit-transition: all 1s ease;
@@ -5545,9 +4983,9 @@ input[type="range"]::-webkit-slider-thumb {
   -o-transition: all 1s ease;
   transition: all 1s ease;
 }
-/* line 517, C:\wamp\www\portfolio-group\less\style.less */
 .search-property-type {
   background-color: #b58411;
+  color: white;
   border-radius: 1000px;
   padding-top: 15px;
   height: 48px;
@@ -5555,29 +4993,167 @@ input[type="range"]::-webkit-slider-thumb {
   margin: 0 auto 20px;
   display: block;
 }
-/* line 529, C:\wamp\www\portfolio-group\less\style.less */
 .search-property-type.building {
   background-color: #0db9a4;
 }
-/* line 533, C:\wamp\www\portfolio-group\less\style.less */
 .search-property-content {
   margin-top: 100px;
 }
-/* line 540, C:\wamp\www\portfolio-group\less\style.less */
+.search-property-title,
+.search-property-price {
+  color: white;
+}
 .search-property .details .number {
   font-size: 18px;
 }
-/* line 543, C:\wamp\www\portfolio-group\less\style.less */
 .search-property .details li {
   padding: 0 10px;
   min-width: 25%;
   border-right: 1px solid rgba(255, 255, 255, 0.5);
 }
-/* line 547, C:\wamp\www\portfolio-group\less\style.less */
 .search-property .details li:last-child {
   border: 0;
 }
-/* line 552, C:\wamp\www\portfolio-group\less\style.less */
+/*!
+ * Slider for Bootstrap
+ *
+ * Copyright 2012 Stefan Petre
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+.slider {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+.slider.slider-horizontal {
+  width: 210px;
+  height: 20px;
+}
+.slider.slider-horizontal .slider-track {
+  height: 10px;
+  width: 100%;
+  margin-top: -5px;
+  top: 50%;
+  left: 0;
+}
+.slider.slider-horizontal .slider-selection {
+  height: 100%;
+  top: 0;
+  bottom: 0;
+}
+.slider.slider-horizontal .slider-handle {
+  margin-left: -10px;
+  margin-top: -5px;
+}
+.slider.slider-horizontal .slider-handle.triangle {
+  border-width: 0 10px 10px 10px;
+  width: 0;
+  height: 0;
+  border-bottom-color: #0480be;
+  margin-top: 0;
+}
+.slider.slider-vertical {
+  height: 210px;
+  width: 20px;
+}
+.slider.slider-vertical .slider-track {
+  width: 10px;
+  height: 100%;
+  margin-left: -5px;
+  left: 50%;
+  top: 0;
+}
+.slider.slider-vertical .slider-selection {
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+.slider.slider-vertical .slider-handle {
+  margin-left: -5px;
+  margin-top: -10px;
+}
+.slider.slider-vertical .slider-handle.triangle {
+  border-width: 10px 0 10px 10px;
+  width: 1px;
+  height: 1px;
+  border-left-color: #0480be;
+  margin-left: 0;
+}
+.slider input {
+  display: none;
+}
+.slider .tooltip-inner {
+  white-space: nowrap;
+}
+.slider-track {
+  position: absolute;
+  cursor: pointer;
+  background-color: #f7f7f7;
+  background-image: -moz-linear-gradient(top, #f5f5f5, #f9f9f9);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#f9f9f9));
+  background-image: -webkit-linear-gradient(top, #f5f5f5, #f9f9f9);
+  background-image: -o-linear-gradient(top, #f5f5f5, #f9f9f9);
+  background-image: linear-gradient(to bottom, #f5f5f5, #f9f9f9);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#fff9f9f9', GradientType=0);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.slider-selection {
+  position: absolute;
+  background-color: #f7f7f7;
+  background-image: -moz-linear-gradient(top, #202020, #000000);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#202020), to(#000000));
+  background-image: -webkit-linear-gradient(top, #202020, #000000);
+  background-image: -o-linear-gradient(top, #202020, #000000);
+  background-image: linear-gradient(to bottom, #202020, #000000);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff9f9f9', endColorstr='#fff5f5f5', GradientType=0);
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.slider-handle {
+  position: absolute;
+  width: 15px;
+  height: 26px;
+  background: url(../img/slider_handle_big.png) no-repeat top left;
+  /*background-color: #0e90d2;
+  background-image: -moz-linear-gradient(top, #149bdf, #0480be);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#149bdf), to(#0480be));
+  background-image: -webkit-linear-gradient(top, #149bdf, #0480be);
+  background-image: -o-linear-gradient(top, #149bdf, #0480be);
+  background-image: linear-gradient(to bottom, #149bdf, #0480be);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff149bdf', endColorstr='#ff0480be', GradientType=0);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);*/
+
+  opacity: 1;
+  border: 0px solid transparent;
+}
+.slider-handle.round {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+.slider-handle.triangle {
+  background: transparent none;
+}
 .bg-dark-gd {
   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.8)));
@@ -5586,313 +5162,355 @@ input[type="range"]::-webkit-slider-thumb {
   background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
 }
+.cbp-so-scroller {
+  overflow: hidden;
+}
+.cbp-so-section {
+  position: relative;
+}
+/* Clear floats of children */
+.cbp-so-section:before,
+.cbp-so-section:after {
+  content: " ";
+  display: table;
+}
+.cbp-so-section:after {
+  clear: both;
+}
+/* Text styling */
+.cbp-so-section h2 {
+  /*font-size: 5em;
+    font-weight: 300;
+    line-height: 1;*/
+
+}
+.cbp-so-section p {
+  /*font-size: 2em;
+    font-weight: 300;*/
+
+}
+/* Sides */
+.cbp-so-side {
+  /*width: 50%;
+    float: left;
+    margin: 0;
+    padding: 3em 4%;*/
+
+  overflow: hidden;
+}
+/* Clear floats of children */
+.cbp-so-side:before,
+.cbp-so-side:after {
+  content: " ";
+  display: table;
+}
+.cbp-so-side:after {
+  clear: both;
+}
+.cbp-so-side-right {
+  text-align: left;
+}
+.cbp-so-side-left {
+  text-align: right;
+}
+.cbp-so-side-right img {
+  float: left;
+}
+.cbp-so-side-left img {
+  float: right;
+}
+/* Initial state (hidden or anything else) */
+.cbp-so-init .cbp-so-side {
+  opacity: 0;
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+}
+.cbp-so-init .cbp-so-side-left {
+  -webkit-transform: translateX(-80px);
+  -moz-transform: translateX(-80px);
+  transform: translateX(-80px);
+}
+.cbp-so-init .cbp-so-side-right {
+  -webkit-transform: translateX(80px);
+  -moz-transform: translateX(80px);
+  transform: translateX(80px);
+}
+/* Animated state */
+/* add you final states (transition) or your effects (animations) for each side */
+.cbp-so-section.cbp-so-animate .cbp-so-side-left,
+.cbp-so-section.cbp-so-animate .cbp-so-side-right {
+  -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+  -moz-transition: -moz-transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  transform: translateX(0px);
+  opacity: 1;
+}
+/* For example, add a delay for the right side:
+.cbp-so-section.cbp-so-animate .cbp-so-side-right {
+    -webkit-transition-delay: 0.2s;
+    -moz-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+*/
+/* Example media queries */
+@media screen and (max-width: 73.5em) {
+  .cbp-so-side img {
+    max-width: 120%;
+  }
+}
+@media screen and (max-width: 41.125em) {
+  .cbp-so-side {
+    float: none;
+    width: 100%;
+  }
+  .cbp-so-side img {
+    max-width: 100%;
+  }
+}
 @media (min-width: 768px) and (max-width: 991px) {
   
 }
 @media (min-width: 768px) {
-  /* line 11, C:\wamp\www\portfolio-group\less\media-query.less */
   .navbar-wrapper .navbar {
     border-radius: 0;
   }
-  /* line 17, C:\wamp\www\portfolio-group\less\media-query.less */
-  .navbar-inverse:after,
-  .navbar-inverse:before {
-    display: block;
-    content: '  ';
-    height: 50px;
-    border-left: 60px solid #20396c;
-    position: absolute;
-    z-index: 0;
-    top: 0;
-    -webkit-transform: skew(30deg, 0);
-    -moz-transform: skew(30deg, 0);
-    -o-transform: skew(30deg, 0);
-    -ms-transform: skew(30deg, 0);
-    transform: skew(30deg, 0);
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-  /* line 27, C:\wamp\www\portfolio-group\less\media-query.less */
-  .navbar-inverse:after {
-    left: -20px;
-  }
-  /* line 31, C:\wamp\www\portfolio-group\less\media-query.less */
-  .navbar-inverse:before {
-    right: -20px;
-  }
-  /* line 35, C:\wamp\www\portfolio-group\less\media-query.less */
-  .navbar-inverse nav {
-    /*-webkit-transform: skew(-30deg, 0);
-  		-moz-transform: skew(-30deg, 0);
-  		-o-transform: skew(-30deg, 0);
-  		-ms-transform: skew(-30deg, 0);
-  		transform: skew(-30deg, 0);
-  		-webkit-backface-visibility: hidden;
-  		-moz-backface-visibility: hidden;
-  		-ms-backface-visibility: hidden;
-  		-o-backface-visibility: hidden;
-  		backface-visibility: hidden;*/
+  /*	.navbar-inverse {
+  		//position: relative;
+  		&:after, &:before{
+  			display: block;
+  			content: '  ';
+  			height:50px;
+  			border-left:60px solid @brand-primary;
+  			position: absolute;
+  			z-index: 0;
+  			top:0;
+  			.skew();
+  		}
+  		&:after {
+  			left:-20px;
+  		}
   
-  }
+  		&:before {
+  			right:-20px;
+  		}
+  	}*/
 }
 @media (min-width: 992px) {
-  
+  /*	.property-sidebar {
+  	  position: absolute;
+  	  height: 100%;
+  	  right: 0;
+  	  top: 0;
+  	}*/
 }
-/* line 5, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
-.skew-remove {
-  -webkit-transform: none !important;
-  -moz-transform: none !important;
-  -o-transform: none !important;
-  -ms-transform: none !important;
-  transform: none !important;
+.border-top-gray-light {
+  border-top: 1px solid #ededed;
 }
-/* line 13, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
-.skew {
-  -webkit-transform: skew(30deg, 0);
-  -moz-transform: skew(30deg, 0);
-  -o-transform: skew(30deg, 0);
-  -ms-transform: skew(30deg, 0);
-  transform: skew(30deg, 0);
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-  backface-visibility: hidden;
+.border-right-gray-light {
+  border-right: 1px solid #ededed;
 }
-/* line 27, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .bg-gray-light {
   background-color: #f7f7f7;
 }
-/* line 31, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .bg-gray {
   background-color: #555555;
 }
-/* line 35, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
+.bg-pure {
+  background-color: white;
+}
 .bg-white {
   background-color: white;
   border-top: 1px solid #CFCFCB;
   box-shadow: inset 0 2px 0px rgba(0, 0, 0, 0.05);
 }
-/* line 42, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .color-white,
 .white {
   color: #fff;
 }
-/* line 44, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .color-white:hover,
 .white:hover {
   color: #e6e6e6;
 }
-/* line 49, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .color-sec {
   color: #b58411;
 }
-/* line 51, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .color-sec:hover {
   color: #edb93f;
 }
-/* line 56, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 select,
 option {
   line-height: 24px;
   margin-bottom: 20px;
 }
-/* line 63, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .margin-zero,
 .no-margins {
   margin-top: 0;
   margin-bottom: 0;
 }
-/* line 68, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .margin-top-zero {
   margin-top: 0;
 }
-/* line 72, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .margin-bottom-zero {
   margin-bottom: 0;
 }
-/* line 77, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .padding-r-l-1em {
   padding-left: 1em;
   padding-right: 1em;
 }
-/* line 83, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .padding-r-l-2em {
   padding-left: 2em;
   padding-right: 2em;
 }
-/* line 90, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .padding-l-1em {
   padding-left: 1em;
 }
-/* line 95, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .padding-after-navbar {
   padding-top: 40px;
 }
-/* line 98, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
+.padding-05em {
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
 .padding-1em {
   padding-top: 1em;
   padding-bottom: 1em;
 }
-/* line 103, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .padding-2em {
   padding-top: 2em;
   padding-bottom: 2em;
 }
-/* line 108, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .padding-3em {
   padding-top: 3em;
   padding-bottom: 3em;
 }
-/* line 113, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .padding-4em {
   padding-top: 4em;
   padding-bottom: 4em;
 }
-/* line 118, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
+.padding-bottom-2em {
+  padding-bottom: 2em;
+}
+.padding-bottom-3em {
+  padding-bottom: 3em;
+}
 .margin-after-navbar {
   margin-top: 40px;
 }
-/* line 125, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .margin-top-1em {
   margin-top: 1em;
 }
-/* line 129, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .margin-top-2em {
   margin-top: 2em;
 }
-/* line 133, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .margin-top-3em {
   margin-top: 3em;
 }
-/* line 139, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
+.margin-top-4em {
+  margin-top: 4em;
+}
+.margin-bottom-1em {
+  margin-bottom: 1em;
+}
+.margin-bottom-2em {
+  margin-bottom: 2em;
+}
+.margin-bottom-3em {
+  margin-bottom: 3em;
+}
+.margin-bottom-4em {
+  margin-bottom: 4em;
+}
 .height-100 {
   height: 100%;
 }
-/* line 143, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .height-75 {
   height: 75%;
 }
-/* line 147, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .height-50 {
   height: 50%;
 }
-/* line 155, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .bold {
   font-weight: bold;
 }
-/* line 159, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .normal {
   font-weight: normal;
 }
-/* line 163, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .italic {
   font-style: italic;
 }
-/* line 168, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .serif {
   font-family: "Charis SIL", Georgia, "Times New Roman", Times, serif;
 }
-/* line 172, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .sans {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-/* line 180, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .lh-80 {
   line-height: 80%;
 }
-/* line 184, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .lh-90 {
   line-height: 90%;
 }
-/* line 187, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .lh-100 {
   line-height: 100%;
 }
-/* line 191, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .lh-110 {
   line-height: 110%;
 }
-/* line 195, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .lh-120 {
   line-height: 120%;
 }
-/* line 199, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .lh-130 {
   line-height: 130%;
 }
-/* line 203, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .lh-140 {
   line-height: 140%;
 }
-/* line 207, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .lh-150 {
   line-height: 150%;
 }
-/* line 213, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .size-20 {
   font-size: 20px;
 }
-/* line 217, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .size-18 {
   font-size: 18px;
 }
-/* line 221, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .size-16 {
   font-size: 16px;
 }
-/* line 225, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .size-14 {
   font-size: 14px;
 }
-/* line 229, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .size-13 {
   font-size: 13px;
 }
-/* line 233, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .size-12 {
   font-size: 12px;
 }
-/* line 237, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
-.skew-remove {
-  -webkit-transform: none !important;
-  -moz-transform: none !important;
-  -o-transform: none !important;
-  -ms-transform: none !important;
-  transform: none !important;
-}
-/* line 248, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .opacity-20 {
   opacity: .2;
 }
-/* line 251, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .opacity-50 {
   opacity: .5;
 }
-/* line 255, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .opacity-90 {
   opacity: .9;
 }
-/* line 259, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 ul.no-bullets {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
-/* line 266, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 ul.dotted li {
   border-bottom: 1px dotted #999999;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
-/* line 270, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 ul.dotted li:last-child {
   border: 0;
 }
-/* line 277, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .transition {
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -5900,38 +5518,46 @@ ul.dotted li:last-child {
   -o-transition: all 1s ease;
   transition: all 1s ease;
 }
-/* line 286, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .txt-center {
   text-align: center;
 }
-/* line 290, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .txt-left {
   text-align: left;
 }
-/* line 294, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
+.txt-right {
+  text-align: right;
+}
+.relative {
+  position: relative;
+}
 .display-block {
   display: block;
 }
-/* line 299, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
+.display-inline {
+  display: inline;
+}
+.display-none {
+  display: none;
+}
+.ov-h,
+.ovh {
+  overflow: hidden;
+}
 .list-inline li {
   display: inline-block;
   margin-right: 5px;
 }
-/* line 302, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .list-inline li:last-child {
   margin-right: 0;
 }
-/* line 308, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .list-no-bullets {
   list-style-type: none;
   margin-left: 0;
   padding-left: 0;
 }
-/* line 317, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .clearfix {
   *zoom: 1;
 }
-/* line 20, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -5941,33 +5567,26 @@ ul.dotted li:last-child {
   /* 2 */
 
 }
-/* line 25, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 .clearfix:after {
   clear: both;
 }
-/* line 320, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .pull-right,
 .fr {
   float: right;
 }
-/* line 323, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .pull-left,
 .fl {
   float: left;
 }
-/* line 331, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .hide {
   display: none !important;
 }
-/* line 334, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .show {
   display: block !important;
 }
-/* line 337, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .invisible {
   visibility: hidden;
 }
-/* line 340, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .text-hide {
   font: 0/0 a;
   color: transparent;
@@ -5975,7 +5594,6 @@ ul.dotted li:last-child {
   background-color: transparent;
   border: 0;
 }
-/* line 348, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .affix {
   position: fixed;
 }
@@ -5985,7 +5603,6 @@ ul.dotted li:last-child {
 /*
  * Image replacement
  */
-/* line 362, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .ir {
   background-color: transparent;
   border: 0;
@@ -5994,7 +5611,6 @@ ul.dotted li:last-child {
 
   *text-indent: -9999px;
 }
-/* line 370, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .ir:before {
   content: "";
   display: block;
@@ -6004,7 +5620,6 @@ ul.dotted li:last-child {
 /*
  * Hide from both screenreaders and browsers: h5bp.com/u
  */
-/* line 381, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .hidden {
   display: none !important;
   visibility: hidden;
@@ -6012,7 +5627,6 @@ ul.dotted li:last-child {
 /*
  * Hide only visually, but have it available for screenreaders: h5bp.com/v
  */
-/* line 390, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -6027,7 +5641,6 @@ ul.dotted li:last-child {
  * Extends the .visuallyhidden class to allow the element to be focusable
  * when navigated to via the keyboard: h5bp.com/p
  */
-/* line 406, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -6040,7 +5653,6 @@ ul.dotted li:last-child {
 /*
  * Hide visually and from screenreaders, but maintain layout
  */
-/* line 420, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .invisible {
   visibility: hidden;
 }
@@ -6055,7 +5667,6 @@ ul.dotted li:last-child {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-/* line 436, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -6065,7 +5676,6 @@ ul.dotted li:last-child {
   /* 2 */
 
 }
-/* line 442, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .clearfix:after {
   clear: both;
 }
@@ -6073,7 +5683,6 @@ ul.dotted li:last-child {
  * For IE 6/7 only
  * Include this rule to trigger hasLayout and contain floats.
  */
-/* line 451, C:\wamp\www\portfolio-group\less\bootstrap\utilities.less */
 .clearfix {
   *zoom: 1;
 }
@@ -6085,293 +5694,230 @@ ul.dotted li:last-child {
     width: 320px;
   }
 }
-/* line 31, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
 .hidden {
   display: none !important;
   visibility: hidden !important;
 }
-/* line 39, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
 .visible-sm {
   display: block !important;
 }
-/* line 428, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 tr.visible-sm {
   display: table-row !important;
 }
-/* line 429, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 th.visible-sm,
 td.visible-sm {
   display: table-cell !important;
 }
-/* line 42, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
 .visible-md {
   display: none !important;
 }
-/* line 435, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 tr.visible-md {
   display: none !important;
 }
-/* line 436, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 th.visible-md,
 td.visible-md {
   display: none !important;
 }
-/* line 45, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
 .visible-lg {
   display: none !important;
 }
-/* line 435, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 tr.visible-lg {
   display: none !important;
 }
-/* line 436, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 th.visible-lg,
 td.visible-lg {
   display: none !important;
 }
-/* line 49, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
 .hidden-sm {
   display: none !important;
 }
-/* line 435, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 tr.hidden-sm {
   display: none !important;
 }
-/* line 436, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 th.hidden-sm,
 td.hidden-sm {
   display: none !important;
 }
-/* line 52, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
 .hidden-md {
   display: block !important;
 }
-/* line 428, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 tr.hidden-md {
   display: table-row !important;
 }
-/* line 429, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 th.hidden-md,
 td.hidden-md {
   display: table-cell !important;
 }
-/* line 55, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
 .hidden-lg {
   display: block !important;
 }
-/* line 428, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 tr.hidden-lg {
   display: table-row !important;
 }
-/* line 429, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 th.hidden-lg,
 td.hidden-lg {
   display: table-cell !important;
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  /* line 62, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
   .visible-sm {
     display: none !important;
   }
-  /* line 435, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   tr.visible-sm {
     display: none !important;
   }
-  /* line 436, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   th.visible-sm,
   td.visible-sm {
     display: none !important;
   }
-  /* line 65, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
   .visible-md {
     display: block !important;
   }
-  /* line 428, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   tr.visible-md {
     display: table-row !important;
   }
-  /* line 429, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   th.visible-md,
   td.visible-md {
     display: table-cell !important;
   }
-  /* line 68, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
   .visible-lg {
     display: none !important;
   }
-  /* line 435, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   tr.visible-lg {
     display: none !important;
   }
-  /* line 436, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   th.visible-lg,
   td.visible-lg {
     display: none !important;
   }
-  /* line 72, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
   .hidden-sm {
     display: block !important;
   }
-  /* line 428, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   tr.hidden-sm {
     display: table-row !important;
   }
-  /* line 429, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   th.hidden-sm,
   td.hidden-sm {
     display: table-cell !important;
   }
-  /* line 75, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
   .hidden-md {
     display: none !important;
   }
-  /* line 435, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   tr.hidden-md {
     display: none !important;
   }
-  /* line 436, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   th.hidden-md,
   td.hidden-md {
     display: none !important;
   }
-  /* line 78, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
   .hidden-lg {
     display: block !important;
   }
-  /* line 428, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   tr.hidden-lg {
     display: table-row !important;
   }
-  /* line 429, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   th.hidden-lg,
   td.hidden-lg {
     display: table-cell !important;
   }
 }
 @media (min-width: 992px) {
-  /* line 85, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
   .visible-sm {
     display: none !important;
   }
-  /* line 435, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   tr.visible-sm {
     display: none !important;
   }
-  /* line 436, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   th.visible-sm,
   td.visible-sm {
     display: none !important;
   }
-  /* line 88, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
   .visible-md {
     display: none !important;
   }
-  /* line 435, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   tr.visible-md {
     display: none !important;
   }
-  /* line 436, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   th.visible-md,
   td.visible-md {
     display: none !important;
   }
-  /* line 91, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
   .visible-lg {
     display: block !important;
   }
-  /* line 428, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   tr.visible-lg {
     display: table-row !important;
   }
-  /* line 429, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   th.visible-lg,
   td.visible-lg {
     display: table-cell !important;
   }
-  /* line 95, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
   .hidden-sm {
     display: block !important;
   }
-  /* line 428, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   tr.hidden-sm {
     display: table-row !important;
   }
-  /* line 429, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   th.hidden-sm,
   td.hidden-sm {
     display: table-cell !important;
   }
-  /* line 98, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
   .hidden-md {
     display: block !important;
   }
-  /* line 428, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   tr.hidden-md {
     display: table-row !important;
   }
-  /* line 429, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   th.hidden-md,
   td.hidden-md {
     display: table-cell !important;
   }
-  /* line 101, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
   .hidden-lg {
     display: none !important;
   }
-  /* line 435, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   tr.hidden-lg {
     display: none !important;
   }
-  /* line 436, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   th.hidden-lg,
   td.hidden-lg {
     display: none !important;
   }
-  /* line 105, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
   .fr-lg {
     float: right;
   }
-  /* line 108, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
   .fl-lg {
     float: left;
   }
+  .border-right {
+    border-right: 1px solid #eeeeee;
+  }
 }
-/* line 114, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
 .visible-print {
   display: none !important;
 }
-/* line 435, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 tr.visible-print {
   display: none !important;
 }
-/* line 436, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
 th.visible-print,
 td.visible-print {
   display: none !important;
 }
 @media print {
-  /* line 120, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
   .visible-print {
     display: block !important;
   }
-  /* line 428, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   tr.visible-print {
     display: table-row !important;
   }
-  /* line 429, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   th.visible-print,
   td.visible-print {
     display: table-cell !important;
   }
-  /* line 123, C:\wamp\www\portfolio-group\less\bootstrap\responsive-utilities.less */
   .hidden-print {
     display: none !important;
   }
-  /* line 435, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   tr.hidden-print {
     display: none !important;
   }
-  /* line 436, C:\wamp\www\portfolio-group\less\bootstrap\mixins.less */
   th.hidden-print,
   td.hidden-print {
     display: none !important;
