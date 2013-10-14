@@ -1,20 +1,20 @@
 <section class="width-20-per fl section" id="sectionFour">
   <header class="section-header">
 
-    <h2 class="section-title"><a href="<?php echo $burl.$l_central_fl ?>">Central Florida <i class="icon-angle-down"></i></a></h2>
+    <h2 class="section-title"><a href="<?php // echo $burl.$l_central_fl ?>">Central Florida <i class="icon-angle-down"></i></a></h2>
     <ul class="sub-nav">
-      <li><a href="<?php echo $burl.$l_Sanford_Lake_Mary?>">Sanford/Lake Mary</a></li>
+      <li><a href="<?php // echo $burl.$l_Sanford_Lake_Mary?>">Sanford/Lake Mary</a></li>
 
-      <li><a href="<?php echo $burl.$l_central_Longwood_altamonte ?>">Longwood/Altamonte</a></li>
+      <li><a href="<?php // echo $burl.$l_central_Longwood_altamonte ?>">Longwood/Altamonte</a></li>
 
-      <li><a href="<?php echo $burl.$l_winter_park_maitland ?>">Winter Park/ Maitland</a></li>
+      <li><a href="<?php // echo $burl.$l_winter_park_maitland ?>">Winter Park/ Maitland</a></li>
 
-      <li><a href="<?php echo $burl.$l_orlando  ?>">Orlando</a></li>
+      <li><a href="<?php // echo $burl.$l_orlando  ?>">Orlando</a></li>
 
-      <li><a href="<?php echo $burl.$l_windermere ?>">Windermere</a></li>
+      <li><a href="<?php // echo $burl.$l_windermere ?>">Windermere</a></li>
 
-      <li><a href="<?php echo $burl.$l_lake_nona ?>">Lake Nona</a></li>
-      <li><a href="<?php echo $burl.$l_kissimmee_st_cloud  ?>">Kissimmee/ St.Cloud</a></li>
+      <li><a href="<?php // echo $burl.$l_lake_nona ?>">Lake Nona</a></li>
+      <li><a href="<?php // echo $burl.$l_kissimmee_st_cloud  ?>">Kissimmee/ St.Cloud</a></li>
     </ul>
   </header>
   <article class="article">

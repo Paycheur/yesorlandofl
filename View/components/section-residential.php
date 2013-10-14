@@ -2,14 +2,14 @@
 
   <header class="section-header">
 
-    <h2 class="section-title"><a href="<?php echo $l_res; ?>">RESIDENTIAL <i class="icon-angle-down"></i></a></h2>
+    <h2 class="section-title"><a href="<?php //echo $l_res; ?>">RESIDENTIAL <i class="icon-angle-down"></i></a></h2>
     <ul class="sub-nav">
-      <li><a href="<?php echo $l_res_luxury_homes; ?>">Luxury Homes</a></li>
-      <li><a href="<?php echo $l_res_golf_homes; ?>">Golf Homes</a></li>
-      <li><a href="<?php echo $l_res_golf_equestrian_polo; ?>">Equestrian / Polo</a></li>
-      <li><a href="<?php echo $l_res_luxury_lake_front_river_front; ?>">Lake Front / River Front</a></li>
-      <li><a href="<?php echo $l_res_luxury_beach_front_homes; ?>">Beach Front Homes</a></li>
-      <li><a href="<?php echo $l_res_vacant_land; ?>">Vacant Land</a></li>
+      <li><a href="<?php //echo $l_res_luxury_homes; ?>">Luxury Homes</a></li>
+      <li><a href="<?php //echo $l_res_golf_homes; ?>">Golf Homes</a></li>
+      <li><a href="<?php //echo $l_res_golf_equestrian_polo; ?>">Equestrian / Polo</a></li>
+      <li><a href="<?php //echo $l_res_luxury_lake_front_river_front; ?>">Lake Front / River Front</a></li>
+      <li><a href="<?php //echo $l_res_luxury_beach_front_homes; ?>">Beach Front Homes</a></li>
+      <li><a href="<?php //echo $l_res_vacant_land; ?>">Vacant Land</a></li>
     </ul>
 
   </header>
