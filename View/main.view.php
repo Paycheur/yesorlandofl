@@ -25,9 +25,25 @@ if(isset($page['class']))
 <!-- Main CSS -->
 <link href="/Assets/css/style.css" rel="stylesheet">
 
+
 <!--[if lt IE 9]>
     <script src="/Assets/js/vendor/respond.min.js"></script>
 <![endif]-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script>window.jQuery || document.write('<script src="/Assets/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="/Assets/js/min/bootstrap.min.js"></script>
+<!-- <script src="/Assets/js/min/typeahead.min.js"></script>
+-->
+<script src="/Assets/js/min/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="/Assets/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/Assets/js/jquery.eislideshow.js"></script>
+<script type="text/javascript" src="/Assets/js/jquery.easing.1.3.js"></script>
+<!-- price range -->
+<script type="text/javascript" src="/Assets/js/bootstrap-slider.js"></script>
+<script src="/Assets/js/main.js"></script>
+<script src="/Assets/js/app/login.js"></script>
+
 <script src="/Assets/js/vendor/modernizr-2.6.2.min.js"></script>
 
   		<?php if(defined('CSS_PAGE'))
@@ -36,13 +52,28 @@ if(isset($page['class']))
 		<?php
   		}
   		if(defined('JS_PAGE'))
-  		{?>
-   			<script type="text/javascript" src="<?=JS_PAGE?>"></script>
+  		{
+  			if(is_array(JS_PAGE))
+  			{
+  				foreach(JS_PAGE as $js)
+  				{
+  				?>
+  					<script type="text/javascript" src="<?=$js?>"></script>
+  				<?php
+  				}
+  			}
+  			else
+  			{?>
+   				<script type="text/javascript" src="<?=JS_PAGE?>"></script>
    		<?php
+  			}
   		}?>
 </head>
 
 <body>
+<?php require_once('components/form-login.php'); ?>
+<?php require_once('components/form-register.php'); ?>
+
 <nav class="navbar navbar-inverse navbar-fixed-top "><!--  -->
   <div class="container">
     <div class="navbar-header">
@@ -86,6 +117,17 @@ if(isset($page['class']))
             <li><a href="<?php echo $burl.$l_central_fl ?>">enquirer more info</a></li>
           </ul>
         </li>
+        <?php 
+        if(isset($_SESSION['user']['id']))
+        {?>
+        	<li class="dropdown">
+        		<a href="<?php echo $burl ?>" class="dropdown-toggle" data-toggle="dropdown"><?=$_SESSION['user']['name'] ?> <b class="caret"></b></a>
+        		<ul class="dropdown-menu">
+            		<li><a href="/logout">Logout</a></li>
+            	</ul>
+        	</li>
+        <?php 
+        }?>
       </ul>
     </div>
   </div>
@@ -177,18 +219,6 @@ if(isset($page['class']))
 		</div>
 	</div>
 </footer>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/Assets/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-<script src="/Assets/js/min/bootstrap.min.js"></script>
-<!-- <script src="/Assets/js/min/typeahead.min.js"></script>
--->
-<script src="/Assets/js/min/bootstrap-select.min.js"></script>
-<script type="text/javascript" src="/Assets/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
-<script type="text/javascript" src="/Assets/js/jquery.eislideshow.js"></script>
-<script type="text/javascript" src="/Assets/js/jquery.easing.1.3.js"></script>
-<!-- price range -->
-<script type="text/javascript" src="/Assets/js/bootstrap-slider.js"></script>
-<script src="/Assets//js/main.js"></script>
 
 
 

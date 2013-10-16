@@ -22,7 +22,9 @@ switch ($EX)
 {
   case 'home'   : home ();   break;
   case 'doLoginWithFacebook' : doLoginWithFacebook(); break;
-
+  case 'doRegister' : doRegister(); exit;
+  case 'doLogin' : doLogin(); exit;
+  case 'logout'   : logout ();   break;
 }
 
 /**
@@ -111,6 +113,75 @@ function doLoginWithFacebook()
 	    	home();
 	    }
 	    
+}
+
+function doRegister()
+{
+	$error = array();
+	$statut = 'KO';
+	if(isset($_POST['email']) && !empty($_POST['email']) && strlen($_POST['email']) > 1 && strlen($_POST['email']) <= 100)
+	{
+		$Syntaxe='#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$#';
+		if(preg_match($Syntaxe,$_POST['email']))
+		{
+			if(isset($_POST['name']) && !empty($_POST['name']) && strlen($_POST['name']) > 1 && strlen($_POST['name']) <= 100)
+			{
+				if(isset($_POST['mdp']) && !empty($_POST['mdp']) && strlen($_POST['mdp']) > 1 && strlen($_POST['mdp']) <= 50)
+				{
+					$email = $_POST['email'];
+					$password = $_POST['mdp'];
+					$name = $_POST['name'];
+					
+					$login = new MLogin();
+	    			$error = $login->register($name, $email, $password);
+	    			if(isset($error['ok']) && $error['ok'] == true)
+	    			{
+	    				$statut = 'OK';
+	    				$rep = $login->login($email, $password);
+	    			}
+				}
+				else
+				{
+					$error['registerPassword'] = 'Error';
+				}
+			}
+			else
+			{
+				$error['registerName'] = 'Error';
+			}
+		}
+		else
+		{
+			$error['registerEmail'] = 'Wrong email';
+		}
+	}		
+	else
+	{
+		$error['registerEmail'] = 'Wrong email';
+	}
+    
+    print json_encode(array('error_form' =>$error, 'statut' => $statut));
+   
+}
+
+function doLogin()
+{
+	$statut = 'KO';
+	if(isset($_POST['email']) && isset($_POST['mdp']))
+	{
+		$login = new MLogin();
+		$rep = $login->login($_POST['email'], $_POST['mdp']);
+		if($rep == true)
+			$statut = 'OK';
+	}
+	
+	print json_encode(array('statut' => $statut));
+}
+
+function logout()
+{
+	unset($_SESSION['user']);
+	header('Location:/');
 }
 
 ?>
