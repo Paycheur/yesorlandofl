@@ -29,7 +29,7 @@ switch ($EX)
 /**
  * R�cup�ration de la mise en page
  */
-require ('View/main.view.php');
+require ('View/inc/main.view.php');
 
 /********* Fonctions de contr�le *********/
 

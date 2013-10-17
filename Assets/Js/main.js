@@ -1,3 +1,5 @@
+
+
 $(function(){
     $("a[rel='tab']").on('click', function(e){
         e.preventDefault();
@@ -19,9 +21,10 @@ $(function(){
 });
 
 /* the below code is to override back button to get the ajax content without reload*/
-$(window).bind('popstate', function( e ) {
-    $(".content").load(location.pathname+" .content");
-});
+//$(window).bind('popstate', function( e ) {
+//	console.log(location.pathname);
+//    $(".content").load(location.pathname+" .content");
+//});
 
 
 //search form
@@ -74,7 +77,7 @@ var sectionWidth = {
 };
 
 
-$( document ).ajaxComplete(function( event,request, settings ) {
+$(function() {
     (function (){
         $('.form_datetime').datetimepicker({
             //language:  'fr',
@@ -88,7 +91,7 @@ $( document ).ajaxComplete(function( event,request, settings ) {
         });
 
     })();
-
+    
  // residential/ commercial types
 
   $('#residential-type-btn').on('click', function () {
@@ -294,7 +297,5 @@ $(".qtyminus").click(function(e) {
 
       });
     };
-  })
-
+  });
 });
-

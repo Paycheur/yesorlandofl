@@ -3,8 +3,8 @@
 header ('Content-Type:text/html; charset=UTF-8');
 //define ('ICONE_PAGE', '../Img/bdd.png');
 //define ('CSS_PAGE', '../Css/index.css');
-define ('JS_PAGE', '/Assets/Js/login.req.js');
-define ('CONTROLER', 'login.php');
+define ('JS_PAGE', '/Assets/js/app/login.js');
+define ('CONTROLER', 'page_login.php');
 
 require ('Inc/require.inc.php');
 
@@ -30,7 +30,7 @@ switch ($EX)
 /**
  * R�cup�ration de la mise en page
  */
-require ('View/main.view.php');
+require ('View/inc/main.view.php');
 
 /********* Fonctions de contr�le *********/
 
