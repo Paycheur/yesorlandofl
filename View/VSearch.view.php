@@ -6,7 +6,6 @@ class VSearch
 
 	public function __destruct() {return;}
 
-
 	public function homeSearch($_value)
 	{
 
@@ -245,7 +244,7 @@ class VSearch
 	<div class="content">
 		<div class="container page-white margin-bottom-2em" >
 			<div class="row-fluid" id="holer-content">
-				<?php include (__DIR__.'/components/form-visit-request.php')?>
+				<?php include (__DIR__.'/components/form-visit-request.php');?>
 				<article class="col-lg-7 padding-r-l-1em padding-4em" >
 					<div class="row-fluid">
 						<hgroup class="col-lg-7">
@@ -299,10 +298,7 @@ class VSearch
 
 						</div>
 					</div>
-
-
 					<div class="row-fluid ">
-
 						<section class="col-lg-3 padding-2em">
 							<h4 class="margin-top-zero  lh-100">ESSENTIALS</h4>
 							<ul class="no-bullets">
@@ -314,7 +310,6 @@ class VSearch
 								<li>Approx. Sq. Ft.8,018
 								<li>Exposure N, S &amp; W
 							</ul>
-
 						</section>
 
 						<section class="col-lg-3 padding-2em">
