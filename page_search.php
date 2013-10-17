@@ -3,7 +3,7 @@
 header ('Content-Type:text/html; charset=UTF-8');
 //define ('ICONE_PAGE', '../Img/bdd.png');
 //define ('CSS_PAGE', '../Css/index.css');
-define ('JS_PAGE', '/Assets/Js/search.req.js');
+define ('JS_PAGE', '/Assets/js/app/search.js');
 define ('CONTROLER', 'page_search.php');
 
 require ('Inc/require.inc.php');
@@ -45,6 +45,61 @@ function home()
     global $page;
 
     $tab = array();
+    if(isset($_POST['city']))
+    {
+	    if(isset($_POST['type']))
+			$type = urlencode($_POST['type']);
+		else 
+			$type = '';
+			
+		if(isset($_POST['city']))
+			$location = $_POST['city'];
+		else 
+			$location = '';
+			
+		if(isset($_POST['beds']))
+			$beds = $_POST['beds'];
+		else 
+			$beds = '';
+			
+		if(isset($_POST['bathroom']))
+			$bathroom = $_POST['bathroom'];
+		else 
+			$bathroom = '';
+			
+		if(isset($_POST['page']))
+			$p = $_POST['page'];
+		else 
+			$p = 1;
+		
+		$price = '';
+		$search = new MSearch();
+		$datas = $search->searchForm($type, $location, $beds, $bathroom, $p);
+
+		$nbResultMax = $search->countSearchForm($type, $location, $beds, $bathroom);
+	
+		if($p == 1 && $nbResultMax > 0)
+		{
+			if(isset($_SESSION['user']['id']) && !empty($_SESSION['user']['id']))
+			{
+				
+				$memberSearch = new BddMemberSearch();
+				$memberSearch->setBathroom($bathroom);
+				$memberSearch->setBed($beds);
+				$memberSearch->setCity($location);
+				$memberSearch->setIdMember($_SESSION['user']['id']);
+				$memberSearch->setPrice($price);
+				$memberSearch->setStyle($type);
+				$memberSearch->setDate(date('Y-m-d H:i:s', time()));
+				$memberSearch->setNbResults($nbResultMax);
+				$memberSearch->insert('REPLACE');
+			}
+		}
+		
+		$tab['nbResults'] = $nbResultMax;
+		$tab['results'] = $datas;
+	
+    }
     
     $page['title'] = 'Search Engine';
     $page['class'] = 'VSearch';
@@ -84,7 +139,7 @@ function searchLink()
 	$nbResult = $search->countSearchLink($style, $city, $id);
 	
 	$tab = array();
-	$tab['data'] = $datas;
+	$tab['results'] = $datas;
 	$tab['nbResult'] = $nbResult;
 	
 	if($id != '')
@@ -92,7 +147,7 @@ function searchLink()
 		if(count($datas) > 0)
 		{
 			
-			afficherProperty($tab['data']);
+			afficherProperty($tab['results']);
 			
 		}
 		else 
@@ -123,8 +178,8 @@ function searchAJAX() //JSON
 	else 
 		$type = '';
 		
-	if(isset($_GET['location']))
-		$location = $_GET['location'];
+	if(isset($_GET['city']))
+		$location = $_GET['city'];
 	else 
 		$location = '';
 		
@@ -214,10 +269,10 @@ function afficherProperty($data)
   	}
   	
   	$tab['gps'] = $tabGps[0];
-    $tab['data'] = $data[0];
+    $tab['results'] = $data[0];
     
     $page['title'] = 'View Property';
-    $page['class'] = 'VSearch';
+    $page['class'] = 'VProperty';
     $page['method'] = 'showProperty';
     $page['arg'] = $tab;
 }

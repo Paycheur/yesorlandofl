@@ -1,4 +1,4 @@
-<div id="myModal" class="modal fade"  role="dialog" >
+<div id="modalVisitRequest" class="modal fade"  role="dialog" >
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -6,33 +6,17 @@
 				<h3 id="myModalLabel">PICK UP A DATE AND TIME</h3>
 			</div>
 			<div class="modal-body padding-bottom-3em">
-				<form action="" class=" col-lg-12" role="form">
+				<form action="" id="formVisitRequest" class=" col-lg-12" role="form">
 					<div class="form-group row-fluid padding-2em">
 						<label class="col-lg-3 control-label">Date : <i class="icon-calendar-empty"></i></label>
 						<div class="col-9">
-							<input type="date" name="date" class="form-control">
+							<input type="date" name="visit_date" class="form-control" placeholder="e.g. : 2013-09-22">
 						</div>
 					</div>
 					<div class="form-group row-fluid padding-2em">
 						<label class="col-lg-3 control-label">Hour : <i class="icon-time"></i></label>
 						<div class="col-9">
-							<input type="time" name="time" class="form-control">
-						</div>
-					</div>
-					<div class="form-group row-fluid padding-2em">
-						<label class="col-lg-3 control-label" for="name">
-						Name <i class="icon-user"></i></label>
-						<div class="col-9">
-							<input type="text" placeholder="e.g.: John Doe" class="form-control" id="name" name="name"></input>
-						</div>
-					</div>
-					<div class="form-group row-fluid padding-2em">
-						<label class="col-lg-3 control-label" for="email">
-							E-mail
-							<i class="icon-envelope"></i>
-						</label>
-						<div class="col-9">
-							<input type="text" placeholder="e.g.: john@gmail.com" class="form-control" id="email" name="email"></input>
+							<input type="time" name="visit_hour" class="form-control">
 						</div>
 					</div>
 					<div class="txt-right  padding-2em">

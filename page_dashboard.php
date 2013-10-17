@@ -22,7 +22,7 @@ if(!isset($_SESSION['user']['id']) || empty($_SESSION['user']['id']))
 switch ($EX)
 {
   case 'home'   : home ($_SESSION['user']['id']);   break;
-  case 'logout'   : logout ();   break;
+
 
 }
 
@@ -66,11 +66,7 @@ function home($idUser)
     
 }
 
-function logout()
-{
-	unset($_SESSION['user']);
-	header('Location:login.php');
-}
+
 
 
 ?>

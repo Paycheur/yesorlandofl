@@ -2,6 +2,8 @@ Options +FollowSymlinks
 Options -Indexes
 RewriteEngine on
 
+DirectoryIndex page_index.php
+
 RewriteRule ^search/s_(.*)/c_(.*)/([0-9]{1,})$  /page_search.php?EX=searchLink&style=$1&city=$2&id=$3 [L]
 RewriteRule ^search/c_(.*)/([0-9]{1,})$  /page_search.php?EX=searchLink&city=$1&id=$2 [L]
 RewriteRule ^search/s_(.*)/([0-9]{1,})$  /page_search.php?EX=searchLink&style=$1&id=$2 [L]
@@ -13,8 +15,8 @@ RewriteRule ^property/([0-9]{1,})$  /page_search.php?EX=searchLink&id=$1 [L]
 RewriteRule ^search$  page_search.php [L]
 
 RewriteRule ^dashboard  /page_dashboard.php [L]
-RewriteRule ^logout  /page_dashboard.php?EX=logout [L]
+RewriteRule ^logout  /page_login.php?EX=logout [L]
 
 RewriteRule ^login  /page_login.php [L]
 
-RewriteRule ^index  /page_index.php [L]
+

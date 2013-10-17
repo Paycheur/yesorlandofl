@@ -12,19 +12,43 @@ class MSearch
 	public function searchForm($style, $city, $beds, $bathroom, $page)
 	{
 		$n = ($page-1)*6;
-		$where = array('actif' => 1);
-		$whereSpe = array();
+		$req = 'SELECT id,type,style,city,address,bed,bathroom,sqft,price,img,postal_code,state,actif,flag_actif FROM data'.
+				' WHERE actif = 1';
 		if($style != '')
-			$whereSpe[0] = array('style', array('LIKE', '%'.$style.'%'));
+				$req .= ' AND style LIKE \'%'.$style.'%\'';
 		if($beds != 0 && $beds != '')
-			$where['beds'] = $beds;
+			$req .= ' AND beds = \''.protegeChaine($beds).'\'';
 		if($bathroom != 0 && $bathroom != '')
-			$where['bathroom'] = $bathroom;
+			$req .= ' AND bathroom = \''.protegeChaine($bathroom).'\'';
 		if($city != '')
-			$whereSpe[1] = array('city', array('LIKE', '%'.$city.'%'));
+		{
+			if(is_array($city))
+			{
+				$req .=' AND (';
+				foreach($city as $c)
+				{
+					$req .= ' city LIKE \'%'.$c.'%\' OR ';
+				}
+				$req.='#end;';
+				$req = str_replace('OR #end;', '', $req);
+				$req.=')';
+				
+			}
+			else
+			{
+				$req .= ' AND city LIKE \'%'.$city.'%\'';
+			}
 			
-		$result = $this->dbData->select($where, $whereSpe, array(), array($n, '6'));
-        return $result;
+			
+		}
+		
+		$req .= ' LIMIT '.$n.', 6';
+
+		$tabRows =  array();
+		$res = $this->dbData->getConnexion()->query($req); //on récupère une connexion
+		if($res !== false)
+			$tabRows = $res->fetchAll(PDO::FETCH_ASSOC);
+        return $tabRows;
 	}
     
 	public function searchLink($style, $city, $id, $page)
@@ -61,6 +85,7 @@ class MSearch
 	public function countSearchLink($style, $city, $id)
 	{
 		$where = array('actif' => 1);
+		$whereSpe = array();
 		$whereSpe[0] = array('style', array('LIKE', '%'.$style.'%'));
 		if($style != '' && $city != '' && $id != '')
 		{
@@ -77,21 +102,43 @@ class MSearch
         return $result;
 	}
 	
-	public function countSearchForm($style, $location, $beds, $bathroom)
+	public function countSearchForm($style, $city, $beds, $bathroom)
 	{
-		$where = array('actif' => 1);
+		$req = 'SELECT COUNT(1) value FROM data'.
+				' WHERE actif = 1';
 		if($style != '')
-			$whereSpe[0] = array('style', array('LIKE', '%'.$style.'%'));
+				$req .= ' AND style LIKE \'%'.$style.'%\'';
 		if($beds != 0 && $beds != '')
-			$where['beds'] = $beds;
+			$req .= ' AND beds = \''.protegeChaine($beds).'\'';
 		if($bathroom != 0 && $bathroom != '')
-			$where['bathroom'] = $bathroom;
-		if($location != '')
-			$whereSpe[1] = array('city', array('LIKE', '%'.$location.'%'));
-			
-		$result = $this->dbData->selectFunction(array('COUNT', '1'), $where, $whereSpe);
+			$req .= ' AND bathroom = \''.protegeChaine($bathroom).'\'';
+		if($city != '')
+		{
 		
-        return $result;
+			if(is_array($city))
+			{
+				$req .=' AND (';
+				foreach($city as $c)
+				{
+					$req .= ' city LIKE \'%'.$c.'%\' OR ';
+				}
+				$req.='#end;';
+				$req = str_replace('OR #end;', '', $req);
+				$req.=')';
+				
+			}
+			else
+			{
+				$req .= ' AND city LIKE \'%'.$city.'%\'';
+			}
+			
+			
+		}
+		
+		$tabRows =  array();
+		$res = $this->dbData->getConnexion()->query($req);
+		$tabRows = $res->fetchAll(PDO::FETCH_ASSOC);
+		return $tabRows[0]['value'];
 	}
 	
 	

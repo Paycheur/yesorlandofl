@@ -297,6 +297,7 @@ class BddData extends CConnexion
 			}
 			$req .= $chLimit;
 		}
+
 		$tabRows =  array();
 		$res = $this->getConnexion()->query($req);
 		$tabRows = $res->fetchAll(PDO::FETCH_ASSOC);

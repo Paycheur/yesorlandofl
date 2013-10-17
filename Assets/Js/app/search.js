@@ -3,12 +3,16 @@
 		
 		var nbPage = 1;
 		var firstRequete = true;
-		$('#location').change(function() {
+		$('#areas').change(function() {
 			$('#formSearch').submit();
 			//Gestion de la soumission du formulaire
 			
 		});
 		
+		$('#submitSearch').on('click', function()
+		{
+			$('#formSearch').submit();
+		});
 		$('#formSearch').submit(function(e){ 
 		    e.preventDefault();
 		    var valeurs=$(this).serialize();
@@ -92,7 +96,7 @@
 					{
 						nbPage = Math.ceil(json.nbResults / 6);
 						
-						$('#nb_match').find('b').text(json.nbResults+'  Matching');
+						$('#matching').text(json.nbResults);
 						firstNum = 1;
 						lastNum = 5;
 						$('.liste_page').empty();
@@ -235,6 +239,7 @@
 			else
 				numPage = parseInt($(this).text());
 			
+			var valeurs=$('#formSearch').serialize();
 			recherche(valeurs, numPage);
 		});
 		
@@ -301,8 +306,8 @@
 						alert('Error');
 					else
 					{
-						$('#button_dislike').removeClass('hide');
-						$('#button_like').addClass('hide');
+						$('#button_dislike').parent().removeClass('hide');
+						$('#button_like').parent().addClass('hide');
 					}
 						
 				}
@@ -323,8 +328,8 @@
 						alert('Error');
 					else
 					{
-						$('#button_dislike').addClass('hide');
-						$('#button_like').removeClass('hide');
+						$('#button_dislike').parent().addClass('hide');
+						$('#button_like').parent().removeClass('hide');
 					}
 						
 				}
