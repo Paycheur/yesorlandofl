@@ -83,17 +83,18 @@ class VIndex
 	</div>
 </div><!-- container -->
 
-<div class="container">
-	<div class="row" id="holder">
-		<div class="col-lg-12 ">
-			<?php  require_once('components/section-residential.php'); ?>
-			<?php  require_once('components/section-commercial.php'); ?>
-			<?php  require_once('components/section-investment.php'); ?>
-			<?php  require_once('components/section-central-fl.php'); ?>
-			<?php  require_once('components/section-firm.php'); ?>
-		</div><!-- col-lg-12 -->
-	</div><!-- row -->
-	</div><!-- container -->
+<div class="bg-pure ">
+	<div class="container">
+		<div class="row" id="holder">
+			<div class="col-lg-12 ">
+				<?php   require_once('components/section-residential.php'); ?>
+				<?php   require_once('components/section-commercial.php'); ?>
+				<?php   require_once('components/section-investment.php'); ?>
+				<?php   require_once('components/section-central-fl.php'); ?>
+				<?php   require_once('components/section-firm.php'); ?>
+			</div><!-- col-lg-12 -->
+		</div><!-- row -->
+		</div><!-- container -->
 	</div><!-- pg-pure -->
 </div><!-- content -->
 
