@@ -16,6 +16,8 @@ class BddData extends CConnexion
 	private $State = '';
 	private $Actif = '';
 	private $FlagActif = '';
+	private $SaleOrLease = '';
+	private $Status;
 
 	/************** SETTERS *****************/
 
@@ -87,6 +89,16 @@ class BddData extends CConnexion
 	function setFlagActif($v)
 	{
 		$this->FlagActif = $v;
+	}
+	
+	function setSaleOrLease($v)
+	{
+		$this->SaleOrLease = $v;
+	}
+	
+	function setStatus($v)
+	{
+		$this->Status = $v;
 	}
 
 	/************** GETTERS *****************/
@@ -160,6 +172,16 @@ class BddData extends CConnexion
 	{
 		return $this->FlagActif;
 	}
+	
+	function getSaleOrLease()
+	{
+		return $this->SaleOrLease;
+	}
+	
+	function getStatus()
+	{
+		return $this->Status;
+	}
 
 	function __construct($valeurs = array())
 	{
@@ -201,11 +223,13 @@ class BddData extends CConnexion
 		$champsRequete['bathroom']		=	($this->Bathroom != '')		? '\''. protegeChaine($this->getBathroom()) .'\'' : 'DEFAULT';
 		$champsRequete['sqft']		=	($this->Sqft != '')		? '\''. protegeChaine($this->getSqft()) .'\'' : 'DEFAULT';
 		$champsRequete['price']		=	($this->Price != '')		? '\''. protegeChaine($this->getPrice()) .'\'' : 'DEFAULT';
+		$champsRequete['sale_or_lease']		=	($this->SaleOrLease != '')		? '\''. protegeChaine($this->getSaleOrLease()) .'\'' : 'DEFAULT';
 		$champsRequete['img']		=	($this->Img != '')		? '\''. protegeChaine($this->getImg()) .'\'' : 'DEFAULT';
 		$champsRequete['postal_code']		=	($this->PostalCode != '')		? '\''. protegeChaine($this->getPostalCode()) .'\'' : 'DEFAULT';
 		$champsRequete['state']		=	($this->State != '')		? '\''. protegeChaine($this->getState()) .'\'' : 'DEFAULT';
 		$champsRequete['actif']		=	($this->Actif != '')		? '\''. protegeChaine($this->getActif()) .'\'' : 'DEFAULT';
 		$champsRequete['flag_actif']		=	($this->FlagActif != '')		? '\''. protegeChaine($this->getFlagActif()) .'\'' : 'DEFAULT';
+		$champsRequete['status']		=	($this->Status != '')		? '\''. protegeChaine($this->getStatus()) .'\'' : 'DEFAULT';
 		return $champsRequete; 	}
 
 	function load($row)
@@ -224,12 +248,13 @@ class BddData extends CConnexion
 		$this->setState($row['state']);
 		$this->setActif($row['actif']);
 		$this->setFlagActif($row['flag_actif']);
-
+		$this->setSaleOrLease($row['sale_or_lease']);
+		$this->setStatus($row['status']);
 	}
 	function select($where = array(), $whereSpe=array(), $orderBy = array(), $limit = null)
 	{
 		// Clause SELECT
-		$req = 'SELECT id,type,style,city,address,bed,bathroom,sqft,price,img,postal_code,state,actif,flag_actif '.
+		$req = 'SELECT id,type,style,city,address,bed,bathroom,sqft,price,img,postal_code,state,actif,flag_actif, sale_or_lease, status '.
 				'FROM data  ';
 				
 		// Clause WHERE
