@@ -1,7 +1,7 @@
-    <?php 
+    <?php
     $arrayCityMost = array('Heathrow','Lake Mary','Longwood','Orlando','Sanford','Windermere');
     $arrayCityMore = array('Altamonte Springs','Apopka','Belle Isle','Casselberry','Celebration','Champions Gate','Chuluota','Clermont','Davenport','Debary','Deland','Deltona','Eatonville','Edgewood','Eustis','Fern Park','Ferndale','Geneva','Gotha','Howey In The Hills','Hudson','Kissimmee','Lake Helen','Maitland','Minneola','Montverde','Mount Dora','Mount Plymouth','Oakland','Ocoee','Orange City','Osteen','Oviedo','Poinciana','Reunion','Saint Cloud','Sorrento','Tavares','Titusville','Winter Garden','Winter Park','Winter Springs');?>
-    
+
     <form action="/search" method="POST" class="form-holder padding-r-l-1em padding-1em" id="formSearch">
       <div class="row">
         <div class="col-lg-2 border-right-gray-light">
@@ -29,14 +29,14 @@
             			{
             				$stringOption .= ' selected';
             			}
-            			
+
             		}
             	}
             	$stringOption .= '>'.$city.'</option>';
             	echo $stringOption;
-            	
+
             }?>
-            
+
             </optgroup>
             <optgroup label="More cities">
              <?php foreach($arrayCityMore as $city)
@@ -50,7 +50,7 @@
             			{
             				$stringOption .= ' selected';
             			}
-            			
+
             		}
             	}
             	$stringOption .= '>'.$city.'</option>';
@@ -61,8 +61,8 @@
         </div>
         <div class="col-lg-3 txt-center border-right-gray-light">
           <label for="rangeInput" class="display-block"><b>What is your price range :</b></label>
-          <input type="text" class="display-block form-control " value="" name="price" data-slider-min="0" data-slider-max="1000000" data-slider-step="5" data-slider-value="[0,1000000]" data-slider-tooltip="hide" id="price-range">
-          <label for="rangeInput" class="display-block padding-05em">From <b class="theMin">Any Price</b> to <b class="theMax">Any</b> :</label>
+          <input type="text" class="display-block form-control " value="" name="price" data-slider-min="0" data-slider-max="1000000"  data-slider-value="[0,1000000]" data-slider-tooltip="hide" id="price-range">
+          <label for="rangeInput" class="display-block padding-05em">From <b class="theMin">Any Price</b> to <b class="theMax">Any</b></label>
           <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-white active">
               <input type="radio" name="options" id="option1"> For Sale

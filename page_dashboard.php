@@ -15,13 +15,13 @@ $EX = isset($_REQUEST['EX']) ? $_REQUEST['EX'] : 'home';
 //Variables
 $page['error']='';
 $page['confirmation']='';
-if(!isset($_SESSION['user']['id']) || empty($_SESSION['user']['id']))
-	header('Location:login.php');
-	
+//if(!isset($_SESSION['user']['id']) || empty($_SESSION['user']['id']))
+ //header('Location:login.php');
+
 // Contr�leur
 switch ($EX)
 {
-  case 'home'   : home ($_SESSION['user']['id']);   break;
+  case 'home'   : home ();   break;
 
 
 }
@@ -29,41 +29,41 @@ switch ($EX)
 /**
  * R�cup�ration de la mise en page
  */
-require ('View/inc/main.view.php');
+require ('View/inc/main-dashboard.view.php');
 
 /********* Fonctions de contr�le *********/
 
 /**
  * Affiche le formulaire et le tableau
- * 
+ *
  * @return none
  */
 
 
-function home($idUser)
+function home()
 {
     global $page;
 
-    
+
     $tab = array();
-    
-    $member = new BddMember();
+
+    /*$member = new BddMember();
     $rows = $member->select(array('id' => $idUser));
     if(count($rows) > 0)
     {
-    	$member->load($rows[0]);
-    	$tab['member'] = $member;
+     $member->load($rows[0]);
+     $tab['member'] = $member;
     }
     else
     {
-    	header('Location:login.php');
-    }
-    
+     header('Location:login.php');
+    }*/
+
     $page['title'] = 'DashBoard';
     $page['class'] = 'VDashBoard';
     $page['method'] = 'homeDashboard';
     $page['arg'] = $tab;
-    
+
 }
 
 

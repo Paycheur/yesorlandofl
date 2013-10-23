@@ -16,81 +16,81 @@
 
 
   <article class="article">
-    <a href="property.php"  rel="tab" >
+    <a href="vision.php"  rel="tab" >
       <img src="http://lorempixel.com/640/640/fashion" alt="" class="padding-1em">
     </a>
     <h3 class="article-title">
-      <a href="property.php"  rel="tab">
+      <a href="vision.php"  rel="tab">
         Luxury Residential
       </a>
     </h3>
     <p>
       Say Yes To Orlando’s finest Luxury Communities and lets find out which one fits your lifestyle.
     </p>
-    <a href="property.php"  rel="tab" class="btn btn-primary  btn-more">Read more</a>
+    <a href="vision.php"  rel="tab" class="btn btn-primary  btn-more">Read more</a>
   </article>
 
 
   <article class="article">
-    <a href="property.php"  rel="tab" >
+    <a href="vision.php"  rel="tab" >
       <img src="http://lorempixel.com/640/480/nature" alt="" class="padding-1em">
     </a>
     <h3 class="article-title">
-      <a href="property.php"  rel="tab">
+      <a href="vision.php"  rel="tab">
         Golf Homes
       </a>
     </h3>
     <p>
       Florida is home to some of the finest Golf Front Paradise.
     </p>
-    <a href="property.php"  rel="tab" class="btn btn-primary  btn-more">Read more</a>
+    <a href="vision.php"  rel="tab" class="btn btn-primary  btn-more">Read more</a>
   </article>
 
 
   <article class="article">
-    <a href="property.php"  rel="tab" >
+    <a href="vision.php"  rel="tab" >
       <img src="http://lorempixel.com/640/480/sports" alt="" class="padding-1em">
     </a>
     <h3 class="article-title">
-      <a href="property.php"  rel="tab">
+      <a href="vision.php"  rel="tab">
         Equestrian
       </a>
     </h3>
     <p>
       Equestrian estates offer an impervious getaway or lifestyle that sharply contrasts the busy city ambiance.
     </p>
-    <a href="property.php"  rel="tab" class="btn btn-primary  btn-more">Read more</a>
+    <a href="vision.php"  rel="tab" class="btn btn-primary  btn-more">Read more</a>
   </article>
 
   <article class="article">
-    <a href="property.php"  rel="tab" >
+    <a href="vision.php"  rel="tab" >
       <img src="http://lorempixel.com/640/480/transport" alt="" class="padding-1em">
     </a>
     <h3 class="article-title">
-      <a href="property.php"  rel="tab">
+      <a href="vision.php"  rel="tab">
         Lake Front / Waterfront
       </a>
     </h3>
     <p>
       Central Florida is home to some of the finest Lakes, Beaches, and Riverfront properties in the country!
     </p>
-    <a href="property.php"  rel="tab" class="btn btn-primary  btn-more">Read more</a>
+    <a href="vision.php"  rel="tab" class="btn btn-primary  btn-more">Read more</a>
   </article>
 
 
   <article class="article">
-    <a href="property.php"  rel="tab" >
+    <a href="vision.php"  rel="tab" >
       <img src="http://lorempixel.com/640/640/animals" alt="" class="padding-1em">
     </a>
     <h3 class="article-title">
-      <a href="property.php"  rel="tab">
+      <a href="vision.php"  rel="tab">
         Vacant Land
       </a>
     </h3>
     <p>
       Looking for Land to build your dream home? Lets begin to search for the perfect parcel to call home.
     </p>
-    <a href="property.php"  rel="tab" class="btn btn-primary  btn-more">Read more</a>
+    <a href="vision.php"  rel="tab" class="btn btn-primary  btn-more">Read more</a>
   </article>
 
 
