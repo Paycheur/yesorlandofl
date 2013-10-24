@@ -47,7 +47,7 @@ class VSearch
 										<hgroup class="txt-center">
 											<h4 class="search-property-type"><span class="visuallyhidden">Property type :</span> <i class="icon-home"></i></h4>
 											<h3 class="search-property-title lh-100 margin-zero"><?=$d['address']?></h3>
-											<h4 class="lh-100"><?=$d['price']?></h4>
+											<h4 class="lh-100">$<?=str_replace('.00', '', $d['price'])?></h4>
 										</hgroup>
 										<a href="/property/<?=$d['id'] ?>" class="btn btn-primary">View details</a>
 										<ul class="list-inline padding-3em details">

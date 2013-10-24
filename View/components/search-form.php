@@ -61,14 +61,14 @@
         </div>
         <div class="col-lg-3 txt-center border-right-gray-light">
           <label for="rangeInput" class="display-block"><b>What is your price range :</b></label>
-          <input type="text" class="display-block form-control " value="" name="price" data-slider-min="0" data-slider-max="1000000" data-slider-step="5" data-slider-value="[0,1000000]" data-slider-tooltip="hide" id="price-range">
+          <input type="text" class="display-block form-control " value="<?=(isset($_REQUEST['price']) ? $_REQUEST['price'] : '') ?>" name="price" data-slider-min="0" data-slider-max="1000000" data-slider-step="1000" data-slider-value="[0,1000000]" data-slider-tooltip="hide" id="price-range">
           <label for="rangeInput" class="display-block padding-05em">From <b class="theMin">Any Price</b> to <b class="theMax">Any</b> :</label>
           <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-white active">
-              <input type="radio" name="options" id="option1"> For Sale
+              <input type="radio" name="option" id="option1" value="sale"> For Sale
             </label>
             <label class="btn btn-white">
-              <input type="radio" name="options" id="option2"> For Lease
+              <input type="radio" name="option" id="option2" value="lease"> For Lease
             </label>
           </div>
         </div>

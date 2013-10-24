@@ -9,7 +9,7 @@ class MSearch
     	$this->dbData = new BddData();
     }
     
-	public function searchForm($style, $city, $beds, $bathroom, $page)
+	public function searchForm($style, $city, $beds, $bathroom, $option, $price, $page)
 	{
 		$n = ($page-1)*6;
 		$req = 'SELECT id,type,style,city,address,bed,bathroom,sqft,price,img,postal_code,state,actif,flag_actif FROM data'.
@@ -41,6 +41,20 @@ class MSearch
 			
 			
 		}
+		if($price != '')
+		{
+			$explPrice = explode(',', $price);
+			if(count($explPrice) == 2)
+			{
+				$minPrice = $explPrice[0];
+				$maxPrice = $explPrice[1];
+				
+				$req .= ' AND price BETWEEN \''.protegeChaine($minPrice).'\' AND \''.protegeChaine($maxPrice).'\' ';
+			}
+		}
+		
+		if($option != '')
+			$req .= ' AND sale_or_lease = \''.protegeChaine($option).'\' ';
 		
 		$req .= ' LIMIT '.$n.', 6';
 
@@ -102,7 +116,7 @@ class MSearch
         return $result;
 	}
 	
-	public function countSearchForm($style, $city, $beds, $bathroom)
+	public function countSearchForm($style, $city, $beds, $bathroom, $option, $price)
 	{
 		$req = 'SELECT COUNT(1) value FROM data'.
 				' WHERE actif = 1';
@@ -135,6 +149,21 @@ class MSearch
 			
 		}
 		
+		if($price != '')
+		{
+			$explPrice = explode(',', $price);
+			if(count($explPrice) == 2)
+			{
+				$minPrice = $explPrice[0];
+				$maxPrice = $explPrice[1];
+				
+				$req .= ' AND price BETWEEN \''.protegeChaine($minPrice).'\' AND \''.protegeChaine($maxPrice).'\' ';
+			}
+		}
+		
+		if($option != '')
+			$req .= ' AND sale_or_lease = \''.protegeChaine($option).'\' ';
+			
 		$tabRows =  array();
 		$res = $this->dbData->getConnexion()->query($req);
 		$tabRows = $res->fetchAll(PDO::FETCH_ASSOC);
@@ -206,6 +235,111 @@ class MSearch
 			}
 		}
 		return $adresses;
+	}
+	
+	public function getAllDatasCsv($id_property, $type_property)
+	{
+		
+		if($type_property == 'commercial')
+			$fichier = 'property_commercial';
+		else if($type_property == 'rental')
+			$fichier = 'property_rental';
+		else if($type_property == 'residential')
+			$fichier = 'property_residential';
+		else if($type_property == 'vacant_land')
+			$fichier = 'property_vacant_land';
+			
+		if (file_exists(__DIR__.'/../Batch/data/'.$fichier.'.csv') != FALSE) 
+		{
+			
+		    $handle  = file_get_contents(__DIR__.'/../Batch/data/'.$fichier.'.csv') or exit;
+		    $handle_row = explode("\n", $handle);
+		    $first = true;
+		    $array_key = array();
+		    $array_donnees = array();
+		    foreach ($handle_row as $key => $val) 
+		    {
+		    	if($val == '') continue;
+		    	$row_array = array();
+		    	if($first == true)
+		       		$row_array = explode(',', str_replace('"', '', $val));
+		       	else
+		       		$row_array = explode('||,', str_replace('"', '', $val));
+
+		       
+	       		if($first == true)
+	        	{
+			        foreach ($row_array as $key2 => $val2) 
+			        {
+			        	
+			        	$array_key[$val2] = $key2;
+			        }
+			       
+	        	}
+	        	else
+	        	{
+	        		if(trim( str_replace('||', '', $row_array[0])) == $id_property)
+	        		{
+	        			var_dump($row_array);
+	        			exit;
+	        		}
+	        		else
+	        		{
+	        			continue;
+	        		}
+	        	}
+	        	
+	        	$first = false;
+		    }
+		}
+	        	
+//		        if($first == false)
+//		        {	
+//		        		
+//		        	$value_id = '';
+//		        	$value_city = '';
+//		        	if($fichier == 'property_commercial')
+//		        		$value_type='commercial';
+//		        	else if($fichier == 'property_rental')
+//		        		$value_type = 'rental';
+//		        	else if($fichier == 'property_residential')
+//		        		$value_type = 'residential';
+//		        	else if($fichier == 'property_vacant_land')
+//		        		$value_type = 'vacant_land';
+//		        		
+//		        	$value_style = '';
+//		        	$value_bed = '';
+//		        	$value_bathroom = '';
+//		        	$value_price = '';
+//		        	$value_sqft ='';
+//		        	$value_address = '';
+//		        	$value_img = '';
+//		        	$value_state = '';
+//		        	$value_postalCode = '';
+//		        	$value_sale_or_lease = '';
+//					$value_status = '';
+//
+//				     switch($fichier)
+//				     {
+//				     	case 'property_commercial':
+//				     		$value_id = trim( str_replace('||', '', $row_array[0])); //id
+//				     		$value_city = trim( str_replace('||', '', $row_array[$array_key[2302]])); //city
+//					   		$value_style = trim( str_replace('||', '', $row_array[$array_key[77]])); //property style
+//					   		$value_address = trim( str_replace('||', '', $row_array[$array_key[49]])); //address391
+//					   		if(trim( str_replace('||', '', $row_array[$array_key[2308]])) != '')
+//					   		{
+//					   			$value_price = trim( str_replace('||', '', $row_array[$array_key[2308]])); //lease rate
+//					   			$value_sale_or_lease = 'lease';
+//					   		}
+//					   		else
+//					   		{
+//					   			$value_price = str_replace(',', '', trim( str_replace('||', '', $row_array[$array_key[176]]))); //list price
+//					   			$value_sale_or_lease = 'sale';
+//					   		}
+//					   		$value_sqft = trim( str_replace('||', '', $row_array[$array_key[80]])) ;//lotsize sqft
+//					   		$value_state = trim( str_replace('||', '', $row_array[$array_key[2304]])); //state
+//					   		$value_postalCode = trim( str_replace('||', '', $row_array[$array_key[46]])) ;//postal code (zipcode)
+//					   		$value_status = trim( str_replace('||', '', $row_array[$array_key[178]])) ;//status
 	}
     
 }

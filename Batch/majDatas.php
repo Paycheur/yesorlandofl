@@ -265,6 +265,8 @@ function recupDonnees()
 				    {
 			        	$photos = $phrets->GetObject("Property", "Photo", $value_id, "*", 1);
 						foreach ($photos as $photo) {
+							if(!isset($photo['Location'])) continue;
+							
 							$value_img .= $photo['Location'].'|';
 						        
 						}

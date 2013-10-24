@@ -47,6 +47,16 @@ function home()
     $tab = array();
     if(isset($_POST['city']))
     {
+    	if(isset($_POST['option']))
+			$option = urlencode($_POST['option']);
+		else 
+			$option = 'sale';
+			
+		if(isset($_POST['price']))
+			$price = urldecode($_POST['price']);
+		else 
+			$price = '';
+		
 	    if(isset($_POST['type']))
 			$type = urlencode($_POST['type']);
 		else 
@@ -72,11 +82,11 @@ function home()
 		else 
 			$p = 1;
 		
-		$price = '';
-		$search = new MSearch();
-		$datas = $search->searchForm($type, $location, $beds, $bathroom, $p);
 
-		$nbResultMax = $search->countSearchForm($type, $location, $beds, $bathroom);
+		$search = new MSearch();
+		$datas = $search->searchForm($type, $location, $beds, $bathroom, $option, $price, $p);
+
+		$nbResultMax = $search->countSearchForm($type, $location, $beds, $bathroom, $option, $price);
 	
 		if($p == 1 && $nbResultMax > 0)
 		{
@@ -178,6 +188,16 @@ function searchAJAX() //JSON
 	else 
 		$type = '';
 		
+	if(isset($_GET['option']))
+		$option = urlencode($_GET['option']);
+	else 
+		$option = 'sale';
+		
+	if(isset($_GET['price']))
+		$price = urldecode($_GET['price']);
+	else 
+		$price = '';
+	
 	if(isset($_GET['city']))
 		$location = $_GET['city'];
 	else 
@@ -197,11 +217,10 @@ function searchAJAX() //JSON
 		$p = $_GET['page'];
 	else 
 		$p = '';
-	
-	$price = '';
+
 	$search = new MSearch();
-	$datas = $search->searchForm($type, $location, $beds, $bathroom, $p);
-	$nbResultMax = $search->countSearchForm($type, $location, $beds, $bathroom);
+	$datas = $search->searchForm($type, $location, $beds, $bathroom, $option, $price, $p);
+	$nbResultMax = $search->countSearchForm($type, $location, $beds, $bathroom, $option, $price);
 
 	if($p == 1 && $nbResultMax > 0)
 	{
@@ -268,6 +287,8 @@ function afficherProperty($data)
   		$tab['like'] = false;
   	}
   	
+//  	$allDatasCsv = $search->getAllDatasCsv($data[0]['id'], $data[0]['type']);
+//  	var_dump($allDatasCsv);
   	$tab['gps'] = $tabGps[0];
     $tab['results'] = $data[0];
     
