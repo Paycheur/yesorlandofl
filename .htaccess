@@ -20,6 +20,8 @@ RewriteRule ^logout  /page_login.php?EX=logout [L]
 RewriteRule ^login  /page_login.php [L]
 
 RewriteRule ^vision  /page_vision.php [L]
+RewriteRule ^test  /page_test.php [L]
+
 RewriteRule ^relocation  /page_relocation.php [L]
 RewriteRule ^careers  /page_careers.php [L]
 RewriteRule ^contact  /page_contact.php [L]
