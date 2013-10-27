@@ -1,7 +1,11 @@
-var searchOpt = {
-	init : function () {
+(function($) {
+	$(function() {
 			var nbPage = 1;
 			var firstRequete = true;
+			var firstNum = 1;
+			var lastNum = 5;
+			
+			var allPages = $('.page');
 			$('#areas').change(function() {
 				$('#formSearch').submit();
 				//Gestion de la soumission du formulaire
@@ -19,12 +23,12 @@ var searchOpt = {
 			    recherche(valeurs, 1);
 			});
 
-			function recherche(valeurs, page)
+			function recherche(valeurs, numPage)
 			{
 				$.ajax({
 		            url: '/page_search.php',
 		            type: 'GET',
-		            data : 'EX=searchAJAX&'+valeurs+'&page='+page,
+		            data : 'EX=searchAJAX&'+valeurs+'&page='+numPage,
 		            dataType: 'json',
 		            success: function(json) {
 
@@ -90,14 +94,14 @@ var searchOpt = {
 						});
 
 						$('#searchResult').html(html);
-
+						nbPage = Math.ceil(json.nbResults / 6);
+						
 						if(firstRequete)
 						{
-							nbPage = Math.ceil(json.nbResults / 6);
+							
 
 							$('#matching').text(json.nbResults);
-							firstNum = 1;
-							lastNum = 5;
+							
 							$('.liste_page').empty();
 							if(nbPage > 1)
 							{
@@ -123,29 +127,11 @@ var searchOpt = {
 								}
 								$('.liste_page').append($('<li />').append($('<a />').attr('class','page last').attr('href','#').html('&raquo;')));
 							}
+							
+							firstRequete = false;
 						}
-
-
-						firstRequete = false;
-						$('.page').unbind('click');
-						$('.page').on('click',function(e)
+						else
 						{
-							e.preventDefault();
-							$.each($('.page'), function()
-							{
-								$(this).parent().removeClass('active');
-							});
-
-							$(this).parent().addClass('active');
-
-							if($(this).hasClass('last'))
-								numPage = nbPage;
-							else if($(this).hasClass('first'))
-								numPage = 1;
-							else
-								numPage = parseInt($(this).text());
-
-							recherche(valeurs, numPage);
 
 							if(nbPage > 1)
 							{
@@ -153,7 +139,7 @@ var searchOpt = {
 								{
 									$('.liste_page').empty();
 									$('.liste_page').append($('<li />').append($('<a />').attr('class','page first').attr('href','#').html('&laquo;')));
-
+	
 									if(numPage + 2 > nbPage)
 									{
 										i = numPage - 3;
@@ -169,11 +155,11 @@ var searchOpt = {
 										i = numPage - 2;
 										limit = numPage + 2;
 									}
-
+	
 									for(; i <= limit; ++i)
 									{
 										if(i == nbPage + 1) break;
-
+	
 										if(i == numPage)
 											$('.liste_page').append($('<li />').attr('class','active').append($('<a />').attr('class','page').attr('href','#').text(i)));
 										else
@@ -182,7 +168,7 @@ var searchOpt = {
 									$('.liste_page').append($('<li />').append($('<a />').attr('class','page last').attr('href','#').html('&raquo;')));
 									lastNum = i - 1;
 									firstNum = i - 5;
-
+	
 								}
 								else if(numPage == nbPage || numPage == 1)
 								{
@@ -196,14 +182,14 @@ var searchOpt = {
 										i = numPage;
 										limit = numPage + 4;
 									}
-
+	
 									$('.liste_page').empty();
 									$('.liste_page').append($('<li />').append($('<a />').attr('class','page first').attr('href','#').html('&laquo;')));
-
+	
 									for(; i <= limit; ++i)
 									{
 										if(i == nbPage + 1) break;
-
+	
 										if(i == numPage)
 											$('.liste_page').append($('<li />').attr('class','active').append($('<a />').attr('class','page').attr('href','#').text(i)));
 										else
@@ -212,34 +198,67 @@ var searchOpt = {
 									$('.liste_page').append($('<li />').append($('<a />').attr('class','page last').attr('href','#').html('&raquo;')));
 									lastNum = i - 1;
 									firstNum = i - 5;
+	
 								}
 							}
+						}
+						
+						allPages = $('.page');
+						$('.page').unbind('click');
+						allPages.on('click',function(e)
+						{
+							e.preventDefault();
+							$.each(allPages, function()
+							{
+								$(this).parent().removeClass('active');
+							});
+
+							$(this).parent().addClass('active');
+
+							if($(this).hasClass('last'))
+								numPage = nbPage;
+							else if($(this).hasClass('first'))
+								numPage = 1;
+							else
+								numPage = parseInt($(this).text());
+
+							firstRequete = false;
+
+							var valeurs=$('#formSearch').serialize();
+							recherche(valeurs, numPage);
+
+							
 						});
+						
 					},
 					error: function(resultat, statut, erreur){
 		            }
 		        });
 			}
 
-			$('.page').on('click',function(e)
+			allPages.on('click',function(e)
 			{
 				e.preventDefault();
-				$.each($('.page'), function()
+				$.each(allPages, function()
 				{
 					$(this).parent().removeClass('active');
 				});
 
 				$(this).parent().addClass('active');
 
-				if($(this).text() == '�')
+				if($(this).hasClass('last'))
 					numPage = nbPage;
-				else if($(this).text() == '�')
+				else if($(this).hasClass('first'))
 					numPage = 1;
 				else
 					numPage = parseInt($(this).text());
 
+				firstRequete = false;
+
 				var valeurs=$('#formSearch').serialize();
 				recherche(valeurs, numPage);
+
+				
 			});
 
 			$('#formVisitRequest').on('submit', function(e)
@@ -334,12 +353,8 @@ var searchOpt = {
 					}
 				});
 			});
-	}
-};
-(function($) {
-	searchOpt.init();
+	});
+
+
 })(jQuery);
 
-$( document ).ajaxComplete(function() {
-	searchOpt.init();
-});

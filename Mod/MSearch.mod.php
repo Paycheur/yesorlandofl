@@ -469,7 +469,7 @@ class MSearch
 							$data['waterfront_feet'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3022]])), 'lib' => 'Waterfront Feet');
 							$data['taxes'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[1375]])), 'lib' => 'Taxes');
 							$data['hoa_comm_assn'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3074]])), 'lib' => 'HOA/Comm Assn');
-							$data['hoa_fee'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[1833]])), 'lib' => 'HOA Fee');
+							//$data['hoa_fee'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[1833]])), 'lib' => 'HOA Fee');
 							$data['hoa_payment_schedule'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[2901]])), 'lib' => 'HOA Payment Schedule');
 							$data['condo_maintenance_fee'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3189]])), 'lib' => 'Condo Maintenance Fee');
 							$data['condo_maint_fee_schedule'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3190]])), 'lib' => 'Condo Maint. Fee Schedule');
