@@ -23,9 +23,9 @@ if(isset($page['class']))
 <!-- Web font -->
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 <!-- Main CSS -->
-<link href="/Assets/css/style.css" rel="stylesheet">
+<link href="Assets/css/style.css" rel="stylesheet">
 
-
+<script src="Assets/js/vendor/modernizr-2.6.2.min.js"></script>
 <!--[if lt IE 9]>
     <script src="/Assets/js/vendor/respond.min.js"></script>
 <![endif]-->
@@ -59,11 +59,11 @@ require_once(dirname(__FILE__).'/../components/form-login.php'); ?>
     <div class="nav-collapse collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav fr-lg">
         <li><a rel="tab" href="<?php echo $burl ?>" title="home"><i class="icon-home"></i></a></li>
-        <li><a rel="tab" href="<?php echo $burl ?>vision">Vision</a></li>
+        <li><a rel="tab" href="/vision">Vision</a></li>
         <li class="dropdown">
           <a href="<?php echo $burl ?>" class="dropdown-toggle" data-toggle="dropdown">Property search <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a rel="tab" href="<?php echo $burl ?>residential.php">residential</a></li>
+            <li><a rel="tab" href="/residential.php">residential</a></li>
             <li><a rel="tab" href="<?php echo $burl ?>commercial.php">commercial</a></li>
             <li><a rel="tab" href="<?php echo $burl.$l_central_fl ?>">central florida</a></li>
           </ul>

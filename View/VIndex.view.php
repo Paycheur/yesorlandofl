@@ -16,49 +16,49 @@ class VIndex
 	<div id="ei-slider" class="ei-slider">
 		<ul class="ei-slider-large">
 			<li>
-				<img src="/Assets/img/slide-bg-golf.jpg"/>
+				<img src="Assets/img/slide-bg-golf.jpg"/>
 				<div class="ei-title">
 					<h2>Passionate</h2>
 					<h3>Seeker</h3>
 				</div>
 			</li>
 			<li>
-				<img src="/Assets/img/slide-bg-com.jpg"/>
+				<img src="Assets/img/slide-bg-com.jpg"/>
 				<div class="ei-title">
 					<h2>Passionate</h2>
 					<h3>Seeker</h3>
 				</div>
 			</li>
 			<li>
-				<img src="/Assets/img/slide-bg-health.jpg"/>
+				<img src="Assets/img/slide-bg-health.jpg"/>
 				<div class="ei-title">
 					<h2>Passionate</h2>
 					<h3>Seeker</h3>
 				</div>
 			</li>
 			<li>
-				<img src="/Assets/img/slide-bg-com.jpg"/>
+				<img src="Assets/img/slide-bg-com.jpg"/>
 				<div class="ei-title">
 					<h2>Passionate</h2>
 					<h3>Seeker</h3>
 				</div>
 			</li>
 			<li>
-				<img src="/Assets/img/slide-bg-com.jpg"/>
+				<img src="Assets/img/slide-bg-com.jpg"/>
 				<div class="ei-title">
 					<h2>Passionate</h2>
 					<h3>Seeker</h3>
 				</div>
 			</li>
 			<li>
-				<img src="/Assets/img/slide-bg-com.jpg"/>
+				<img src="Assets/img/slide-bg-com.jpg"/>
 				<div class="ei-title">
 					<h2>Passionate</h2>
 					<h3>Seeker</h3>
 				</div>
 			</li>
 			<li>
-				<img src="/Assets/img/slide-bg-com.jpg"/>
+				<img src="Assets/img/slide-bg-com.jpg"/>
 				<div class="ei-title">
 					<h2>Passionate</h2>
 					<h3>Seeker</h3>
@@ -67,13 +67,13 @@ class VIndex
 			</ul><!-- ei-slider-large -->
 			<ul class="ei-slider-thumbs">
 				<li class="ei-slider-element">Current</li>
-				<li><a href="#">Slide 6</a><img src="/Assets/img/thumbs/6.jpg" alt="thumb06" /></li>
-				<li><a href="#">Slide 1</a><img src="/Assets/img/thumbs/1.jpg" alt="thumb01" /></li>
-				<li><a href="#">Slide 2</a><img src="/Assets/img/thumbs/2.jpg" alt="thumb02" /></li>
-				<li><a href="#">Slide 6</a><img src="/Assets/img/thumbs/6.jpg" alt="thumb06" /></li>
-				<li><a href="#">Slide 1</a><img src="/Assets/img/thumbs/1.jpg" alt="thumb01" /></li>
-				<li><a href="#">Slide 2</a><img src="/Assets/img/thumbs/2.jpg" alt="thumb02" /></li>
-				<li><a href="#">Slide 2</a><img src="/Assets/img/thumbs/2.jpg" alt="thumb02" /></li>
+				<li><a href="#">Slide 6</a><img src="Assets/img/thumbs/6.jpg" alt="thumb06" /></li>
+				<li><a href="#">Slide 1</a><img src="Assets/img/thumbs/1.jpg" alt="thumb01" /></li>
+				<li><a href="#">Slide 2</a><img src="Assets/img/thumbs/2.jpg" alt="thumb02" /></li>
+				<li><a href="#">Slide 6</a><img src="Assets/img/thumbs/6.jpg" alt="thumb06" /></li>
+				<li><a href="#">Slide 1</a><img src="Assets/img/thumbs/1.jpg" alt="thumb01" /></li>
+				<li><a href="#">Slide 2</a><img src="Assets/img/thumbs/2.jpg" alt="thumb02" /></li>
+				<li><a href="#">Slide 2</a><img src="Assets/img/thumbs/2.jpg" alt="thumb02" /></li>
 			</ul><!-- ei-slider-thumbs -->
 	</div><!-- ei-slider -->
 	<!-- /.carousel -->
