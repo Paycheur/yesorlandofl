@@ -295,7 +295,7 @@ function recupDonnees()
 					$dbData->setStatus($value_status);
 					$dbData->insert('REPLACE');
 				    
-					var_dump($value_id.' : '.$value_status);
+					var_dump('['.$value_type.'] '.$value_id.' : '.$value_status);
 		        }
 		        else
 		        {
@@ -304,8 +304,7 @@ function recupDonnees()
 		    }
 		   
 	    }
-		
-	    exit;
+
 	}
 
 	return 'UPDATE DATA DONE';

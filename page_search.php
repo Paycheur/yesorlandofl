@@ -255,7 +255,33 @@ function afficherProperty($data)
     
     $search = new MSearch();
   	$tabGps = $search->getCoordGPS($data[0]['address'].', '.$data[0]['city'].', '.$data[0]['state'].' '.$data[0]['postal_code']);
-  	  
+  	
+  	$tab['proximity'] = array();
+  	
+  	if(count($tabGps) > 0 && isset($tabGps[0]['latitude']) && isset($tabGps[0]['longitude']))
+  	{
+  		 $food = file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='.$tabGps[0]['latitude'].','.$tabGps[0]['longitude'].'&types=restaurant&radius=500&sensor=false&key=AIzaSyCfUWMe6dpjGdY0-uflHdscZgUpH9m7yj8');
+  		 $food = json_decode($food, true);
+  		 if(isset($food['results']))
+  		 	$tab['proximity']['food'] = $food['results'];
+  		 	
+  		 $grocery_or_supermarket = file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='.$tabGps[0]['latitude'].','.$tabGps[0]['longitude'].'&types=grocery_or_supermarket&radius=500&sensor=false&key=AIzaSyCfUWMe6dpjGdY0-uflHdscZgUpH9m7yj8');
+  		 $grocery_or_supermarket = json_decode($grocery_or_supermarket, true);
+  		 if(isset($grocery_or_supermarket['results']))
+  		 	$tab['proximity']['grocery'] = $grocery_or_supermarket['results'];
+  		 
+  		 $health = file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='.$tabGps[0]['latitude'].','.$tabGps[0]['longitude'].'&types=health|spa&radius=500&sensor=false&key=AIzaSyCfUWMe6dpjGdY0-uflHdscZgUpH9m7yj8');
+  		 $health = json_decode($health, true);
+  		 if(isset($health['results']))
+  		 	$tab['proximity']['health'] = $health['results'];
+  		 	
+  		 $school = file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='.$tabGps[0]['latitude'].','.$tabGps[0]['longitude'].'&radius=500&types=school&sensor=false&key=AIzaSyCfUWMe6dpjGdY0-uflHdscZgUpH9m7yj8');
+  		 $school = json_decode($school, true);
+  		 if(isset($school['results']))
+  		 	$tab['proximity']['school'] = $school['results'];
+  	}
+  	
+ 
   	if(isset($_SESSION['user']['id']) && !empty($_SESSION['user']['id']))
   	{
 	  	$visitRequest = new BddVisitRequest();
@@ -287,10 +313,13 @@ function afficherProperty($data)
   		$tab['like'] = false;
   	}
   	
-//  	$allDatasCsv = $search->getAllDatasCsv($data[0]['id'], $data[0]['type']);
-//  	var_dump($allDatasCsv);
+  	$allDatasCsv = $search->getAllDatasCsv($data[0]['id'], $data[0]['type']);
+
+  	
   	$tab['gps'] = $tabGps[0];
     $tab['results'] = $data[0];
+    $tab['dataCsv'] = $allDatasCsv;
+    
     
     $page['title'] = 'View Property';
     $page['class'] = 'VProperty';
