@@ -2,7 +2,7 @@
     $arrayCityMost = array('Heathrow','Lake Mary','Longwood','Orlando','Sanford','Windermere');
     $arrayCityMore = array('Altamonte Springs','Apopka','Belle Isle','Casselberry','Celebration','Champions Gate','Chuluota','Clermont','Davenport','Debary','Deland','Deltona','Eatonville','Edgewood','Eustis','Fern Park','Ferndale','Geneva','Gotha','Howey In The Hills','Hudson','Kissimmee','Lake Helen','Maitland','Minneola','Montverde','Mount Dora','Mount Plymouth','Oakland','Ocoee','Orange City','Osteen','Oviedo','Poinciana','Reunion','Saint Cloud','Sorrento','Tavares','Titusville','Winter Garden','Winter Park','Winter Springs');?>
 
-    <form action="/search" method="POST" class="form-holder padding-r-l-1em padding-1em" id="formSearch">
+    <form action="/search" method="GET" class="form-holder padding-r-l-1em padding-1em" id="formSearch">
       <div class="row">
         <div class="col-lg-2 border-right-gray-light">
           <label for="property-type"><b>What Would you like to Buy ?</b></label>

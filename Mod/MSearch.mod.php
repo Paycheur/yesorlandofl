@@ -17,7 +17,7 @@ class MSearch
 		if($style != '')
 				$req .= ' AND style LIKE \'%'.$style.'%\'';
 		if($beds != 0 && $beds != '')
-			$req .= ' AND beds = \''.protegeChaine($beds).'\'';
+			$req .= ' AND bed = \''.protegeChaine($beds).'\'';
 		if($bathroom != 0 && $bathroom != '')
 			$req .= ' AND bathroom = \''.protegeChaine($bathroom).'\'';
 		if($city != '')
@@ -123,7 +123,7 @@ class MSearch
 		if($style != '')
 				$req .= ' AND style LIKE \'%'.$style.'%\'';
 		if($beds != 0 && $beds != '')
-			$req .= ' AND beds = \''.protegeChaine($beds).'\'';
+			$req .= ' AND bed = \''.protegeChaine($beds).'\'';
 		if($bathroom != 0 && $bathroom != '')
 			$req .= ' AND bathroom = \''.protegeChaine($bathroom).'\'';
 		if($city != '')
@@ -163,6 +163,7 @@ class MSearch
 		
 		if($option != '')
 			$req .= ' AND sale_or_lease = \''.protegeChaine($option).'\' ';
+		
 			
 		$tabRows =  array();
 		$res = $this->dbData->getConnexion()->query($req);

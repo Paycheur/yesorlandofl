@@ -25,6 +25,8 @@
 
 			function recherche(valeurs, numPage)
 			{
+
+				window.history.pushState(document.title,document.title, 'http://'+document.location.hostname+'/search?'+valeurs);
 				$.ajax({
 		            url: '/page_search.php',
 		            type: 'GET',
@@ -203,32 +205,7 @@
 							}
 						}
 						
-						allPages = $('.page');
-						$('.page').unbind('click');
-						allPages.on('click',function(e)
-						{
-							e.preventDefault();
-							$.each(allPages, function()
-							{
-								$(this).parent().removeClass('active');
-							});
-
-							$(this).parent().addClass('active');
-
-							if($(this).hasClass('last'))
-								numPage = nbPage;
-							else if($(this).hasClass('first'))
-								numPage = 1;
-							else
-								numPage = parseInt($(this).text());
-
-							firstRequete = false;
-
-							var valeurs=$('#formSearch').serialize();
-							recherche(valeurs, numPage);
-
-							
-						});
+						
 						
 					},
 					error: function(resultat, statut, erreur){
@@ -236,7 +213,7 @@
 		        });
 			}
 
-			allPages.on('click',function(e)
+			$('.pagination').on('click', '.page', function(e)
 			{
 				e.preventDefault();
 				$.each(allPages, function()

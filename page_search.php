@@ -45,40 +45,41 @@ function home()
     global $page;
 
     $tab = array();
-    if(isset($_POST['city']))
+    if(isset($_GET['city']))
     {
-    	if(isset($_POST['option']))
-			$option = urlencode($_POST['option']);
+    	
+    	if(isset($_GET['option']))
+			$option = urlencode($_GET['option']);
 		else 
 			$option = 'sale';
 			
-		if(isset($_POST['price']))
-			$price = urldecode($_POST['price']);
+		if(isset($_GET['price']))
+			$price = urldecode($_GET['price']);
 		else 
 			$price = '';
 		
-	    if(isset($_POST['type']))
-			$type = urlencode($_POST['type']);
+	    if(isset($_GET['type']))
+			$type = urlencode($_GET['type']);
 		else 
 			$type = '';
 			
-		if(isset($_POST['city']))
-			$location = $_POST['city'];
+		if(isset($_GET['city']))
+			$location = $_GET['city'];
 		else 
 			$location = '';
 			
-		if(isset($_POST['beds']))
-			$beds = $_POST['beds'];
+		if(isset($_GET['beds']))
+			$beds = $_GET['beds'];
 		else 
 			$beds = '';
 			
-		if(isset($_POST['bathroom']))
-			$bathroom = $_POST['bathroom'];
+		if(isset($_GET['bathroom']))
+			$bathroom = $_GET['bathroom'];
 		else 
 			$bathroom = '';
 			
-		if(isset($_POST['page']))
-			$p = $_POST['page'];
+		if(isset($_GET['page']))
+			$p = $_GET['page'];
 		else 
 			$p = 1;
 		
@@ -87,7 +88,7 @@ function home()
 		$datas = $search->searchForm($type, $location, $beds, $bathroom, $option, $price, $p);
 
 		$nbResultMax = $search->countSearchForm($type, $location, $beds, $bathroom, $option, $price);
-	
+
 		if($p == 1 && $nbResultMax > 0)
 		{
 			if(isset($_SESSION['user']['id']) && !empty($_SESSION['user']['id']))
