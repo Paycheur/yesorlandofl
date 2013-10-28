@@ -18,6 +18,6 @@ require (__DIR__.'/../Mod/Db/DbFavorite.mod.php');
 
 //lib
 require (__DIR__.'/../Lib/tools.lib.php');
-require (__DIR__.'/../Lib/Facebook/base_facebook.php');
-require (__DIR__.'/../Lib/Facebook/facebook.php');
+//require (__DIR__.'/../Lib/Facebook/base_facebook.php');
+//require (__DIR__.'/../Lib/Facebook/facebook.php');
 ?>
