@@ -23,9 +23,20 @@ if(isset($page['class']))
 <!-- Web font -->
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 <!-- Main CSS -->
-<link href="Assets/css/style.css" rel="stylesheet">
-
-<script src="Assets/js/vendor/modernizr-2.6.2.min.js"></script>
+<?php 
+if($_SERVER['SERVER_ADMIN'] == 'yo.lefevre@gmail.com') //le cas de Yoann
+{?>
+	<link href="/Assets/css/style.css" rel="stylesheet">
+	
+	<script src="/Assets/js/vendor/modernizr-2.6.2.min.js"></script>
+<?php 
+} else  //Shérif
+{?>
+	<link href="Assets/css/style.css" rel="stylesheet">
+	
+	<script src="Assets/js/vendor/modernizr-2.6.2.min.js"></script>
+<?php 
+}?>
 <!--[if lt IE 9]>
     <script src="/Assets/js/vendor/respond.min.js"></script>
 <![endif]-->

@@ -28,6 +28,8 @@ class VProperty
 		{
 			$allImg =array();
 		}
+		
+		setlocale(LC_MONETARY, 'en_US'); //prix format americain
 	?>
 	<div class="content">
 	<div class="container page-white margin-bottom-2em" >
@@ -71,7 +73,7 @@ class VProperty
 					<div class="col-lg-5">
 						<h3 class="price margin-top-zero  lh-100">
 										 <!-- Class salon le staut badge-inactive  badge-hold  -->
-							$21,000,000  <?=(isset($_value['results']['status']) && $_value['results']['status'] != '' ? '<span class="badge'.($_value['results']['status'] == 'Active' ? ' badge-active' : '').'"> '.$_value['results']['status'].' </span>' : '')?>
+							<?=money_format('%(#10n', $_value['results']['price'])?>  <?=(isset($_value['results']['status']) && $_value['results']['status'] != '' ? '<span class="badge'.($_value['results']['status'] == 'Active' ? ' badge-active' : '').'"> '.$_value['results']['status'].' </span>' : '')?>
 						</h3>
 						<ul class="no-bullets dotted">
 							<!-- <HOA Fee:> per <HOA Payment Schedule> is <HOA/Comm Assn>  -->
@@ -152,7 +154,7 @@ class VProperty
 
 				</div>
 				<!-- Begin list data for this property -->
-				<div>
+				<div style="clear:both"></div><div>
 				<ul>
 				<?php 
 				foreach($csv as $tab)
