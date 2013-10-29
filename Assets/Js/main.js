@@ -289,6 +289,7 @@ var loadItem = {
     stickyHeaders.init();
     navSlide.init();
     sectionWidth.init();
+    loadItem.init();
 
 })(jQuery);
 

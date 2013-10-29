@@ -16,18 +16,18 @@
 
 
   <article class="article">
-    <a href="vision.php"  rel="tab" >
+    <a href="test.php"  rel="tab" >
       <img src="http://lorempixel.com/640/640/fashion" alt="" class="padding-1em">
     </a>
     <h3 class="article-title">
-      <a href="vision.php"  rel="tab">
+      <a href="test.php"  rel="tab">
         Luxury Residential
       </a>
     </h3>
     <p>
       Say Yes To Orlando’s finest Luxury Communities and lets find out which one fits your lifestyle.
     </p>
-    <a href="vision.php"  rel="tab" class="btn btn-primary  btn-more">Read more</a>
+    <a href="test.php"  rel="tab" class="btn btn-primary  btn-more">Read more</a>
   </article>
 
 

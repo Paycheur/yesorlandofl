@@ -3,10 +3,10 @@ class VProperty
 {
 
 	public function __construct() {return;}
-		
+
 	public function __destruct() {return;}
-	
-	  
+
+
 	public function showProperty($_value)
 	{
 		/*
@@ -16,9 +16,9 @@ class VProperty
 		 * - health : $_value['proximity']['health']
 		 * - restaurant : $_value['proximity']['food']
 		 */
-		
+
 		$csv = $_value['dataCsv'];
-		
+
 
 		if(isset($_value['results']['img']))
 		{
@@ -31,15 +31,52 @@ class VProperty
 	?>
 	<div class="content">
 	<div class="container page-white margin-bottom-2em" >
-		<div class="row-fluid" id="holer-content">
+		<div class="row" id="holer-content">
+			<div id="property-carousel" class="carousel slide col-lg-12">
+			  <!-- Indicators -->
+			  <ol class="carousel-indicators">
+			       <?php
+			    	 	$first = true;
+			    	 	$i = 0;
+			    	 	foreach($allImg as $url){
+
+			    	 	?>
+
+
+
+			    	    <li data-target="#property-carousel" data-slide-to="<?=$i?>" class="<?=($first== true ? ' active' : '' )?>">
+			    	    	<img src="<?=$url ?>" alt="">
+			    	    </li>
+
+			    	   	<?php
+			    	   	$first = false;
+			    	   	$i++;
+			    	}?>
+
+			  </ol>
+			  <div class="carousel-inner " >
+			   <?php
+				 	$first = true;
+				 	foreach($allImg as $url)
+				 	{?>
+				    <div class="item<?=($first== true ? ' active' : '' )?> bg-cover" style="background-image:url(<?=$url ?>)" >
+				      <div class="container">
+				      	<h6 class="visuallyhidden">Property Image</h6>
+				      </div>
+				    </div>
+
+				   	<?php
+				   	$first = false;
+				}?>
+			  </div>
+			  <a class="left carousel-control" href="#property-carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+			  <a class="right carousel-control" href="#property-carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+			</div><!-- /.carousel -->
 		<?php require_once('components/form-visit-request.php'); ?>
 		<input type="hidden" value="<?=$_value['results']['id']?>" id="id_property" /> <!-- important ! -->
 			<article class="col-lg-7 padding-r-l-1em padding-4em" >
 				<div class="row-fluid">
 					<hgroup class="col-lg-7">
-						<h4 class="property-type">
-								<span class="visuallyhidden">Property type :</span> <i class="icon-home"></i>
-						</h4>
 						<h2 class="margin-zero lh-100"><?=(isset($_value['results']['address']) ? $_value['results']['address'] : '') ?></h2>
 							<h3 class="margin-zero lh-100"><small><?=(isset($_value['results']['address']) ? $_value['results']['address'] : '').' '.(isset($_value['results']['city']) ? ', '.$_value['results']['city'] : '').' '.(isset($_value['results']['state']) && isset($_value['results']['postal_code']) ? ', '.$_value['results']['state'].' '.$_value['results']['postal_code'] : '') ?></small>
 							<!-- <StreetNumber>  <StreetName>
@@ -59,7 +96,7 @@ class VProperty
 									<li class="hide"><a href="#" title="Dislike" id="button_dislike"><i class="icon-heart" style="color:#FF0989"></i></a></li>
 								<?php
 								}?>
-								
+
 								<li><a href="#" title="Facebook"><i class="icon-facebook"></i></a></li>
 								<li><a href="#" title="Twitter"><i class="icon-twitter"></i> </a></li>
 								<li><a href="javascript:window.print()" title="Print"><i class="icon-print"></i> </a></li>
@@ -79,38 +116,6 @@ class VProperty
 							<li>Monthly Taxes$5,895</li>
 							<li>10% down$2,150,000</li>
 						</ul>
-					</div>
-				</div>
-				<div class="row-fluid">
-					<div class="col-lg-12">
-
-						<div id="property-carousel" class="carousel slide">
-						  <!-- Indicators -->
-						  <ol class="carousel-indicators">
-						    <li data-target="#property-carousel" data-slide-to="0" class="active"></li>
-						    <li data-target="#property-carousel" data-slide-to="1"><img src="http://placehold.it/100x100/07432D/fff" alt=""></li>
-						    <li data-target="#property-carousel" data-slide-to="2"></li>
-
-						  </ol>
-						  <div class="carousel-inner " >
-						   <?php
-							 	$first = true;
-							 	foreach($allImg as $url)
-							 	{?>
-							    <div class="item<?=($first== true ? ' active' : '' )?>">
-							      <div class="container ">
-							      	<img src="<?=$url ?>" alt="">
-							      </div>
-							    </div>
-
-							   	<?php
-							   	$first = false;
-							 	}?>
-						  </div>
-						  <a class="left carousel-control" href="#property-carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-						  <a class="right carousel-control" href="#property-carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-						</div><!-- /.carousel -->
-
 					</div>
 				</div>
 
@@ -153,23 +158,23 @@ class VProperty
 				</div>
 				<!-- Begin list data for this property -->
 				<div>
-				<ul>
-				<?php 
+				<ul class="no-bullets">
+				<?php
 				foreach($csv as $tab)
 				{
 					if($tab['val'] != '')
 					{?>
 						<li><?='<b>'.$tab['lib'].' :</b> '.$tab['val'] ?></li>
-					<?php 
+					<?php
 					}
 				}?>
 				</ul>
 				</div>
 				<!-- end list data -->
-				
+
 			</article>
 			<aside class="col-lg-5 padding-r-l-2em padding-4em bg-gray-light property-sidebar" >
-				
+
 					<h3 class="price margin-top-zero  lh-100">
 						<?=(isset($_value['results']['style']) ? $_value['results']['style'] : '') ?>
 						<?php
@@ -216,57 +221,57 @@ class VProperty
 				  			{?>
 				  			<li><i class="icon-food"></i>  Restaurants (<?=count($_value['proximity']['food']) ?>)
 				  				<ul>
-				  					<?php 
+				  					<?php
 				  					foreach($_value['proximity']['food'] as $v)
 				  					{?>
 				  						<li><?=$v['name'] ?></li>
-				  					<?php 
+				  					<?php
 				  					}?>
 				  				</ul>
 				  			</li>
-				  			<?php 
+				  			<?php
 				  			}
 				  			if(isset($_value['proximity']['grocery']) && count($_value['proximity']['grocery'])  > 0)
 				  			{?>
 				  			<li><i class="icon-leaf"></i>  Grocery and Markets (<?=count($_value['proximity']['grocery']) ?>)
 				  				<ul>
-				  					<?php 
+				  					<?php
 				  					foreach($_value['proximity']['grocery'] as $v)
 				  					{?>
 				  						<li><?=$v['name'] ?></li>
-				  					<?php 
+				  					<?php
 				  					}?>
 				  				</ul>
 				  			</li>
-				  			<?php 
+				  			<?php
 				  			}
 				  			if(isset($_value['proximity']['health']) && count($_value['proximity']['health'])  > 0)
 				  			{?>
 				  			<li><i class="icon-stethoscope"></i>  Health clubs and spas (<?=count($_value['proximity']['health']) ?>)
 				  				<ul>
-				  					<?php 
+				  					<?php
 				  					foreach($_value['proximity']['health'] as $v)
 				  					{?>
 				  						<li><?=$v['name'] ?></li>
-				  					<?php 
+				  					<?php
 				  					}?>
 				  				</ul>
 				  			</li>
-				  			<?php 
+				  			<?php
 				  			}
 				  			if(isset($_value['proximity']['school']) && count($_value['proximity']['school'])  > 0)
 				  			{?>
 				  			<li><i class="icon-book"></i> Public School (<?=count($_value['proximity']['school']) ?>)
 				  				<ul>
-				  					<?php 
+				  					<?php
 				  					foreach($_value['proximity']['school'] as $v)
 				  					{?>
 				  						<li><?=$v['name'] ?></li>
-				  					<?php 
+				  					<?php
 				  					}?>
 				  				</ul>
 				  			</li>
-				  			<?php 
+				  			<?php
 				  			}?>
 
 				  		</ul>
@@ -295,7 +300,7 @@ class VProperty
 		</div>
 	</div>
 	<div class="bg-header">
-		<img src="img/flou.jpg" alt="">
+		<img src="http://localhost/yesorlandofl/Assets/img/flou.jpg" alt="">
 	</div>
 </div>
 	<?php

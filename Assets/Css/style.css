@@ -4305,6 +4305,7 @@ label {
     content: "\f104";
 }*/
 .bg-cover {
+  background-color: #202020;
   background-position: center center;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -4385,6 +4386,7 @@ label {
   top: -10px;
   z-index: 99;
   max-width: 1090px !important;
+  list-style-type: none;
 }
 .ei-slider-thumbs li {
   position: relative;
@@ -4875,6 +4877,32 @@ input[type="range"]::-webkit-slider-thumb {
   -ms-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
+}
+.carousel .item {
+  height: 400px;
+}
+.carousel-indicators {
+  width: 90%;
+  left: auto;
+  right: 10%;
+}
+.carousel-indicators li {
+  display: inline;
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 1px;
+  text-indent: 0px;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.carousel-indicators .active {
+  width: 100px;
+  height: 100px;
+  background-color: none;
+  background-color: transparent;
+  border: 0;
 }
 .badge-active {
   background-color: #5cb85c;

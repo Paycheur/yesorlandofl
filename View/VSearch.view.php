@@ -9,17 +9,17 @@ class VSearch
 
 	public function homeSearch($_value)
 	{
-		
+
 		?>
 		<div class="content" id="holer-content">
 
 			<div class="container">
-		
-				
+
+
 				<?php require_once('components/search-form.php') ?>
-		
-		
-				
+
+
+
 			</div>
 
 			<div class="container">
@@ -69,7 +69,7 @@ class VSearch
 					}?>
 				</div>
 			</div>
-			<?php 
+			<?php
 			if(isset($_value['nbResults']) && $_value['nbResults'] > 6)
 			{?>
 			<div class="container">
@@ -84,7 +84,7 @@ class VSearch
 							{
 								echo '<li><a class="page first" href="#">&laquo;</a></li>';
 								echo '<li class="active"><a class="page" href="#">1</a></li>';
-							
+
 								for($i = 2; $i < 6; $i++)
 								{
 									echo '<li><a class="page" href="#">'.$i.'</a></li>';
@@ -107,17 +107,17 @@ class VSearch
 					</div>
 				</div>
 			</div>
-			<?php 
+			<?php
 			}?>
 			<div class="bg-header">
-				<img src="/assets/img/flou.jpg" alt="">
+				<img src="http://localhost/yesorlandofl/Assets/img/flou.jpg" alt="">
 			</div>
 		</div>
 
 	   <?php
 	}
 
-	
+
 
 }
 

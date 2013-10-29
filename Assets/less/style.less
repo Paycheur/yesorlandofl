@@ -151,6 +151,7 @@ label{
 
 // bg
 .bg-cover {
+  background-color: @brand-primary;
 	background-position: center center;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
@@ -617,6 +618,33 @@ input[type="range"]::-webkit-slider-thumb {
     }
 // =============================================
 // Property
+
+.carousel .item {
+height: 400px;
+}
+.carousel-indicators {
+  width: 90%;
+  left: auto;
+  right: 10%;
+}
+.carousel-indicators li {
+  display: inline;
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin: 1px;
+  text-indent: 0px;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.carousel-indicators .active  {
+  width: 100px;
+  height: 100px;
+  background-color: none;
+  background-color: transparent;
+  border: 0;
+}
 
 .badge-active {
   background-color: @brand-success;
