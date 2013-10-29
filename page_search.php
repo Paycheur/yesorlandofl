@@ -3,7 +3,10 @@
 header ('Content-Type:text/html; charset=UTF-8');
 //define ('ICONE_PAGE', '../Img/bdd.png');
 //define ('CSS_PAGE', '../Css/index.css');
-define ('JS_PAGE', 'Assets/js/app/search.js');
+if($_SERVER['SERVER_ADMIN'] == 'yo.lefevre@gmail.com')
+	define ('JS_PAGE', '/Assets/js/app/search.js');
+else
+	define ('JS_PAGE', 'Assets/js/app/search.js');
 define ('CONTROLER', 'page_search.php');
 
 require ('Inc/require.inc.php');
@@ -45,9 +48,7 @@ function home()
     global $page;
 
     $tab = array();
-    if(isset($_GET['city']))
-    {
-    	
+
     	if(isset($_GET['option']))
 			$option = urlencode($_GET['option']);
 		else 
@@ -109,8 +110,6 @@ function home()
 
 		$tab['nbResults'] = $nbResultMax;
 		$tab['results'] = $datas;
-
-    }
 
     $page['title'] = 'Search Engine';
     $page['class'] = 'VSearch';
@@ -242,7 +241,13 @@ function searchAJAX() //JSON
 	}
 	$tab = array();
 	$tab['nbResults'] = $nbResultMax;
-	$tab['results'] = $datas;
+	$datas2 = $datas;
+	foreach($datas as $k => $t)
+	{
+		$url = format_url($t['style'].'-'.$t['address']);
+		$datas2[$k]['url'] = $url;
+	}
+	$tab['results'] = $datas2;
 
     echo json_encode($tab);
 

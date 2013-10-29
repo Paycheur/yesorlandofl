@@ -21,12 +21,12 @@
 			    var valeurs=$(this).serialize();
 			    firstRequete = true;
 			    recherche(valeurs, 1);
+			   
 			});
 
 			function recherche(valeurs, numPage)
 			{
-
-				window.history.pushState(document.title,document.title, 'http://'+document.location.hostname+'/search?'+valeurs);
+				window.history.pushState(document.title,document.title, 'http://'+document.location.hostname+'/search?'+valeurs+'&page='+numPage+'#searchResult');
 				$.ajax({
 		            url: '/page_search.php',
 		            type: 'GET',
@@ -84,7 +84,7 @@
 											'<h3 class="search-property-title lh-100 margin-zero">'+address+'</h3>'+
 											'<h4 class="lh-100">'+price+'</h4>'+
 										'</hgroup>'+
-										'<a href="/property/'+encodeURIComponent(id)+'" class="btn btn-primary">View details</a>'+
+										'<a href="/property/'+v.url+'/'+encodeURIComponent(id)+'" class="btn btn-primary">View details</a>'+
 										'<ul class="list-inline padding-3em details">'+
 											'<li class="text-left"><strong class="display-block number">'+bed+'</strong> BEDS'+
 											'<li class="text-left"><strong class="display-block number">'+bathroom+'</strong> BATHS'+
@@ -98,36 +98,37 @@
 						$('#searchResult').html(html);
 						nbPage = Math.ceil(json.nbResults / 6);
 						
-						if(firstRequete)
+						if(numPage == 1)
 						{
 							
-
+							
 							$('#matching').text(json.nbResults);
 							
 							$('.liste_page').empty();
 							if(nbPage > 1)
 							{
+								
 								if(nbPage > 5)
 								{
-									$('.liste_page').append($('<li />').append($('<a />').attr('class','page first').attr('href','#').html('&laquo;')));
-									$('.liste_page').append($('<li />').attr('class','active').append($('<a />').attr('class','page').attr('href','#').text(1)));
+									$('.liste_page').append($('<li />').append($('<a />').attr('class','page first').attr('href','/search?'+valeurs+'&page=1').html('&laquo;')));
+									$('.liste_page').append($('<li />').attr('class','active').append($('<a />').attr('class','page').attr('href','/search?'+valeurs+'&page=1').text(1)));
 
 									for(i = 2; i < 6; ++i)
 									{
-											$('.liste_page').append($('<li />').append($('<a />').attr('class','page').attr('href','#').text(i)));
+											$('.liste_page').append($('<li />').append($('<a />').attr('class','page').attr('href','/search?'+valeurs+'&page='+i).text(i)));
 									}
 								}
 								else
 								{
-									$('.liste_page').append($('<li />').append($('<a />').attr('class','page').attr('href','#').html('&laquo;')));
-									$('.liste_page').append($('<li />').attr('class','active').append($('<a />').attr('class','page').attr('href','#').text(1)));
+									$('.liste_page').append($('<li />').append($('<a />').attr('class','page').attr('href','/search?'+valeurs+'&page=1').html('&laquo;')));
+									$('.liste_page').append($('<li />').attr('class','active').append($('<a />').attr('class','page').attr('href','/search?'+valeurs+'&page=1').text(1)));
 
 									for(i = 2; i != nbPage + 1; ++i)
 									{
-											$('.liste_page').append($('<li />').append($('<a />').attr('class','page').attr('href','#').text(i)));
+											$('.liste_page').append($('<li />').append($('<a />').attr('class','page').attr('href','/search?'+valeurs+'&page='+i).text(i)));
 									}
 								}
-								$('.liste_page').append($('<li />').append($('<a />').attr('class','page last').attr('href','#').html('&raquo;')));
+								$('.liste_page').append($('<li />').append($('<a />').attr('class','page last').attr('href','/search?'+valeurs+'&page='+nbPage).html('&raquo;')));
 							}
 							
 							firstRequete = false;
@@ -137,10 +138,39 @@
 
 							if(nbPage > 1)
 							{
-								if((numPage == lastNum && numPage != nbPage) || (numPage == firstNum && numPage != 1))
+								if(numPage == nbPage || numPage == 1)
+								{
+									if(numPage == nbPage)
+									{
+										limit = numPage;
+										(numPage < 5 ? i = 1 : i = numPage - 4)
+									}
+									else if(numPage == 1)
+									{
+										i = numPage;
+										limit = numPage + 4;
+									}
+	
+									$('.liste_page').empty();
+									$('.liste_page').append($('<li />').append($('<a />').attr('class','page first').attr('href','/search?'+valeurs+'&page=1').html('&laquo;')));
+	
+									for(; i <= limit; ++i)
+									{
+										if(i == nbPage + 1) break;
+	
+										if(i == numPage)
+											$('.liste_page').append($('<li />').attr('class','active').append($('<a />').attr('class','page').attr('href','/search?'+valeurs+'&page='+i).text(i)));
+										else
+											$('.liste_page').append($('<li />').append($('<a />').attr('class','page').attr('href','/search?'+valeurs+'&page='+i).text(i)));
+									}
+									$('.liste_page').append($('<li />').append($('<a />').attr('class','page last').attr('href','/search?'+valeurs+'&page='+nbPage).html('&raquo;')));
+									lastNum = i - 1;
+									firstNum = i - 5;
+								}
+								else
 								{
 									$('.liste_page').empty();
-									$('.liste_page').append($('<li />').append($('<a />').attr('class','page first').attr('href','#').html('&laquo;')));
+									$('.liste_page').append($('<li />').append($('<a />').attr('class','page first').attr('href','/search?'+valeurs+'&page=1').html('&laquo;')));
 	
 									if(numPage + 2 > nbPage)
 									{
@@ -163,41 +193,11 @@
 										if(i == nbPage + 1) break;
 	
 										if(i == numPage)
-											$('.liste_page').append($('<li />').attr('class','active').append($('<a />').attr('class','page').attr('href','#').text(i)));
+											$('.liste_page').append($('<li />').attr('class','active').append($('<a />').attr('class','page').attr('href','/search?'+valeurs+'&page='+i).text(i)));
 										else
-											$('.liste_page').append($('<li />').append($('<a />').attr('class','page').attr('href','#').text(i)));
+											$('.liste_page').append($('<li />').append($('<a />').attr('class','page').attr('href','/search?'+valeurs+'&page='+i).text(i)));
 									}
-									$('.liste_page').append($('<li />').append($('<a />').attr('class','page last').attr('href','#').html('&raquo;')));
-									lastNum = i - 1;
-									firstNum = i - 5;
-	
-								}
-								else if(numPage == nbPage || numPage == 1)
-								{
-									if(numPage == nbPage)
-									{
-										limit = numPage;
-										(numPage < 5 ? i = 1 : i = numPage - 4)
-									}
-									else if(numPage == 1)
-									{
-										i = numPage;
-										limit = numPage + 4;
-									}
-	
-									$('.liste_page').empty();
-									$('.liste_page').append($('<li />').append($('<a />').attr('class','page first').attr('href','#').html('&laquo;')));
-	
-									for(; i <= limit; ++i)
-									{
-										if(i == nbPage + 1) break;
-	
-										if(i == numPage)
-											$('.liste_page').append($('<li />').attr('class','active').append($('<a />').attr('class','page').attr('href','#').text(i)));
-										else
-											$('.liste_page').append($('<li />').append($('<a />').attr('class','page').attr('href','#').text(i)));
-									}
-									$('.liste_page').append($('<li />').append($('<a />').attr('class','page last').attr('href','#').html('&raquo;')));
+									$('.liste_page').append($('<li />').append($('<a />').attr('class','page last').attr('href','/search?'+valeurs+'&page='+nbPage).html('&raquo;')));
 									lastNum = i - 1;
 									firstNum = i - 5;
 	
@@ -232,9 +232,12 @@
 
 				firstRequete = false;
 
+				//mettre a jours lastNum et firstNum en fonction des num affichés en bas
+				
 				var valeurs=$('#formSearch').serialize();
 				recherche(valeurs, numPage);
-
+				
+				 window.location.hash = "#searchResult";
 				
 			});
 

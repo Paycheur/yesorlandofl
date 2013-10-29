@@ -1,4 +1,5 @@
 </div>
+
 <!-- FOOTER -->
 <footer class="bg-white">
 	<div class="container">
@@ -79,37 +80,58 @@
 	</div>
 </footer>
 
-
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
-<script>window.jQuery || document.write('<script src="http://localhost/yesorlandofl/Assets/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-<script src="http://localhost/yesorlandofl/Assets/js/min/bootstrap.min.js"></script>
-<!-- <script src="http://localhost/yesorlandofl/Assets/js/min/typeahead.min.js"></script>
--->
-<script src="http://localhost/yesorlandofl/Assets/js/min/bootstrap-select.min.js"></script>
-<script src="http://localhost/yesorlandofl/Assets/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
-<script src="http://localhost/yesorlandofl/Assets/js/jquery.eislideshow.js"></script>
-<script src="http://localhost/yesorlandofl/Assets/js/jquery.easing.1.3.js"></script>
-<!-- price range -->
-<script src="http://localhost/yesorlandofl/Assets/js/bootstrap-slider.js"></script>
-<script src="http://localhost/yesorlandofl/Assets/js/main.js"></script>
-<script src="http://localhost/yesorlandofl/Assets/js/app/login.js"></script>
+<?php 
+if($_SERVER['SERVER_ADMIN'] == 'yo.lefevre@gmail.com') //le cas de Yoann
+{?>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	
+	<script>window.jQuery || document.write('<script src="/Assets/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+	<script src="/Assets/js/min/bootstrap.min.js"></script>
+	<!-- <script src="/Assets/js/min/typeahead.min.js"></script>
+	-->
+	<script src="/Assets/js/min/bootstrap-select.min.js"></script>
+	<script type="text/javascript" src="/Assets/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="/Assets/js/jquery.eislideshow.js"></script>
+	<script type="text/javascript" src="/Assets/js/jquery.easing.1.3.js"></script>
+	<!-- price range -->
+	<script type="text/javascript" src="/Assets/js/bootstrap-slider.js"></script>
+	<script src="/Assets/js/main.js"></script>
+	<script src="/Assets/js/app/login.js"></script>
 
 <?php
+}
+else //le cas de Shérif
+{
+	?>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	
+	<script>window.jQuery || document.write('<script src="Assets/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+	<script src="Assets/js/min/bootstrap.min.js"></script>
+	<!-- <script src="Assets/js/min/typeahead.min.js"></script>
+	-->
+	<script src="Assets/js/min/bootstrap-select.min.js"></script>
+	<script type="text/javascript" src="Assets/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="Assets/js/jquery.eislideshow.js"></script>
+	<script type="text/javascript" src="Assets/js/jquery.easing.1.3.js"></script>
+	<!-- price range -->
+	<script type="text/javascript" src="Assets/js/bootstrap-slider.js"></script>
+	<script src="Assets/js/main.js"></script>
+	<script src="Assets/js/app/login.js"></script>
+	<?php
+}
 if(defined('JS_PAGE')) {
 	if(is_array(JS_PAGE))
 	{
 		foreach(JS_PAGE as $js)
 		{
 		?>
-			<script src="<?=$js?>"></script>
+			<script type="text/javascript" src="<?=$js?>"></script>
 		<?php
 		}
 	}
 	else
 	{?>
-		<script src="<?=JS_PAGE?>"></script>
+		<script type="text/javascript" src="<?=JS_PAGE?>"></script>
 <?php
 	}
 }?>

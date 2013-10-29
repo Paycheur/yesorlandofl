@@ -1,35 +1,30 @@
-RewriteEngine on
-#Domaine 1
-RewriteCond %{HTTP_HOST} ^localhost$/
-RewriteRule ^(.*)$ /$1 [L]
-
 Options +FollowSymlinks
 Options -Indexes
-# RewriteEngine on
+RewriteEngine on
 
 DirectoryIndex page_index.php
 
-RewriteRule ^search/s_(.*)/c_(.*)/([0-9]{1,})$  /yesorlandofl/page_search.php?EX=searchLink&style=$1&city=$2&id=$3 [L]
-RewriteRule ^search/c_(.*)/([0-9]{1,})$  /yesorlandofl/page_search.php?EX=searchLink&city=$1&id=$2 [L]
-RewriteRule ^search/s_(.*)/([0-9]{1,})$  /yesorlandofl/page_search.php?EX=searchLink&style=$1&id=$2 [L]
-RewriteRule ^search/s_(.*)/c_(.*)/p_(.*)$  /yesorlandofl/page_search.php?EX=searchLink&style=$1&city=$2&page=$3 [L]
-RewriteRule ^search/s_(.*)/c_(.*)$  /yesorlandofl/page_search.php?EX=searchLink&style=$1&city=$2 [L]
-RewriteRule ^search/s_(.*)$  /yesorlandofl/page_search.php?EX=searchLink&style=$1 [L]
-RewriteRule ^search/c_(.*)$  /yesorlandofl/page_search.php?EX=searchLink&city=$1 [L]
-RewriteRule ^property/([0-9]{1,})$  /yesorlandofl/page_search.php?EX=searchLink&id=$1 [L]
+RewriteRule ^search/s_(.*)/c_(.*)/([0-9]{1,})$  page_search.php?EX=searchLink&style=$1&city=$2&id=$3 [L]
+RewriteRule ^search/c_(.*)/([0-9]{1,})$  page_search.php?EX=searchLink&city=$1&id=$2 [L]
+RewriteRule ^search/s_(.*)/([0-9]{1,})$  page_search.php?EX=searchLink&style=$1&id=$2 [L]
+RewriteRule ^search/s_(.*)/c_(.*)/p_(.*)$  page_search.php?EX=searchLink&style=$1&city=$2&page=$3 [L]
+RewriteRule ^search/s_(.*)/c_(.*)$  page_search.php?EX=searchLink&style=$1&city=$2 [L]
+RewriteRule ^search/s_(.*)$  page_search.php?EX=searchLink&style=$1 [L]
+RewriteRule ^search/c_(.*)$  page_search.php?EX=searchLink&city=$1 [L]
+RewriteRule ^property/.*/([0-9]{1,})$  page_search.php?EX=searchLink&id=$1 [L]
 RewriteRule ^search$  page_search.php [L]
 
-RewriteRule ^dashboard  /yesorlandofl/page_dashboard.php [L]
-RewriteRule ^logout  /yesorlandofl/page_login.php?EX=logout [L]
+RewriteRule ^dashboard  page_dashboard.php [L]
+RewriteRule ^logout  page_login.php?EX=logout [L]
 
-RewriteRule ^login  /yesorlandofl/page_login.php [L]
+RewriteRule ^login  page_login.php [L]
 
-RewriteRule ^vision  /yesorlandofl/page_vision.php [L]
-RewriteRule ^test  /yesorlandofl/page_test.php [L]
+RewriteRule ^vision  page_vision.php [L]
+RewriteRule ^test  page_test.php [L]
 
-RewriteRule ^relocation  /yesorlandofl/page_relocation.php [L]
-RewriteRule ^careers  /yesorlandofl/page_careers.php [L]
-RewriteRule ^contact  /yesorlandofl/page_contact.php [L]
+RewriteRule ^relocation  page_relocation.php [L]
+RewriteRule ^careers  page_careers.php [L]
+RewriteRule ^contact  page_contact.php [L]
 
 
 
