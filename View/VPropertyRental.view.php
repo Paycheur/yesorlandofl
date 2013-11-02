@@ -1,5 +1,5 @@
 <?php
-class VProperty
+class VPropertyRental
 {
 	public function __construct() {return;}
 	public function __destruct() {return;}

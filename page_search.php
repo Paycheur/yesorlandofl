@@ -336,9 +336,26 @@ function afficherProperty($data)
     $tab['results'] = $data[0];
     $tab['dataCsv'] = $allDatasCsv;
 
-
-    $page['title'] = 'View Property';
-    $page['class'] = 'VProperty';
+	if($data[0]['type'] == 'residential')
+	{
+	    $page['title'] = 'Residential - '.$data[0]['address'].', '.$data[0]['city'].', '.$data[0]['state'].' '.$data[0]['postal_code']; 
+	    $page['class'] = 'VPropertyResidential';
+	}
+	else if($data[0]['type'] == 'commercial')
+	{
+	    $page['title'] = 'Commercial - '.$data[0]['address'].', '.$data[0]['city'].', '.$data[0]['state'].' '.$data[0]['postal_code']; 
+	    $page['class'] = 'VPropertyCommercial';
+	}
+	else if($data[0]['type'] == 'rental')
+	{
+	    $page['title'] = 'Rental - '.$data[0]['address'].', '.$data[0]['city'].', '.$data[0]['state'].' '.$data[0]['postal_code']; 
+	    $page['class'] = 'VPropertyRental';
+	}
+	else if($data[0]['type'] == 'vacant_land')
+	{
+	    $page['title'] = 'Vacant Land - '.$data[0]['address'].', '.$data[0]['city'].', '.$data[0]['state'].' '.$data[0]['postal_code']; 
+	    $page['class'] = 'VPropertyVacantLand';
+	}
     $page['method'] = 'showProperty';
     $page['arg'] = $tab;
 }
