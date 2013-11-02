@@ -11,6 +11,48 @@
 				//Gestion de la soumission du formulaire
 
 			});
+			
+			$('.checkbox_style').click(function() {
+				$('#formSearch').submit();
+				//Gestion de la soumission du formulaire
+
+			});
+			
+			$('.qtyplus').click(function() {
+				$('#formSearch').submit();
+				//Gestion de la soumission du formulaire
+
+			});
+			
+			$('.qtyminus').click(function() {
+				$('#formSearch').submit();
+				//Gestion de la soumission du formulaire
+
+			});
+			
+			$('.slider-handle').mouseup(function() {
+				$('#formSearch').submit();
+				//Gestion de la soumission du formulaire
+
+			});
+			
+			$('.slider-handle').mouseup(function() {
+				$('#formSearch').submit();
+				//Gestion de la soumission du formulaire
+
+			});
+			
+			$('#option1').change(function() { //SALE
+				$('#formSearch').submit();
+				//Gestion de la soumission du formulaire
+
+			});
+			
+			$('#option2').change(function() { //LEASE
+				$('#formSearch').submit();
+				//Gestion de la soumission du formulaire
+
+			});
 
 			$('#submitSearch').on('click', function()
 			{

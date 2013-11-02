@@ -107,90 +107,55 @@
         <div class="col-lg-3">
           <div class="checkbox">
            <label>
-             <input type="checkbox"> Type
+             <input value="RES_1/2 Duplex" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('RES_1/2 Duplex', $_REQUEST['style']) ? 'checked' : '') ?>> 1/2 Duplex
            </label>
           </div>
           <div class="checkbox">
            <label>
-             <input type="checkbox"> Type
+             <input value="RES_Co-Op" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('RES_Co-Op', $_REQUEST['style']) ? 'checked' : '') ?>> Co-op
            </label>
           </div>
           <div class="checkbox">
            <label>
-             <input type="checkbox"> Type
+             <input value="RES_Condo" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('RES_Condo', $_REQUEST['style']) ? 'checked' : '') ?>> Condo
            </label>
           </div>
           <div class="checkbox">
            <label>
-             <input type="checkbox"> Type
+             <input value="RES_Condo-Hotel" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('RES_Condo-Hotel', $_REQUEST['style']) ? 'checked' : '') ?>> Condo-Hotel
            </label>
           </div>
         </div> <!-- 4 col -->
         <div class="col-lg-3">
           <div class="checkbox">
            <label>
-             <input type="checkbox"> Type
+             <input value="RES_Dock-Rackominium" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('RES_Dock-Rackominium', $_REQUEST['style']) ? 'checked' : '') ?>> Dock-Rackominium
            </label>
           </div>
           <div class="checkbox">
            <label>
-             <input type="checkbox"> Type
+             <input value="RES_Farm" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('RES_Farm', $_REQUEST['style']) ? 'checked' : '') ?>> Farm
            </label>
           </div>
           <div class="checkbox">
            <label>
-             <input type="checkbox"> Type
+             <input value="RES_Single Family Home" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('RES_Single Family Home', $_REQUEST['style']) ? 'checked' : '') ?>> Single Family Home
            </label>
           </div>
           <div class="checkbox">
            <label>
-             <input type="checkbox"> Type
+             <input value="RES_Townhouse" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('RES_Townhouse', $_REQUEST['style']) ? 'checked' : '') ?>> Townhouse
            </label>
           </div>
         </div> <!-- 4 col -->
         <div class="col-lg-3">
           <div class="checkbox">
            <label>
-             <input type="checkbox"> Type
-           </label>
-          </div>
-          <div class="checkbox">
-           <label>
-             <input type="checkbox"> Type
-           </label>
-          </div>
-          <div class="checkbox">
-           <label>
-             <input type="checkbox"> Type
-           </label>
-          </div>
-          <div class="checkbox">
-           <label>
-             <input type="checkbox"> Type
+             <input value="RES_Villa" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('RES_Villa', $_REQUEST['style']) ? 'checked' : '') ?>> Villa
            </label>
           </div>
         </div> <!-- 4 col -->
-        <div class="col-lg-3">
-          <div class="checkbox">
-           <label>
-             <input type="checkbox"> Type
-           </label>
-          </div>
-          <div class="checkbox">
-           <label>
-             <input type="checkbox"> Type
-           </label>
-          </div>
-          <div class="checkbox">
-           <label>
-             <input type="checkbox"> Type
-           </label>
-          </div>
-          <div class="checkbox">
-           <label>
-             <input type="checkbox"> Type
-           </label>
-          </div>
+
         </div> <!-- 4 col -->
       </div>
 

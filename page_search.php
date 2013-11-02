@@ -3,8 +3,7 @@
 header ('Content-Type:text/html; charset=UTF-8');
 //define ('ICONE_PAGE', '../Img/bdd.png');
 //define ('CSS_PAGE', '../Css/index.css');
-// if($_SERVER['SERVER_ADMIN'] == 'yo.lefevre@gmail.com')
-if(true || $_SERVER['SERVER_ADMIN'] == 'yo.lefevre@gmail.com') //le cas de Yoann
+if($_SERVER['SERVER_ADMIN'] == 'yo.lefevre@gmail.com')
 	define ('JS_PAGE', '/Assets/js/app/search.js');
 else
 	define ('JS_PAGE', 'Assets/js/app/search.js');
@@ -52,44 +51,44 @@ function home()
 
     	if(isset($_GET['option']))
 			$option = urlencode($_GET['option']);
-		else
+		else 
 			$option = 'sale';
-
+			
 		if(isset($_GET['price']))
 			$price = urldecode($_GET['price']);
-		else
+		else 
 			$price = '';
-
-	    if(isset($_GET['type']))
-			$type = urlencode($_GET['type']);
-		else
-			$type = '';
-
+		
+	    if(isset($_GET['style']))
+			$style = $_GET['style'];
+		else 
+			$style = '';
+			
 		if(isset($_GET['city']))
 			$location = $_GET['city'];
-		else
+		else 
 			$location = '';
-
+			
 		if(isset($_GET['beds']))
 			$beds = $_GET['beds'];
-		else
+		else 
 			$beds = '';
-
+			
 		if(isset($_GET['bathroom']))
 			$bathroom = $_GET['bathroom'];
-		else
+		else 
 			$bathroom = '';
-
+			
 		if(isset($_GET['page']))
 			$p = $_GET['page'];
-		else
+		else 
 			$p = 1;
 
 
 		$search = new MSearch();
-		$datas = $search->searchForm($type, $location, $beds, $bathroom, $option, $price, $p);
+		$datas = $search->searchForm($style, $location, $beds, $bathroom, $option, $price, $p);
 
-		$nbResultMax = $search->countSearchForm($type, $location, $beds, $bathroom, $option, $price);
+		$nbResultMax = $search->countSearchForm($style, $location, $beds, $bathroom, $option, $price);
 
 		if($p == 1 && $nbResultMax > 0)
 		{
@@ -102,7 +101,7 @@ function home()
 				$memberSearch->setCity($location);
 				$memberSearch->setIdMember($_SESSION['user']['id']);
 				$memberSearch->setPrice($price);
-				$memberSearch->setStyle($type);
+				$memberSearch->setStyle($style);
 				$memberSearch->setDate(date('Y-m-d H:i:s', time()));
 				$memberSearch->setNbResults($nbResultMax);
 				$memberSearch->insert('REPLACE');
@@ -184,10 +183,10 @@ function searchAJAX() //JSON
 {
     global $page;
 
-    if(isset($_GET['type']))
-		$type = urlencode($_GET['type']);
+    if(isset($_GET['style']))
+		$style = $_GET['style'];
 	else
-		$type = '';
+		$style = '';
 
 	if(isset($_GET['option']))
 		$option = urlencode($_GET['option']);
@@ -220,38 +219,48 @@ function searchAJAX() //JSON
 		$p = '';
 
 	$search = new MSearch();
-	$datas = $search->searchForm($type, $location, $beds, $bathroom, $option, $price, $p);
-	$nbResultMax = $search->countSearchForm($type, $location, $beds, $bathroom, $option, $price);
-
-	if($p == 1 && $nbResultMax > 0)
+	if(isset($_GET['action']) && $_GET['action'] == 'count')
 	{
-		if(isset($_SESSION['user']['id']) && !empty($_SESSION['user']['id']))
+		$nbResultMax = $search->countSearchForm($style, $location, $beds, $bathroom, $option, $price);
+		$tab['nbResults'] = $nbResultMax;
+		echo json_encode($tab);
+	}
+	else if(!isset($_GET['action']))
+	{
+		$datas = $search->searchForm($style, $location, $beds, $bathroom, $option, $price, $p);
+		$nbResultMax = $search->countSearchForm($style, $location, $beds, $bathroom, $option, $price);
+	
+	
+
+		if($p == 1 && $nbResultMax > 0)
 		{
-
-			$memberSearch = new BddMemberSearch();
-			$memberSearch->setBathroom($bathroom);
-			$memberSearch->setBed($beds);
-			$memberSearch->setCity($location);
-			$memberSearch->setIdMember($_SESSION['user']['id']);
-			$memberSearch->setPrice($price);
-			$memberSearch->setStyle($type);
-			$memberSearch->setDate(date('Y-m-d H:i:s', time()));
-			$memberSearch->setNbResults($nbResultMax);
-			$memberSearch->insert('REPLACE');
+			if(isset($_SESSION['user']['id']) && !empty($_SESSION['user']['id']))
+			{
+	
+				$memberSearch = new BddMemberSearch();
+				$memberSearch->setBathroom($bathroom);
+				$memberSearch->setBed($beds);
+				$memberSearch->setCity($location);
+				$memberSearch->setIdMember($_SESSION['user']['id']);
+				$memberSearch->setPrice($price);
+				$memberSearch->setStyle($style);
+				$memberSearch->setDate(date('Y-m-d H:i:s', time()));
+				$memberSearch->setNbResults($nbResultMax);
+				$memberSearch->insert('REPLACE');
+			}
 		}
+		$tab = array();
+		$tab['nbResults'] = $nbResultMax;
+		$datas2 = $datas;
+		foreach($datas as $k => $t)
+		{
+			$url = format_url($t['style'].'-'.$t['address']);
+			$datas2[$k]['url'] = $url;
+		}
+		$tab['results'] = $datas2;
+	
+	    echo json_encode($tab);
 	}
-	$tab = array();
-	$tab['nbResults'] = $nbResultMax;
-	$datas2 = $datas;
-	foreach($datas as $k => $t)
-	{
-		$url = format_url($t['style'].'-'.$t['address']);
-		$datas2[$k]['url'] = $url;
-	}
-	$tab['results'] = $datas2;
-
-    echo json_encode($tab);
-
 }
 
 function afficherProperty($data)
