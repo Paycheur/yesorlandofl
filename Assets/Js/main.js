@@ -2,7 +2,7 @@
   Ajax for link load
 ==================================================*/
 
-var ajaxLinks = {
+/*var ajaxLinks = {
     init : function ( link ) {
       link.on('click', function(e){
           e.preventDefault();
@@ -19,12 +19,12 @@ var ajaxLinks = {
       })
     }
 };
-
+*/
 /* the below code is to override back button to get the ajax content without reload*/
-$(window).bind('popstate', function( e ) {
+/*$(window).bind('popstate', function( e ) {
     $(".content").load(location.pathname+" .content");
 });
-
+*/
 var navActiveLink = {
     init : function ( link ) {
       link.on('click', function(e){
@@ -249,7 +249,7 @@ var loadItem = {
   when document is ready
 ==================================================*/
 (function($) {
-  ajaxLinks.init( navLinks );
+  //ajaxLinks.init( navLinks );
   navActiveLink.init( navLinks );
 
   //main homepage slider
@@ -296,7 +296,7 @@ var loadItem = {
 /*==================================================
   Register a handler to be called when Ajax requests complete
 ==================================================*/
-$( document ).ajaxComplete(function() {
+/*$( document ).ajaxComplete(function() {
 
   //main homepage slider
   $('#ei-slider').eislideshow({
@@ -337,7 +337,7 @@ $( document ).ajaxComplete(function() {
     sectionWidth.init();
 
 
-});
+});*/
 //Run a function when the page is fully loaded including graphics.
 $( window ).load(function() {
   // Run code
