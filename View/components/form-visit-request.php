@@ -26,7 +26,7 @@
 				<hr>
 				<div class="row padding-1em">
 					<div class="col-lg-2">
-						<img src="img/jere.jpg" class="img-circle">
+						<img src="/Assets/img/jere.jpg" class="img-circle">
 					</div>
 					<span class="col-lg-10">
 					<hgroup>

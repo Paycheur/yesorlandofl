@@ -80,11 +80,12 @@
 	</div>
 </footer>
 
-<?php 
-if($_SERVER['SERVER_ADMIN'] == 'yo.lefevre@gmail.com') //le cas de Yoann
+<?php
+// if($_SERVER['SERVER_ADMIN'] == 'yo.lefevre@gmail.com') //le cas de Yoann
+if(true || $_SERVER['SERVER_ADMIN'] == 'yo.lefevre@gmail.com') //le cas de Yoann
 {?>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	
+
 	<script>window.jQuery || document.write('<script src="/Assets/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
 	<script src="/Assets/js/min/bootstrap.min.js"></script>
 	<!-- <script src="/Assets/js/min/typeahead.min.js"></script>
@@ -104,7 +105,7 @@ else //le cas de Shérif
 {
 	?>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	
+
 	<script>window.jQuery || document.write('<script src="Assets/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
 	<script src="Assets/js/min/bootstrap.min.js"></script>
 	<!-- <script src="Assets/js/min/typeahead.min.js"></script>

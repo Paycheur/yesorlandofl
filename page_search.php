@@ -3,7 +3,8 @@
 header ('Content-Type:text/html; charset=UTF-8');
 //define ('ICONE_PAGE', '../Img/bdd.png');
 //define ('CSS_PAGE', '../Css/index.css');
-if($_SERVER['SERVER_ADMIN'] == 'yo.lefevre@gmail.com')
+// if($_SERVER['SERVER_ADMIN'] == 'yo.lefevre@gmail.com')
+if(true || $_SERVER['SERVER_ADMIN'] == 'yo.lefevre@gmail.com') //le cas de Yoann
 	define ('JS_PAGE', '/Assets/js/app/search.js');
 else
 	define ('JS_PAGE', 'Assets/js/app/search.js');
@@ -51,37 +52,37 @@ function home()
 
     	if(isset($_GET['option']))
 			$option = urlencode($_GET['option']);
-		else 
+		else
 			$option = 'sale';
-			
+
 		if(isset($_GET['price']))
 			$price = urldecode($_GET['price']);
-		else 
+		else
 			$price = '';
-		
+
 	    if(isset($_GET['type']))
 			$type = urlencode($_GET['type']);
-		else 
+		else
 			$type = '';
-			
+
 		if(isset($_GET['city']))
 			$location = $_GET['city'];
-		else 
+		else
 			$location = '';
-			
+
 		if(isset($_GET['beds']))
 			$beds = $_GET['beds'];
-		else 
+		else
 			$beds = '';
-			
+
 		if(isset($_GET['bathroom']))
 			$bathroom = $_GET['bathroom'];
-		else 
+		else
 			$bathroom = '';
-			
+
 		if(isset($_GET['page']))
 			$p = $_GET['page'];
-		else 
+		else
 			$p = 1;
 
 
