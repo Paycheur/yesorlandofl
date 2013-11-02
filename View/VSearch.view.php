@@ -106,7 +106,15 @@ class VSearch
 						    }
 						    else
 						    {
-						        $param_get.= '&'.$key.'='.$value;
+						    	if(is_array($value))
+						    	{
+						    		foreach($value as $k => $v)
+						    		{
+						    			$param_get.= '&'.$key.'[]='.$v;
+						    		}
+						    	}
+						    	else
+						       		$param_get.= '&'.$key.'='.$value;
 						    }
 						}
 						if($numPage == 1)
@@ -130,10 +138,10 @@ class VSearch
 	
 									for($i = 2; $i != ($nbPage + 1); $i++)
 									{
-										echo '<li class="active"><a class="page" href="/search?'.$param_get.'&page='.$i.'">'.$i.'</a></li>';
+										echo '<li><a class="page" href="/search?'.$param_get.'&page='.$i.'">'.$i.'</a></li>';
 									}
 								}
-								echo '<li class="active"><a class="page last" href="/search?'.$param_get.'&page='.$nbPage.'">&raquo;</a></li>';
+								echo '<li><a class="page last" href="/search?'.$param_get.'&page='.$nbPage.'">&raquo;</a></li>';
 							}
 						}
 						else
@@ -177,6 +185,8 @@ class VSearch
 									if($numPage + 2 > $nbPage)
 									{
 										$i = $numPage - 3;
+										if($i <= 0)
+											$i = 1;
 										$limit = $numPage + 1;
 									}
 									else if($numPage - 2 < 1)

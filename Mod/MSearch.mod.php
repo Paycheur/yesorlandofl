@@ -9,13 +9,63 @@ class MSearch
     	$this->dbData = new BddData();
     }
     
-	public function searchForm($style, $city, $beds, $bathroom, $option, $price, $page)
+	public function searchForm($type_style, $city, $beds, $bathroom, $option, $price, $page)
 	{
 		$n = ($page-1)*6;
 		$req = 'SELECT id,type,style,city,address,bed,bathroom,sqft,price,img,postal_code,state,actif,flag_actif FROM data'.
 				' WHERE actif = 1';
-		if($style != '')
-				$req .= ' AND style LIKE \'%'.$style.'%\'';
+		if($type_style != '')
+		{
+			$tabType = array();
+			if(is_array($type_style))
+			{
+				$req .=' AND (';
+				foreach($type_style as $s)
+				{
+					$explStyle = explode('_', $s);
+					if(count($explStyle) == 2)
+					{
+						$type=$explStyle[0];
+						$style = $explStyle[1];
+						
+						$tabType[$type] = true;
+							
+						$req .= ' style = \''.$style.'\' OR ';
+					}
+				}
+				$req.='#end;';
+				$req = str_replace('OR #end;', '', $req);
+				$req.=')';
+				
+			}
+			else
+			{
+				$explStyle = explode('_', $type_style);
+				if(count($explStyle) == 2)
+				{
+					$type=$explStyle[0];
+					$style = $explStyle[1];
+					
+					$tabType[$type] = true;
+						
+					$req .= ' style = \''.$style.'\' ';
+				}
+			}
+			
+			$req .=' AND (';
+			foreach($tabType as $type)
+			{
+				if($type == 'RES')
+					$req .= ' type = \'residential\' OR ';
+				if($type == 'COM')
+					$req .= ' type = \'commercial\' OR ';
+				if($type == 'VAC')
+					$req .= ' type = \'vacant_land\' OR ';
+			}
+			$req.='#end;';
+			$req = str_replace('OR #end;', '', $req);
+			$req.=')';
+		}
 		if($beds != 0 && $beds != '')
 			$req .= ' AND bed = \''.protegeChaine($beds).'\'';
 		if($bathroom != 0 && $bathroom != '')
@@ -56,7 +106,7 @@ class MSearch
 		if($option != '')
 			$req .= ' AND sale_or_lease = \''.protegeChaine($option).'\' ';
 		
-		$req .= ' LIMIT '.$n.', 6';
+		$req .= ' ORDER BY price ASC LIMIT '.$n.', 6';
 
 		$tabRows =  array();
 		$res = $this->dbData->getConnexion()->query($req); //on récupère une connexion
@@ -116,12 +166,62 @@ class MSearch
         return $result;
 	}
 	
-	public function countSearchForm($style, $city, $beds, $bathroom, $option, $price)
+	public function countSearchForm($type_style, $city, $beds, $bathroom, $option, $price)
 	{
 		$req = 'SELECT COUNT(1) value FROM data'.
 				' WHERE actif = 1';
-		if($style != '')
-				$req .= ' AND style LIKE \'%'.$style.'%\'';
+	if($type_style != '')
+		{
+			$tabType = array();
+			if(is_array($type_style))
+			{
+				$req .=' AND (';
+				foreach($type_style as $s)
+				{
+					$explStyle = explode('_', $s);
+					if(count($explStyle) == 2)
+					{
+						$type=$explStyle[0];
+						$style = $explStyle[1];
+						
+						$tabType[$type] = true;
+							
+						$req .= ' style = \''.$style.'\' OR ';
+					}
+				}
+				$req.='#end;';
+				$req = str_replace('OR #end;', '', $req);
+				$req.=')';
+				
+			}
+			else
+			{
+				$explStyle = explode('_', $type_style);
+				if(count($explStyle) == 2)
+				{
+					$type=$explStyle[0];
+					$style = $explStyle[1];
+					
+					$tabType[$type] = true;
+						
+					$req .= ' style = \''.$style.'\' ';
+				}
+			}
+			
+			$req .=' AND (';
+			foreach($tabType as $type)
+			{
+				if($type == 'RES')
+					$req .= ' type = \'residential\' OR ';
+				if($type == 'COM')
+					$req .= ' type = \'commercial\' OR ';
+				if($type == 'VAC')
+					$req .= ' type = \'vacant_land\' OR ';
+			}
+			$req.='#end;';
+			$req = str_replace('OR #end;', '', $req);
+			$req.=')';
+		}
 		if($beds != 0 && $beds != '')
 			$req .= ' AND bed = \''.protegeChaine($beds).'\'';
 		if($bathroom != 0 && $bathroom != '')
@@ -163,6 +263,7 @@ class MSearch
 		
 		if($option != '')
 			$req .= ' AND sale_or_lease = \''.protegeChaine($option).'\' ';
+		
 		
 			
 		$tabRows =  array();

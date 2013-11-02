@@ -67,6 +67,7 @@ function format_url($chaine)
     $chaine = SupprAccents(supprAccentUTF8(html_entity_decode($chaine)));
     $chaine = str_replace('œ', 'oe', $chaine);
     $chaine = strtolower($chaine);
+    $chaine = str_replace('#', '-', $chaine);
     $chaine = str_replace('(', '-', $chaine);
     $chaine = str_replace(')', '-', $chaine);
     $chaine = str_replace('&', '-', $chaine);

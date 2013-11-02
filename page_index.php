@@ -3,7 +3,7 @@
 header ('Content-Type:text/html; charset=UTF-8');
 //define ('ICONE_PAGE', '../Img/bdd.png');
 //define ('CSS_PAGE', '../Css/index.css');
-//define ('JS_PAGE', '');
+define ('JS_PAGE', '/Assets/Js/app/home-search.js');
 define ('CONTROLER', 'page_index.php');
 
 require ('Inc/require.inc.php');
