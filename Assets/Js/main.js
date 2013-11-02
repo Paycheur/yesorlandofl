@@ -25,7 +25,7 @@
     $(".content").load(location.pathname+" .content");
 });
 */
-var navActiveLink = {
+/*var navActiveLink = {
     init : function ( link ) {
       link.on('click', function(e){
         //activing class
@@ -36,7 +36,7 @@ var navActiveLink = {
     }
 };
 
-var navLinks = $("a[rel='tab']");
+var navLinks = $("a[rel='tab']");*/
 
 
 /*==================================================
@@ -250,7 +250,7 @@ var loadItem = {
 ==================================================*/
 (function($) {
   //ajaxLinks.init( navLinks );
-  navActiveLink.init( navLinks );
+  //navActiveLink.init( navLinks );
 
   //main homepage slider
   $('#ei-slider').eislideshow({

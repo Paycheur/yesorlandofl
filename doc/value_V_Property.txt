@@ -23,7 +23,7 @@ net_operating_income 				: 		<?=(isset($csv['net_operating_income']) ? $csv['net
 cam_per_sq_ft 				: 		<?=(isset($csv['cam_per_sq_ft']) ? $csv['cam_per_sq_ft']['val'] : '')?>
 number_of_add_parcels 				: 		<?=(isset($csv['number_of_add_parcels']) ? $csv['number_of_add_parcels']['val'] : '')?>
 water_view 				: 		<?=(isset($csv['water_view']) ? $csv['water_view']['val'] : '')?>
-waterfront_feet 				: 		<?=(isset($csv['waterfront_feet']) ? $csv['waterfront_feet']['val'] : '')?>	
+waterfront_feet 				: 		<?=(isset($csv['waterfront_feet']) ? $csv['waterfront_feet']['val'] : '')?>
 number_of_hotel_motel_rms 				: 		<?=(isset($csv['number_of_hotel_motel_rms']) ? $csv['number_of_hotel_motel_rms']['val'] : '')?>
 number_of_restrooms 				: 		<?=(isset($csv['number_of_restrooms']) ? $csv['number_of_restrooms']['val'] : '')?>
 number_of_offices 				: 		<?=(isset($csv['number_of_offices']) ? $csv['number_of_offices']['val'] : '')?>
@@ -129,7 +129,7 @@ pets_allowed_y_n 				: 		<?=(isset($csv['pets_allowed_y_n']) ? $csv['pets_allowe
 green_certifications 				: 		<?=(isset($csv['green_certifications']) ? $csv['green_certifications']['val'] : '')?>
 
 	********** END VALUE LIST FOR RENTAL
-*/	
+*/
 
 
 

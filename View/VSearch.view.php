@@ -9,17 +9,17 @@ class VSearch
 
 	public function homeSearch($_value)
 	{
-		
+
 		?>
 		<div class="content" id="holer-content">
 
 			<div class="container">
-		
-				
+
+
 				<?php require_once('components/search-form.php') ?>
-		
-		
-				
+
+
+
 			</div>
 
 			<div class="container">
@@ -39,22 +39,26 @@ class VSearch
 						}
 										?>
 							<div class="col-lg-4 padding-2em">
-								<article class="search-property">
-									<div class="bg-header">
-										<img src="<?=$allImg[0] ?>" alt="">
-									</div>
-									<div class="padding-r-l-2em search-property-content txt-center">
-										<hgroup class="txt-center">
-											<h4 class="search-property-type"><span class="visuallyhidden">Property type :</span> <i class="icon-home"></i></h4>
-											<h3 class="search-property-title lh-100 margin-zero"><?=$d['address']?></h3>
-											<h4 class="lh-100">$<?=str_replace('.00', '', $d['price'])?></h4>
-										</hgroup>
-										<a href="/property/<?=format_url($d['style'].'-'.$d['address'])?>/<?=$d['id'] ?>" class="btn btn-primary">View details</a>
-										<ul class="list-inline padding-3em details">
-											<li class="text-left"><strong class="display-block number"><?=$d['bed'] ?></strong> BEDS
-											<li class="text-left"><strong class="display-block number"><?=$d['bathroom'] ?></strong> BATHS
-											<li class="text-left"><strong class="display-block number"><?=$d['sqft'] ?></strong>  SQFT
-										</ul>
+								<article class="bg-cover" style="background-image:url(<?=$allImg[0] ?>);"   >
+									<div class="search-property"  >
+										<div class="padding-r-l-2em search-property-content txt-center">
+											<hgroup class="txt-center">
+												<h3 class="search-property-title h4 lh-100 margin-zero"><?=$d['address']?></h3>
+												<h4 class="lh-100 h3 white">$<?=str_replace('.00', '', $d['price'])?></h4>
+											</hgroup>
+											<a href="/property/<?=format_url($d['style'].'-'.$d['address'])?>/<?=$d['id'] ?>" class="btn btn-warning">View details</a>
+											<ul class="list-inline padding-3em details">
+												<?php if ( isset( $d['bed'] )  ):  ?>
+													<li class="text-left"><strong class="display-block number"><?=$d['bed'] ?></strong> BEDS
+												<?php endif; ?>
+												<?php if ( isset( $d['bathroom'] )  ):  ?>
+													<li class="text-left"><strong class="display-block number"><?=$d['bathroom'] ?></strong> BATHS
+												<?php endif; ?>
+												<?php if ( isset( $d['sqft'] )  ):  ?>
+													<li class="text-left"><strong class="display-block number"><?=$d['sqft'] ?></strong>  SQFT
+												<?php endif; ?>
+											</ul>
+										</div>
 									</div>
 								</article>
 							</div>
@@ -69,7 +73,7 @@ class VSearch
 					}?>
 				</div>
 			</div>
-			<?php 
+			<?php
 			if(isset($_value['nbResults']) && $_value['nbResults'] > 6)
 			{?>
 			<div class="container">
@@ -79,10 +83,10 @@ class VSearch
 							<?php
 						if(isset($_GET['page']))
 							$numPage = $_GET['page'];
-						else 
+						else
 							$numPage = 1;
 						$nbPage = ceil($_value['nbResults']/6);
-						
+
 						$param_get='';
 						$isTheFirst=true;
 						foreach($_GET as $key=>$value)
@@ -125,7 +129,7 @@ class VSearch
 								{
 									echo '<li><a class="page first" href="/search?'.$param_get.'&page=1">&laquo;</a></li>';
 									echo '<li class="active"><a class="page" href="/search?'.$param_get.'&page=1">1</a></li>';
-								
+
 									for($i = 2; $i < 6; $i++)
 									{
 										echo '<li><a class="page" href="/search?'.$param_get.'&page='.$i.'">'.$i.'</a></li>';
@@ -135,7 +139,7 @@ class VSearch
 								{
 									echo '<li><a class="page" href="#">&laquo;</a></li>';
 									echo '<li class="active"><a class="page" href="#">1</a></li>';
-	
+
 									for($i = 2; $i != ($nbPage + 1); $i++)
 									{
 										echo '<li><a class="page" href="/search?'.$param_get.'&page='.$i.'">'.$i.'</a></li>';
@@ -154,9 +158,9 @@ class VSearch
 									if($numPage == $nbPage)
 									{
 										$limit = $numPage;
-										if($numPage < 5) 
+										if($numPage < 5)
 											$i = 1;
-										else 
+										else
 											$i = $numPage - 4;
 									}
 									else if($numPage == 1)
@@ -164,19 +168,19 @@ class VSearch
 										$i = $numPage;
 										$limit = $numPage + 4;
 									}
-	
+
 									echo '<li><a class="page first" href="/search?'.$param_get.'&page=1">&laquo;</a></li>';
 									for(; $i <= $limit; $i++)
 									{
 										if($i == $nbPage + 1) break;
-	
+
 										if($i == $numPage)
 											echo '<li class="active"><a class="page" href="/search?'.$param_get.'&page='.$i.'">'.$i.'</a></li>';
 										else
 											echo '<li><a class="page" href="/search?'.$param_get.'&page='.$i.'">'.$i.'</a></li>';
 									}
 									echo '<li><a class="page last" href="/search?'.$param_get.'&page='.$nbPage.'">&raquo;</a></li>';
-	
+
 								}
 								else
 								{
@@ -199,18 +203,18 @@ class VSearch
 										$i = $numPage - 2;
 										$limit = $numPage + 2;
 									}
-	
+
 									for(; $i <= $limit; $i++)
 									{
 										if($i == $nbPage + 1) break;
-	
+
 										if($i == $numPage)
 											echo '<li class="active"><a class="page" href="/search?'.$param_get.'&page='.$i.'">'.$i.'</a></li>';
 										else
 											echo '<li><a class="page" href="/search?'.$param_get.'&page='.$i.'">'.$i.'</a></li>';
 									}
 									echo '<li><a class="page last" href="/search?'.$param_get.'&page='.$nbPage.'">&raquo;</a></li>';
-	
+
 								}
 							}
 						}
@@ -219,7 +223,7 @@ class VSearch
 					</div>
 				</div>
 			</div>
-			<?php 
+			<?php
 			}?>
 			<div class="bg-header">
 				<img src="/assets/img/flou.jpg" alt="">
@@ -229,7 +233,7 @@ class VSearch
 	   <?php
 	}
 
-	
+
 
 }
 
