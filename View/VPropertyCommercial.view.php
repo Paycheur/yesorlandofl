@@ -1,5 +1,5 @@
 <?php
-class VProperty
+class VPropertyCommercial
 {
 
 	public function __construct() {return;}
