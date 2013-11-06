@@ -112,7 +112,8 @@ else //le cas de Shérif
 	-->
 	<script src="Assets/js/min/bootstrap-select.min.js"></script>
 	<script type="text/javascript" src="Assets/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
-	<script type="text/javascript" src="Assets/js/jquery.eislideshow.js"></script>
+
+
 	<script type="text/javascript" src="Assets/js/jquery.easing.1.3.js"></script>
 	<!-- price range -->
 	<script type="text/javascript" src="Assets/js/bootstrap-slider.js"></script>
@@ -137,14 +138,5 @@ if(defined('JS_PAGE')) {
 	}
 }?>
 
-<!--
-<? if ($condition): ?>
-  <p>Content</p>
-<? elseif ($other_condition): ?>
-  <p>Other Content</p>
-<? else: ?>
-  <p>Default Content</p>
-<? endif; ?>
--->
 </body>
 </html>
