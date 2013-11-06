@@ -37,6 +37,7 @@ class VSearch
 						{
 							$allImg =array();
 						}
+						
 										?>
 							<div class="col-lg-4 padding-2em">
 								<article class="bg-cover" style="background-image:url(<?=$allImg[0] ?>);"   >
@@ -44,7 +45,8 @@ class VSearch
 										<div class="padding-r-l-2em search-property-content txt-center">
 											<hgroup class="txt-center">
 												<h3 class="search-property-title h4 lh-100 margin-zero"><?=$d['address']?></h3>
-												<h4 class="lh-100 h3 white">$<?=str_replace('.00', '', $d['price'])?></h4>
+												<h4 class="lh-100 h3 white">$ <?=str_replace('.00', '', $d['price'])?></h4>
+												
 											</hgroup>
 											<a href="/property/<?=format_url($d['style'].'-'.$d['address'])?>/<?=$d['id'] ?>" class="btn btn-warning">View details</a>
 											<ul class="list-inline padding-3em details">
@@ -54,7 +56,7 @@ class VSearch
 												<?php if ( isset( $d['bathroom'] )  ):  ?>
 													<li class="text-left"><strong class="display-block number"><?=$d['bathroom'] ?></strong> BATHS
 												<?php endif; ?>
-												<?php if ( isset( $d['sqft'] )  ):  ?>
+												<?php if ( isset( $d['sqft'] ) && $d['sqft'] != '0'  ):  ?>
 													<li class="text-left"><strong class="display-block number"><?=$d['sqft'] ?></strong>  SQFT
 												<?php endif; ?>
 											</ul>
@@ -226,7 +228,7 @@ class VSearch
 			<?php
 			}?>
 			<div class="bg-header">
-				<img src="/assets/img/flou.jpg" alt="">
+				<img src="/Assets/img/flou.jpg" alt="">
 			</div>
 		</div>
 

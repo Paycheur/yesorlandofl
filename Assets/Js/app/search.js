@@ -68,7 +68,7 @@
 
 			function recherche(valeurs, numPage)
 			{
-				window.history.pushState(document.title,document.title, 'http://'+document.location.hostname+'/search?'+valeurs+'&page='+numPage+'#searchResult');
+				window.history.pushState(document.title,document.title, 'http://'+document.location.hostname+'/search?'+valeurs+'&page='+numPage);
 				$.ajax({
 		            url: '/page_search.php',
 		            type: 'GET',
@@ -77,10 +77,10 @@
 		            success: function(json) {
 
 						var address = 'No Address';
-						var sqft = '/';
+						var sqft = '';
 						var price = 'No Price';
-						var bed = '/';
-						var bathroom = '/';
+						var bed = '';
+						var bathroom = '';
 						var img = '../assets/img/img-480-2.jpg';
 						var id = '';
 						var style = '';
@@ -92,7 +92,7 @@
 							if(v.address != null)
 								address = v.address;
 							if(v.price != null)
-								price = '$'+v.price.replace('.00', '');
+								price = '$ '+v.price.replace('.00', '');
 							if(v.bed != null)
 								bed = v.bed;
 							if(v.bathroom != null)
@@ -116,22 +116,23 @@
 
 
 							html += '<div class="col-lg-4 padding-2em">'+
-								'<article class="search-property">'+
-									'<div class="bg-header">'+
-										'<img src="'+img+'" alt="">'+
-									'</div>'+
-									'<div class="padding-r-l-2em search-property-content txt-center">'+
-										'<hgroup class="txt-center">'+
-											'<h4 class="search-property-type"><span class="visuallyhidden">Property type :</span> <i class="icon-home"></i></h4>'+
-											'<h3 class="search-property-title lh-100 margin-zero">'+address+'</h3>'+
-											'<h4 class="lh-100">'+price+'</h4>'+
-										'</hgroup>'+
-										'<a href="/property/'+v.url+'/'+encodeURIComponent(id)+'" class="btn btn-primary">View details</a>'+
-										'<ul class="list-inline padding-3em details">'+
-											'<li class="text-left"><strong class="display-block number">'+bed+'</strong> BEDS'+
-											'<li class="text-left"><strong class="display-block number">'+bathroom+'</strong> BATHS'+
-											'<li class="text-left"><strong class="display-block number">'+sqft+'</strong>  SQFT'+
-										'</ul>'+
+								'<article class="bg-cover" style="background-image:url('+img+');"   >'+
+									'<div class="search-property"  >'+
+										'<div class="padding-r-l-2em search-property-content txt-center">'+
+											'<hgroup class="txt-center">'+
+												'<h3 class="search-property-title h4 lh-100 margin-zero">'+address+'</h3>'+
+												'<h4 class="lh-100 h3 white">'+price+'</h4>'+
+											'</hgroup>'+
+											'<a href="/property/'+v.url+'/'+encodeURIComponent(id)+'" class="btn btn-warning">View details</a>'+
+											'<ul class="list-inline padding-3em details">';
+												if(bed != '')
+													html += '<li class="text-left"><strong class="display-block number">'+bed+'</strong> BEDS';
+												if(bathroom != '')
+													html += '<li class="text-left"><strong class="display-block number">'+bathroom+'</strong> BATHS';
+												if(sqft != '' && sqft != '0')
+													html+='<li class="text-left"><strong class="display-block number">'+sqft+'</strong>  SQFT';
+											html+='</ul>'+
+										'</div>'+
 									'</div>'+
 								'</article>'+
 							'</div>';
@@ -279,7 +280,7 @@
 				var valeurs=$('#formSearch').serialize();
 				recherche(valeurs, numPage);
 				
-				 window.location.hash = "#searchResult";
+				 $(window).scrollTop(0);
 				
 			});
 

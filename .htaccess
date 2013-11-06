@@ -2,7 +2,7 @@ Options +FollowSymlinks
 Options -Indexes
 RewriteEngine on
 
-DirectoryIndex page_index.php
+#DirectoryIndex page_index.php
 
 RewriteRule ^search/s_(.*)/c_(.*)/([0-9]{1,})$  page_search.php?EX=searchLink&style=$1&city=$2&id=$3 [L]
 RewriteRule ^search/c_(.*)/([0-9]{1,})$  page_search.php?EX=searchLink&city=$1&id=$2 [L]
@@ -25,6 +25,6 @@ RewriteRule ^test  page_test.php [L]
 RewriteRule ^relocation  page_relocation.php [L]
 RewriteRule ^careers  page_careers.php [L]
 RewriteRule ^contact  page_contact.php [L]
-
+RewriteRule ^home  page_index.php [L]
 
 

@@ -21,7 +21,7 @@ class VPropertyRental
 		{
 			$allImg =array();
 		}
-		setlocale(LC_MONETARY, 'en_US'); //prix format americain
+		//setlocale(LC_MONETARY, 'en_US'); //prix format americain
 ?>
 <div class="content">
 
@@ -61,7 +61,7 @@ class VPropertyRental
 					<div class="col-lg-5">
 						<h3 class="price margin-top-zero  lh-100">
 						<!-- Class salon le staut badge-inactive  badge-hold  -->
-						<?=$_value['results']['price']?>  <?=(isset($_value['results']['status']) && $_value['results']['status'] != '' ? '<span class="badge'.($_value['results']['status'] == 'Active' ? ' badge-active' : '').'"> '.$_value['results']['status'].' </span>' : '')?>
+						$ <?=str_replace('.00', '', $_value['results']['price'])?>  <?=(isset($_value['results']['status']) && $_value['results']['status'] != '' ? '<span class="badge'.($_value['results']['status'] == 'Active' ? ' badge-active' : '').'"> '.$_value['results']['status'].' </span>' : '')?>
 						</h3>
 						<ul class="no-bullets dotted">
 							<!-- <HOA Fee:> per <HOA Payment Schedule> is <HOA/Comm Assn>  -->
@@ -234,7 +234,7 @@ class VPropertyRental
 						<ul class="dotted no-bullets">
 							<?php if(isset($_value['proximity']['food']) && count($_value['proximity']['food'])  > 0)
 							{?>
-							<li><i class="icon-food"></i>  Restaurants (<?=count($_value['proximity']['food']) ?>)
+							<li><i class="icon-food"></i>  <b>Restaurants (<?=count($_value['proximity']['food']) ?>)</b>
 								<ul class="list-unstyled">
 									<?php
 									foreach($_value['proximity']['food'] as $v)
@@ -248,7 +248,7 @@ class VPropertyRental
 							}
 							if(isset($_value['proximity']['grocery']) && count($_value['proximity']['grocery'])  > 0)
 							{?>
-							<li><i class="icon-leaf"></i>  Grocery and Markets (<?=count($_value['proximity']['grocery']) ?>)
+							<li><i class="icon-leaf"></i>  <b>Grocery and Markets (<?=count($_value['proximity']['grocery']) ?>)</b>
 								<ul class="list-unstyled">
 									<?php
 									foreach($_value['proximity']['grocery'] as $v)
@@ -262,7 +262,7 @@ class VPropertyRental
 							}
 							if(isset($_value['proximity']['health']) && count($_value['proximity']['health'])  > 0)
 							{?>
-							<li><i class="icon-stethoscope"></i>  Health clubs and spas (<?=count($_value['proximity']['health']) ?>)
+							<li><i class="icon-stethoscope"></i>  <b>Health clubs and spas (<?=count($_value['proximity']['health']) ?>)</b>
 								<ul class="list-unstyled">
 									<?php
 									foreach($_value['proximity']['health'] as $v)
@@ -276,7 +276,7 @@ class VPropertyRental
 							}
 							if(isset($_value['proximity']['school']) && count($_value['proximity']['school'])  > 0)
 							{?>
-							<li><i class="icon-book"></i> Public School (<?=count($_value['proximity']['school']) ?>)
+							<li><i class="icon-book"></i> <b>Public School (<?=count($_value['proximity']['school']) ?>)</b>
 								<ul class="list-unstyled">
 									<?php
 									foreach($_value['proximity']['school'] as $v)

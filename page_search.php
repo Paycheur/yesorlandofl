@@ -3,7 +3,7 @@
 header ('Content-Type:text/html; charset=UTF-8');
 //define ('ICONE_PAGE', '../Img/bdd.png');
 //define ('CSS_PAGE', '../Css/index.css');
-if($_SERVER['SERVER_ADMIN'] == 'yo.lefevre@gmail.com')
+if(true || $_SERVER['SERVER_ADMIN'] == 'yo.lefevre@gmail.com')
 	define ('JS_PAGE', '/Assets/js/app/search.js');
 else
 	define ('JS_PAGE', 'Assets/js/app/search.js');
@@ -274,7 +274,7 @@ function afficherProperty($data)
 
   	$tab['proximity'] = array();
 
-/*  	if(count($tabGps) > 0 && isset($tabGps[0]['latitude']) && isset($tabGps[0]['longitude']))
+ 	if(count($tabGps) > 0 && isset($tabGps[0]['latitude']) && isset($tabGps[0]['longitude']))
   	{
   		 $food = file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='.$tabGps[0]['latitude'].','.$tabGps[0]['longitude'].'&types=restaurant&radius=500&sensor=false&key=AIzaSyCfUWMe6dpjGdY0-uflHdscZgUpH9m7yj8');
   		 $food = json_decode($food, true);
@@ -286,7 +286,7 @@ function afficherProperty($data)
   		 if(isset($grocery_or_supermarket['results']))
   		 	$tab['proximity']['grocery'] = $grocery_or_supermarket['results'];
 
-  		 $health = file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='.$tabGps[0]['latitude'].','.$tabGps[0]['longitude'].'&types=health|spa&radius=500&sensor=false&key=AIzaSyCfUWMe6dpjGdY0-uflHdscZgUpH9m7yj8');
+  		 $health = file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='.$tabGps[0]['latitude'].','.$tabGps[0]['longitude'].'&types=spa&radius=500&sensor=false&key=AIzaSyCfUWMe6dpjGdY0-uflHdscZgUpH9m7yj8');
   		 $health = json_decode($health, true);
   		 if(isset($health['results']))
   		 	$tab['proximity']['health'] = $health['results'];
@@ -295,7 +295,7 @@ function afficherProperty($data)
   		 $school = json_decode($school, true);
   		 if(isset($school['results']))
   		 	$tab['proximity']['school'] = $school['results'];
-  	}*/
+  	}
 
 
   	if(isset($_SESSION['user']['id']) && !empty($_SESSION['user']['id']))

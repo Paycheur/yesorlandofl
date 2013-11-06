@@ -109,7 +109,7 @@ function recupDonnees()
 	$donnees_retour = array();
 	foreach($all_fichier as $fichier)
 	{
-		
+		if($fichier != 'property_commercial') continue;
 		$tab_donnees_fichier=array();
 		if (file_exists(__DIR__.'/data/'.$fichier.'.csv') != FALSE) 
 		{
@@ -172,17 +172,30 @@ function recupDonnees()
 				     		$value_city = trim( str_replace('||', '', $row_array[$array_key[2302]])); //city
 					   		$value_style = trim( str_replace('||', '', $row_array[$array_key[77]])); //property style
 					   		$value_address = trim( str_replace('||', '', $row_array[$array_key[49]])); //address391
-					   		if(trim( str_replace('||', '', $row_array[$array_key[2308]])) != '')
+					   		$lease_rate = trim( str_replace('||', '', $row_array[$array_key[2308]]));
+					   		if($lease_rate != '')
 					   		{
-					   			$value_price = trim( str_replace('||', '', $row_array[$array_key[2308]])); //lease rate
+					   			$value_sqft = trim( str_replace('||', '', $row_array[$array_key[79]])) ;//lotsize sqft
+					   			if($lease_rate > 50)
+					   			{
+					   				$value_price = $lease_rate;
+					   			}
+					   			else
+					   			{
+					   				$value_price = ($lease_rate*$value_sqft)/12; //lease rate
+					   			}
 					   			$value_sale_or_lease = 'lease';
+					   			
+					   			echo '['.$value_id.'] => 	'.$lease_rate.' | $ '.number_format($value_price,2);
+					   			echo "\n";
 					   		}
 					   		else
 					   		{
 					   			$value_price = str_replace(',', '', trim( str_replace('||', '', $row_array[$array_key[176]]))); //list price
+					   			$value_sqft = trim( str_replace('||', '', $row_array[$array_key[80]])) ;//lotsize sqft
 					   			$value_sale_or_lease = 'sale';
 					   		}
-					   		$value_sqft = trim( str_replace('||', '', $row_array[$array_key[80]])) ;//lotsize sqft
+					   		
 					   		$value_state = trim( str_replace('||', '', $row_array[$array_key[2304]])); //state
 					   		$value_postalCode = trim( str_replace('||', '', $row_array[$array_key[46]])) ;//postal code (zipcode)
 					   		$value_status = trim( str_replace('||', '', $row_array[$array_key[178]])) ;//status
@@ -218,7 +231,7 @@ function recupDonnees()
 					   		$value_bed = trim( str_replace('||', '', $row_array[$array_key[32]])); //beds
 					   		$value_address = trim( str_replace('||', '', $row_array[$array_key[49]])); //address
 					   		$value_price = str_replace(',', '', trim( str_replace('||', '', $row_array[$array_key[176]]))); //list price
-					   		$value_sqft = trim( str_replace('||', '', $row_array[$array_key[2622]])); //lotsize sqft
+					   		$value_sqft = trim( str_replace('||', '', $row_array[$array_key[2346]])); //lotsize sqft
 					   		$value_state = trim( str_replace('||', '', $row_array[$array_key[2304]])); //state
 					   		$value_postalCode = trim( str_replace('||', '', $row_array[$array_key[46]])) ;//postal code (zipcode)
 					   		$value_bathroom = trim( str_replace('||', '', $row_array[$array_key[2294]])); //full bath
@@ -248,6 +261,8 @@ function recupDonnees()
 					   		
 				     }
 				    
+				     continue;
+				     
 				    $recup_img = true;
 				    $dbData = new BddData();
 				    $rows = $dbData->select(array('id' => $value_id, 'type' => $value_type));
@@ -293,6 +308,11 @@ function recupDonnees()
 					$dbData->setFlagActif(1);
 					$dbData->setSaleOrLease($value_sale_or_lease);
 					$dbData->setStatus($value_status);
+					if($value_price == 0)
+						$dbData->setActif(0);
+					else
+						$dbData->setActif(1);
+						
 					$dbData->insert('REPLACE');
 				    
 					var_dump('['.$value_type.'] '.$value_id.' : '.$value_status);

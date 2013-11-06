@@ -4,5 +4,7 @@ include('header.php');
 
 $vpage->$page['method']($page['arg']);
 
+
 include('footer.php');
+
 ?>

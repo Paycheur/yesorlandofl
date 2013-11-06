@@ -3,7 +3,7 @@
 header ('Content-Type:text/html; charset=UTF-8');
 //define ('ICONE_PAGE', '../Img/bdd.png');
 //define ('CSS_PAGE', '../Css/index.css');
-define ('JS_PAGE', '/Assets/Js/app/home-search.js');
+define ('JS_PAGE', '/Assets/js/app/home-search.js');
 define ('CONTROLER', 'page_index.php');
 
 require ('Inc/require.inc.php');
@@ -43,9 +43,13 @@ function home()
 {
     global $page;
 
-
     $tab = array();
-
+    
+    $search = new MSearch();
+    $option = 'sale';
+	$nbResultMax = $search->countSearchForm('', '', '', '', $option, '');
+	$tab['nbResults'] = $nbResultMax;
+	
     $page['title'] = 'Orlando';
     $page['class'] = 'VIndex';
     $page['method'] = 'homeFun';

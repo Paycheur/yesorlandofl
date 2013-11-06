@@ -63,14 +63,14 @@ require_once(dirname(__FILE__).'/../components/form-login.php'); ?>
       <hgroup class="margin-zero navbar-brand">
         <h2 class="margin-zero lh-80 "><a class="white serif bold size-16" rel="tab"  href="#">THE <span class="italic">PORTFOLIO</span> GROUP</a></h2>
         <h6 class="margin-zero lh-80">
-          <a class="color-sec  sans  size-14" rel="tab"  href="<?php echo $burl ?>">International real Estate Experts </a>
+          <a class="color-sec  sans  size-14" rel="tab"  href="<?php echo $burl ?>home">International real Estate Experts </a>
         </h6>
       </hgroup>
     </div><!-- navhead -->
 
     <div class="nav-collapse collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav fr-lg">
-        <li><a rel="tab" href="<?php echo $burl ?>" title="home"><i class="icon-home"></i></a></li>
+        <li><a rel="tab" href="<?php echo $burl ?>home" title="home"><i class="icon-home"></i></a></li>
         <li><a rel="tab" href="/vision">Vision</a></li>
         <li class="dropdown">
           <a href="<?php echo $burl ?>" class="dropdown-toggle" data-toggle="dropdown">Property search <b class="caret"></b></a>
