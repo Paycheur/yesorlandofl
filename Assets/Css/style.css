@@ -1573,16 +1573,16 @@ fieldset[disabled] .btn {
   box-shadow: none;
 }
 .btn-default {
-  color: #ffffff;
-  background-color: #828282;
-  border-color: #828282;
+  color: #202020;
+  background-color: #ffffff;
+  border-color: #ffffff;
 }
 .btn-default:hover,
 .btn-default:focus,
 .btn-default:active,
 .btn-default.active {
-  background-color: #757575;
-  border-color: #696969;
+  background-color: #f2f2f2;
+  border-color: #e6e6e6;
 }
 .btn-default.disabled,
 .btn-default[disabled],
@@ -1599,8 +1599,8 @@ fieldset[disabled] .btn-default:active,
 .btn-default.disabled.active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
-  background-color: #828282;
-  border-color: #828282;
+  background-color: #ffffff;
+  border-color: #ffffff;
 }
 .btn-primary {
   color: #ffffff;
@@ -2749,10 +2749,10 @@ button.close {
   color: #ffffff;
 }
 .btn .caret {
-  border-top-color: #ffffff;
+  border-top-color: #202020;
 }
 .dropup .btn .caret {
-  border-bottom-color: #ffffff;
+  border-bottom-color: #202020;
 }
 .btn-group,
 .btn-group-vertical {
@@ -4207,7 +4207,16 @@ h4,
 h5,
 h6,
 .blue {
-  color: #20396c;
+  color: #2d4f95;
+  -webkit-font-smoothing: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: none;
+  -moz-font-smoothing: subpixel-antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: none;
+  font-smoothing: subpixel-antialiased;
+  font-smoothing: antialiased;
 }
 label {
   font-weight: normal;
@@ -4638,9 +4647,18 @@ input[type="range"]::-webkit-slider-thumb {
   display: block;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #20396c;
-  border-top: 2px solid #20396c;
-  border-bottom: 1px solid #20396c;
+  color: #2d4f95;
+  -webkit-font-smoothing: none;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: none;
+  -moz-font-smoothing: subpixel-antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: none;
+  font-smoothing: subpixel-antialiased;
+  font-smoothing: antialiased;
+  border-top: 2px solid #2d4f95;
+  border-bottom: 1px solid #2d4f95;
 }
 .section-title a:hover {
   text-decoration: none;
@@ -4817,7 +4835,7 @@ input[type="range"]::-webkit-slider-thumb {
   margin: 20px 0;
 }
 .social a {
-  color: #20396c;
+  color: #2d4f95;
 }
 .social a:hover {
   text-decoration: none;
@@ -5225,17 +5243,44 @@ input[type="range"]::-webkit-slider-thumb {
   	}
   */
 }
+.border-top-2px-blue {
+  border-top: 2px solid #2d4f95;
+}
+.border-top-2px-red {
+  border-top: 2px solid #ed1d24;
+}
 .border-top-gray-light {
   border-top: 1px solid #ededed;
 }
 .border-right-gray-light {
   border-right: 1px solid #ededed;
 }
+.border-5px,
+.border-img {
+  border: 5px;
+  border-style: solid;
+}
+.border-3px,
+.border-img-small {
+  border: 2px;
+  border-style: solid;
+}
+.border-bottom-gray-light {
+  border-bottom: 1px solid #ededed;
+}
+.border-gray-light,
+.border-img,
+.border-img-small {
+  border-color: #ededed;
+}
 .bg-gray-light {
   background-color: #f7f7f7;
 }
 .bg-gray {
   background-color: #555555;
+}
+.bg-fb {
+  background-color: #3b5998;
 }
 .bg-pure {
   background-color: white;
@@ -5464,6 +5509,9 @@ ul.dotted li:last-child {
 .txt-right {
   text-align: right;
 }
+.txt-justify {
+  text-align: justify;
+}
 .relative {
   position: relative;
 }
@@ -5537,6 +5585,77 @@ ul.dotted li:last-child {
 }
 .affix {
   position: fixed;
+}
+.cssanimations .translate {
+  opacity: 0;
+  /* make things invisible upon start */
+
+  animation: translate ease-in 1;
+  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+
+  animation-fill-mode: forwards;
+  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+
+  animation-duration: 1s;
+  animation-delay: 1s;
+  -webkit-transform: translate(0, -1em);
+  -webkit-animation: translate ease-in 1;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: .5s;
+}
+@keyframes translate {
+  from {
+    opacity: 0;
+    transform: translate(0, -1em);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0em);
+  }
+}
+@-webkit-keyframes translate /* Safari and Chrome */ {
+  from {
+    opacity: 0;
+    -webkit-transform: translate(0, -1em);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate(0, 0em);
+  }
+}
+.cssanimations .fade-in {
+  opacity: 0;
+  /* make things invisible upon start */
+
+  animation: fadeIn ease-in 1;
+  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+
+  animation-fill-mode: forwards;
+  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+
+  animation-duration: 1s;
+  animation-delay: 1s;
+  -webkit-animation: fadeIn ease-in 1;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-delay: .5s;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn /* Safari and Chrome */ {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 /* ==========================================================================
    Helper classes

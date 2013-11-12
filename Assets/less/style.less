@@ -33,6 +33,17 @@ img, iframe {
 
 h1, h2, h3, h4, h5, h6, .blue {
   color: @blue;
+ -webkit-font-smoothing: none;
+ -webkit-font-smoothing: subpixel-antialiased;
+ -webkit-font-smoothing: antialiased;
+
+ -moz-font-smoothing: none;
+ -moz-font-smoothing: subpixel-antialiased;
+ -moz-font-smoothing: antialiased;
+
+ font-smoothing: none;
+ font-smoothing: subpixel-antialiased;
+ font-smoothing: antialiased;
 }
 
 label{
@@ -845,7 +856,7 @@ height: 400px;
 
 
 .bg-dark-gd {
-  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.8)));
 background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%);
 background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%);

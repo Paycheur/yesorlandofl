@@ -2,14 +2,41 @@
 // Utility classes
 // --------------------------------------------------
 
+.border-top-2px-blue {
+  border-top: 2px solid @blue;
+}
 
-.border-top-gray-light {
+.border-top-2px-red {
+  border-top: 2px solid @brand-danger;
+}
+.border-top-gray-light{
   border-top: 1px solid lighten(@gray-light, 33%);
 }
 
 .border-right-gray-light {
   border-right: 1px solid lighten(@gray-light, 33%);
 }
+
+.border-5px, .border-img  {
+  border: 5px;
+  border-style: solid;
+}
+
+.border-3px, .border-img-small  {
+  border: 2px;
+  border-style: solid;
+}
+
+
+.border-bottom-gray-light{
+  border-bottom: 1px solid lighten(@gray-light, 33%);
+}
+
+.border-gray-light, .border-img , .border-img-small  {
+  border-color: lighten(@gray-light, 33%);
+}
+
+
 
 
 .bg-gray-light {
@@ -20,6 +47,10 @@
 
 .bg-gray {
   background-color: @gray;
+}
+
+.bg-fb {
+  background-color: #3b5998;
 }
 
 .bg-pure {
@@ -335,6 +366,10 @@ ul.dotted{
 .txt-right {
   text-align: right;
 }
+
+.txt-justify {
+  text-align: justify;
+}
 .relative {
   position: relative;
 }
@@ -411,6 +446,55 @@ ul.dotted{
 .affix {
   position: fixed;
 }
+
+
+// .cssanimations
+.cssanimations  .translate {
+     opacity:0;  /* make things invisible upon start */
+     animation:translate ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+
+     animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+
+     animation-duration:1s;
+     animation-delay: 1s;
+
+    -webkit-transform: translate(0,-1em);
+
+     -webkit-animation:translate ease-in 1;
+     -webkit-animation-fill-mode:forwards;
+     -webkit-animation-duration:1s;
+     -webkit-animation-delay: .5s;
+ }
+
+
+ @keyframes translate { from { opacity:0;  transform: translate(0,-1em); } to { opacity:1; transform: translate(0,0em); } }
+
+ @-webkit-keyframes translate /* Safari and Chrome */
+ { from { opacity:0; -webkit-transform: translate(0,-1em); } to { opacity:1;  -webkit-transform: translate(0,0em);} }
+
+
+
+
+.cssanimations .fade-in {
+       opacity:0;  /* make things invisible upon start */
+       animation:fadeIn ease-in 1; /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+
+       animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+
+       animation-duration:1s;
+       animation-delay: 1s;
+
+       -webkit-animation:fadeIn ease-in 1;
+       -webkit-animation-fill-mode:forwards;
+       -webkit-animation-duration:1s;
+       -webkit-animation-delay: .5s;
+   }
+
+
+   @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+   @-webkit-keyframes fadeIn /* Safari and Chrome */
+   { from { opacity:0; } to { opacity:1; } }
 
 
 

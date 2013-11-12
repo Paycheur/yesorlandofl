@@ -1,4 +1,3 @@
-</div>
 
 <!-- FOOTER -->
 <footer class="bg-white">
@@ -119,6 +118,7 @@ else //le cas de Shérif
 	<script type="text/javascript" src="Assets/js/bootstrap-slider.js"></script>
 	<script src="Assets/js/main.js"></script>
 	<script src="Assets/js/app/login.js"></script>
+
 	<?php
 }
 if(defined('JS_PAGE')) {

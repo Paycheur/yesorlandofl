@@ -284,6 +284,21 @@ var loadItem = {
     sectionWidth.init();
     loadItem.init();
 
+
+      //page vision
+      (function ($) {
+        // timeline fade
+        imgs = $('section').find("img").not(':first').fadeTo(0, 0);
+        $(window).scroll(function(d,h) {
+          imgs.each(function(i) {
+          a = $(this).offset().top + $(this).height();
+          b = $(window).scrollTop() + $(window).height();
+          if (a < b) $(this).fadeTo(500,1);
+          });
+        });
+      })(jQuery);
+
+
 })(jQuery);
 
 /*==================================================

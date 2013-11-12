@@ -3,10 +3,10 @@ class VLogin
 {
 
 	public function __construct() {return;}
-		
+
 	public function __destruct() {return;}
-	
-	  
+
+
 	public function homeLogin($_value)
 	{
 		?>
@@ -20,13 +20,13 @@ class VLogin
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> Remember me
         </label>
-        <button class="btn btn-large" type="submit">Sign in</button>
+        <button class="btn btn-secondary btn-large" type="submit">Sign in</button>
         <hr>
         <a href="login.php?EX=doLoginWithFacebook" class="btn btn-large btn-primary" type="submit">Sign in with Facebook account</a>
-        
+
 
       </form>
-		
+
 		<?php
 	}
 }
