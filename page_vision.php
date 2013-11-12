@@ -16,7 +16,7 @@ require ('Inc/require.inc.php');
 ////Variables
 //$page['error']='';
 //$page['confirmation']='';
-//	
+//
 //// Contr�leur
 //switch ($EX)
 //{

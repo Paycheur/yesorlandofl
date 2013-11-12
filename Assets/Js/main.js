@@ -48,7 +48,7 @@ var btnDropdownTypes = {
         theBtn.on('click', function () {
             closeOpen.hide('fast');
             openClose.toggle('slow');
-          $('html,body').animate({scrollTop: 400}, 1000);
+          // $('html,body').animate({scrollTop: 400}, 1000);
         });
       }
 };
@@ -61,8 +61,8 @@ var priceRange = {
               $this = $(this),
               theValMin =  + ev.value[0],
               theMax =  + $this.data('slider-max'),
-              minSpan = $('.theMin'),
-              maxSpan = $('.theMax'),
+              minSpan = $this.parent('.slider').siblings('label').find('.theMin'),
+              maxSpan = $this.parent('.slider').siblings('label').find('.theMax'),
               unite = $('.unite'),
               uniteVal = unite.text() ;
               unite.siblings('.orMore').hide();
@@ -252,21 +252,6 @@ var loadItem = {
   //ajaxLinks.init( navLinks );
   //navActiveLink.init( navLinks );
 
-  //main homepage slider
-  $('#ei-slider').eislideshow({
-            animation     : 'center',
-            autoplay      : false,
-            slideshow_interval  : 3000,
-            titlesFactor    : 0,
-            speed           : 800,
-            titlesFactor        : 0.60,
-            // titles animation speed
-            titlespeed          : 800,
-            // titles animation easing
-            titleeasing         : '',
-            // maximum width for the thumbs in pixels
-            thumbMaxWidth       : 150
-  });
 
   // SEARCH CALLING FUNCTIONS
     // --cities
@@ -282,6 +267,14 @@ var loadItem = {
     btnDropdownTypes.init( $('#commercial-type-btn'),  residentailTypes, commercialTypes);
     // -- price Range slider
     priceRange.init( $('#price-range') );
+    priceRange.init( $('#price-range-lease') );
+
+
+
+
+
+
+
     // -- + et - buttons
     plusMinus.init( $('.qtyplus'), $(".qtyminus") );
 
@@ -290,6 +283,21 @@ var loadItem = {
     navSlide.init();
     sectionWidth.init();
     loadItem.init();
+
+
+      //page vision
+      (function ($) {
+        // timeline fade
+        imgs = $('section').find("img").not(':first').fadeTo(0, 0);
+        $(window).scroll(function(d,h) {
+          imgs.each(function(i) {
+          a = $(this).offset().top + $(this).height();
+          b = $(window).scrollTop() + $(window).height();
+          if (a < b) $(this).fadeTo(500,1);
+          });
+        });
+      })(jQuery);
+
 
 })(jQuery);
 

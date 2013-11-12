@@ -51,37 +51,37 @@ function home()
 
     	if(isset($_GET['option']))
 			$option = urlencode($_GET['option']);
-		else 
+		else
 			$option = 'sale';
-			
+
 		if(isset($_GET['price']))
 			$price = urldecode($_GET['price']);
-		else 
+		else
 			$price = '';
-		
+
 	    if(isset($_GET['style']))
 			$style = $_GET['style'];
-		else 
+		else
 			$style = '';
-			
+
 		if(isset($_GET['city']))
 			$location = $_GET['city'];
-		else 
+		else
 			$location = '';
-			
+
 		if(isset($_GET['beds']))
 			$beds = $_GET['beds'];
-		else 
+		else
 			$beds = '';
-			
+
 		if(isset($_GET['bathroom']))
 			$bathroom = $_GET['bathroom'];
-		else 
+		else
 			$bathroom = '';
-			
+
 		if(isset($_GET['page']))
 			$p = $_GET['page'];
-		else 
+		else
 			$p = 1;
 
 
@@ -229,14 +229,14 @@ function searchAJAX() //JSON
 	{
 		$datas = $search->searchForm($style, $location, $beds, $bathroom, $option, $price, $p);
 		$nbResultMax = $search->countSearchForm($style, $location, $beds, $bathroom, $option, $price);
-	
-	
+
+
 
 		if($p == 1 && $nbResultMax > 0)
 		{
 			if(isset($_SESSION['user']['id']) && !empty($_SESSION['user']['id']))
 			{
-	
+
 				$memberSearch = new BddMemberSearch();
 				$memberSearch->setBathroom($bathroom);
 				$memberSearch->setBed($beds);
@@ -258,7 +258,7 @@ function searchAJAX() //JSON
 			$datas2[$k]['url'] = $url;
 		}
 		$tab['results'] = $datas2;
-	
+
 	    echo json_encode($tab);
 	}
 }
@@ -274,7 +274,7 @@ function afficherProperty($data)
 
   	$tab['proximity'] = array();
 
- 	if(count($tabGps) > 0 && isset($tabGps[0]['latitude']) && isset($tabGps[0]['longitude']))
+ 	/*if(count($tabGps) > 0 && isset($tabGps[0]['latitude']) && isset($tabGps[0]['longitude']))
   	{
   		 $food = file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='.$tabGps[0]['latitude'].','.$tabGps[0]['longitude'].'&types=restaurant&radius=500&sensor=false&key=AIzaSyCfUWMe6dpjGdY0-uflHdscZgUpH9m7yj8');
   		 $food = json_decode($food, true);
@@ -295,7 +295,7 @@ function afficherProperty($data)
   		 $school = json_decode($school, true);
   		 if(isset($school['results']))
   		 	$tab['proximity']['school'] = $school['results'];
-  	}
+  	}*/
 
 
   	if(isset($_SESSION['user']['id']) && !empty($_SESSION['user']['id']))
@@ -338,22 +338,22 @@ function afficherProperty($data)
 
 	if($data[0]['type'] == 'residential')
 	{
-	    $page['title'] = 'Residential - '.$data[0]['address'].', '.$data[0]['city'].', '.$data[0]['state'].' '.$data[0]['postal_code']; 
+	    $page['title'] = 'Residential - '.$data[0]['address'].', '.$data[0]['city'].', '.$data[0]['state'].' '.$data[0]['postal_code'];
 	    $page['class'] = 'VPropertyResidential';
 	}
 	else if($data[0]['type'] == 'commercial')
 	{
-	    $page['title'] = 'Commercial - '.$data[0]['address'].', '.$data[0]['city'].', '.$data[0]['state'].' '.$data[0]['postal_code']; 
+	    $page['title'] = 'Commercial - '.$data[0]['address'].', '.$data[0]['city'].', '.$data[0]['state'].' '.$data[0]['postal_code'];
 	    $page['class'] = 'VPropertyCommercial';
 	}
 	else if($data[0]['type'] == 'rental')
 	{
-	    $page['title'] = 'Rental - '.$data[0]['address'].', '.$data[0]['city'].', '.$data[0]['state'].' '.$data[0]['postal_code']; 
+	    $page['title'] = 'Rental - '.$data[0]['address'].', '.$data[0]['city'].', '.$data[0]['state'].' '.$data[0]['postal_code'];
 	    $page['class'] = 'VPropertyRental';
 	}
 	else if($data[0]['type'] == 'vacant_land')
 	{
-	    $page['title'] = 'Vacant Land - '.$data[0]['address'].', '.$data[0]['city'].', '.$data[0]['state'].' '.$data[0]['postal_code']; 
+	    $page['title'] = 'Vacant Land - '.$data[0]['address'].', '.$data[0]['city'].', '.$data[0]['state'].' '.$data[0]['postal_code'];
 	    $page['class'] = 'VPropertyVacantLand';
 	}
     $page['method'] = 'showProperty';

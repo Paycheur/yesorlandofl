@@ -37,7 +37,7 @@ class VSearch
 						{
 							$allImg =array();
 						}
-						
+
 										?>
 							<div class="col-lg-4 padding-2em">
 								<article class="bg-cover" style="background-image:url(<?=$allImg[0] ?>);"   >
@@ -46,7 +46,7 @@ class VSearch
 											<hgroup class="txt-center">
 												<h3 class="search-property-title h4 lh-100 margin-zero"><?=$d['address']?></h3>
 												<h4 class="lh-100 h3 white">$ <?=str_replace('.00', '', $d['price'])?></h4>
-												
+
 											</hgroup>
 											<a href="/property/<?=format_url($d['style'].'-'.$d['address'])?>/<?=$d['id'] ?>" class="btn btn-warning">View details</a>
 											<ul class="list-inline padding-3em details">
