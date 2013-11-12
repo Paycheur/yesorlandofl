@@ -28,10 +28,10 @@ class VPropertyResidential
 		{
 			$allImg =array();
 		}
-
+		
 		setlocale(LC_MONETARY, 'en_US'); //prix format americain
 	?>
-
+	
 	<div class="content">
 
 		<div class="container margin-top-2em margin-bottom-2em " >
