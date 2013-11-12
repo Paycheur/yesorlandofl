@@ -67,9 +67,9 @@ class MSearch
 			$req.=')';
 		}
 		if($beds != 0 && $beds != '')
-			$req .= ' AND bed = \''.protegeChaine($beds).'\'';
+			$req .= ' AND bed >= \''.protegeChaine($beds).'\'';
 		if($bathroom != 0 && $bathroom != '')
-			$req .= ' AND bathroom = \''.protegeChaine($bathroom).'\'';
+			$req .= ' AND bathroom >= \''.protegeChaine($bathroom).'\'';
 		if($city != '')
 		{
 			if(is_array($city))
@@ -98,8 +98,10 @@ class MSearch
 			{
 				$minPrice = $explPrice[0];
 				$maxPrice = $explPrice[1];
-				
-				$req .= ' AND price BETWEEN \''.protegeChaine($minPrice).'\' AND \''.protegeChaine($maxPrice).'\' ';
+				if($maxPrice == '1000000')
+					$req .= ' AND price >= \''.protegeChaine($minPrice).'\' ';
+				else 
+					$req .= ' AND price BETWEEN \''.protegeChaine($minPrice).'\' AND \''.protegeChaine($maxPrice).'\' ';
 			}
 		}
 		
@@ -223,9 +225,9 @@ class MSearch
 			$req.=')';
 		}
 		if($beds != 0 && $beds != '')
-			$req .= ' AND bed = \''.protegeChaine($beds).'\'';
+			$req .= ' AND bed >= \''.protegeChaine($beds).'\'';
 		if($bathroom != 0 && $bathroom != '')
-			$req .= ' AND bathroom = \''.protegeChaine($bathroom).'\'';
+			$req .= ' AND bathroom >= \''.protegeChaine($bathroom).'\'';
 		if($city != '')
 		{
 		
@@ -256,8 +258,10 @@ class MSearch
 			{
 				$minPrice = $explPrice[0];
 				$maxPrice = $explPrice[1];
-				
-				$req .= ' AND price BETWEEN \''.protegeChaine($minPrice).'\' AND \''.protegeChaine($maxPrice).'\' ';
+				if($maxPrice == '1000000')
+					$req .= ' AND price >= \''.protegeChaine($minPrice).'\' ';
+				else 
+					$req .= ' AND price BETWEEN \''.protegeChaine($minPrice).'\' AND \''.protegeChaine($maxPrice).'\' ';
 			}
 		}
 		
