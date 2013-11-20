@@ -28,6 +28,8 @@ body {
 
 img, iframe {
   max-width: 100%;
+}
+img {
   height: auto;
 }
 
@@ -171,7 +173,9 @@ label{
 	-o-background-size: cover;
 	background-size: cover;
 }
-
+.bg-fixed {
+  background-attachment: fixed;
+}
 
 /* RESPONSIVE CSS
 -------------------------------------------------- */
@@ -631,7 +635,11 @@ input[type="range"]::-webkit-slider-thumb {
 // Property
 
 .carousel .item {
-height: 400px;
+  height: 400px;
+}
+
+.carousel-thumbs .item {
+  height: auto;
 }
 /*.carousel-indicators {
   width: auto !important;
@@ -709,13 +717,21 @@ height: 400px;
 }
 
 .page-white {
-      margin-top: 60px;
       background-color: #fff;
       position: relative;
       -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.2);
       -moz-box-shadow: 0px 0px 10px rgba(0,0,0,.2);
       box-shadow: 0px 0px 10px rgba(0,0,0,.2);
 }
+.page-blue {
+      background-color: @blue;
+      color: white;
+      position: relative;
+      -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,.2);
+      -moz-box-shadow: 0px 0px 10px rgba(0,0,0,.2);
+      box-shadow: 0px 0px 10px rgba(0,0,0,.2);
+}
+
 .social {
   font-size: 18px;
   line-height: 24px;

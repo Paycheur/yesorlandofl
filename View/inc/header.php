@@ -80,7 +80,7 @@ require_once(dirname(__FILE__).'/../components/form-login.php'); ?>
             <li><a rel="tab" href="<?php echo $burl.$l_central_fl ?>">central florida</a></li>
           </ul>
         </li>
-        <li><a rel="tab" href="<?php echo $burl ?>brand.php">Sell/Lease</a></li>
+        <li><a rel="tab" href="<?php echo $burl ?>sell-lease">Sell/Lease</a></li>
         <li><a rel="tab" href="<?php echo $burl ?>relocation">Relocation</a></li>
         <li><a rel="tab" href="<?php echo $burl ?>blog.php">Blog</a></li>
 

@@ -3,10 +3,10 @@ class VPropertyCommercial
 {
 
 	public function __construct() {return;}
-		
+
 	public function __destruct() {return;}
-	
-	  
+
+
 	public function showProperty($_value)
 	{
 		/*
@@ -16,9 +16,9 @@ class VPropertyCommercial
 		 * - health : $_value['proximity']['health']
 		 * - restaurant : $_value['proximity']['food']
 		 */
-		
+
 		$csv = $_value['dataCsv'];
-		
+
 
 		if(isset($_value['results']['img']))
 		{
@@ -28,7 +28,7 @@ class VPropertyCommercial
 		{
 			$allImg =array();
 		}
-		
+
 		//setlocale(LC_MONETARY, 'en_US'); //prix format americain
 	?>
 	<div class="content">
@@ -61,7 +61,7 @@ class VPropertyCommercial
 									<li class="hide"><a href="#" title="Dislike" id="button_dislike"><i class="icon-heart" style="color:#FF0989"></i></a></li>
 								<?php
 								}?>
-								
+
 								<li><a href="#" title="Facebook"><i class="icon-facebook"></i></a></li>
 								<li><a href="#" title="Twitter"><i class="icon-twitter"></i> </a></li>
 								<li><a href="javascript:window.print()" title="Print"><i class="icon-print"></i> </a></li>
@@ -156,22 +156,22 @@ class VPropertyCommercial
 				<!-- Begin list data for this property -->
 				<div style="clear:both"></div><div>
 				<ul>
-				<?php 
+				<?php
 				foreach($csv as $tab)
 				{
 					if($tab['val'] != '')
 					{?>
 						<li><?='<b>'.$tab['lib'].' :</b> '.$tab['val'] ?></li>
-					<?php 
+					<?php
 					}
 				}?>
 				</ul>
 				</div>
 				<!-- end list data -->
-				
+
 			</article>
 			<aside class="col-lg-5 padding-r-l-2em padding-4em bg-gray-light property-sidebar" >
-				
+
 					<h3 class="price margin-top-zero  lh-100">
 						<?=(isset($_value['results']['style']) ? $_value['results']['style'] : '') ?>
 						<?php
@@ -218,57 +218,57 @@ class VPropertyCommercial
 				  			{?>
 				  			<li><i class="icon-food"></i>  <b>Restaurants (<?=count($_value['proximity']['food']) ?>)</b>
 				  				<ul>
-				  					<?php 
+				  					<?php
 				  					foreach($_value['proximity']['food'] as $v)
 				  					{?>
 				  						<li><?=$v['name'] ?></li>
-				  					<?php 
+				  					<?php
 				  					}?>
 				  				</ul>
 				  			</li>
-				  			<?php 
+				  			<?php
 				  			}
 				  			if(isset($_value['proximity']['grocery']) && count($_value['proximity']['grocery'])  > 0)
 				  			{?>
 				  			<li><i class="icon-leaf"></i>  <b>Grocery and Markets (<?=count($_value['proximity']['grocery']) ?>)</b>
 				  				<ul>
-				  					<?php 
+				  					<?php
 				  					foreach($_value['proximity']['grocery'] as $v)
 				  					{?>
 				  						<li><?=$v['name'] ?></li>
-				  					<?php 
+				  					<?php
 				  					}?>
 				  				</ul>
 				  			</li>
-				  			<?php 
+				  			<?php
 				  			}
 				  			if(isset($_value['proximity']['health']) && count($_value['proximity']['health'])  > 0)
 				  			{?>
 				  			<li><i class="icon-stethoscope"></i>  <b>Health clubs and spas (<?=count($_value['proximity']['health']) ?>)</b>
 				  				<ul>
-				  					<?php 
+				  					<?php
 				  					foreach($_value['proximity']['health'] as $v)
 				  					{?>
 				  						<li><?=$v['name'] ?></li>
-				  					<?php 
+				  					<?php
 				  					}?>
 				  				</ul>
 				  			</li>
-				  			<?php 
+				  			<?php
 				  			}
 				  			if(isset($_value['proximity']['school']) && count($_value['proximity']['school'])  > 0)
 				  			{?>
 				  			<li><i class="icon-book"></i> <b>Public School (<?=count($_value['proximity']['school']) ?>)</b>
 				  				<ul>
-				  					<?php 
+				  					<?php
 				  					foreach($_value['proximity']['school'] as $v)
 				  					{?>
 				  						<li><?=$v['name'] ?></li>
-				  					<?php 
+				  					<?php
 				  					}?>
 				  				</ul>
 				  			</li>
-				  			<?php 
+				  			<?php
 				  			}?>
 
 				  		</ul>

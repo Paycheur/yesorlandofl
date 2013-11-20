@@ -121,6 +121,7 @@ else //le cas de Shérif
 
 	<?php
 }
+
 if(defined('JS_PAGE')) {
 	if(is_array(JS_PAGE))
 	{
