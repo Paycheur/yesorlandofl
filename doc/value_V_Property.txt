@@ -4,45 +4,123 @@ Pour afficher le libellé d'une valeur, replacer "val" par "lib"
 
 /*
  * ******** BEGIN VALUE LIST FOR COMMERCIAL **********
-lease_rate 				: 		<?=(isset($csv['lease_rate']) ? $csv['lease_rate']['val'] : '')?>
-property_use 				: 		<?=(isset($csv['property_use']) ? $csv['property_use']['val'] : '')?>
-property_style 				: 		<?=(isset($csv['property_style']) ? $csv['property_style']['val'] : '')?>
-sq_ft_gross 				: 		<?=(isset($csv['sq_ft_gross']) ? $csv['sq_ft_gross']['val'] : '')?>
-lp_sqft 				: 		<?=(isset($csv['lp_sqft']) ? $csv['lp_sqft']['val'] : '')?>
-lease_price_per_sf 				: 		<?=(isset($csv['lease_price_per_sf']) ? $csv['lease_price_per_sf']['val'] : '')?>
-net_leasable_sq_ft 				: 		<?=(isset($csv['net_leasable_sq_ft']) ? $csv['net_leasable_sq_ft']['val'] : '')?>
-total_num_bldg 				: 		<?=(isset($csv['total_num_bldg']) ? $csv['total_num_bldg']['val'] : '')?>
-floors_number 				: 		<?=(isset($csv['floors_number']) ? $csv['floors_number']['val'] : '')?>
-class_of_space 				: 		<?=(isset($csv['class_of_space']) ? $csv['class_of_space']['val'] : '')?>
-lot_size_acres 				: 		<?=(isset($csv['lot_size_acres']) ? $csv['lot_size_acres']['val'] : '')?>
-public_remarks_new 				: 		<?=(isset($csv['public_remarks_new']) ? $csv['public_remarks_new']['val'] : '')?>
-complex_community_name_nccb 				: 		<?=(isset($csv['complex_community_name_nccb']) ? $csv['complex_community_name_nccb']['val'] : '')?>
-zoning 				: 		<?=(isset($csv['zoning']) ? $csv['zoning']['val'] : '')?>
-taxes 				: 		<?=(isset($csv['taxes']) ? $csv['taxes']['val'] : '')?>
-net_operating_income 				: 		<?=(isset($csv['net_operating_income']) ? $csv['net_operating_income']['val'] : '')?>
-cam_per_sq_ft 				: 		<?=(isset($csv['cam_per_sq_ft']) ? $csv['cam_per_sq_ft']['val'] : '')?>
-number_of_add_parcels 				: 		<?=(isset($csv['number_of_add_parcels']) ? $csv['number_of_add_parcels']['val'] : '')?>
-water_view 				: 		<?=(isset($csv['water_view']) ? $csv['water_view']['val'] : '')?>
-waterfront_feet 				: 		<?=(isset($csv['waterfront_feet']) ? $csv['waterfront_feet']['val'] : '')?>
-number_of_hotel_motel_rms 				: 		<?=(isset($csv['number_of_hotel_motel_rms']) ? $csv['number_of_hotel_motel_rms']['val'] : '')?>
-number_of_restrooms 				: 		<?=(isset($csv['number_of_restrooms']) ? $csv['number_of_restrooms']['val'] : '')?>
-number_of_offices 				: 		<?=(isset($csv['number_of_offices']) ? $csv['number_of_offices']['val'] : '')?>
-warehouse_space_heated 				: 		<?=(isset($csv['warehouse_space_heated']) ? $csv['warehouse_space_heated']['val'] : '')?>
-warehouse_space_total 				: 		<?=(isset($csv['warehouse_space_total']) ? $csv['warehouse_space_total']['val'] : '')?>
-number_of_bays_dock_high 				: 		<?=(isset($csv['number_of_bays_dock_high']) ? $csv['number_of_bays_dock_high']['val'] : '')?>
-number_of_bays_grade_level 				: 		<?=(isset($csv['number_of_bays_grade_level']) ? $csv['number_of_bays_grade_level']['val'] : '')?>
-freezer_space_y_n 				: 		<?=(isset($csv['freezer_space_y_n']) ? $csv['freezer_space_y_n']['val'] : '')?>
-air_conditioning 				: 		<?=(isset($csv['air_conditioning']) ? $csv['air_conditioning']['val'] : '')?>
-utilities 				: 		<?=(isset($csv['utilities']) ? $csv['utilities']['val'] : '')?>
-new_construction 				: 		<?=(isset($csv['new_construction']) ? $csv['new_construction']['val'] : '')?>
-construction_status 				: 		<?=(isset($csv['construction_status']) ? $csv['construction_status']['val'] : '')?>
-projected_completion_date 				: 		<?=(isset($csv['projected_completion_date']) ? $csv['projected_completion_date']['val'] : '')?>
-green_site_improvements 				: 		<?=(isset($csv['green_site_improvements']) ? $csv['green_site_improvements']['val'] : '')?>
-green_water_features 				: 		<?=(isset($csv['green_water_features']) ? $csv['green_water_features']['val'] : '')?>
-green_energy_features 				: 		<?=(isset($csv['green_energy_features']) ? $csv['green_energy_features']['val'] : '')?>
-financing_terms 				: 		<?=(isset($csv['financing_terms']) ? $csv['financing_terms']['val'] : '')?>
-condo_fees 				: 		<?=(isset($csv['condo_fees']) ? $csv['condo_fees']['val'] : '')?>
-condo_fees_term 				: 		<?=(isset($csv['condo_fees_term']) ? $csv['condo_fees_term']['val'] : '')?>
+
+lease_rate	:
+					<?=(isset($csv['lease_rate']) ? $csv['lease_rate']['val'] : '')?>
+
+property_use	:
+					<?=(isset($csv['property_use']) ? $csv['property_use']['val'] : '')?>
+
+property_style	:
+					<?=(isset($csv['property_style']) ? $csv['property_style']['val'] : '')?>
+
+sq_ft_gross	:
+					<?=(isset($csv['sq_ft_gross']) ? $csv['sq_ft_gross']['val'] : '')?>
+
+lp_sqft	:
+					<?=(isset($csv['lp_sqft']) ? $csv['lp_sqft']['val'] : '')?>
+
+lease_price_per_sf	:
+					<?=(isset($csv['lease_price_per_sf']) ? $csv['lease_price_per_sf']['val'] : '')?>
+
+net_leasable_sq_ft	:
+					<?=(isset($csv['net_leasable_sq_ft']) ? $csv['net_leasable_sq_ft']['val'] : '')?>
+
+total_num_bldg	:
+					<?=(isset($csv['total_num_bldg']) ? $csv['total_num_bldg']['val'] : '')?>
+
+floors_number	:
+					<?=(isset($csv['floors_number']) ? $csv['floors_number']['val'] : '')?>
+
+class_of_space	:
+					<?=(isset($csv['class_of_space']) ? $csv['class_of_space']['val'] : '')?>
+
+lot_size_acres	:
+					<?=(isset($csv['lot_size_acres']) ? $csv['lot_size_acres']['val'] : '')?>
+
+public_remarks_new	:
+					<?=(isset($csv['public_remarks_new']) ? $csv['public_remarks_new']['val'] : '')?>
+
+complex_community_name_nccb	:
+					<?=(isset($csv['complex_community_name_nccb']) ? $csv['complex_community_name_nccb']['val'] : '')?>
+
+zoning	:
+					<?=(isset($csv['zoning']) ? $csv['zoning']['val'] : '')?>
+
+taxes	:
+					<?=(isset($csv['taxes']) ? $csv['taxes']['val'] : '')?>
+
+net_operating_income	:
+					<?=(isset($csv['net_operating_income']) ? $csv['net_operating_income']['val'] : '')?>
+
+cam_per_sq_ft	:
+					<?=(isset($csv['cam_per_sq_ft']) ? $csv['cam_per_sq_ft']['val'] : '')?>
+
+number_of_add_parcels	:
+					<?=(isset($csv['number_of_add_parcels']) ? $csv['number_of_add_parcels']['val'] : '')?>
+
+water_view	:
+					<?=(isset($csv['water_view']) ? $csv['water_view']['val'] : '')?>
+
+waterfront_feet	:
+					<?=(isset($csv['waterfront_feet']) ? $csv['waterfront_feet']['val'] : '')?>
+
+number_of_hotel_motel_rms	:
+					<?=(isset($csv['number_of_hotel_motel_rms']) ? $csv['number_of_hotel_motel_rms']['val'] : '')?>
+
+number_of_restrooms	:
+					<?=(isset($csv['number_of_restrooms']) ? $csv['number_of_restrooms']['val'] : '')?>
+
+number_of_offices	:
+					<?=(isset($csv['number_of_offices']) ? $csv['number_of_offices']['val'] : '')?>
+
+warehouse_space_heated	:
+					<?=(isset($csv['warehouse_space_heated']) ? $csv['warehouse_space_heated']['val'] : '')?>
+
+warehouse_space_total	:
+					<?=(isset($csv['warehouse_space_total']) ? $csv['warehouse_space_total']['val'] : '')?>
+
+number_of_bays_dock_high	:
+					<?=(isset($csv['number_of_bays_dock_high']) ? $csv['number_of_bays_dock_high']['val'] : '')?>
+
+number_of_bays_grade_level	:
+					<?=(isset($csv['number_of_bays_grade_level']) ? $csv['number_of_bays_grade_level']['val'] : '')?>
+
+freezer_space_y_n	:
+					<?=(isset($csv['freezer_space_y_n']) ? $csv['freezer_space_y_n']['val'] : '')?>
+
+air_conditioning	:
+					<?=(isset($csv['air_conditioning']) ? $csv['air_conditioning']['val'] : '')?>
+
+utilities	:
+					<?=(isset($csv['utilities']) ? $csv['utilities']['val'] : '')?>
+
+new_construction	:
+					<?=(isset($csv['new_construction']) ? $csv['new_construction']['val'] : '')?>
+
+construction_status	:
+					<?=(isset($csv['construction_status']) ? $csv['construction_status']['val'] : '')?>
+
+projected_completion_date	:
+					<?=(isset($csv['projected_completion_date']) ? $csv['projected_completion_date']['val'] : '')?>
+
+green_site_improvements	:
+					<?=(isset($csv['green_site_improvements']) ? $csv['green_site_improvements']['val'] : '')?>
+
+green_water_features	:
+					<?=(isset($csv['green_water_features']) ? $csv['green_water_features']['val'] : '')?>
+
+green_energy_features	:
+					<?=(isset($csv['green_energy_features']) ? $csv['green_energy_features']['val'] : '')?>
+
+financing_terms	:
+					<?=(isset($csv['financing_terms']) ? $csv['financing_terms']['val'] : '')?>
+
+condo_fees	:
+					<?=(isset($csv['condo_fees']) ? $csv['condo_fees']['val'] : '')?>
+
+condo_fees_term	:
+					<?=(isset($csv['condo_fees_term']) ? $csv['condo_fees_term']['val'] : '')?>
 	********** END VALUE LIST FOR COMMERCIAL
 */
 
@@ -51,82 +129,234 @@ condo_fees_term 				: 		<?=(isset($csv['condo_fees_term']) ? $csv['condo_fees_te
 
 /*
  * ******** BEGIN VALUE LIST FOR RENTAL **********
-property_description 				: 		<?=(isset($csv['property_description']) ? $csv['property_description']['val'] : '')?>
-property_style 				: 		<?=(isset($csv['property_style']) ? $csv['property_style']['val'] : '')?>
-architectural_style 				: 		<?=(isset($csv['architectural_style']) ? $csv['architectural_style']['val'] : '')?>
-beds 				: 		<?=(isset($csv['beds']) ? $csv['beds']['val'] : '')?>
-full_baths 				: 		<?=(isset($csv['full_baths']) ? $csv['full_baths']['val'] : '')?>
-half_baths 				: 		<?=(isset($csv['half_baths']) ? $csv['half_baths']['val'] : '')?>
-sq_ft_heated 				: 		<?=(isset($csv['sq_ft_heated']) ? $csv['sq_ft_heated']['val'] : '')?>
-lot_size 				: 		<?=(isset($csv['lot_size']) ? $csv['lot_size']['val'] : '')?>
-lp_sqft 				: 		<?=(isset($csv['lp_sqft']) ? $csv['lp_sqft']['val'] : '')?>
-year_built 				: 		<?=(isset($csv['year_built']) ? $csv['year_built']['val'] : '')?>
-garage_carport 				: 		<?=(isset($csv['garage_carport']) ? $csv['garage_carport']['val'] : '')?>
-annual_rent 				: 		<?=(isset($csv['annual_rent']) ? $csv['annual_rent']['val'] : '')?>
-seasonal_rent 				: 		<?=(isset($csv['seasonal_rent']) ? $csv['seasonal_rent']['val'] : '')?>
-off_season_rent 				: 		<?=(isset($csv['off_season_rent']) ? $csv['off_season_rent']['val'] : '')?>
-weekly_rent 				: 		<?=(isset($csv['weekly_rent']) ? $csv['weekly_rent']['val'] : '')?>
-application_fee 				: 		<?=(isset($csv['application_fee']) ? $csv['application_fee']['val'] : '')?>
-max_pet_weight 				: 		<?=(isset($csv['max_pet_weight']) ? $csv['max_pet_weight']['val'] : '')?>
-minimum_days_leased 				: 		<?=(isset($csv['minimum_days_leased']) ? $csv['minimum_days_leased']['val'] : '')?>
-pet_deposit 				: 		<?=(isset($csv['pet_deposit']) ? $csv['pet_deposit']['val'] : '')?>
-pet_fee_non_refundable 				: 		<?=(isset($csv['pet_fee_non_refundable']) ? $csv['pet_fee_non_refundable']['val'] : '')?>
-security_deposit 				: 		<?=(isset($csv['security_deposit']) ? $csv['security_deposit']['val'] : '')?>
-long_term_y_n 				: 		<?=(isset($csv['long_term_y_n']) ? $csv['long_term_y_n']['val'] : '')?>
-association_approval_fee 				: 		<?=(isset($csv['association_approval_fee']) ? $csv['association_approval_fee']['val'] : '')?>
-additional_applicant_fee 				: 		<?=(isset($csv['additional_applicant_fee']) ? $csv['additional_applicant_fee']['val'] : '')?>
-furnishings 				: 		<?=(isset($csv['furnishings']) ? $csv['furnishings']['val'] : '')?>
-weeks_available_2013 				: 		<?=(isset($csv['weeks_available_2013']) ? $csv['weeks_available_2013']['val'] : '')?>
-master_bedroom_approx 				: 		<?=(isset($csv['master_bedroom_approx']) ? $csv['master_bedroom_approx']['val'] : '')?>
-2nd_bedroom_approx 				: 		<?=(isset($csv['2nd_bedroom_approx']) ? $csv['2nd_bedroom_approx']['val'] : '')?>
-3rd_bedroom_approx 				: 		<?=(isset($csv['3rd_bedroom_approx']) ? $csv['3rd_bedroom_approx']['val'] : '')?>
-4th_bedroom_approx 				: 		<?=(isset($csv['4th_bedroom_approx']) ? $csv['4th_bedroom_approx']['val'] : '')?>
-5th_bedroom_approx 				: 		<?=(isset($csv['5th_bedroom_approx']) ? $csv['5th_bedroom_approx']['val'] : '')?>
-master_bath_features 				: 		<?=(isset($csv['master_bath_features']) ? $csv['master_bath_features']['val'] : '')?>
-kitchen_features 				: 		<?=(isset($csv['kitchen_features']) ? $csv['kitchen_features']['val'] : '')?>
-kitchen_approx 				: 		<?=(isset($csv['kitchen_approx']) ? $csv['kitchen_approx']['val'] : '')?>
-great_room_approx 				: 		<?=(isset($csv['great_room_approx']) ? $csv['great_room_approx']['val'] : '')?>
-family_room_approx 				: 		<?=(isset($csv['family_room_approx']) ? $csv['family_room_approx']['val'] : '')?>
-living_room_approx 				: 		<?=(isset($csv['living_room_approx']) ? $csv['living_room_approx']['val'] : '')?>
-dinette_approx 				: 		<?=(isset($csv['dinette_approx']) ? $csv['dinette_approx']['val'] : '')?>
-bonus_room_approx 				: 		<?=(isset($csv['bonus_room_approx']) ? $csv['bonus_room_approx']['val'] : '')?>
-studio_dimensions 				: 		<?=(isset($csv['studio_dimensions']) ? $csv['studio_dimensions']['val'] : '')?>
-study_den_dimensions 				: 		<?=(isset($csv['study_den_dimensions']) ? $csv['study_den_dimensions']['val'] : '')?>
-balcony_porch_lanai_approx 				: 		<?=(isset($csv['balcony_porch_lanai_approx']) ? $csv['balcony_porch_lanai_approx']['val'] : '')?>
-interior_layout 				: 		<?=(isset($csv['interior_layout']) ? $csv['interior_layout']['val'] : '')?>
-interior_features 				: 		<?=(isset($csv['interior_features']) ? $csv['interior_features']['val'] : '')?>
-floor_covering 				: 		<?=(isset($csv['floor_covering']) ? $csv['floor_covering']['val'] : '')?>
-roof 				: 		<?=(isset($csv['roof']) ? $csv['roof']['val'] : '')?>
-foundation 				: 		<?=(isset($csv['foundation']) ? $csv['foundation']['val'] : '')?>
-exterior_features 				: 		<?=(isset($csv['exterior_features']) ? $csv['exterior_features']['val'] : '')?>
-lot_size_acres 				: 		<?=(isset($csv['lot_size_acres']) ? $csv['lot_size_acres']['val'] : '')?>
-lot_size_sqft 				: 		<?=(isset($csv['lot_size_sqft']) ? $csv['lot_size_sqft']['val'] : '')?>
-lot_dimensions 				: 		<?=(isset($csv['lot_dimensions']) ? $csv['lot_dimensions']['val'] : '')?>
-total_acreage 				: 		<?=(isset($csv['total_acreage']) ? $csv['total_acreage']['val'] : '')?>
-garage_features	character 				: 		<?=(isset($csv['garage_features	character']) ? $csv['garage_features	character']['val'] : '')?>
-air_conditioning 				: 		<?=(isset($csv['air_conditioning']) ? $csv['air_conditioning']['val'] : '')?>
-heating_and_fuel 				: 		<?=(isset($csv['heating_and_fuel']) ? $csv['heating_and_fuel']['val'] : '')?>
-fireplace_y_n 				: 		<?=(isset($csv['fireplace_y_n']) ? $csv['fireplace_y_n']['val'] : '')?>
-fireplace_description 				: 		<?=(isset($csv['fireplace_description']) ? $csv['fireplace_description']['val'] : '')?>
-utilities 				: 		<?=(isset($csv['utilities']) ? $csv['utilities']['val'] : '')?>
-appliances_included 				: 		<?=(isset($csv['appliances_included']) ? $csv['appliances_included']['val'] : '')?>
-pool 				: 		<?=(isset($csv['pool']) ? $csv['pool']['val'] : '')?>
-pool_type 				: 		<?=(isset($csv['pool_type']) ? $csv['pool_type']['val'] : '')?>
-pool_dimensions 				: 		<?=(isset($csv['pool_dimensions']) ? $csv['pool_dimensions']['val'] : '')?>
-water_name 				: 		<?=(isset($csv['water_name']) ? $csv['water_name']['val'] : '')?>
-water_view_y_n 				: 		<?=(isset($csv['water_view_y_n']) ? $csv['water_view_y_n']['val'] : '')?>
-water_frontage_y_n 				: 		<?=(isset($csv['water_frontage_y_n']) ? $csv['water_frontage_y_n']['val'] : '')?>
-water_frontage 				: 		<?=(isset($csv['water_frontage']) ? $csv['water_frontage']['val'] : '')?>
-water_access 				: 		<?=(isset($csv['water_access']) ? $csv['water_access']['val'] : '')?>
-waterfront_feet 				: 		<?=(isset($csv['waterfront_feet']) ? $csv['waterfront_feet']['val'] : '')?>
-elementary_school 				: 		<?=(isset($csv['elementary_school']) ? $csv['elementary_school']['val'] : '')?>
-middle_or_junior_school 				: 		<?=(isset($csv['middle_or_junior_school']) ? $csv['middle_or_junior_school']['val'] : '')?>
-high_school 				: 		<?=(isset($csv['high_school']) ? $csv['high_school']['val'] : '')?>
-community_features 				: 		<?=(isset($csv['community_features']) ? $csv['community_features']['val'] : '')?>
-flood_zone_code 				: 		<?=(isset($csv['flood_zone_code']) ? $csv['flood_zone_code']['val'] : '')?>
-location 				: 		<?=(isset($csv['location']) ? $csv['location']['val'] : '')?>
-pets_allowed_y_n 				: 		<?=(isset($csv['pets_allowed_y_n']) ? $csv['pets_allowed_y_n']['val'] : '')?>
-green_certifications 				: 		<?=(isset($csv['green_certifications']) ? $csv['green_certifications']['val'] : '')?>
+
+property_description	:
+					<?=(isset($csv['property_description']) ? $csv['property_description']['val'] : '')?>
+
+property_style	:
+					<?=(isset($csv['property_style']) ? $csv['property_style']['val'] : '')?>
+
+architectural_style	:
+					<?=(isset($csv['architectural_style']) ? $csv['architectural_style']['val'] : '')?>
+
+beds	:
+					<?=(isset($csv['beds']) ? $csv['beds']['val'] : '')?>
+
+full_baths	:
+					<?=(isset($csv['full_baths']) ? $csv['full_baths']['val'] : '')?>
+
+half_baths	:
+					<?=(isset($csv['half_baths']) ? $csv['half_baths']['val'] : '')?>
+
+sq_ft_heated	:
+					<?=(isset($csv['sq_ft_heated']) ? $csv['sq_ft_heated']['val'] : '')?>
+
+lot_size	:
+					<?=(isset($csv['lot_size']) ? $csv['lot_size']['val'] : '')?>
+
+lp_sqft	:
+					<?=(isset($csv['lp_sqft']) ? $csv['lp_sqft']['val'] : '')?>
+
+year_built	:
+					<?=(isset($csv['year_built']) ? $csv['year_built']['val'] : '')?>
+
+garage_carport	:
+					<?=(isset($csv['garage_carport']) ? $csv['garage_carport']['val'] : '')?>
+
+annual_rent	:
+					<?=(isset($csv['annual_rent']) ? $csv['annual_rent']['val'] : '')?>
+
+seasonal_rent	:
+					<?=(isset($csv['seasonal_rent']) ? $csv['seasonal_rent']['val'] : '')?>
+
+off_season_rent	:
+					<?=(isset($csv['off_season_rent']) ? $csv['off_season_rent']['val'] : '')?>
+
+weekly_rent	:
+					<?=(isset($csv['weekly_rent']) ? $csv['weekly_rent']['val'] : '')?>
+
+application_fee	:
+					<?=(isset($csv['application_fee']) ? $csv['application_fee']['val'] : '')?>
+
+max_pet_weight	:
+					<?=(isset($csv['max_pet_weight']) ? $csv['max_pet_weight']['val'] : '')?>
+
+minimum_days_leased	:
+					<?=(isset($csv['minimum_days_leased']) ? $csv['minimum_days_leased']['val'] : '')?>
+
+pet_deposit	:
+					<?=(isset($csv['pet_deposit']) ? $csv['pet_deposit']['val'] : '')?>
+
+pet_fee_non_refundable	:
+					<?=(isset($csv['pet_fee_non_refundable']) ? $csv['pet_fee_non_refundable']['val'] : '')?>
+
+security_deposit	:
+					<?=(isset($csv['security_deposit']) ? $csv['security_deposit']['val'] : '')?>
+
+long_term_y_n	:
+					<?=(isset($csv['long_term_y_n']) ? $csv['long_term_y_n']['val'] : '')?>
+
+association_approval_fee	:
+					<?=(isset($csv['association_approval_fee']) ? $csv['association_approval_fee']['val'] : '')?>
+
+additional_applicant_fee	:
+					<?=(isset($csv['additional_applicant_fee']) ? $csv['additional_applicant_fee']['val'] : '')?>
+
+furnishings	:
+					<?=(isset($csv['furnishings']) ? $csv['furnishings']['val'] : '')?>
+
+weeks_available_2013	:
+					<?=(isset($csv['weeks_available_2013']) ? $csv['weeks_available_2013']['val'] : '')?>
+
+master_bedroom_approx	:
+					<?=(isset($csv['master_bedroom_approx']) ? $csv['master_bedroom_approx']['val'] : '')?>
+
+2nd_bedroom_approx	:
+					<?=(isset($csv['2nd_bedroom_approx']) ? $csv['2nd_bedroom_approx']['val'] : '')?>
+
+3rd_bedroom_approx	:
+					<?=(isset($csv['3rd_bedroom_approx']) ? $csv['3rd_bedroom_approx']['val'] : '')?>
+
+4th_bedroom_approx	:
+					<?=(isset($csv['4th_bedroom_approx']) ? $csv['4th_bedroom_approx']['val'] : '')?>
+
+5th_bedroom_approx	:
+					<?=(isset($csv['5th_bedroom_approx']) ? $csv['5th_bedroom_approx']['val'] : '')?>
+
+master_bath_features	:
+					<?=(isset($csv['master_bath_features']) ? $csv['master_bath_features']['val'] : '')?>
+
+kitchen_features	:
+					<?=(isset($csv['kitchen_features']) ? $csv['kitchen_features']['val'] : '')?>
+
+kitchen_approx	:
+					<?=(isset($csv['kitchen_approx']) ? $csv['kitchen_approx']['val'] : '')?>
+
+great_room_approx	:
+					<?=(isset($csv['great_room_approx']) ? $csv['great_room_approx']['val'] : '')?>
+
+family_room_approx	:
+					<?=(isset($csv['family_room_approx']) ? $csv['family_room_approx']['val'] : '')?>
+
+living_room_approx	:
+					<?=(isset($csv['living_room_approx']) ? $csv['living_room_approx']['val'] : '')?>
+
+dinette_approx	:
+					<?=(isset($csv['dinette_approx']) ? $csv['dinette_approx']['val'] : '')?>
+
+bonus_room_approx	:
+					<?=(isset($csv['bonus_room_approx']) ? $csv['bonus_room_approx']['val'] : '')?>
+
+studio_dimensions	:
+					<?=(isset($csv['studio_dimensions']) ? $csv['studio_dimensions']['val'] : '')?>
+
+study_den_dimensions	:
+					<?=(isset($csv['study_den_dimensions']) ? $csv['study_den_dimensions']['val'] : '')?>
+
+balcony_porch_lanai_approx	:
+					<?=(isset($csv['balcony_porch_lanai_approx']) ? $csv['balcony_porch_lanai_approx']['val'] : '')?>
+
+interior_layout	:
+					<?=(isset($csv['interior_layout']) ? $csv['interior_layout']['val'] : '')?>
+
+interior_features	:
+					<?=(isset($csv['interior_features']) ? $csv['interior_features']['val'] : '')?>
+
+floor_covering	:
+					<?=(isset($csv['floor_covering']) ? $csv['floor_covering']['val'] : '')?>
+
+roof	:
+					<?=(isset($csv['roof']) ? $csv['roof']['val'] : '')?>
+
+foundation	:
+					<?=(isset($csv['foundation']) ? $csv['foundation']['val'] : '')?>
+
+exterior_features	:
+					<?=(isset($csv['exterior_features']) ? $csv['exterior_features']['val'] : '')?>
+
+lot_size_acres	:
+					<?=(isset($csv['lot_size_acres']) ? $csv['lot_size_acres']['val'] : '')?>
+
+lot_size_sqft	:
+					<?=(isset($csv['lot_size_sqft']) ? $csv['lot_size_sqft']['val'] : '')?>
+
+lot_dimensions	:
+					<?=(isset($csv['lot_dimensions']) ? $csv['lot_dimensions']['val'] : '')?>
+
+total_acreage	:
+					<?=(isset($csv['total_acreage']) ? $csv['total_acreage']['val'] : '')?>
+
+garage_features	character	:
+					<?=(isset($csv['garage_features	character']) ? $csv['garage_features	character']['val'] : '')?>
+
+air_conditioning	:
+					<?=(isset($csv['air_conditioning']) ? $csv['air_conditioning']['val'] : '')?>
+
+heating_and_fuel	:
+					<?=(isset($csv['heating_and_fuel']) ? $csv['heating_and_fuel']['val'] : '')?>
+
+fireplace_y_n	:
+					<?=(isset($csv['fireplace_y_n']) ? $csv['fireplace_y_n']['val'] : '')?>
+
+fireplace_description	:
+					<?=(isset($csv['fireplace_description']) ? $csv['fireplace_description']['val'] : '')?>
+
+utilities	:
+					<?=(isset($csv['utilities']) ? $csv['utilities']['val'] : '')?>
+
+appliances_included	:
+					<?=(isset($csv['appliances_included']) ? $csv['appliances_included']['val'] : '')?>
+
+pool	:
+					<?=(isset($csv['pool']) ? $csv['pool']['val'] : '')?>
+
+pool_type	:
+					<?=(isset($csv['pool_type']) ? $csv['pool_type']['val'] : '')?>
+
+pool_dimensions	:
+					<?=(isset($csv['pool_dimensions']) ? $csv['pool_dimensions']['val'] : '')?>
+
+water_name	:
+					<?=(isset($csv['water_name']) ? $csv['water_name']['val'] : '')?>
+
+water_view_y_n	:
+					<?=(isset($csv['water_view_y_n']) ? $csv['water_view_y_n']['val'] : '')?>
+
+water_frontage_y_n	:
+					<?=(isset($csv['water_frontage_y_n']) ? $csv['water_frontage_y_n']['val'] : '')?>
+
+water_frontage	:
+					<?=(isset($csv['water_frontage']) ? $csv['water_frontage']['val'] : '')?>
+
+water_access	:
+					<?=(isset($csv['water_access']) ? $csv['water_access']['val'] : '')?>
+
+waterfront_feet	:
+					<?=(isset($csv['waterfront_feet']) ? $csv['waterfront_feet']['val'] : '')?>
+
+elementary_school	:
+					<?=(isset($csv['elementary_school']) ? $csv['elementary_school']['val'] : '')?>
+
+middle_or_junior_school	:
+					<?=(isset($csv['middle_or_junior_school']) ? $csv['middle_or_junior_school']['val'] : '')?>
+
+high_school	:
+					<?=(isset($csv['high_school']) ? $csv['high_school']['val'] : '')?>
+
+community_features	:
+					<?=(isset($csv['community_features']) ? $csv['community_features']['val'] : '')?>
+
+flood_zone_code	:
+					<?=(isset($csv['flood_zone_code']) ? $csv['flood_zone_code']['val'] : '')?>
+
+location	:
+					<?=(isset($csv['location']) ? $csv['location']['val'] : '')?>
+
+pets_allowed_y_n	:
+					<?=(isset($csv['pets_allowed_y_n']) ? $csv['pets_allowed_y_n']['val'] : '')?>
+
+green_certifications	:
+					<?=(isset($csv['green_certifications']) ? $csv['green_certifications']['val'] : '')?>
 
 	********** END VALUE LIST FOR RENTAL
 */
@@ -135,78 +365,222 @@ green_certifications 				: 		<?=(isset($csv['green_certifications']) ? $csv['gre
 
 /*
  * ******** BEGIN VALUE LIST FOR RESIDENTIAL **********
-special_sale_provision 				: 		<?=(isset($csv['special_sale_provision']) ? $csv['special_sale_provision']['val'] : '')?>
-list_price 				: 		<?=(isset($csv['list_price']) ? $csv['list_price']['val'] : '')?>
-property_description 				: 		<?=(isset($csv['property_description']) ? $csv['property_description']['val'] : '')?>
-property_style 				: 		<?=(isset($csv['property_style']) ? $csv['property_style']['val'] : '')?>
-architectural_style 				: 		<?=(isset($csv['architectural_style']) ? $csv['architectural_style']['val'] : '')?>
-full_baths 				: 		<?=(isset($csv['full_baths']) ? $csv['full_baths']['val'] : '')?>
-half_baths 				: 		<?=(isset($csv['half_baths']) ? $csv['half_baths']['val'] : '')?>
-sq_ft_heated 				: 		<?=(isset($csv['sq_ft_heated']) ? $csv['sq_ft_heated']['val'] : '')?>
-lot_size 				: 		<?=(isset($csv['lot_size']) ? $csv['lot_size']['val'] : '')?>
-lp_sqft 				: 		<?=(isset($csv['lp_sqft']) ? $csv['lp_sqft']['val'] : '')?>
-year_built 				: 		<?=(isset($csv['year_built']) ? $csv['year_built']['val'] : '')?>
-garage_carport 				: 		<?=(isset($csv['garage_carport']) ? $csv['garage_carport']['val'] : '')?>
-beds 				: 		<?=(isset($csv['beds']) ? $csv['beds']['val'] : '')?>
-master_bedroom_approx 				: 		<?=(isset($csv['master_bedroom_approx']) ? $csv['master_bedroom_approx']['val'] : '')?>
-2nd_bedroom_approx 				: 		<?=(isset($csv['2nd_bedroom_approx']) ? $csv['2nd_bedroom_approx']['val'] : '')?>
-3rd_bedroom_approx 				: 		<?=(isset($csv['3rd_bedroom_approx']) ? $csv['3rd_bedroom_approx']['val'] : '')?>
-4th_bedroom_approx 				: 		<?=(isset($csv['4th_bedroom_approx']) ? $csv['4th_bedroom_approx']['val'] : '')?>
-5th_bedroom_approx 				: 		<?=(isset($csv['5th_bedroom_approx']) ? $csv['5th_bedroom_approx']['val'] : '')?>
-master_bath_features 				: 		<?=(isset($csv['master_bath_features']) ? $csv['master_bath_features']['val'] : '')?>
-kitchen_features 				: 		<?=(isset($csv['kitchen_features']) ? $csv['kitchen_features']['val'] : '')?>
-kitchen_approx 				: 		<?=(isset($csv['kitchen_approx']) ? $csv['kitchen_approx']['val'] : '')?>
-great_room_approx 				: 		<?=(isset($csv['great_room_approx']) ? $csv['great_room_approx']['val'] : '')?>
-family_room_approx 				: 		<?=(isset($csv['family_room_approx']) ? $csv['family_room_approx']['val'] : '')?>
-living_room_approx 				: 		<?=(isset($csv['living_room_approx']) ? $csv['living_room_approx']['val'] : '')?>
-dinette_approx 				: 		<?=(isset($csv['dinette_approx']) ? $csv['dinette_approx']['val'] : '')?>
-bonus_room_approx 				: 		<?=(isset($csv['bonus_room_approx']) ? $csv['bonus_room_approx']['val'] : '')?>
-studio_dimensions 				: 		<?=(isset($csv['studio_dimensions']) ? $csv['studio_dimensions']['val'] : '')?>
-study_den_dimensions 				: 		<?=(isset($csv['study_den_dimensions']) ? $csv['study_den_dimensions']['val'] : '')?>
-balcony_porch_lanai_approx 				: 		<?=(isset($csv['balcony_porch_lanai_approx']) ? $csv['balcony_porch_lanai_approx']['val'] : '')?>
-interior_layout 				: 		<?=(isset($csv['interior_layout']) ? $csv['interior_layout']['val'] : '')?>
-interior_features 				: 		<?=(isset($csv['interior_features']) ? $csv['interior_features']['val'] : '')?>
-floor_covering 				: 		<?=(isset($csv['floor_covering']) ? $csv['floor_covering']['val'] : '')?>
-roof 				: 		<?=(isset($csv['roof']) ? $csv['roof']['val'] : '')?>
-foundation 				: 		<?=(isset($csv['foundation']) ? $csv['foundation']['val'] : '')?>
-exterior_features 				: 		<?=(isset($csv['exterior_features']) ? $csv['exterior_features']['val'] : '')?>
-lot_size_acres 				: 		<?=(isset($csv['lot_size_acres']) ? $csv['lot_size_acres']['val'] : '')?>
-lot_size_sqft 				: 		<?=(isset($csv['lot_size_sqft']) ? $csv['lot_size_sqft']['val'] : '')?>
-lot_dimensions 				: 		<?=(isset($csv['lot_dimensions']) ? $csv['lot_dimensions']['val'] : '')?>
-total_acreage 				: 		<?=(isset($csv['total_acreage']) ? $csv['total_acreage']['val'] : '')?>
-garage_features	character 				: 		<?=(isset($csv['garage_features	character']) ? $csv['garage_features	character']['val'] : '')?>
-air_conditioning 				: 		<?=(isset($csv['air_conditioning']) ? $csv['air_conditioning']['val'] : '')?>
-heating_and_fuel 				: 		<?=(isset($csv['heating_and_fuel']) ? $csv['heating_and_fuel']['val'] : '')?>
-fireplace_y_n 				: 		<?=(isset($csv['fireplace_y_n']) ? $csv['fireplace_y_n']['val'] : '')?>
-fireplace_description 				: 		<?=(isset($csv['fireplace_description']) ? $csv['fireplace_description']['val'] : '')?>
-utilities 				: 		<?=(isset($csv['utilities']) ? $csv['utilities']['val'] : '')?>
-appliances_included 				: 		<?=(isset($csv['appliances_included']) ? $csv['appliances_included']['val'] : '')?>
-pool 				: 		<?=(isset($csv['pool']) ? $csv['pool']['val'] : '')?>
-pool_type 				: 		<?=(isset($csv['pool_type']) ? $csv['pool_type']['val'] : '')?>
-pool_dimensions 				: 		<?=(isset($csv['pool_dimensions']) ? $csv['pool_dimensions']['val'] : '')?>
-water_name 				: 		<?=(isset($csv['water_name']) ? $csv['water_name']['val'] : '')?>
-water_view_y_n 				: 		<?=(isset($csv['water_view_y_n']) ? $csv['water_view_y_n']['val'] : '')?>
-water_frontage_y_n 				: 		<?=(isset($csv['water_frontage_y_n']) ? $csv['water_frontage_y_n']['val'] : '')?>
-water_frontage 				: 		<?=(isset($csv['water_frontage']) ? $csv['water_frontage']['val'] : '')?>
-water_access 				: 		<?=(isset($csv['water_access']) ? $csv['water_access']['val'] : '')?>
-waterfront_feet 				: 		<?=(isset($csv['waterfront_feet']) ? $csv['waterfront_feet']['val'] : '')?>
-taxes 				: 		<?=(isset($csv['taxes']) ? $csv['taxes']['val'] : '')?>
-hoa_comm_assn 				: 		<?=(isset($csv['hoa_comm_assn']) ? $csv['hoa_comm_assn']['val'] : '')?>
-hoa_fee 				: 		<?=(isset($csv['hoa_fee']) ? $csv['hoa_fee']['val'] : '')?>
-hoa_payment_schedule 				: 		<?=(isset($csv['hoa_payment_schedule']) ? $csv['hoa_payment_schedule']['val'] : '')?>
-condo_maintenance_fee 				: 		<?=(isset($csv['condo_maintenance_fee']) ? $csv['condo_maintenance_fee']['val'] : '')?>
-condo_maint_fee_schedule 				: 		<?=(isset($csv['condo_maint_fee_schedule']) ? $csv['condo_maint_fee_schedule']['val'] : '')?>
-cdd_y_n 				: 		<?=(isset($csv['cdd_y_n']) ? $csv['cdd_y_n']['val'] : '')?>
-annual_cdd_fee 				: 		<?=(isset($csv['annual_cdd_fee']) ? $csv['annual_cdd_fee']['val'] : '')?>
-elementary_school 				: 		<?=(isset($csv['elementary_school']) ? $csv['elementary_school']['val'] : '')?>
-middle_or_junior_school 				: 		<?=(isset($csv['middle_or_junior_school']) ? $csv['middle_or_junior_school']['val'] : '')?>
-high_school 				: 		<?=(isset($csv['high_school']) ? $csv['high_school']['val'] : '')?>
-community_features 				: 		<?=(isset($csv['community_features']) ? $csv['community_features']['val'] : '')?>
-flood_zone_code 				: 		<?=(isset($csv['flood_zone_code']) ? $csv['flood_zone_code']['val'] : '')?>
-location 				: 		<?=(isset($csv['location']) ? $csv['location']['val'] : '')?>
-pets_allowed_y_n 				: 		<?=(isset($csv['pets_allowed_y_n']) ? $csv['pets_allowed_y_n']['val'] : '')?>
-green_certifications 				: 		<?=(isset($csv['green_certifications']) ? $csv['green_certifications']['val'] : '')?>
-office_name 				: 		<?=(isset($csv['office_name']) ? $csv['office_name']['val'] : '')?>
+
+special_sale_provision	:
+					<?=(isset($csv['special_sale_provision']) ? $csv['special_sale_provision']['val'] : '')?>
+
+list_price	:
+					<?=(isset($csv['list_price']) ? $csv['list_price']['val'] : '')?>
+
+property_description	:
+					<?=(isset($csv['property_description']) ? $csv['property_description']['val'] : '')?>
+
+property_style	:
+					<?=(isset($csv['property_style']) ? $csv['property_style']['val'] : '')?>
+
+architectural_style	:
+					<?=(isset($csv['architectural_style']) ? $csv['architectural_style']['val'] : '')?>
+
+full_baths	:
+					<?=(isset($csv['full_baths']) ? $csv['full_baths']['val'] : '')?>
+
+half_baths	:
+					<?=(isset($csv['half_baths']) ? $csv['half_baths']['val'] : '')?>
+
+sq_ft_heated	:
+					<?=(isset($csv['sq_ft_heated']) ? $csv['sq_ft_heated']['val'] : '')?>
+
+lot_size	:
+					<?=(isset($csv['lot_size']) ? $csv['lot_size']['val'] : '')?>
+
+lp_sqft	:
+					<?=(isset($csv['lp_sqft']) ? $csv['lp_sqft']['val'] : '')?>
+
+year_built	:
+					<?=(isset($csv['year_built']) ? $csv['year_built']['val'] : '')?>
+
+garage_carport	:
+					<?=(isset($csv['garage_carport']) ? $csv['garage_carport']['val'] : '')?>
+
+beds	:
+					<?=(isset($csv['beds']) ? $csv['beds']['val'] : '')?>
+
+master_bedroom_approx	:
+					<?=(isset($csv['master_bedroom_approx']) ? $csv['master_bedroom_approx']['val'] : '')?>
+
+2nd_bedroom_approx	:
+					<?=(isset($csv['2nd_bedroom_approx']) ? $csv['2nd_bedroom_approx']['val'] : '')?>
+
+3rd_bedroom_approx	:
+					<?=(isset($csv['3rd_bedroom_approx']) ? $csv['3rd_bedroom_approx']['val'] : '')?>
+
+4th_bedroom_approx	:
+					<?=(isset($csv['4th_bedroom_approx']) ? $csv['4th_bedroom_approx']['val'] : '')?>
+
+5th_bedroom_approx	:
+					<?=(isset($csv['5th_bedroom_approx']) ? $csv['5th_bedroom_approx']['val'] : '')?>
+
+master_bath_features	:
+					<?=(isset($csv['master_bath_features']) ? $csv['master_bath_features']['val'] : '')?>
+
+kitchen_features	:
+					<?=(isset($csv['kitchen_features']) ? $csv['kitchen_features']['val'] : '')?>
+
+kitchen_approx	:
+					<?=(isset($csv['kitchen_approx']) ? $csv['kitchen_approx']['val'] : '')?>
+
+great_room_approx	:
+					<?=(isset($csv['great_room_approx']) ? $csv['great_room_approx']['val'] : '')?>
+
+family_room_approx	:
+					<?=(isset($csv['family_room_approx']) ? $csv['family_room_approx']['val'] : '')?>
+
+living_room_approx	:
+					<?=(isset($csv['living_room_approx']) ? $csv['living_room_approx']['val'] : '')?>
+
+dinette_approx	:
+					<?=(isset($csv['dinette_approx']) ? $csv['dinette_approx']['val'] : '')?>
+
+bonus_room_approx	:
+					<?=(isset($csv['bonus_room_approx']) ? $csv['bonus_room_approx']['val'] : '')?>
+
+studio_dimensions	:
+					<?=(isset($csv['studio_dimensions']) ? $csv['studio_dimensions']['val'] : '')?>
+
+study_den_dimensions	:
+					<?=(isset($csv['study_den_dimensions']) ? $csv['study_den_dimensions']['val'] : '')?>
+
+balcony_porch_lanai_approx	:
+					<?=(isset($csv['balcony_porch_lanai_approx']) ? $csv['balcony_porch_lanai_approx']['val'] : '')?>
+
+interior_layout	:
+					<?=(isset($csv['interior_layout']) ? $csv['interior_layout']['val'] : '')?>
+
+interior_features	:
+					<?=(isset($csv['interior_features']) ? $csv['interior_features']['val'] : '')?>
+
+floor_covering	:
+					<?=(isset($csv['floor_covering']) ? $csv['floor_covering']['val'] : '')?>
+
+roof	:
+					<?=(isset($csv['roof']) ? $csv['roof']['val'] : '')?>
+
+foundation	:
+					<?=(isset($csv['foundation']) ? $csv['foundation']['val'] : '')?>
+
+exterior_features	:
+					<?=(isset($csv['exterior_features']) ? $csv['exterior_features']['val'] : '')?>
+
+lot_size_acres	:
+					<?=(isset($csv['lot_size_acres']) ? $csv['lot_size_acres']['val'] : '')?>
+
+lot_size_sqft	:
+					<?=(isset($csv['lot_size_sqft']) ? $csv['lot_size_sqft']['val'] : '')?>
+
+lot_dimensions	:
+					<?=(isset($csv['lot_dimensions']) ? $csv['lot_dimensions']['val'] : '')?>
+
+total_acreage	:
+					<?=(isset($csv['total_acreage']) ? $csv['total_acreage']['val'] : '')?>
+
+garage_features	character	:
+					<?=(isset($csv['garage_features	character']) ? $csv['garage_features	character']['val'] : '')?>
+
+air_conditioning	:
+					<?=(isset($csv['air_conditioning']) ? $csv['air_conditioning']['val'] : '')?>
+
+heating_and_fuel	:
+					<?=(isset($csv['heating_and_fuel']) ? $csv['heating_and_fuel']['val'] : '')?>
+
+fireplace_y_n	:
+					<?=(isset($csv['fireplace_y_n']) ? $csv['fireplace_y_n']['val'] : '')?>
+
+fireplace_description	:
+					<?=(isset($csv['fireplace_description']) ? $csv['fireplace_description']['val'] : '')?>
+
+utilities	:
+					<?=(isset($csv['utilities']) ? $csv['utilities']['val'] : '')?>
+
+appliances_included	:
+					<?=(isset($csv['appliances_included']) ? $csv['appliances_included']['val'] : '')?>
+
+pool	:
+					<?=(isset($csv['pool']) ? $csv['pool']['val'] : '')?>
+
+pool_type	:
+					<?=(isset($csv['pool_type']) ? $csv['pool_type']['val'] : '')?>
+
+pool_dimensions	:
+					<?=(isset($csv['pool_dimensions']) ? $csv['pool_dimensions']['val'] : '')?>
+
+water_name	:
+					<?=(isset($csv['water_name']) ? $csv['water_name']['val'] : '')?>
+
+water_view_y_n	:
+					<?=(isset($csv['water_view_y_n']) ? $csv['water_view_y_n']['val'] : '')?>
+
+water_frontage_y_n	:
+					<?=(isset($csv['water_frontage_y_n']) ? $csv['water_frontage_y_n']['val'] : '')?>
+
+water_frontage	:
+					<?=(isset($csv['water_frontage']) ? $csv['water_frontage']['val'] : '')?>
+
+water_access	:
+					<?=(isset($csv['water_access']) ? $csv['water_access']['val'] : '')?>
+
+waterfront_feet	:
+					<?=(isset($csv['waterfront_feet']) ? $csv['waterfront_feet']['val'] : '')?>
+
+taxes	:
+					<?=(isset($csv['taxes']) ? $csv['taxes']['val'] : '')?>
+
+hoa_comm_assn	:
+					<?=(isset($csv['hoa_comm_assn']) ? $csv['hoa_comm_assn']['val'] : '')?>
+
+hoa_fee	:
+					<?=(isset($csv['hoa_fee']) ? $csv['hoa_fee']['val'] : '')?>
+
+hoa_payment_schedule	:
+					<?=(isset($csv['hoa_payment_schedule']) ? $csv['hoa_payment_schedule']['val'] : '')?>
+
+condo_maintenance_fee	:
+					<?=(isset($csv['condo_maintenance_fee']) ? $csv['condo_maintenance_fee']['val'] : '')?>
+
+condo_maint_fee_schedule	:
+					<?=(isset($csv['condo_maint_fee_schedule']) ? $csv['condo_maint_fee_schedule']['val'] : '')?>
+
+cdd_y_n	:
+					<?=(isset($csv['cdd_y_n']) ? $csv['cdd_y_n']['val'] : '')?>
+
+annual_cdd_fee	:
+					<?=(isset($csv['annual_cdd_fee']) ? $csv['annual_cdd_fee']['val'] : '')?>
+
+elementary_school	:
+					<?=(isset($csv['elementary_school']) ? $csv['elementary_school']['val'] : '')?>
+
+middle_or_junior_school	:
+					<?=(isset($csv['middle_or_junior_school']) ? $csv['middle_or_junior_school']['val'] : '')?>
+
+high_school	:
+					<?=(isset($csv['high_school']) ? $csv['high_school']['val'] : '')?>
+
+community_features	:
+					<?=(isset($csv['community_features']) ? $csv['community_features']['val'] : '')?>
+
+flood_zone_code	:
+					<?=(isset($csv['flood_zone_code']) ? $csv['flood_zone_code']['val'] : '')?>
+
+location	:
+					<?=(isset($csv['location']) ? $csv['location']['val'] : '')?>
+
+pets_allowed_y_n	:
+					<?=(isset($csv['pets_allowed_y_n']) ? $csv['pets_allowed_y_n']['val'] : '')?>
+
+green_certifications	:
+					<?=(isset($csv['green_certifications']) ? $csv['green_certifications']['val'] : '')?>
+
+office_name	:
+					<?=(isset($csv['office_name']) ? $csv['office_name']['val'] : '')?>
 
 	********** END VALUE LIST FOR RESIDENTIAL
 */
@@ -216,29 +590,75 @@ office_name 				: 		<?=(isset($csv['office_name']) ? $csv['office_name']['val'] 
 /*
  * ******** BEGIN VALUE LIST FOR VACANT LAND **********
 
-property_style 				: 		<?=(isset($csv['property_style']) ? $csv['property_style']['val'] : '')?>
-list_price 				: 		<?=(isset($csv['list_price']) ? $csv['list_price']['val'] : '')?>
-lease_rate 				: 		<?=(isset($csv['lease_rate']) ? $csv['lease_rate']['val'] : '')?>
-public_remarks_new 				: 		<?=(isset($csv['public_remarks_new']) ? $csv['public_remarks_new']['val'] : '')?>
-zoning 				: 		<?=(isset($csv['zoning']) ? $csv['zoning']['val'] : '')?>
-lot_size_sqft 				: 		<?=(isset($csv['lot_size_sqft']) ? $csv['lot_size_sqft']['val'] : '')?>
-lot_size_acres 				: 		<?=(isset($csv['lot_size_acres']) ? $csv['lot_size_acres']['val'] : '')?>
-lot_dimensions 				: 		<?=(isset($csv['lot_dimensions']) ? $csv['lot_dimensions']['val'] : '')?>
-total_acreage 				: 		<?=(isset($csv['total_acreage']) ? $csv['total_acreage']['val'] : '')?>
-site_improvements 				: 		<?=(isset($csv['site_improvements']) ? $csv['site_improvements']['val'] : '')?>
-fences 				: 		<?=(isset($csv['fences']) ? $csv['fences']['val'] : '')?>
-taxes 				: 		<?=(isset($csv['taxes']) ? $csv['taxes']['val'] : '')?>
-hoa_comm_assn 				: 		<?=(isset($csv['hoa_comm_assn']) ? $csv['hoa_comm_assn']['val'] : '')?>
-hoa_fee 				: 		<?=(isset($csv['hoa_fee']) ? $csv['hoa_fee']['val'] : '')?>
-hoa_payment_schedule 				: 		<?=(isset($csv['hoa_payment_schedule']) ? $csv['hoa_payment_schedule']['val'] : '')?>
-annual_cdd_fee 				: 		<?=(isset($csv['annual_cdd_fee']) ? $csv['annual_cdd_fee']['val'] : '')?>
-financing_available 				: 		<?=(isset($csv['financing_available']) ? $csv['financing_available']['val'] : '')?>
-water_name 				: 		<?=(isset($csv['water_name']) ? $csv['water_name']['val'] : '')?>
-water_frontage 				: 		<?=(isset($csv['water_frontage']) ? $csv['water_frontage']['val'] : '')?>
-water_access 				: 		<?=(isset($csv['water_access']) ? $csv['water_access']['val'] : '')?>
-waterfront_feet 				: 		<?=(isset($csv['waterfront_feet']) ? $csv['waterfront_feet']['val'] : '')?>
-driving_directions 				: 		<?=(isset($csv['driving_directions']) ? $csv['driving_directions']['val'] : '')?>
-office_name 				: 		<?=(isset($csv['office_name']) ? $csv['office_name']['val'] : '')?>
+
+property_style	:
+					<?=(isset($csv['property_style']) ? $csv['property_style']['val'] : '')?>
+
+list_price	:
+					<?=(isset($csv['list_price']) ? $csv['list_price']['val'] : '')?>
+
+lease_rate	:
+					<?=(isset($csv['lease_rate']) ? $csv['lease_rate']['val'] : '')?>
+
+public_remarks_new	:
+					<?=(isset($csv['public_remarks_new']) ? $csv['public_remarks_new']['val'] : '')?>
+
+zoning	:
+					<?=(isset($csv['zoning']) ? $csv['zoning']['val'] : '')?>
+
+lot_size_sqft	:
+					<?=(isset($csv['lot_size_sqft']) ? $csv['lot_size_sqft']['val'] : '')?>
+
+lot_size_acres	:
+					<?=(isset($csv['lot_size_acres']) ? $csv['lot_size_acres']['val'] : '')?>
+
+lot_dimensions	:
+					<?=(isset($csv['lot_dimensions']) ? $csv['lot_dimensions']['val'] : '')?>
+
+total_acreage	:
+					<?=(isset($csv['total_acreage']) ? $csv['total_acreage']['val'] : '')?>
+
+site_improvements	:
+					<?=(isset($csv['site_improvements']) ? $csv['site_improvements']['val'] : '')?>
+
+fences	:
+					<?=(isset($csv['fences']) ? $csv['fences']['val'] : '')?>
+
+taxes	:
+					<?=(isset($csv['taxes']) ? $csv['taxes']['val'] : '')?>
+
+hoa_comm_assn	:
+					<?=(isset($csv['hoa_comm_assn']) ? $csv['hoa_comm_assn']['val'] : '')?>
+
+hoa_fee	:
+					<?=(isset($csv['hoa_fee']) ? $csv['hoa_fee']['val'] : '')?>
+
+hoa_payment_schedule	:
+					<?=(isset($csv['hoa_payment_schedule']) ? $csv['hoa_payment_schedule']['val'] : '')?>
+
+annual_cdd_fee	:
+					<?=(isset($csv['annual_cdd_fee']) ? $csv['annual_cdd_fee']['val'] : '')?>
+
+financing_available	:
+					<?=(isset($csv['financing_available']) ? $csv['financing_available']['val'] : '')?>
+
+water_name	:
+					<?=(isset($csv['water_name']) ? $csv['water_name']['val'] : '')?>
+
+water_frontage	:
+					<?=(isset($csv['water_frontage']) ? $csv['water_frontage']['val'] : '')?>
+
+water_access	:
+					<?=(isset($csv['water_access']) ? $csv['water_access']['val'] : '')?>
+
+waterfront_feet	:
+					<?=(isset($csv['waterfront_feet']) ? $csv['waterfront_feet']['val'] : '')?>
+
+driving_directions	:
+					<?=(isset($csv['driving_directions']) ? $csv['driving_directions']['val'] : '')?>
+
+office_name	:
+					<?=(isset($csv['office_name']) ? $csv['office_name']['val'] : '')?>
 
 	********** END VALUE LIST FOR VACANT LAND
 */

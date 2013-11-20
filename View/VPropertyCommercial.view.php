@@ -3,10 +3,10 @@ class VPropertyCommercial
 {
 
 	public function __construct() {return;}
-		
+
 	public function __destruct() {return;}
-	
-	  
+
+
 	public function showProperty($_value)
 	{
 		/*
@@ -16,9 +16,9 @@ class VPropertyCommercial
 		 * - health : $_value['proximity']['health']
 		 * - restaurant : $_value['proximity']['food']
 		 */
-		
+
 		$csv = $_value['dataCsv'];
-		
+
 
 		if(isset($_value['results']['img']))
 		{
@@ -30,6 +30,7 @@ class VPropertyCommercial
 		}
 		
 		setlocale(LC_MONETARY, 'en_US'); //prix format americain
+
 	?>
 	<div class="content">
 	<div class="container page-white margin-bottom-2em" >
@@ -67,7 +68,7 @@ class VPropertyCommercial
 									<li class="hide"><a href="#" title="Dislike" id="button_dislike"><i class="icon-heart" style="color:#FF0989"></i></a></li>
 								<?php
 								}?>
-								
+
 								<li><a href="#" title="Facebook"><i class="icon-facebook"></i></a></li>
 								<li><a href="#" title="Twitter"><i class="icon-twitter"></i> </a></li>
 								<li><a href="javascript:window.print()" title="Print"><i class="icon-print"></i> </a></li>
@@ -162,22 +163,22 @@ class VPropertyCommercial
 				<!-- Begin list data for this property -->
 				<div style="clear:both"></div><div>
 				<ul>
-				<?php 
+				<?php
 				foreach($csv as $tab)
 				{
 					if($tab['val'] != '')
 					{?>
 						<li><?='<b>'.$tab['lib'].' :</b> '.$tab['val'] ?></li>
-					<?php 
+					<?php
 					}
 				}?>
 				</ul>
 				</div>
 				<!-- end list data -->
-				
+
 			</article>
 			<aside class="col-lg-5 padding-r-l-2em padding-4em bg-gray-light property-sidebar" >
-				
+
 					<h3 class="price margin-top-zero  lh-100">
 						<?=(isset($_value['results']['style']) ? $_value['results']['style'] : '') ?>
 						<?php
@@ -309,6 +310,7 @@ class VPropertyCommercial
 								<?php
 								}?>
 							</ul>
+
 				  </div>
 				  <div class="tab-pane" id="Neighborhood">
 						<h5>

@@ -24,6 +24,8 @@ RewriteRule ^test  page_test.php [L]
 
 RewriteRule ^relocation  page_relocation.php [L]
 RewriteRule ^careers  page_careers.php [L]
+RewriteRule ^sell-lease  page_sell-lease.php [L]
+
 RewriteRule ^contact  page_contact.php [L]
 RewriteRule ^home  page_index.php [L]
 

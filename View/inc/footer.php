@@ -121,6 +121,7 @@ else //le cas de Shérif
 
 	<?php
 }
+
 if(defined('JS_PAGE')) {
 	?>
 		<script type="text/javascript" src="<?=JS_PAGE?>"></script>
