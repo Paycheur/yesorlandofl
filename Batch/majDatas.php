@@ -1,11 +1,11 @@
 <?php
-include(__DIR__.'/../Class/phrets.php');
-include(__DIR__.'/../Inc/require.inc.php');
+ini_set("memory_limit" , "20000M");
+include(dirname(__FILE__).'/../Class/phrets.php');
+include(dirname(__FILE__).'/../Inc/require.inc.php');
 
-
-//recupFichier();
+recupFichier();
 $rep = recupDonnees();
-//var_dump($rep);
+var_dump($rep);
 
 function recupFichier()
 {
@@ -19,11 +19,11 @@ function recupFichier()
 	
 	// use http://retsmd.com to help determine the names of the classes you want to pull.
 	// these might be something like RE_1, RES, RESI, 1, etc.
-	$property_classes = array("1","3","4","5");
+	$property_classes = array("1", "3", "4","5");
 	
 	// DateTime which is used to determine how far back to retrieve records.
 	// using a really old date so we can get everything
-	$previous_start_time = "2013-08-22T00:00:00";
+	$previous_start_time = "2013-01-01T00:00:00";
 	
 	// start rets connection
 	$rets = new phRETS;
@@ -56,7 +56,7 @@ function recupFichier()
 	        else if($class=="5")
 	        	$name = 'vacant_land';
 	        $file_name = strtolower("data/property_".$name.".csv");
-	        $fh = fopen(__DIR__.'/'.$file_name, "w+");
+	        $fh = fopen(dirname(__FILE__).'/'.$file_name, "w+");
 	
 	        $fields_order = array();
 	
@@ -98,6 +98,9 @@ function recupFichier()
 
 function recupDonnees()
 {
+	$connexion = new CConnexion(BD_NAME, BD_LOGIN, BD_PASSWORD);
+	$sql = 'UPDATE data SET flag_actif=0';
+	$connexion->getConnexion()->query($sql);
 	$phrets = new phRETS;
 	$rets_login_url = "http://mfr.rets.interealty.com/Login.asmx/Login";
 	$rets_username = "RETS689";
@@ -109,12 +112,11 @@ function recupDonnees()
 	$donnees_retour = array();
 	foreach($all_fichier as $fichier)
 	{
-		if($fichier != 'property_commercial') continue;
 		$tab_donnees_fichier=array();
-		if (file_exists(__DIR__.'/data/'.$fichier.'.csv') != FALSE) 
+		if (file_exists(dirname(__FILE__).'/data/'.$fichier.'.csv') != FALSE) 
 		{
 			
-		    $handle  = file_get_contents(__DIR__.'/data/'.$fichier.'.csv') or exit;
+		    $handle  = file_get_contents(dirname(__FILE__).'/data/'.$fichier.'.csv') or exit;
 		    $handle_row = explode("\n", $handle);
 		    $first = true;
 		    $array_key = array();
@@ -186,8 +188,6 @@ function recupDonnees()
 					   			}
 					   			$value_sale_or_lease = 'lease';
 					   			
-					   			echo '['.$value_id.'] => 	'.$lease_rate.' | $ '.number_format($value_price,2);
-					   			echo "\n";
 					   		}
 					   		else
 					   		{
@@ -246,9 +246,10 @@ function recupDonnees()
 					   		$value_sqft = trim( str_replace('||', '', $row_array[$array_key[2622]])); //lotsize sqft
 					   		$value_state = trim( str_replace('||', '', $row_array[$array_key[2304]])); //state
 					   		$value_postalCode = trim( str_replace('||', '', $row_array[$array_key[46]])) ;//postal code (zipcode)
-					   		if(trim( str_replace('||', '', $row_array[$array_key[2308]])) != '')
+					   		$lease_rate = trim( str_replace('||', '', $row_array[$array_key[2308]]));
+					   		if($lease_rate!= '')
 					   		{
-					   			$value_price = trim( str_replace('||', '', $row_array[$array_key[2308]])); //lease rate
+					   			$value_price = $lease_rate; //lease rate
 					   			$value_sale_or_lease = 'lease';
 					   		}
 					   		else
@@ -261,8 +262,9 @@ function recupDonnees()
 					   		
 				     }
 				    
-				     continue;
-				     
+				    if($value_status == 'Sold')
+				    	continue;
+				    
 				    $recup_img = true;
 				    $dbData = new BddData();
 				    $rows = $dbData->select(array('id' => $value_id, 'type' => $value_type));
@@ -327,5 +329,7 @@ function recupDonnees()
 
 	}
 
+	$sql = 'UPDATE data SET actif=0 WHERE flag_actif=0';
+	$connexion->getConnexion()->query($sql);
 	return 'UPDATE DATA DONE';
 }

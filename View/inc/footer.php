@@ -122,20 +122,21 @@ else //le cas de Shérif
 	<?php
 }
 if(defined('JS_PAGE')) {
-	if(is_array(JS_PAGE))
-	{
-		foreach(JS_PAGE as $js)
-		{
-		?>
-			<script type="text/javascript" src="<?=$js?>"></script>
-		<?php
-		}
-	}
-	else
-	{?>
+	?>
 		<script type="text/javascript" src="<?=JS_PAGE?>"></script>
 <?php
-	}
+}
+
+if(defined('JS_PAGE_2')) {
+	?>
+		<script type="text/javascript" src="<?=JS_PAGE_2?>"></script>
+<?php
+}
+
+if(defined('JS_PAGE_3')) {
+	?>
+		<script type="text/javascript" src="<?=JS_PAGE_3?>"></script>
+<?php
 }?>
 
 </body>

@@ -12,7 +12,7 @@ class MSearch
 	public function searchForm($type_style, $city, $beds, $bathroom, $option, $price, $page)
 	{
 		$n = ($page-1)*6;
-		$req = 'SELECT id,type,style,city,address,bed,bathroom,sqft,price,img,postal_code,state,actif,flag_actif FROM data'.
+		$req = 'SELECT id,type,style,city,address,bed,bathroom,sqft,price,img,postal_code,state,actif,flag_actif, file FROM data'.
 				' WHERE actif = 1';
 		if($type_style != '')
 		{
@@ -53,7 +53,7 @@ class MSearch
 			}
 			
 			$req .=' AND (';
-			foreach($tabType as $type)
+			foreach($tabType as $type => $t)
 			{
 				if($type == 'RES')
 					$req .= ' type = \'residential\' OR ';
@@ -61,6 +61,8 @@ class MSearch
 					$req .= ' type = \'commercial\' OR ';
 				if($type == 'VAC')
 					$req .= ' type = \'vacant_land\' OR ';
+				if($type == 'REN')
+					$req .= ' type = \'rental\' OR ';
 			}
 			$req.='#end;';
 			$req = str_replace('OR #end;', '', $req);
@@ -98,7 +100,7 @@ class MSearch
 			{
 				$minPrice = $explPrice[0];
 				$maxPrice = $explPrice[1];
-				if($maxPrice == '1000000')
+				if($maxPrice >= '1000000')
 					$req .= ' AND price >= \''.protegeChaine($minPrice).'\' ';
 				else 
 					$req .= ' AND price BETWEEN \''.protegeChaine($minPrice).'\' AND \''.protegeChaine($maxPrice).'\' ';
@@ -209,9 +211,9 @@ class MSearch
 					$req .= ' style = \''.$style.'\' ';
 				}
 			}
-			
+
 			$req .=' AND (';
-			foreach($tabType as $type)
+			foreach($tabType as $type => $t)
 			{
 				if($type == 'RES')
 					$req .= ' type = \'residential\' OR ';
@@ -219,6 +221,8 @@ class MSearch
 					$req .= ' type = \'commercial\' OR ';
 				if($type == 'VAC')
 					$req .= ' type = \'vacant_land\' OR ';
+				if($type == 'REN')
+					$req .= ' type = \'rental\' OR ';
 			}
 			$req.='#end;';
 			$req = str_replace('OR #end;', '', $req);
@@ -258,7 +262,7 @@ class MSearch
 			{
 				$minPrice = $explPrice[0];
 				$maxPrice = $explPrice[1];
-				if($maxPrice == '1000000')
+				if($maxPrice >= '1000000')
 					$req .= ' AND price >= \''.protegeChaine($minPrice).'\' ';
 				else 
 					$req .= ' AND price BETWEEN \''.protegeChaine($minPrice).'\' AND \''.protegeChaine($maxPrice).'\' ';
@@ -269,7 +273,7 @@ class MSearch
 			$req .= ' AND sale_or_lease = \''.protegeChaine($option).'\' ';
 		
 		
-			
+
 		$tabRows =  array();
 		$res = $this->dbData->getConnexion()->query($req);
 		$tabRows = $res->fetchAll(PDO::FETCH_ASSOC);
@@ -296,7 +300,7 @@ class MSearch
 			//$url = 'http://maps.google.com/maps/geo?q=' . $adresse . '&output=xml&oe=utf8&gl=fr&sensor=false&key=' . GMAP_KEY;
 			$url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=' . $coord . '&sensor=false';
 		}
-		
+
 		if($url != '')
 		{
 			$page = file_get_contents($url);
@@ -343,19 +347,19 @@ class MSearch
 		return $adresses;
 	}
 	
-	public function getAllDatasCsv($id_property, $type_property)
+	public function getAllDatasCsv($id_property, $type_property, $file)
 	{
 		
 		$data = array();
 		
 		if($type_property == 'commercial')
-			$fichier = 'property_commercial';
+			$fichier = 'property_commercial_'.$file;
 		else if($type_property == 'rental')
-			$fichier = 'property_rental';
+			$fichier = 'property_rental_'.$file;
 		else if($type_property == 'residential')
-			$fichier = 'property_residential';
+			$fichier = 'property_residential_'.$file;
 		else if($type_property == 'vacant_land')
-			$fichier = 'property_vacant_land';
+			$fichier = 'property_vacant_land_'.$file;
 			
 		if (file_exists(__DIR__.'/../Batch/data/'.$fichier.'.csv') != FALSE) 
 		{
@@ -388,7 +392,7 @@ class MSearch
 	        	{
 	        		if(trim( str_replace('||', '', $row_array[0])) == $id_property)
 	        		{
-	        			if($fichier == 'property_commercial')
+	        			if(strpos($fichier,'property_commercial') !== false)
 	        			{
 		        			$data['lease_rate'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[2308]])), 'lib' => 'Lease Rate');
 							$data['property_use'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[86]])), 'lib' => 'Property Use');
@@ -431,7 +435,7 @@ class MSearch
 							$data['condo_fees'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3254]])), 'lib' => 'Condo Fees');
 							$data['condo_fees_term'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3255]])), 'lib' => 'Condo Fees Term');
 	        			}
-	        			else if($fichier == 'property_rental')
+	        			else if(strpos($fichier,'property_rental') !== false)
 	        			{
 	        				$data['property_description'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[2819]])), 'lib' => 'Property Description');
 							$data['property_style'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[1349]])), 'lib' => 'Property Style');
@@ -512,7 +516,7 @@ class MSearch
 							$data['pets_allowed_y_n'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3075]])), 'lib' => 'Pets Allowed Y/N');
 							$data['green_certifications'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3015]])), 'lib' => 'Green Certifications');
 	        			}
-	        			else if($fichier == 'property_residential')
+	        			else if(strpos($fichier,'property_residential') !== false)
 	        			{
 	        				$data['special_sale_provision'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3062]])), 'lib' => 'Special Sale Provision');
 							$data['list_price'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[176]])), 'lib' => 'List Price');
@@ -592,7 +596,7 @@ class MSearch
 							$data['office_name'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[2368]])), 'lib' => 'Office Name');
 	        				
 	        			}
-	        			else if($fichier == 'property_vacant_land')
+	        			else if(strpos($fichier,'property_vacant_land') !== false)
 	        			{
 	        				$data['property_style'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[1764]])), 'lib' => 'Property Style');
 							$data['list_price'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[176]])), 'lib' => 'List Price');

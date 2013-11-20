@@ -90,7 +90,7 @@ require_once(dirname(__FILE__).'/../components/form-login.php'); ?>
         <li class="dropdown">
           <a href="<?php echo $burl ?>" class="dropdown-toggle" data-toggle="dropdown">My Portfolio <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="<?php echo $burl ?>residential.php">Sing in / up</a></li>
+            <li><a data-toggle="modal" href="#modalLogin">Sing in / up</a></li>
             <li><a href="<?php echo $burl ?>commercial.php">Mange portfolio</a></li>
             <li><a href="<?php echo $burl.$l_central_fl ?>">enquirer more info</a></li>
           </ul>

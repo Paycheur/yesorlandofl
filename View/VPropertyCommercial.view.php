@@ -29,13 +29,19 @@ class VPropertyCommercial
 			$allImg =array();
 		}
 		
-		//setlocale(LC_MONETARY, 'en_US'); //prix format americain
+		setlocale(LC_MONETARY, 'en_US'); //prix format americain
 	?>
 	<div class="content">
 	<div class="container page-white margin-bottom-2em" >
 		<div class="row-fluid" id="holer-content">
 		<?php require_once('components/form-visit-request.php'); ?>
 		<input type="hidden" value="<?=$_value['results']['id']?>" id="id_property" /> <!-- important ! -->
+		<?php if(isset($_value['gps']['latitude']) && isset($_value['gps']['longitude']))
+		{?>
+			<input type="hidden" value="<?=$_value['gps']['latitude'] ?>;<?=$_value['gps']['longitude'] ?>" id="coord_gps"/>
+			<input type="hidden" value="<?=(isset($_value['results']['address']) ? $_value['results']['address'] : '').' '.(isset($_value['results']['city']) ? ', '.$_value['results']['city'] : '').' '.(isset($_value['results']['state']) && isset($_value['results']['postal_code']) ? ', '.$_value['results']['state'].' '.$_value['results']['postal_code'] : '') ?>" id="address_property"/>
+		<?php 
+		}?>
 			<article class="col-lg-7 padding-r-l-1em padding-4em" >
 				<div class="row-fluid">
 					<hgroup class="col-lg-7">
@@ -203,8 +209,11 @@ class VPropertyCommercial
 					<?php
 					}?>
 				</ul>
-
-				<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.fr/maps?dg=opt&ie=UTF8&ll=<?=$_value['gps']['latitude'] ?>,<?=$_value['gps']['longitude'] ?>&q=<?=$_value['gps']['latitude'] ?>,<?=$_value['gps']['longitude'] ?>&spn=0.022904,0.042272&t=m&z=15&output=embed" class="padding-2em"></iframe>
+			<?php if(isset($_value['gps']['latitude']) && isset($_value['gps']['longitude']))
+				{?>
+				<div id="googleMap">
+				</div>
+<!--				<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.fr/maps?dg=opt&ie=UTF8&ll=<?=$_value['gps']['latitude'] ?>,<?=$_value['gps']['longitude'] ?>&q=<?=$_value['gps']['latitude'] ?>,<?=$_value['gps']['longitude'] ?>&spn=0.022904,0.042272&t=m&z=15&output=embed" class="padding-2em"></iframe>-->
 
 				<ul class="nav nav-tabs" id="myTab">
 				  <li class="active"><a href="#area" data-toggle="pill">What's in the area</a></li>
@@ -214,64 +223,92 @@ class VPropertyCommercial
 				<div class="tab-content padding-1em">
 				  <div class="tab-pane active" id="area">
 				  		<ul class="dotted no-bullets">
-				  			<?php if(isset($_value['proximity']['food']) && count($_value['proximity']['food'])  > 0)
-				  			{?>
-				  			<li><i class="icon-food"></i>  <b>Restaurants (<?=count($_value['proximity']['food']) ?>)</b>
-				  				<ul>
-				  					<?php 
-				  					foreach($_value['proximity']['food'] as $v)
-				  					{?>
-				  						<li><?=$v['name'] ?></li>
-				  					<?php 
-				  					}?>
-				  				</ul>
-				  			</li>
-				  			<?php 
-				  			}
-				  			if(isset($_value['proximity']['grocery']) && count($_value['proximity']['grocery'])  > 0)
-				  			{?>
-				  			<li><i class="icon-leaf"></i>  <b>Grocery and Markets (<?=count($_value['proximity']['grocery']) ?>)</b>
-				  				<ul>
-				  					<?php 
-				  					foreach($_value['proximity']['grocery'] as $v)
-				  					{?>
-				  						<li><?=$v['name'] ?></li>
-				  					<?php 
-				  					}?>
-				  				</ul>
-				  			</li>
-				  			<?php 
-				  			}
-				  			if(isset($_value['proximity']['health']) && count($_value['proximity']['health'])  > 0)
-				  			{?>
-				  			<li><i class="icon-stethoscope"></i>  <b>Health clubs and spas (<?=count($_value['proximity']['health']) ?>)</b>
-				  				<ul>
-				  					<?php 
-				  					foreach($_value['proximity']['health'] as $v)
-				  					{?>
-				  						<li><?=$v['name'] ?></li>
-				  					<?php 
-				  					}?>
-				  				</ul>
-				  			</li>
-				  			<?php 
-				  			}
-				  			if(isset($_value['proximity']['school']) && count($_value['proximity']['school'])  > 0)
-				  			{?>
-				  			<li><i class="icon-book"></i> <b>Public School (<?=count($_value['proximity']['school']) ?>)</b>
-				  				<ul>
-				  					<?php 
-				  					foreach($_value['proximity']['school'] as $v)
-				  					{?>
-				  						<li><?=$v['name'] ?></li>
-				  					<?php 
-				  					}?>
-				  				</ul>
-				  			</li>
-				  			<?php 
-				  			}?>
-
-				  		</ul>
+								<?php if(isset($_value['proximity']['food']) && count($_value['proximity']['food'])  > 0)
+								{?>
+								<li><i class="icon-food"></i>  <b>Restaurants & Food(<?=count($_value['proximity']['food']) ?>)</b>
+									<ul class="list-unstyled">
+										<?php
+										foreach($_value['proximity']['food'] as $v)
+										{
+										?>
+										<li class="list-area"><input type="hidden" value="<?=$v['geometry']['location']['lat'].';'.$v['geometry']['location']['lng']?>"><span><?=$v['name'] ?></span></li>
+										<?php
+										}?>
+									</ul>
+								</li>
+								<?php
+								}
+								if(isset($_value['proximity']['amenities']) && count($_value['proximity']['amenities'])  > 0)
+								{?>
+								<li><i class="icon-leaf"></i>  <b>Amenities (<?=count($_value['proximity']['amenities']) ?>)</b>
+									<ul class="list-unstyled">
+										<?php
+										foreach($_value['proximity']['amenities'] as $v)
+										{?>
+										<li class="list-area"><input type="hidden" value="<?=$v['geometry']['location']['lat'].';'.$v['geometry']['location']['lng']?>"><span><?=$v['name'] ?></span></li>
+										<?php
+										}?>
+									</ul>
+								</li>
+								<?php
+								}
+								if(isset($_value['proximity']['health']) && count($_value['proximity']['health'])  > 0)
+								{?>
+								<li><i class="icon-stethoscope"></i>  <b>Health, Health Clubs and Spas (<?=count($_value['proximity']['health']) ?>)</b>
+									<ul class="list-unstyled">
+										<?php
+										foreach($_value['proximity']['health'] as $v)
+										{?>
+										<li class="list-area"><input type="hidden" value="<?=$v['geometry']['location']['lat'].';'.$v['geometry']['location']['lng']?>"><span><?=$v['name'] ?></span></li>
+										<?php
+										}?>
+									</ul>
+								</li>
+								<?php
+								}
+								if(isset($_value['proximity']['school']) && count($_value['proximity']['school'])  > 0)
+								{?>
+								<li><i class="icon-book"></i> <b>Schools (<?=count($_value['proximity']['school']) ?>)</b>
+									<ul class="list-unstyled">
+										<?php
+										foreach($_value['proximity']['school'] as $v)
+										{?>
+										<li class="list-area"><input type="hidden" value="<?=$v['geometry']['location']['lat'].';'.$v['geometry']['location']['lng']?>"><span><?=$v['name'] ?></span></li>
+										<?php
+										}?>
+									</ul>
+								</li>
+								<?php
+								}
+								if(isset($_value['proximity']['transportation']) && count($_value['proximity']['transportation'])  > 0)
+								{?>
+								<li><i class="icon-book"></i> <b>Transportation (<?=count($_value['proximity']['transportation']) ?>)</b>
+									<ul class="list-unstyled">
+										<?php
+										foreach($_value['proximity']['transportation'] as $v)
+										{?>
+										<li class="list-area"><input type="hidden" value="<?=$v['geometry']['location']['lat'].';'.$v['geometry']['location']['lng']?>"><span><?=$v['name'] ?></span></li>
+										<?php
+										}?>
+									</ul>
+								</li>
+								<?php
+								}
+								if(isset($_value['proximity']['retail']) && count($_value['proximity']['retail'])  > 0)
+								{?>
+								<li><i class="icon-book"></i> <b>Retail (<?=count($_value['proximity']['retail']) ?>)</b>
+									<ul class="list-unstyled">
+										<?php
+										foreach($_value['proximity']['retail'] as $v)
+										{?>
+										<li class="list-area"><input type="hidden" value="<?=$v['geometry']['location']['lat'].';'.$v['geometry']['location']['lng']?>"><span><?=$v['name'] ?></span></li>
+										<?php
+										}?>
+									</ul>
+								</li>
+								<?php
+								}?>
+							</ul>
 				  </div>
 				  <div class="tab-pane" id="Neighborhood">
 						<h5>
@@ -293,6 +330,8 @@ class VPropertyCommercial
 						</p>
 				  </div>
 				</div>
+				<?php 
+				}?>
 			</aside>
 		</div>
 	</div>

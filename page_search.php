@@ -3,10 +3,9 @@
 header ('Content-Type:text/html; charset=UTF-8');
 //define ('ICONE_PAGE', '../Img/bdd.png');
 //define ('CSS_PAGE', '../Css/index.css');
-if(true || $_SERVER['SERVER_ADMIN'] == 'yo.lefevre@gmail.com')
-	define ('JS_PAGE', '/Assets/js/app/search.js');
-else
-	define ('JS_PAGE', 'Assets/js/app/search.js');
+define ('JS_PAGE', '/Assets/js/app/search.js');
+define ('JS_PAGE_2', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCfUWMe6dpjGdY0-uflHdscZgUpH9m7yj8&sensor=true');
+
 define ('CONTROLER', 'page_search.php');
 
 require ('Inc/require.inc.php');
@@ -274,28 +273,119 @@ function afficherProperty($data)
 
   	$tab['proximity'] = array();
 
- 	/*if(count($tabGps) > 0 && isset($tabGps[0]['latitude']) && isset($tabGps[0]['longitude']))
+ 	if(count($tabGps) > 0 && isset($tabGps[0]['latitude']) && isset($tabGps[0]['longitude']))
   	{
-  		 $food = file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='.$tabGps[0]['latitude'].','.$tabGps[0]['longitude'].'&types=restaurant&radius=500&sensor=false&key=AIzaSyCfUWMe6dpjGdY0-uflHdscZgUpH9m7yj8');
+  		if($data[0]['type'] == 'commercial')
+  		{
+  		 	$retail = file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='.$tabGps[0]['latitude'].','.$tabGps[0]['longitude'].'&types=book_store|electronics_store|florist|clothing_store|convenience_store|department_store|shopping_mall|shoe_store|hardware_store|furniture_store|pet_store|hair_care&rankby=distance&sensor=false&key=AIzaSyCfUWMe6dpjGdY0-uflHdscZgUpH9m7yj8');
+	  		 $retail = json_decode($retail, true);
+	  		 if(isset($retail['results']))
+	  		 {
+	  		 	$i=0;
+	  		 	$tabResults = array();
+	  		 	foreach($retail['results'] as $r)
+	  		 	{
+	  		 		$tabResults[] = $r;
+	  		 		$i++;
+	  		 		if($i==5)
+	  		 			break;
+	  		 	}
+	  		 	$tab['proximity']['retail'] = $tabResults;
+	  		 }
+  		}
+  		else
+  		{
+  			$school = file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='.$tabGps[0]['latitude'].','.$tabGps[0]['longitude'].'&types=school|university&rankby=distance&sensor=false&key=AIzaSyCfUWMe6dpjGdY0-uflHdscZgUpH9m7yj8');
+	  		$school = json_decode($school, true);
+	  		if(isset($school['results']))
+	  		{
+	  			$i=0;
+	  		 	$tabResults = array();
+	  		 	foreach($school['results'] as $r)
+	  		 	{
+	  		 		$tabResults[] = $r;
+	  		 		$i++;
+	  		 		if($i==5)
+	  		 			break;
+	  		 	}
+	  		 	
+	  		 	$tab['proximity']['school'] = $tabResults;
+	  		}
+	  			
+  		}
+  		 $food = file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='.$tabGps[0]['latitude'].','.$tabGps[0]['longitude'].'&types=cafe|bar|bakery|restaurant|food|grocery_or_supermarket&rankby=distance&sensor=false&key=AIzaSyCfUWMe6dpjGdY0-uflHdscZgUpH9m7yj8');
   		 $food = json_decode($food, true);
   		 if(isset($food['results']))
-  		 	$tab['proximity']['food'] = $food['results'];
+  		 {
+  		 	$i=0;
+  		 	$tabResults = array();
+  		 	foreach($food['results'] as $r)
+  		 	{
+  		 		$tabResults[] = $r;
+  		 		$i++;
+  		 		if($i==5)
+  		 			break;
+  		 	}
+  		 	$tab['proximity']['food'] = $tabResults;
+  		 }
 
-  		 $grocery_or_supermarket = file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='.$tabGps[0]['latitude'].','.$tabGps[0]['longitude'].'&types=grocery_or_supermarket&radius=500&sensor=false&key=AIzaSyCfUWMe6dpjGdY0-uflHdscZgUpH9m7yj8');
-  		 $grocery_or_supermarket = json_decode($grocery_or_supermarket, true);
-  		 if(isset($grocery_or_supermarket['results']))
-  		 	$tab['proximity']['grocery'] = $grocery_or_supermarket['results'];
+  		
+  		 	
+  		 $amenities = file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='.$tabGps[0]['latitude'].','.$tabGps[0]['longitude'].'&types=atm|gym|post_office|bank|gas_station|fire_station|police|library&rankby=distance&sensor=false&key=AIzaSyCfUWMe6dpjGdY0-uflHdscZgUpH9m7yj8');
+  		 $amenities = json_decode($amenities, true);
+  		 if(isset($amenities['results']))
+  		 {
+  			 $i=0;
+  		 	$tabResults = array();
+  		 	foreach($amenities['results'] as $r)
+  		 	{
+  		 		$tabResults[] = $r;
+  		 		$i++;
+  		 		if($i==5)
+  		 			break;
+  		 	}
+  		 	
+  		 	$tab['proximity']['amenities'] = $tabResults;
+  		 }
+  		 	
+  		 	
+  		 $transportation = file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='.$tabGps[0]['latitude'].','.$tabGps[0]['longitude'].'&types=airport|bus_station|car_rental|taxi_stand|train_station&rankby=distance&sensor=false&key=AIzaSyCfUWMe6dpjGdY0-uflHdscZgUpH9m7yj8');
+  		 $transportation = json_decode($transportation, true);
 
-  		 $health = file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='.$tabGps[0]['latitude'].','.$tabGps[0]['longitude'].'&types=spa&radius=500&sensor=false&key=AIzaSyCfUWMe6dpjGdY0-uflHdscZgUpH9m7yj8');
+  		 if(isset($transportation['results']))
+  		 {
+  		  	$i=0;
+  		 	$tabResults = array();
+  		 	foreach($transportation['results'] as $r)
+  		 	{
+  		 		$tabResults[] = $r;
+  		 		$i++;
+  		 		if($i==5)
+  		 			break;
+  		 	}
+  		 	
+  		 	$tab['proximity']['transportation'] = $tabResults;
+  		 }
+
+  		 $health = file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='.$tabGps[0]['latitude'].','.$tabGps[0]['longitude'].'&types=dentist|hospital|doctor|pharmacy|beauty_salon|spa&rankby=distance&sensor=false&key=AIzaSyCfUWMe6dpjGdY0-uflHdscZgUpH9m7yj8');
   		 $health = json_decode($health, true);
   		 if(isset($health['results']))
-  		 	$tab['proximity']['health'] = $health['results'];
+  		 {
+  		 	 $i=0;
+  		 	$tabResults = array();
+  		 	foreach($health['results'] as $r)
+  		 	{
+  		 		$tabResults[] = $r;
+  		 		$i++;
+  		 		if($i==5)
+  		 			break;
+  		 	}
+  		 	
+  		 	$tab['proximity']['health'] = $tabResults;
+  		 }
 
-  		 $school = file_get_contents('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='.$tabGps[0]['latitude'].','.$tabGps[0]['longitude'].'&radius=500&types=school&sensor=false&key=AIzaSyCfUWMe6dpjGdY0-uflHdscZgUpH9m7yj8');
-  		 $school = json_decode($school, true);
-  		 if(isset($school['results']))
-  		 	$tab['proximity']['school'] = $school['results'];
-  	}*/
+  		
+  	}
 
 
   	if(isset($_SESSION['user']['id']) && !empty($_SESSION['user']['id']))
@@ -329,10 +419,10 @@ function afficherProperty($data)
   		$tab['like'] = false;
   	}
 
-  	$allDatasCsv = $search->getAllDatasCsv($data[0]['id'], $data[0]['type']);
+  	$allDatasCsv = $search->getAllDatasCsv($data[0]['id'], $data[0]['type'], $data[0]['file']);
 
-
-  	$tab['gps'] = $tabGps[0];
+	if(isset($tabGps[0]))
+  		$tab['gps'] = $tabGps[0];
     $tab['results'] = $data[0];
     $tab['dataCsv'] = $allDatasCsv;
 

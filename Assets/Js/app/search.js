@@ -376,6 +376,94 @@
 					}
 				});
 			});
+			function initializeMap() 
+			{
+					
+				if($('#coord_gps').length > 0)
+				{
+					var coord_property = $('#coord_gps').val();
+					var address_property = $('#address_property').val();
+					var img_property = $('.img_property').attr('src');
+					
+					var split_coord = coord_property.split(';');
+					var point_center = new google.maps.LatLng(split_coord[0], split_coord[1]);
+					var myOptions = {
+						zoom: 15,
+						center: point_center,
+						mapTypeId: google.maps.MapTypeId.ROADMAP
+					};
+					var map = new google.maps.Map(document.getElementById("googleMap"), myOptions);
+					
+					var marker = new google.maps.Marker({
+				        position: point_center,
+				        map: map
+				    });
+					
+					var infowindow = new google.maps.InfoWindow({
+						content: '<img src="'+img_property+'" alt="" style="float:left;height:40px;margin:5px;border:1px solid #999999" /><b>'+address_property+'</b>',
+						maxWidth: 200
+
+					});
+					
+					google.maps.event.addListener(marker, 'load', function() {
+					    infowindow.open(map,marker);
+					  });
+
+					infowindow.open(map,marker);
+					$('.list-area').on('click', function(e)
+					{
+						e.preventDefault();
+						var latlong = $(this).find('input').val();
+						var nom_area = $(this).find('span').text();
+						var split_latlong = latlong.split(';');
+						var point_center_2 = new google.maps.LatLng(split_latlong[0], split_latlong[1]);
+						 myOptions = {
+							zoom: 14,
+							center: point_center_2,
+							mapTypeId: google.maps.MapTypeId.ROADMAP,
+							
+						};
+						map = new google.maps.Map(document.getElementById("googleMap"), myOptions);
+						
+						var marker = new google.maps.Marker({
+					        position: point_center,
+					        map: map
+					    });
+						
+						var marker_2 = new google.maps.Marker({
+					        position: point_center_2,
+					        map: map
+					    });
+						
+						var infowindow_2 = new google.maps.InfoWindow({
+							content: '<b>'+nom_area+'</b>',
+							maxWidth: 200
+
+						});
+						
+						var infowindow = new google.maps.InfoWindow({
+							content: '<img src="'+img_property+'" alt="" style="float:left;height:40px;margin:5px;border:1px solid #999999" /><b>'+address_property+'</b>',
+							maxWidth: 200
+							
+
+						});
+						
+						google.maps.event.addListener(marker, 'click', function() {
+						    infowindow.open(map,marker);
+						  });
+						
+						google.maps.event.addListener(marker_2, 'click', function() {
+						    infowindow_2.open(map,marker_2);
+						  });
+						
+						infowindow.open(map,marker);
+						window.location.hash = '#googleMap';
+					});
+				}
+			}
+			if($('#coord_gps').length > 0)
+				google.maps.event.addDomListener(window, 'load', initializeMap);
+			
 	});
 
 

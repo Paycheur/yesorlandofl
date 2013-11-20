@@ -259,12 +259,49 @@ var loadItem = {
       'selectedText': 'cat'
     });
     // --types
-    var  residentialTypeBtn= $('#residential-type-btn'),
-         residentialTypeBtn= $('#commercial-type-btn'),
-         commercialTypes= $('#commercial-types'),
-         residentailTypes= $('#residentail-types');
-    btnDropdownTypes.init( $('#residential-type-btn'),  commercialTypes, residentailTypes);
-    btnDropdownTypes.init( $('#commercial-type-btn'),  residentailTypes, commercialTypes);
+//    var  residentialTypeBtn= $('#residential-type-btn'),
+//         residentialTypeBtn= $('#commercial-type-btn'),
+//         commercialTypes= $('#commercial-types'),
+//         residentailTypes= $('#residentail-types'),;
+//    btnDropdownTypes.init( $('#residential-type-btn'),  commercialTypes, residentailTypes);
+//    btnDropdownTypes.init( $('#commercial-type-btn'),  residentailTypes, commercialTypes);
+    
+    $('#residential-type-btn').on('click', function () {
+        //$(this).find('i').toggleClass( [ 'icon-angle-down', 'icon-angle-up' ])
+        $('#commercial-types').hide('fast');
+        $('#vacant_land-types').hide('fast');
+        $('#rental-types').hide('fast');
+        $('#residentail-types').toggle('slow');
+        $('html,body').animate({scrollTop: 400}, 1000);
+
+    });
+
+    $('#commercial-type-btn').on('click', function () {
+        $('#residentail-types').hide('fast');
+        $('#vacant_land-types').hide('fast');
+        $('#rental-types').hide('fast');
+        $('#commercial-types').toggle('slow');
+        $('html,body').animate({scrollTop: 400}, 1000);
+
+    });
+    
+    $('#vacant_land-type-btn').on('click', function () {
+        $('#commercial-types').hide('fast');
+        $('#rental-types').hide('fast');
+        $('#residentail-types').hide('fast');
+        $('#vacant_land-types').toggle('slow');
+        $('html,body').animate({scrollTop: 400}, 1000);
+
+    });
+    
+    $('#rental-type-btn').on('click', function () {
+        $('#commercial-types').hide('fast');
+        $('#vacant_land-types').hide('fast');
+        $('#residentail-types').hide('fast');
+        $('#rental-types').toggle('slow');
+        $('html,body').animate({scrollTop: 400}, 1000);
+
+    });
     // -- price Range slider
     priceRange.init( $('#price-range') );
     priceRange.init( $('#price-range-lease') );

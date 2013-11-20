@@ -18,6 +18,7 @@ class BddData extends CConnexion
 	private $FlagActif = '';
 	private $SaleOrLease = '';
 	private $Status;
+	private $File;
 
 	/************** SETTERS *****************/
 
@@ -99,6 +100,11 @@ class BddData extends CConnexion
 	function setStatus($v)
 	{
 		$this->Status = $v;
+	}
+	
+	function setFile($v)
+	{
+		$this->File = $v;
 	}
 
 	/************** GETTERS *****************/
@@ -182,6 +188,11 @@ class BddData extends CConnexion
 	{
 		return $this->Status;
 	}
+	
+	function getFile()
+	{
+		return $this->File;
+	}
 
 	function __construct($valeurs = array())
 	{
@@ -230,6 +241,7 @@ class BddData extends CConnexion
 		$champsRequete['actif']		=	($this->Actif != '')		? '\''. protegeChaine($this->getActif()) .'\'' : 'DEFAULT';
 		$champsRequete['flag_actif']		=	($this->FlagActif != '')		? '\''. protegeChaine($this->getFlagActif()) .'\'' : 'DEFAULT';
 		$champsRequete['status']		=	($this->Status != '')		? '\''. protegeChaine($this->getStatus()) .'\'' : 'DEFAULT';
+		$champsRequete['file']		=	($this->File != '')		? '\''. protegeChaine($this->getFile()) .'\'' : 'DEFAULT';
 		return $champsRequete; 	}
 
 	function load($row)
@@ -250,11 +262,12 @@ class BddData extends CConnexion
 		$this->setFlagActif($row['flag_actif']);
 		$this->setSaleOrLease($row['sale_or_lease']);
 		$this->setStatus($row['status']);
+		$this->setFile($row['file']);
 	}
 	function select($where = array(), $whereSpe=array(), $orderBy = array(), $limit = null)
 	{
 		// Clause SELECT
-		$req = 'SELECT id,type,style,city,address,bed,bathroom,sqft,price,img,postal_code,state,actif,flag_actif, sale_or_lease, status '.
+		$req = 'SELECT id,type,style,city,address,bed,bathroom,sqft,price,img,postal_code,state,actif,flag_actif, sale_or_lease, status, file '.
 				'FROM data  ';
 				
 		// Clause WHERE

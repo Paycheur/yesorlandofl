@@ -1,19 +1,27 @@
 <?php
-ini_set("memory_limit" , "8048M");
+ini_set("memory_limit" , "32000M");
 include(dirname(__FILE__).'/../Class/phrets.php');
 include(dirname(__FILE__).'/../Inc/require.inc.php');
 
-$connexion = new CConnexion(BD_NAME, BD_LOGIN, BD_PASSWORD);
+$connexion2 = new CConnexion(BD_NAME, BD_LOGIN, BD_PASSWORD);
 $sql = 'INSERT INTO import (date, type, text) VALUES (\''.date('Y-m-d H:i:s', time()).'\', \'residential\', \'begin\')';
-$connexion->getConnexion()->query($sql);
+$connexion2->getConnexion()->query($sql);
 
-recupFichier();
+$anneeCourante = date('Y', time());
 
+recupFichier($anneeCourante);
+
+$connexion3 = new CConnexion(BD_NAME, BD_LOGIN, BD_PASSWORD);
+$sql = 'INSERT INTO import (date, type, text) VALUES (\''.date('Y-m-d H:i:s', time()).'\', \'residential\', \'half\')';
+$connexion3->getConnexion()->query($sql);
 	
 recupDonnees();
 
+$connexion4 = new CConnexion(BD_NAME, BD_LOGIN, BD_PASSWORD);
+$sql = 'INSERT INTO import (date, type, text) VALUES (\''.date('Y-m-d H:i:s', time()).'\', \'residential\', \'end\')';
+$connexion4->getConnexion()->query($sql);
 
-function recupFichier()
+function recupFichier($anneeCourante)
 {
 	$rets_login_url = "http://mfr.rets.interealty.com/Login.asmx/Login";
 	$rets_username = "RETS689";
@@ -30,9 +38,14 @@ function recupFichier()
 	// DateTime which is used to determine how far back to retrieve records.
 	// using a really old date so we can get everything
 	$previous_start_time = "2013-01-01T00:00:00";
-	$time_between = array('2013-01-01-2013-02-01');
+	//'01-1' => '2013-01-01-2013-01-15', '01-2' => '2013-01-15-2013-02-01', '02-1' => '2013-02-01-2013-02-15', '02-2' => '2013-02-15-2013-03-01', '03-1' => '2013-03-01-2013-03-15','03-2' => '2013-03-15-2013-04-01',
+	//'04-1' => '2013-04-01-2013-04-15', '04-2' => '2013-04-15-2013-05-01', '05-1' => '2013-05-01-2013-05-15', '05-2' => '2013-05-15-2013-05-20', '05-3' => '2013-05-20-2013-05-25', 
+	//'05-4' => '2013-05-25-2013-06-01',
+	//'06-1' => '2013-06-01-2013-06-10','06-2' => '2013-06-10-2013-06-20','06-3' => '2013-06-20-2013-07-01','07-1' => '2013-07-01-2013-07-10', '07-2' => '2013-07-10-2013-07-20', '07-3' => '2013-07-20-2013-08-01', '08-1' => '2013-08-01-2013-08-10','08-2' => '2013-08-10-2013-08-20','08-3' => '2013-08-20-2013-09-01',
+	//'09-1' => '2013-09-01-2013-09-10', '09-2' => '2013-09-10-2013-09-20', 
+	$time_between = array('11-6' => '2013-11-16-2013-11-17', '11-7' => '2013-11-17-2013-11-18', '11-8' => '2013-11-18-2013-11-19', '11-9' => '2013-11-18-2013-11-20');
 	
-	foreach($time_between as $between)
+	foreach($time_between as $month=>$between)
 	{
 		// start rets connection
 		$rets = new phRETS;
@@ -64,22 +77,24 @@ function recupFichier()
 		        	$name = 'residential';
 		        else if($class=="5")
 		        	$name = 'vacant_land';
-		        $file_name = strtolower("data/property_".$name."_".$between.".csv");
+		        $file_name = strtolower("data/property_".$name."_".$anneeCourante."-".$month.".csv");
 		        $fh = fopen(dirname(__FILE__).'/'.$file_name, "w+");
 		
+
 		        $fields_order = array();
-		
+
 		        $query = "({$rets_modtimestamp_field}={$between})";
 		        // run RETS search
-		        echo "   + Resource: Property   Class: {$class}   Query: {$query}<br>\n";
-		        $search = $rets->SearchQuery("Property", $class, $query, array());
+		        
+		        
+		        echo "   + Query: {$query}  Limit: {$limit}  Offset: {$offset}<br>\n";
+		        $search = $rets->SearchQuery("Property", $class, $query,  array());
 		
 		        if ($rets->NumRows($search) > 0) {
 		
 		                // print filename headers as first line
-		                $fields_order = $rets->SearchGetFields($search);
-		                fputcsv($fh, $fields_order);
-		
+			                $fields_order = $rets->SearchGetFields($search);
+			                fputcsv($fh, $fields_order);
 		                // process results
 		                while ($record = $rets->FetchRow($search)) {
 		                        $this_record = array();
@@ -90,10 +105,12 @@ function recupFichier()
 		                }
 		
 		        }
-		
-		        echo "    + Total found: {$rets->TotalRecordsFound($search)}<br>\n";
-		
-		        $rets->FreeResult($search);
+		        
+		    
+                echo "    + Total found: {$rets->TotalRecordsFound($search)}<br>\n";
+
+                $rets->FreeResult($search);
+		        
 		
 		        fclose($fh);
 		
@@ -104,24 +121,20 @@ function recupFichier()
 		echo "+ Disconnecting<br>\n";
 		$rets->Disconnect();
 	}
-	$connexion = new CConnexion(BD_NAME, BD_LOGIN, BD_PASSWORD);
-	$sql = 'INSERT INTO import (date, type, text) VALUES (\''.date('Y-m-d H:i:s', time()).'\', \'residential\', \'half\')';
-	$connexion->getConnexion()->query($sql);
+
 	
 }
 
 function recupDonnees()
 {
-	$connexion = new CConnexion(BD_NAME, BD_LOGIN, BD_PASSWORD);
-	$sql = 'UPDATE data SET flag_actif=0 WHERE type=\'residential\' ';
-	$connexion->getConnexion()->query($sql);
 	$phrets = new phRETS;
 	$rets_login_url = "http://mfr.rets.interealty.com/Login.asmx/Login";
 	$rets_username = "RETS689";
 	$rets_password = "2e7Retru";
     $phrets->Connect($rets_login_url, $rets_username, $rets_password);
     
-	$all_fichier = array('property_residential_2013-01-01-2013-02-01');
+	$all_fichier = array('property_residential_2013-11-6','property_residential_2013-11-7','property_residential_2013-11-8','property_residential_2013-11-9');
+	
 	$donnees_retour = array();
 	foreach($all_fichier as $fichier)
 	{
@@ -174,103 +187,25 @@ function recupDonnees()
 		        	$value_sale_or_lease = '';
 					$value_status = '';
 
-				     switch($fichier)
-				     {
-				     	case 'property_commercial':
-				     		$value_id = trim( str_replace('||', '', $row_array[0])); //id
-				     		$value_city = trim( str_replace('||', '', $row_array[$array_key[2302]])); //city
-					   		$value_style = trim( str_replace('||', '', $row_array[$array_key[77]])); //property style
-					   		$value_address = trim( str_replace('||', '', $row_array[$array_key[49]])); //address391
-					   		$lease_rate = trim( str_replace('||', '', $row_array[$array_key[2308]]));
-					   		if($lease_rate != '')
-					   		{
-					   			$value_sqft = trim( str_replace('||', '', $row_array[$array_key[79]])) ;//lotsize sqft
-					   			if($lease_rate > 50)
-					   			{
-					   				$value_price = $lease_rate;
-					   			}
-					   			else
-					   			{
-					   				$value_price = ($lease_rate*$value_sqft)/12; //lease rate
-					   			}
-					   			$value_sale_or_lease = 'lease';
-					   			
-					   		}
-					   		else
-					   		{
-					   			$value_price = str_replace(',', '', trim( str_replace('||', '', $row_array[$array_key[176]]))); //list price
-					   			$value_sqft = trim( str_replace('||', '', $row_array[$array_key[80]])) ;//lotsize sqft
-					   			$value_sale_or_lease = 'sale';
-					   		}
-					   		
-					   		$value_state = trim( str_replace('||', '', $row_array[$array_key[2304]])); //state
-					   		$value_postalCode = trim( str_replace('||', '', $row_array[$array_key[46]])) ;//postal code (zipcode)
-					   		$value_status = trim( str_replace('||', '', $row_array[$array_key[178]])) ;//status
-					   		break;
-//				     	case 'property_income':
-//				     		$value_id = trim( str_replace('||', '', $row_array[0])); //id
-//				     		$value_city = trim( str_replace('||', '', $row_array[$array_key[2302]])); //city
-//					   		$value_style = trim( str_replace('||', '', $row_array[$array_key[519]])); //property style
-//					   		$value_address = trim( str_replace('||', '', $row_array[$array_key[49]])); //address
-//					   		$value_price = trim( str_replace('||', '', $row_array[$array_key[176]])); //list price
-//					   		$value_sqft = trim( str_replace('||', '', $row_array[$array_key[2622]])); //lotsize sqft
-//					   		$value_state = trim( str_replace('||', '', $row_array[$array_key[2304]])); //state
-//					   		$value_postalCode = trim( str_replace('||', '', $row_array[$array_key[46]])) ;//postal code (zipcode)
-//					   		break;
-					   	case 'property_rental':
-					   		$value_id = trim( str_replace('||', '', $row_array[0])); //id
-				     		$value_city = trim( str_replace('||', '', $row_array[$array_key[2302]])); //city
-					   		$value_style = trim( str_replace('||', '', $row_array[$array_key[934]])); //property style
-					   		$value_bed = trim( str_replace('||', '', $row_array[$array_key[32]])); //beds
-					   		$value_address = trim( str_replace('||', '', $row_array[$array_key[49]])); //address
-					   		$value_price = str_replace(',', '', trim( str_replace('||', '', $row_array[$array_key[2364]]))); //rent price
-					   		$value_sqft = trim( str_replace('||', '', $row_array[$array_key[2622]])); //lotsize sqft
-					   		$value_state = trim( str_replace('||', '', $row_array[$array_key[2304]])); //state
-					   		$value_postalCode = trim( str_replace('||', '', $row_array[$array_key[46]])) ;//postal code (zipcode)
-					   		$value_bathroom = trim( str_replace('||', '', $row_array[$array_key[2294]])); //full bath
-					   		$value_sale_or_lease = 'lease';
-					   		$value_status = trim( str_replace('||', '', $row_array[$array_key[178]])) ;//status
-					   		break;
-					   	case 'property_residential':
-					   		$value_id = trim( str_replace('||', '', $row_array[0])); //id
-				     		$value_city = trim( str_replace('||', '', $row_array[$array_key[2302]])); //city
-					   		$value_style = trim( str_replace('||', '', $row_array[$array_key[1349]])); //property style
-					   		$value_bed = trim( str_replace('||', '', $row_array[$array_key[32]])); //beds
-					   		$value_address = trim( str_replace('||', '', $row_array[$array_key[49]])); //address
-					   		$value_price = str_replace(',', '', trim( str_replace('||', '', $row_array[$array_key[176]]))); //list price
-					   		$value_sqft = trim( str_replace('||', '', $row_array[$array_key[2346]])); //lotsize sqft
-					   		$value_state = trim( str_replace('||', '', $row_array[$array_key[2304]])); //state
-					   		$value_postalCode = trim( str_replace('||', '', $row_array[$array_key[46]])) ;//postal code (zipcode)
-					   		$value_bathroom = trim( str_replace('||', '', $row_array[$array_key[2294]])); //full bath
-					   		$value_sale_or_lease = 'sale';
-					   		$value_status = trim( str_replace('||', '', $row_array[$array_key[178]])) ;//status
-					   		break;
-					   	case 'property_vacant_land':
-					   		$value_id = trim( str_replace('||', '', $row_array[0])); //id
-				     		$value_city = trim( str_replace('||', '', $row_array[$array_key[2302]])); //city
-					   		$value_style = trim( str_replace('||', '', $row_array[$array_key[1764]])); //property style
-					   		$value_address = trim( str_replace('||', '', $row_array[$array_key[165]])).' '.trim( str_replace('||', '', $row_array[$array_key[421]])).' '.trim( str_replace('||', '', $row_array[$array_key[2306]])); //number, street
-					   		$value_sqft = trim( str_replace('||', '', $row_array[$array_key[2622]])); //lotsize sqft
-					   		$value_state = trim( str_replace('||', '', $row_array[$array_key[2304]])); //state
-					   		$value_postalCode = trim( str_replace('||', '', $row_array[$array_key[46]])) ;//postal code (zipcode)
-					   		$lease_rate = trim( str_replace('||', '', $row_array[$array_key[2308]]));
-					   		if($lease_rate!= '')
-					   		{
-					   			$value_price = $lease_rate; //lease rate
-					   			$value_sale_or_lease = 'lease';
-					   		}
-					   		else
-					   		{
-					   			$value_price = str_replace(',', '', trim( str_replace('||', '', $row_array[$array_key[176]]))); //list price
-					   			$value_sale_or_lease = 'sale';
-					   		}
-					   		$value_status = trim( str_replace('||', '', $row_array[$array_key[178]])) ;//status
-					   		break;
-					   		
-				     }
+				    //for property_residential
+			   		$value_id = trim( str_replace('||', '', $row_array[0])); //id
+		     		$value_city = trim( str_replace('||', '', $row_array[$array_key[2302]])); //city
+			   		$value_style = trim( str_replace('||', '', $row_array[$array_key[1349]])); //property style
+			   		$value_bed = trim( str_replace('||', '', $row_array[$array_key[32]])); //beds
+			   		$value_address = trim( str_replace('||', '', $row_array[$array_key[49]])); //address
+			   		$value_price = str_replace(',', '', trim( str_replace('||', '', $row_array[$array_key[176]]))); //list price
+			   		$value_sqft = trim( str_replace('||', '', $row_array[$array_key[2346]])); //lotsize sqft
+			   		$value_state = trim( str_replace('||', '', $row_array[$array_key[2304]])); //state
+			   		$value_postalCode = trim( str_replace('||', '', $row_array[$array_key[46]])) ;//postal code (zipcode)
+			   		$value_bathroom = trim( str_replace('||', '', $row_array[$array_key[2294]])); //full bath
+			   		$value_sale_or_lease = 'sale';
+			   		$value_status = trim( str_replace('||', '', $row_array[$array_key[178]])) ;//status
+					   	
 				    
-				    if($value_status == 'Sold')
-				    	continue;
+				    if($value_status == 'Sold' || $value_status == '' || $value_price == 0)
+				    	$actif = 0;
+				    else
+				    	$actif=1;
 				    
 				    $recup_img = true;
 				    $dbData = new BddData();
@@ -320,10 +255,8 @@ function recupDonnees()
 					$dbData->setFlagActif(1);
 					$dbData->setSaleOrLease($value_sale_or_lease);
 					$dbData->setStatus($value_status);
-					if($value_price == 0)
-						$dbData->setActif(0);
-					else
-						$dbData->setActif(1);
+					$dbData->setFile(str_replace('property_residential_', '', $fichier));
+					$dbData->setActif($actif);
 						
 					$dbData->insert('REPLACE');
 				    
@@ -339,11 +272,6 @@ function recupDonnees()
 
 	}
 
-	$sql = 'UPDATE data SET actif=0 WHERE flag_actif=0 AND type=\'residential\' ';
-	$connexion->getConnexion()->query($sql);
-	
-	$sql = 'INSERT INTO import (date, type, text) VALUES (\''.date('Y-m-d H:i:s', time()).'\', \'residential\', \'end\')';
-	$connexion->getConnexion()->query($sql);
 
 }
 ?>
