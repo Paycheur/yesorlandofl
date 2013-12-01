@@ -40,7 +40,7 @@ function br2nl($text) //Enleve les <br /> du au nl2br()
     foreach($normalizeChars as $accent => $suppr){
     	$toClean = str_replace($accent, $suppr, $toClean);
     }
-    
+
     return $toClean;
 }
 
@@ -61,7 +61,7 @@ function supprAccentUTF8($chaine)
 
 	return $chaine;
  }
- 
+
 function format_url($chaine)
 {
     $chaine = SupprAccents(supprAccentUTF8(html_entity_decode($chaine)));
@@ -87,7 +87,7 @@ function format_url($chaine)
     $chaine = str_replace('!', '', $chaine);
     // Si le dernier caractère est un - on le supprimer
     if(endswith($chaine, '-')) $chaine = substr($chaine, 0, strlen($chaine)-1);
-    
+
     return $chaine;
 }
 
@@ -97,6 +97,15 @@ function format_url($chaine)
 
 function endswith($hay, $needle) {
   return substr($hay, -strlen($needle)) === $needle;
+}
+
+//view check value
+function test_value($csv, $input ) {
+    if ( isset( $csv[$input] ) &&  $csv[$input]['val'] != '' )  {
+
+        echo '<li><b>'.$csv[$input]["lib"].': </b>'
+        .$csv[$input]["val"].'</li>' ;
+    }
 }
 
 ?>

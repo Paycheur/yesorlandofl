@@ -8,7 +8,7 @@
           </h1>
           <p>We are a boutique Real Estate Firm with a desire to transform the Real Estate industry through innovation, talent, passion, and most important collaboration.</p>
         </header>
-        <div class="fade-in">
+        <div class="fade-in" id="fadeImages">
 
           <section class="col-lg-offset-3 col-lg-6 text-center padding-2em border-top-gray-light">
 

@@ -18,7 +18,15 @@ if(isset($page['class']))
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="author" content="http://mondedesign.net">
+
+
+
  <title><?=$page['title']?></title>
+
+
+
+
+
 
 <!-- Web font -->
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
