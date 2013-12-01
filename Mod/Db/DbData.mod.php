@@ -17,8 +17,9 @@ class BddData extends CConnexion
 	private $Actif = '';
 	private $FlagActif = '';
 	private $SaleOrLease = '';
-	private $Status;
-	private $File;
+	private $Status = '';
+	private $File = '';
+	private $JsonData = '';
 
 	/************** SETTERS *****************/
 
@@ -105,6 +106,11 @@ class BddData extends CConnexion
 	function setFile($v)
 	{
 		$this->File = $v;
+	}
+	
+	function setJsonData($v)
+	{
+		$this->JsonData = $v;
 	}
 
 	/************** GETTERS *****************/
@@ -193,6 +199,11 @@ class BddData extends CConnexion
 	{
 		return $this->File;
 	}
+	
+	function getJsonData()
+	{
+		return $this->JsonData;
+	}
 
 	function __construct($valeurs = array())
 	{
@@ -242,6 +253,7 @@ class BddData extends CConnexion
 		$champsRequete['flag_actif']		=	($this->FlagActif != '')		? '\''. protegeChaine($this->getFlagActif()) .'\'' : 'DEFAULT';
 		$champsRequete['status']		=	($this->Status != '')		? '\''. protegeChaine($this->getStatus()) .'\'' : 'DEFAULT';
 		$champsRequete['file']		=	($this->File != '')		? '\''. protegeChaine($this->getFile()) .'\'' : 'DEFAULT';
+		$champsRequete['json_data']		=	($this->JsonData != '')		? '\''. protegeChaine($this->getJsonData()) .'\'' : 'DEFAULT';
 		return $champsRequete; 	}
 
 	function load($row)
@@ -263,11 +275,12 @@ class BddData extends CConnexion
 		$this->setSaleOrLease($row['sale_or_lease']);
 		$this->setStatus($row['status']);
 		$this->setFile($row['file']);
+		$this->setJsonData($row['json_data']);
 	}
 	function select($where = array(), $whereSpe=array(), $orderBy = array(), $limit = null)
 	{
 		// Clause SELECT
-		$req = 'SELECT id,type,style,city,address,bed,bathroom,sqft,price,img,postal_code,state,actif,flag_actif, sale_or_lease, status, file '.
+		$req = 'SELECT id,type,style,city,address,bed,bathroom,sqft,price,img,postal_code,state,actif,flag_actif, sale_or_lease, status, file, json_data '.
 				'FROM data  ';
 				
 		// Clause WHERE
@@ -338,6 +351,7 @@ class BddData extends CConnexion
 
 		$tabRows =  array();
 		$res = $this->getConnexion()->query($req);
+		
 		$tabRows = $res->fetchAll(PDO::FETCH_ASSOC);
 		return $tabRows;
 	}

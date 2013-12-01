@@ -9,23 +9,19 @@ $connexion2 = new CConnexion(BD_NAME, BD_LOGIN, BD_PASSWORD);
 $sql = 'INSERT INTO import (date, type, text) VALUES (\''.date('Y-m-d H:i:s', time()).'\', \'commercial\', \'begin\')';
 $connexion2->getConnexion()->query($sql);
 
-$day = date('d', time());
-$month = date('m', time());
-$year = date('Y', time());
-
-recupFichier($day, $month, $year);
+recupFichier();
 
 $connexion3 = new CConnexion(BD_NAME, BD_LOGIN, BD_PASSWORD);
 $sql = 'INSERT INTO import (date, type, text) VALUES (\''.date('Y-m-d H:i:s', time()).'\', \'commercial\', \'half\')';
 $connexion3->getConnexion()->query($sql);
 
-recupDonnees($month, $year);
+recupDonnees();
 
 $connexion4 = new CConnexion(BD_NAME, BD_LOGIN, BD_PASSWORD);
 $sql = 'INSERT INTO import (date, type, text) VALUES (\''.date('Y-m-d H:i:s', time()).'\', \'commercial\', \'end\')';
 $connexion4->getConnexion()->query($sql);
 
-function recupFichier($day, $month, $year)
+function recupFichier()
 {
 	$rets_login_url = "http://mfr.rets.interealty.com/Login.asmx/Login";
 	$rets_username = "RETS689";
@@ -41,18 +37,13 @@ function recupFichier($day, $month, $year)
 	
 	// DateTime which is used to determine how far back to retrieve records.
 	// using a really old date so we can get everything
-	if($day == '01')
-	{
-		$dateBegin = date('Y-m-d', strtotime('-1 day'));
-		$dateEnd = $year.'-'.$month.'-'.$day;
-	}
-	else
-	{
-		$dateBegin = $year.'-'.$month.'-01';
-		$dateEnd = $year.'-'.$month.'-'.$day;
-	}
-	$between = $dateBegin.'-'.$dateEnd;
+
+	$dateBegin = date('Y-m-d', strtotime('-1 day'));
+
+	$dateEnd = date('Y-m-d', time());
 	
+
+		
 	// start rets connection
 	$rets = new phRETS;
 	
@@ -71,6 +62,7 @@ function recupFichier($day, $month, $year)
 	        exit;
 	}
 	
+	
 	foreach ($property_classes as $class) {
 	
 	        echo "+ Property:{$class}<br>\n";
@@ -83,37 +75,70 @@ function recupFichier($day, $month, $year)
 	        	$name = 'residential';
 	        else if($class=="5")
 	        	$name = 'vacant_land';
-	        $file_name = strtolower("data/property_".$name."_".$year."-".$month.".csv");
+	        	
+	       
+	        $file_name = strtolower("data/property_".$name.".csv");
 	        $fh = fopen(dirname(__FILE__).'/'.$file_name, "w+");
 	
-	        $fields_order = array();
+	        
 	
-	        $query = "({$rets_modtimestamp_field}={$between})";
-	        // run RETS search
-	        echo "   + Resource: Property   Class: {$class}   Query: {$query}<br>\n";
-	        $search = $rets->SearchQuery("Property", $class, $query, array());
-	
-	        if ($rets->NumRows($search) > 0) {
-	
-	                // print filename headers as first line
-	                $fields_order = $rets->SearchGetFields($search);
-	                fputcsv($fh, $fields_order);
-	
-	                // process results
-	                while ($record = $rets->FetchRow($search)) {
-	                        $this_record = array();
-	                        foreach ($fields_order as $fo) {
-	                                $this_record[] = "||".$record[$fo]."||";
-	                        }
-	                        fputcsv($fh, $this_record);
-	                }
-	
-	        }
-	
-	        echo "    + Total found: {$rets->TotalRecordsFound($search)}<br>\n";
-	
-	        $rets->FreeResult($search);
-	
+			$i=0;
+			$h_p = 0;
+			$h_s = 0;
+			while($i<=23)
+			{
+				$h_p = $i;
+				$i = $i+3;
+				if($i > 23)
+				{
+					$h_s = 0;
+				}
+				else
+				{
+					$h_s = $i;
+				}
+				if(strlen($h_s) == 1)
+					$h_s = '0'.$h_s;
+				if(strlen($h_p) == 1)
+					$h_p = '0'.$h_p;	
+				if($i > 23)
+				{
+					$between = $dateBegin.'T'.$h_p.':00:00-'.$dateEnd.'T'.$h_s.':00:00';
+				}
+				else
+				{
+					$between = $dateBegin.'T'.$h_p.':00:00-'.$dateBegin.'T'.$h_s.':00:00';
+				}
+				
+				$fields_order = array();
+				
+		        $query = "({$rets_modtimestamp_field}={$between})";
+		        // run RETS search
+		        echo "   + Resource: Property   Class: {$class}   Query: {$query}<br>\n";
+		        $search = $rets->SearchQuery("Property", $class, $query, array());
+		
+		        if ($rets->NumRows($search) > 0) {
+		
+		                // print filename headers as first line
+		                $fields_order = $rets->SearchGetFields($search);
+		                if($i <= 3)
+		                	fputcsv($fh, $fields_order);
+		
+		                // process results
+		                while ($record = $rets->FetchRow($search)) {
+		                        $this_record = array();
+		                        foreach ($fields_order as $fo) {
+		                                $this_record[] = "||".$record[$fo]."||";
+		                        }
+		                        fputcsv($fh, $this_record);
+		                }
+		
+		        }
+		
+		        echo "    + Total found: {$rets->TotalRecordsFound($search)}<br>\n";
+		
+		        $rets->FreeResult($search);
+			}
 	        fclose($fh);
 	
 	        echo "  - done<br>\n";
@@ -122,20 +147,18 @@ function recupFichier($day, $month, $year)
 	
 	echo "+ Disconnecting<br>\n";
 	$rets->Disconnect();
+	
 }
 
-function recupDonnees($month, $year)
+function recupDonnees()
 {
-	$connexion = new CConnexion(BD_NAME, BD_LOGIN, BD_PASSWORD);
-	$sql = 'UPDATE data SET flag_actif=0 WHERE type=\'commercial\' ';
-	$connexion->getConnexion()->query($sql);
 	$phrets = new phRETS;
 	$rets_login_url = "http://mfr.rets.interealty.com/Login.asmx/Login";
 	$rets_username = "RETS689";
 	$rets_password = "2e7Retru";
     $phrets->Connect($rets_login_url, $rets_username, $rets_password);
     
-	$all_fichier = array('property_commercial_'.$year.'-'.$month);
+	$all_fichier = array('property_commercial');
 	
 	$donnees_retour = array();
 	foreach($all_fichier as $fichier)
@@ -257,6 +280,8 @@ function recupDonnees($month, $year)
 						}
 				    }
 
+					$json_csv = getAllDatasCsv($value_id, $value_type);
+			
 					$dbData = new BddData();
 					$dbData->setId($value_id);
 					$dbData->setType($value_type);
@@ -272,9 +297,8 @@ function recupDonnees($month, $year)
 					$dbData->setPostalCode($value_postalCode);
 					$dbData->setSaleOrLease($value_sale_or_lease);
 					$dbData->setStatus($value_status);
-					$dbData->setFile($year.'-'.$month);
 					$dbData->setActif($actif);
-						
+					$dbData->setJsonData(json_encode($json_csv));
 					$dbData->insert('REPLACE');
 				    
 					var_dump('['.$value_type.'] '.$value_id.' : '.$value_status);
@@ -289,8 +313,103 @@ function recupDonnees($month, $year)
 
 	}
 
-	$connexion5 = new CConnexion(BD_NAME, BD_LOGIN, BD_PASSWORD);
-	$sql = 'UPDATE data SET actif=0 WHERE flag_actif=0 AND type=\'commercial\' ';
-	$connexion5->getConnexion()->query($sql);
 }
+
+function getAllDatasCsv($id_property, $type_property)
+	{
+		
+		$data = array();
+		
+			$fichier = 'property_commercial';
+
+			
+		if (file_exists(dirname(__FILE__).'/data/'.$fichier.'.csv') != FALSE) 
+		{
+			
+		    $handle  = file_get_contents(dirname(__FILE__).'/data/'.$fichier.'.csv') or exit;
+		    $handle_row = explode("\n", $handle);
+		    $first = true;
+		    $array_key = array();
+		    $array_donnees = array();
+		    foreach ($handle_row as $key => $val) 
+		    {
+		    	if($val == '') continue;
+		    	$row_array = array();
+		    	if($first == true)
+		       		$row_array = explode(',', str_replace('"', '', $val));
+		       	else
+		       		$row_array = explode('||,', str_replace('"', '', $val));
+
+		       
+	       		if($first == true)
+	        	{
+			        foreach ($row_array as $key2 => $val2) 
+			        {
+			        	
+			        	$array_key[$val2] = $key2;
+			        }
+			       
+	        	}
+	        	else
+	        	{
+	        		if(trim( str_replace('||', '', $row_array[0])) == $id_property)
+	        		{
+	        			if(strpos($fichier,'property_commercial') !== false)
+	        			{
+		        			$data['lease_rate'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[2308]])), 'lib' => 'Lease Rate');
+							$data['property_use'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[86]])), 'lib' => 'Property Use');
+							$data['property_style'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[77]])), 'lib' => 'Property Style');
+							$data['sq_ft_gross'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[80]])), 'lib' => 'Sq.Ft. Gross');
+							$data['lp_sqft'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[2763]])), 'lib' => 'LP/SqFt');
+							$data['lease_price_per_sf'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[2999]])), 'lib' => 'Lease Price per SF');
+							$data['net_leasable_sq_ft'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[79]])), 'lib' => 'Net Leasable Sq.Ft.');
+							$data['total_num_bldg'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[443]])), 'lib' => 'Total Num Bldg');
+							$data['floors_number'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[432]])), 'lib' => 'Floors #');
+							$data['class_of_space'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[2952]])), 'lib' => 'Class of Space');
+							$data['lot_size_acres'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[2624]])), 'lib' => 'Lot Size [Acres]');
+							$data['public_remarks_new'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3187]])), 'lib' => 'Public Remarks New');
+							$data['complex_community_name_nccb'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[2316]])), 'lib' => 'Complex/Community Name/NCCB');
+							$data['zoning'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[2320]])), 'lib' => 'Zoning');
+							$data['taxes'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[104]])), 'lib' => 'Taxes');
+							$data['net_operating_income'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[283]])), 'lib' => 'Net Operating Income');
+							$data['cam_per_sq_ft'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3002]])), 'lib' => 'CAM Per Sq Ft');
+							$data['number_of_add_parcels'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[2632]])), 'lib' => '# of Add Parcels');
+							$data['water_view'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3011]])), 'lib' => 'Water View');
+							$data['waterfront_feet'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3022]])), 'lib' => 'Waterfront Feet');
+							$data['number_of_hotel_motel_rms'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[2644]])), 'lib' => '# of Hotel/Motel Rms');
+							$data['number_of_restrooms'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[2648]])), 'lib' => '# of Restrooms');
+							$data['number_of_offices'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[2650]])), 'lib' => '# of Offices');
+							$data['warehouse_space_heated'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3118]])), 'lib' => 'Warehouse Space(Heated)');
+							$data['warehouse_space_total'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3119]])), 'lib' => 'Warehouse Space(Total)');
+							$data['number_of_bays_dock_high'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3120]])), 'lib' => '# of Bays(Dock High)');
+							$data['number_of_bays_grade_level'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3121]])), 'lib' => '# of Bays(Grade Level)');
+							$data['number_of_restrooms'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[2648]])), 'lib' => '# of Restrooms');
+							$data['freezer_space_y_n'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[2654]])), 'lib' => 'Freezer Space Y/N');
+							$data['air_conditioning'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[487]])), 'lib' => 'Air Conditioning');
+							$data['utilities'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[475]])), 'lib' => 'Utilities');
+							$data['new_construction'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3084]])), 'lib' => 'New Construction');
+							$data['construction_status'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3085]])), 'lib' => 'Construction Status');
+							$data['projected_completion_date'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3086]])), 'lib' => 'Projected Completion Date');
+							$data['green_site_improvements'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3195]])), 'lib' => 'Green Site Improvements');
+							$data['green_water_features'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3196]])), 'lib' => 'Green Water Features');
+							$data['green_energy_features'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3197]])), 'lib' => 'Green Energy Features');
+							$data['financing_terms'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3162]])), 'lib' => 'Financing Terms');
+							$data['condo_fees'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3254]])), 'lib' => 'Condo Fees');
+							$data['condo_fees_term'] = array('val' => trim( str_replace('||', '', $row_array[$array_key[3255]])), 'lib' => 'Condo Fees Term');
+	        			}
+	        			
+						return $data;
+	        		}
+	        		else
+	        		{
+	        			continue;
+	        		}
+	        	}
+	        	
+	        	$first = false;
+		    }
+		}
+
+		return $data;
+	}
 ?>
