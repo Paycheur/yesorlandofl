@@ -95,12 +95,12 @@ $arrayCityMore = array('Altamonte Springs','Apopka','Belle Isle','Casselberry','
 
 
       <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-white active">
-              <input type="radio" name="option" id="option1" value="sale"> <a href="#tabOne" data-toggle="tab" class="display-block">For Sale</a>
+            <label class="btn btn-white active padding-zero">
+              <input type="radio" name="option" id="option1" value="sale"> <a href="#tabOne" data-toggle="tab" class="btn-padding inline-block">For Sale</a>
             </label>
 
-          <label class="btn btn-white">
-            <input type="radio" name="option" id="option2" value="lease"><a href="#tabTwo" data-toggle="tab" class="display-block">For Lease</a>
+          <label class="btn btn-white padding-zero">
+            <input type="radio" name="option" id="option2" value="lease"><a href="#tabTwo" data-toggle="tab" class="btn-padding inline-block">For Lease</a>
           </label>
 
 

@@ -1,6 +1,6 @@
 <div class="content bg-cover bg-fixed" style="background-image: url('Assets/img/wall-1440.jpg');">
 
-  <div class="container padding-top-2em " >
+  <div class="container padding-top-2em " id="fadeImages" >
       <div id="holder-content">
 
         <!-- <div class="row">
