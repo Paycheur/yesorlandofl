@@ -172,11 +172,13 @@ class MSearch
 	
 	public function countSearchForm($type_style, $city, $beds, $bathroom, $option, $price)
 	{
+
 		$req = 'SELECT COUNT(1) value FROM data'.
 				' WHERE actif = 1';
-	if($type_style != '')
+		$tabType = array();
+		if($type_style != '')
 		{
-			$tabType = array();
+			
 			if(is_array($type_style))
 			{
 				$req .=' AND (';
@@ -270,8 +272,9 @@ class MSearch
 		}
 		
 		if($option != '')
+		{
 			$req .= ' AND sale_or_lease = \''.protegeChaine($option).'\' ';
-		
+		}
 		
 		$tabRows =  array();
 		$res = $this->dbData->getConnexion()->query($req);

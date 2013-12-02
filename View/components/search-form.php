@@ -79,14 +79,14 @@ $arrayCityMore = array('Altamonte Springs','Apopka','Belle Isle','Casselberry','
         <div class="tab-pane active" id="tabOne">
 
             <label for="rangeInput" class="display-block"><b>What is your price range :</b></label>
-            <input type="text" class="display-block form-control " value="<?=(isset($_REQUEST['price']) ? $_REQUEST['price'] : '') ?>" name="price" data-slider-min="0" data-slider-max="1000000" data-slider-step="1000" data-slider-value="[0,1000000]" data-slider-tooltip="hide" id="price-range">
+            <input type="text" class="display-block form-control " value="<?=(isset($_REQUEST['price']) ? $_REQUEST['price'] : '') ?>" name="price_sale" data-slider-min="0" data-slider-max="1000000" data-slider-step="1000" data-slider-value="[0,1000000]" data-slider-tooltip="hide" id="price-range">
             <label for="rangeInput" class="display-block padding-05em">From <b class="theMin">Any Price</b> to <b class="theMax">Any</b></label>
 
         </div>
         <div class="tab-pane" id="tabTwo">
 
             <label for="rangeInput" class="display-block"><b>What is your price range lease :</b></label>
-            <input type="text" class="display-block form-control " value="<?=(isset($_REQUEST['price']) ? $_REQUEST['price'] : '') ?>" name="price" data-slider-min="0" data-slider-max="5000" data-slider-step="100" data-slider-value="[0,5000]" data-slider-tooltip="hide" id="price-range-lease">
+            <input type="text" class="display-block form-control " value="<?=(isset($_REQUEST['price']) ? $_REQUEST['price'] : '') ?>" name="price_lease" data-slider-min="0" data-slider-max="5000" data-slider-step="100" data-slider-value="[0,5000]" data-slider-tooltip="hide" id="price-range-lease">
             <label for="rangeInput" class="display-block padding-05em">From <b class="theMin">Any Price</b> to <b class="theMax">Any</b></label>
         </div>
       </div>
@@ -95,7 +95,7 @@ $arrayCityMore = array('Altamonte Springs','Apopka','Belle Isle','Casselberry','
 
 
       <div class="btn-group" data-toggle="buttons">
-            <label class="btn btn-white active padding-zero">
+            <label class="btn btn-white padding-zero">
               <input type="radio" name="option" id="option1" value="sale"> <a href="#tabOne" data-toggle="tab" class="btn-padding inline-block">For Sale</a>
             </label>
 

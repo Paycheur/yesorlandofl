@@ -36,11 +36,6 @@
 
 			});
 			
-			$('.slider-handle').mouseup(function() {
-				$('#formSearch').submit();
-				//Gestion de la soumission du formulaire
-
-			});
 			
 			$('#option1').change(function() { //SALE
 				$('#formSearch').submit();
@@ -376,9 +371,8 @@
 					}
 				});
 			});
-			function initializeMap() 
+			$('.view-map').on('click', function(e)
 			{
-					
 				if($('#coord_gps').length > 0)
 				{
 					var coord_property = $('#coord_gps').val();
@@ -388,7 +382,7 @@
 					var split_coord = coord_property.split(';');
 					var point_center = new google.maps.LatLng(split_coord[0], split_coord[1]);
 					var myOptions = {
-						zoom: 15,
+						zoom: 14,
 						center: point_center,
 						mapTypeId: google.maps.MapTypeId.ROADMAP
 					};
@@ -418,7 +412,7 @@
 						var split_latlong = latlong.split(';');
 						var point_center_2 = new google.maps.LatLng(split_latlong[0], split_latlong[1]);
 						 myOptions = {
-							zoom: 14,
+							zoom: 13,
 							center: point_center_2,
 							mapTypeId: google.maps.MapTypeId.ROADMAP,
 							
@@ -460,9 +454,9 @@
 						window.location.hash = '#googleMap';
 					});
 				}
-			}
-			if($('#coord_gps').length > 0)
-				google.maps.event.addDomListener(window, 'load', initializeMap);
+			});
+//			if($('#coord_gps').length > 0)
+//				google.maps.event.addDomListener(window, 'load', initializeMap);
 			
 	});
 

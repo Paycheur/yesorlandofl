@@ -51,10 +51,12 @@ function home()
     	if(isset($_GET['option']))
 			$option = urlencode($_GET['option']);
 		else
-			$option = 'sale';
+			$option = '';
 
-		if(isset($_GET['price']))
-			$price = urldecode($_GET['price']);
+		if(isset($_GET['price']) && ($option == 'sale' || $option == '') )
+			$price = urldecode($_GET['price_sale']);
+		else if(isset($_GET['price']) && $option == 'lease')
+			$price = urldecode($_GET['price_lease']);
 		else
 			$price = '';
 
@@ -190,10 +192,13 @@ function searchAJAX() //JSON
 	if(isset($_GET['option']))
 		$option = urlencode($_GET['option']);
 	else
-		$option = 'sale';
+		$option = '';
 
-	if(isset($_GET['price']))
-		$price = urldecode($_GET['price']);
+
+	if(isset($_GET['price']) && ($option == 'sale' || $option == '') )
+		$price = urldecode($_GET['price_sale']);
+	else if(isset($_GET['price']) && $option == 'lease')
+		$price = urldecode($_GET['price_lease']);
 	else
 		$price = '';
 

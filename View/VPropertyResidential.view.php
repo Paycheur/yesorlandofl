@@ -19,7 +19,6 @@ class VPropertyResidential
 
 		$csv = $_value['dataCsv'];
 
-
 		if(isset($_value['results']['img']))
 		{
 			$allImg = explode('|', $_value['results']['img']);
@@ -75,7 +74,7 @@ class VPropertyResidential
 									<?=(isset($_value['results']['status']) && $_value['results']['status'] != '' ? '<span class="badge'.($_value['results']['status'] == 'Active' ? ' badge-active' : '').'"> '.$_value['results']['status'].' </span>' : '')?>
 								</small>
 								</h4>
-
+								<?=(isset($_value['results']['sale_or_lease']) ? '<p class="for-sale-or-lease">for sale</p>' : '<p class="for-sale-or-lease">per month (for lease)</p>') ?>
 								<div class="row">
 									<div class="col-lg-12 padding-top-05em ">
 										<ul class="property-main-ul">
@@ -111,7 +110,7 @@ class VPropertyResidential
 								<!-- Nav tabs -->
 								<ul class="nav nav-pills padding-1em">
 								  <li class="active"><a href="#images-tab" data-toggle="tab"><i class="icon-camera translate-always"></i>  IMAGES</a></li>
-								  <li class="dropdown"><a href="#map-tab" data-toggle="tab"><i class="icon-map-marker size-20 translate-always"></i> WHAT'S IN THE AREA </a></li>
+								  <li class="dropdown"><a href="#map-tab" class="view-map" data-toggle="tab"><i class="icon-map-marker size-20 translate-always"></i> WHAT'S IN THE AREA </a></li>
 								</ul>
 							</div>
 							<div class="col-lg-6 text-right">
@@ -180,7 +179,7 @@ class VPropertyResidential
 								  		  	 	?>
 
 								  		  	    <li data-target="#property-carousel" data-slide-to="<?=$i?>" class="<?=($first== true ? ' active' : '' )?>">
-								  		  	    	<img src="<?=$url ?>" alt="">
+								  		  	    	<img src="<?=$url ?>" alt="" class="img_property">
 								  		  	    </li>
 
 								  		  	   	<?php
@@ -197,7 +196,6 @@ class VPropertyResidential
 						 	    	<?php if(isset($_value['gps']['latitude']) && isset($_value['gps']['longitude']))
 						 	    	{?>
 
-						  			<iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.fr/maps?dg=opt&ie=UTF8&ll=<?=$_value['gps']['latitude'] ?>,<?=$_value['gps']['longitude'] ?>&q=<?=$_value['gps']['latitude'] ?>,<?=$_value['gps']['longitude'] ?>&spn=0.022904,0.042272&t=m&z=15&output=embed"></iframe>
 						  			<div id="googleMap">
 						  			</div>
 

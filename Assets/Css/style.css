@@ -6347,3 +6347,33 @@ td.visible-print {
     display: none !important;
   }
 }
+
+
+#googleMap
+{
+	//width:100%;
+	position:relative;
+	height:400px;
+	margin-top:30px;
+}
+
+.list-area > span
+{
+	cursor:pointer;
+	padding-left:20px;
+}
+.list-area > span:hover
+{
+	text-decoration:underline;
+}
+
+.for-sale-or-lease
+{
+	position:relative;
+	top:10px;
+	left:10px;
+	font-weight:bold;
+	color: #2d4f95;
+	font-variant:small-caps;
+}
+	
