@@ -8,44 +8,31 @@ define ('CONTROLER', 'page_contact.php');
 
 require ('Inc/require.inc.php');
 
-$EX = isset($_REQUEST['EX']) ? $_REQUEST['EX'] : 'home';
-
-//Variables
-$page['error']='';
-$page['confirmation']='';
-
-// Contr�leur
-switch ($EX)
-{
-  case 'home'   : home ();   break;
-}
-
-/**
- * R�cup�ration de la mise en page
- */
-require ('View/inc/main.view.php');
-
-/********* Fonctions de contr�le *********/
-
-/**
- * Affiche le formulaire et le tableau
- * 
- * @return none
- */
+//$EX = isset($_REQUEST['EX']) ? $_REQUEST['EX'] : 'home';
+//
+//
+//
+////Variables
+//$page['error']='';
+//$page['confirmation']='';
+//
+//// Contr�leur
+//switch ($EX)
+//{
+//  case 'home'   : home ($_SESSION['user']['id']);   break;
+//
+//
+//}
 
 
-function home()
-{
-    global $page;
+//Header
+require ('View/inc/header.php');
 
-    $tab = array();
-    
-    
-    $page['title'] = 'Contact';
-    $page['class'] = 'VContact';
-    $page['method'] = 'home';
-    $page['arg'] = $tab;
-    
-}
 
+//Page static
+require ('View/static/contact.php');
+
+
+//Footer
+require ('View/inc/footer.php');
 ?>
