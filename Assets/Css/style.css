@@ -4349,11 +4349,20 @@ label {
   border-left: 1px solid #C6C7BA;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), inset 0 4px 0px rgba(0, 0, 0, 0.05);
 }
+.form-holder label {
+  font-size: 13px;
+}
+.form-holder .border-right-gray-light {
+  min-height: 140px;
+}
 .btn-white {
   border: 1px solid #E2E2DE;
 }
 .btn-white:hover {
   color: #333333;
+}
+.active .btn-sl {
+  background-color: rgba(0, 0, 0, 0.09);
 }
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -4372,23 +4381,29 @@ input[type=number]::-webkit-outer-spin-button {
   outline: none;
   box-shadow: none;
 }
+.qty {
+  display: none;
+}
 .qtyplus,
 .qtyminus {
-  border-radius: 1000px;
-  border: 1px solid #999999;
+  border-radius: 1000px ;
+  border: 1px solid #b3b3b3;
   background-color: white;
-  font-size: 14px;
-  width: 18px;
-  height: 18px;
-  font-weight: bold;
-  line-height: 14px;
+  font-size: 16px;
+  width: 26px;
+  height: auto;
+  font-family: arial;
+  font-weight: normal;
+  line-height: 25px;
   display: block;
   text-align: left;
   float: right;
   position: absolute;
   top: 0px;
-  margin-right: 3px;
-  padding-left: 4px;
+  margin-right: 5px;
+  text-align: center;
+  padding-left: 0;
+  padding: 0;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -ms-transition: all 1s ease;
@@ -4401,7 +4416,7 @@ input[type=number]::-webkit-outer-spin-button {
   color: white;
 }
 .qtyplus {
-  right: 20px;
+  right: 28px;
 }
 .qtyminus {
   right: 0;
@@ -6347,33 +6362,3 @@ td.visible-print {
     display: none !important;
   }
 }
-
-
-#googleMap
-{
-	//width:100%;
-	position:relative;
-	height:400px;
-	margin-top:30px;
-}
-
-.list-area > span
-{
-	cursor:pointer;
-	padding-left:20px;
-}
-.list-area > span:hover
-{
-	text-decoration:underline;
-}
-
-.for-sale-or-lease
-{
-	position:relative;
-	top:10px;
-	left:10px;
-	font-weight:bold;
-	color: #2d4f95;
-	font-variant:small-caps;
-}
-	

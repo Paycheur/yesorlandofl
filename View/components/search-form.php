@@ -22,11 +22,6 @@ $arrayCityMore = array('Altamonte Springs','Apopka','Belle Isle','Casselberry','
             Vacant land <i class="icon-angle-down"></i>
             </a>
           </li>
-           <li>
-            <a href="#" id="rental-type-btn" class="display-block   padding-05em txt-left">
-            Rental <i class="icon-angle-down"></i>
-            </a>
-          </li>
         </ul>
       </div>
     </div>
@@ -79,8 +74,8 @@ $arrayCityMore = array('Altamonte Springs','Apopka','Belle Isle','Casselberry','
         <div class="tab-pane active" id="tabOne">
 
             <label for="rangeInput" class="display-block"><b>What is your price range :</b></label>
-            <input type="text" class="display-block form-control " value="<?=(isset($_REQUEST['price']) ? $_REQUEST['price'] : '') ?>" name="price_sale" data-slider-min="0" data-slider-max="1000000" data-slider-step="1000" data-slider-value="[0,1000000]" data-slider-tooltip="hide" id="price-range">
-            <label for="rangeInput" class="display-block padding-05em">From <b class="theMin">Any Price</b> to <b class="theMax">Any</b></label>
+            <input type="text" class="display-block form-control " value="<?=(isset($_REQUEST['price']) ? $_REQUEST['price'] : '') ?>" name="price_sale" id="price-range"  data-slider-min="0" data-slider-max="10"  data-slider-value="[0,10]" data-slider-tooltip="hide">
+            <label for="rangeInput" class="display-block padding-05em">From <b class="theMin">Any price</b> to <b class="theMax">Any price</b></label>
 
         </div>
         <div class="tab-pane" id="tabTwo">
@@ -96,11 +91,11 @@ $arrayCityMore = array('Altamonte Springs','Apopka','Belle Isle','Casselberry','
 
       <div class="btn-group" data-toggle="buttons">
             <label class="btn btn-white padding-zero">
-              <input type="radio" name="option" id="option1" value="sale"> <a href="#tabOne" data-toggle="tab" class="btn-padding inline-block">For Sale</a>
+              <input type="radio" name="option" id="option1" value="sale"> <a href="#tabOne" data-toggle="tab" class="btn-padding inline-block btn-sl">For Sale</a>
             </label>
 
           <label class="btn btn-white padding-zero">
-            <input type="radio" name="option" id="option2" value="lease"><a href="#tabTwo" data-toggle="tab" class="btn-padding inline-block">For Lease</a>
+            <input type="radio" name="option" id="option2" value="lease"><a href="#tabTwo" data-toggle="tab" class="btn-padding inline-block btn-sl">For Lease</a>
           </label>
 
 
@@ -108,17 +103,19 @@ $arrayCityMore = array('Altamonte Springs','Apopka','Belle Isle','Casselberry','
 
 
     </div>
-    <div class="col-lg-2 border-right-gray-light">
-      <div class="relative">
-        <label for="beds" class="display-inline"><b>Beds : </b></label>
-        <input type='nummber' placeholder="Any" autocomplete="off" name='beds' value='<?=(isset($_REQUEST['beds']) ? $_REQUEST['beds'] : '') ?>' class='qty display-inline input-number form-control' />
+    <div class="col-lg-2 border-right-gray-light padding-top-1em">
+      <div class="relative bedsHolder">
+        <label for="beds" class="display-inline"><b  id="bedsNum">
+          <?=(isset($_REQUEST['beds']) ? $_REQUEST['beds'] : 'Any') ?> Beds </b></label>
+        <input type='nummber' autocomplete="off" name='beds' value='<?=(isset($_REQUEST['beds']) ? $_REQUEST['beds'] : '0') ?>' class='qty  input-number form-control'  min="0" max="5"/>
         <input type='button' value='+' class='qtyplus' field='beds' />
         <input type='button' value='–' class='qtyminus' field='beds' />
       </div>
       <hr>
-      <div class="relative">
-        <label for="bathroom" class="display-inline"><b>Bathroom :</b></label>
-        <input type='nummber' name='Bathroom' autocomplete="off" placeholder="Any" value='<?=(isset($_REQUEST['bathroom']) ? $_REQUEST['bathroom'] : '') ?>' class='qty display-inline input-number form-control' />
+      <div class="relative bathHolder">
+        <label for="bathroom" class="display-inline"><b id="bathNum">
+        <?php echo (isset($_REQUEST['Bathroom']) ? $_REQUEST['Bathroom'] : 'Any') ?> Baths</b></label>
+        <input type='nummber' name='Bathroom' autocomplete="off" value='<?=(isset($_REQUEST['Bathroom']) ? $_REQUEST['Bathroom'] : '0') ?>' class='qty  input-number form-control' min="0" max="5" />
         <input type='button' value='+' class='qtyplus' field='Bathroom'  autocomplete="off"/>
         <input type='button' value='–' class='qtyminus' field='Bathroom' autocomplete="off" />
       </div>
@@ -709,119 +706,5 @@ $arrayCityMore = array('Altamonte Springs','Apopka','Belle Isle','Casselberry','
 		      </div>
 </div> <!-- 4 col -->
         </div>
-        <div class="row display-none"  id="rental-types">
-    <div class="row-fluid">
-      <div class="col-lg-12">
-        <hr>
-        <h4 >Choose a Rental type : </h4>
-      </div>
-    </div>
-    <div class="col-lg-3">
 
-		      <div class="checkbox">
-		        <label>
-		          <input value="REN_1/2 Duplex" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('REN_1/2 Duplex', $_REQUEST['style']) ? 'checked' : '') ?>> 1/2 Duplex
-		        </label>
-		      </div>
-		      <div class="checkbox">
-		        <label>
-		          <input value="REN_1st Floor Multi-Story" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('REN_1st Floor Multi-Story', $_REQUEST['style']) ? 'checked' : '') ?>> 1st Floor Multi-Story
-		        </label>
-		      </div>
-		      <div class="checkbox">
-		        <label>
-		          <input value="REN_2nd Floor Multi-Story" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('REN_2nd Floor Multi-Story', $_REQUEST['style']) ? 'checked' : '') ?>> 2nd Floor Multi-Story
-		        </label>
-		      </div>
-		      <div class="checkbox">
-		        <label>
-		          <input value="REN_3rd Fl + above Multi-Story" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('REN_3rd Fl + above Multi-Story', $_REQUEST['style']) ? 'checked' : '') ?>> 3rd Fl + above Multi-Story
-		        </label>
-		      </div>
-		      <div class="checkbox">
-		        <label>
-		          <input value="REN_Apartment" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('REN_Apartment', $_REQUEST['style']) ? 'checked' : '') ?>> Apartment
-		        </label>
-		      </div>
-</div> <!-- 4 col -->
-<div class="col-lg-3">
-
-		      <div class="checkbox">
-		        <label>
-		          <input value="REN_Co-op" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('REN_Co-op', $_REQUEST['style']) ? 'checked' : '') ?>> Co-op
-		        </label>
-		      </div>
-		      <div class="checkbox">
-		        <label>
-		          <input value="REN_Condo" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('REN_Condo', $_REQUEST['style']) ? 'checked' : '') ?>> Condo
-		        </label>
-		      </div>
-		      <div class="checkbox">
-		        <label>
-		          <input value="REN_Condo-Hotel" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('REN_Condo-Hotel', $_REQUEST['style']) ? 'checked' : '') ?>> Condo-Hotel
-		        </label>
-		      </div>
-		      <div class="checkbox">
-		        <label>
-		          <input value="REN_Efficiency" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('REN_Efficiency', $_REQUEST['style']) ? 'checked' : '') ?>> Efficiency
-		        </label>
-		      </div>
-		      <div class="checkbox">
-		        <label>
-		          <input value="REN_Fourplex" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('REN_Fourplex', $_REQUEST['style']) ? 'checked' : '') ?>> Fourplex
-		        </label>
-		      </div>
-</div> <!-- 4 col -->
-<div class="col-lg-3">
-
-		      <div class="checkbox">
-		        <label>
-		          <input value="REN_Garage Apt" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('REN_Garage Apt', $_REQUEST['style']) ? 'checked' : '') ?>> Garage Apt
-		        </label>
-		      </div>
-		      <div class="checkbox">
-		        <label>
-		          <input value="REN_Manufactured/Mobile Home" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('REN_Manufactured/Mobile Home', $_REQUEST['style']) ? 'checked' : '') ?>> Manufactured/Mobile Home
-		        </label>
-		      </div>
-		      <div class="checkbox">
-		        <label>
-		          <input value="REN_Modular" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('REN_Modular', $_REQUEST['style']) ? 'checked' : '') ?>> Modular
-		        </label>
-		      </div>
-		      <div class="checkbox">
-		        <label>
-		          <input value="REN_Single Family Home" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('REN_Single Family Home', $_REQUEST['style']) ? 'checked' : '') ?>> Single Family Home
-		        </label>
-		      </div>
-		      <div class="checkbox">
-		        <label>
-		          <input value="REN_Stilt Home" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('REN_Stilt Home', $_REQUEST['style']) ? 'checked' : '') ?>> Stilt Home
-		        </label>
-		      </div>
-</div> <!-- 4 col -->
-<div class="col-lg-3">
-
-		      <div class="checkbox">
-		        <label>
-		          <input value="REN_Townhouse" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('REN_Townhouse', $_REQUEST['style']) ? 'checked' : '') ?>> Townhouse
-		        </label>
-		      </div>
-		      <div class="checkbox">
-		        <label>
-		          <input value="REN_Tri-Level" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('REN_Tri-Level', $_REQUEST['style']) ? 'checked' : '') ?>> Tri-Level
-		        </label>
-		      </div>
-		      <div class="checkbox">
-		        <label>
-		          <input value="REN_Triplex" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('REN_Triplex', $_REQUEST['style']) ? 'checked' : '') ?>> Triplex
-		        </label>
-		      </div>
-		      <div class="checkbox">
-		        <label>
-		          <input value="REN_Villa" name="style[]" class="checkbox_style" type="checkbox" <?=(isset($_REQUEST['style']) && in_array('REN_Villa', $_REQUEST['style']) ? 'checked' : '') ?>> Villa
-		        </label>
-		      </div>
-          </div> <!-- 4 col -->
-        </div>
-              </form>
+</form>
