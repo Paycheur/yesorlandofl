@@ -56,7 +56,11 @@ var btnDropdownTypes = {
 //slider price range
 var priceRange = {
     init : function  ( theInput ) {
-      theInput.slider({step : 10000}).on('slide', function( ev ){
+      theInput.slider({
+
+            step: 1
+
+          }).on('slide', function( ev ){
               var theVal =  + ev.value[1],
               $this = $(this),
               theValMin =  + ev.value[0],
@@ -66,6 +70,7 @@ var priceRange = {
               unite = $('.unite'),
               uniteVal = unite.text() ;
               unite.siblings('.orMore').hide();
+              console.log(ev.value);
            if ( theVal === theMax ) {
               maxSpan.text( theMax + ' ' + uniteVal  + ' or more' );
               unite.hide();
@@ -77,6 +82,7 @@ var priceRange = {
            };
       });
     }
+
 };
 
 var plusMinus = {
@@ -86,15 +92,39 @@ var plusMinus = {
               e.preventDefault();
               // Get the field name
               fieldName = $(this).attr('field');
+              var theInput  = $('input[name='+fieldName+']');
               // Get its current value
-              var currentVal = parseInt($('input[name='+fieldName+']').val());
+              var currentVal = parseInt(theInput.val());
+
               // If is not undefined
               if (!isNaN(currentVal)) {
                   // Increment
-                  $('input[name='+fieldName+']').val(currentVal + 1);
+                  if (  theInput.val() < 5 ) {
+                        theInput.val(currentVal + 1);
+                        var updatedVal = theInput.val();
+
+                        if (  theInput.parents('.bedsHolder').length ) {
+                            if (  theInput.val() == 0 )  {
+                              $('#bedsNum').text( 'Any beds');
+                            }else if (  theInput.val() == 1 )  {
+                              $('#bedsNum').text( updatedVal + ' bed or more');
+                            }else {
+                              $('#bedsNum').text( updatedVal + ' beds or more');
+                            }
+                        } else {
+                            if (  theInput.val() == 0 )  {
+                              $('#bathNum').text( 'Any baths');
+                            }else if (  theInput.val() == 1 )  {
+                              $('#bathNum').text( updatedVal + ' bath or more');
+                            }else {
+                              $('#bathNum').text( updatedVal + ' baths or more');
+                            }
+                        }
+                  };
+
               } else {
                   // Otherwise put a 0 there
-                  $('input[name='+fieldName+']').val(0);
+                  theInput.val(0);
               }
           });
           theMinusBtn.click(function(e) {
@@ -104,13 +134,38 @@ var plusMinus = {
               fieldName = $(this).attr('field');
               // Get its current value
               var currentVal = parseInt($('input[name='+fieldName+']').val());
+
+              var theInput = $('input[name='+fieldName+']');
               // If it isn't undefined or its greater than 0
               if (!isNaN(currentVal) && currentVal > 0) {
                   // Decrement one
-                  $('input[name='+fieldName+']').val(currentVal - 1);
+                  theInput.val(currentVal - 1);
+                  var updatedVal = theInput.val();
+
+                  if (  theInput.parents('.bedsHolder').length ) {
+
+                      if (  theInput.val() == 0 )  {
+                        $('#bedsNum').text( 'Any beds');
+                      }else if (  theInput.val() == 1 )  {
+                        $('#bedsNum').text( updatedVal + ' bed or more');
+                      }
+
+                      else {
+                        $('#bedsNum').text( updatedVal + ' beds or more');
+                      }
+                  }else {
+                      if (  theInput.val() == 0 )  {
+                        $('#bathNum').text( 'Any baths');
+                      }else if (  theInput.val() == 1 )  {
+                        $('#bathNum').text( updatedVal + ' bath or more');
+                      }else {
+                        $('#bathNum').text( updatedVal + ' baths or more');
+                      }
+                  }
+
               } else {
                   // Otherwise put a 0 there
-                  $('input[name='+fieldName+']').val(0);
+                  theInput.val(0);
               }
           });
     }
@@ -292,12 +347,11 @@ var loadItem = {
     });
     // -- price Range slider
     priceRange.init( $('#price-range') );
+    $('#price-range').slider( 'getValue',  function (value) {
+        return 'Current value: '+value;
+    });
+
     priceRange.init( $('#price-range-lease') );
-
-
-
-
-
 
 
     // -- + et - buttons

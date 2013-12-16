@@ -216,11 +216,26 @@ label{
   [class^="col-lg"] {
   //min-height: 147px;
   }
+
+  label {
+    font-size: 13px;
+  }
+
+  .border-right-gray-light {
+    min-height: 140px;
+  }
 }
 .btn-white {
   border: 1px solid #E2E2DE;
   &:hover {
     color:@text-color;
+  }
+}
+
+
+.active {
+  .btn-sl {
+    background-color: rgba(0, 0, 0, 0.09)
   }
 }
 input[type=number]::-webkit-inner-spin-button,
@@ -243,23 +258,28 @@ outline: none;
   box-shadow: none;
 }
 }
-
+.qty {
+  display: none;
+}
 .qtyplus, .qtyminus {
-  border-radius: 1000px;
-  border:1px solid @gray-light;
+  border-radius: 1000px ;
+  border: 1px solid lighten(@gray-light, 10%);
   background-color: white;
-  font-size: 14px;
-  width: 18px;
-  height: 18px;
-  font-weight: bold;
-  line-height: 14px;
+  font-size: 16px;
+  width: 26px;
+  height: auto;
+  font-family: arial;
+  font-weight: normal;
+  line-height: 25px;
   display: block;
   text-align: left;
   float: right;
   position: absolute;
-  top:0px;
-  margin-right: 3px;
-  padding-left: 4px;
+  top: 0px;
+  margin-right: 5px;
+  text-align: center;
+  padding-left: 0;
+  padding: 0;
   .transition;
   &:hover {
     text-decoration: none;
@@ -267,7 +287,7 @@ outline: none;
   }
 }
 .qtyplus {
-  right: 20px;
+  right: 28px;
 }
 .qtyminus {
   right: 0;

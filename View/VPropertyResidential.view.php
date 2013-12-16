@@ -89,8 +89,8 @@ class VPropertyResidential
 											<li><?=(isset($csv['full_baths']) ? $csv['full_baths']['val'] : '')?> BATHROOM(S)</li>
 											<?php endif; ?>
 
-											<?php if ( isset( $csv['lp_sqft'] ) && $csv['lp_sqft'] != '0'  ):  ?>
-												<li><?=(isset($csv['lp_sqft']) ? $csv['lp_sqft']['val'] : '')?> SQFT</li>
+											<?php if ( isset( $csv['sq_ft_heated'] ) && $csv['sq_ft_heated'] != '0'  ):  ?>
+												<li><?=(isset($csv['sq_ft_heated']) ? $csv['sq_ft_heated']['val'] : '')?> SQFT</li>
 											<?php endif; ?>
 										</ul>
 									</div>
