@@ -95,7 +95,8 @@ function doLoginWithFacebook()
         if(isset($tabMember) && $tabMember !== false) //le membre s'est connecté
 	    {
 	    	$_SESSION['user']['id'] = $tabMember->getId();
-	    	$_SESSION['user']['name'] = $tabMember->getName();
+	    	$_SESSION['user']['name'] = $tabMember->getName().($tabMember->getLastName() != '' ? ' '.$tabMember->getLastName() : '');
+	    	$_SESSION['user']['admin'] = $tabMember->getAdmin();
 	    	
 	    	if(isset($_SESSION['referer']))
 	    	{
@@ -181,7 +182,7 @@ function doLogin()
 function logout()
 {
 	unset($_SESSION['user']);
-	header('Location:/');
+	header('Location:/home');
 }
 
 ?>

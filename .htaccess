@@ -14,7 +14,7 @@ RewriteRule ^search/c_(.*)$  page_search.php?EX=searchLink&city=$1 [L]
 RewriteRule ^property/.*/([0-9]{1,})$  page_search.php?EX=searchLink&id=$1 [L]
 RewriteRule ^search$  page_search.php [L]
 
-RewriteRule ^dashboard  page_dashboard.php [L]
+
 RewriteRule ^logout  page_login.php?EX=logout [L]
 
 RewriteRule ^login  page_login.php [L]
@@ -29,4 +29,15 @@ RewriteRule ^sell-lease  page_sell-lease.php [L]
 RewriteRule ^contact  page_contact.php [L]
 RewriteRule ^home  page_index.php [L]
 
-
+RewriteRule ^dashboard$  page_dashboard.php [L]
+RewriteRule ^dashboard/recently_viewed$  page_dashboard.php?EX=showAllRecentlyViewed [L]
+RewriteRule ^dashboard/favorites$  page_dashboard.php?EX=showAllFavoritesProperties [L]
+RewriteRule ^dashboard/test$  page_dashboard.php?EX=test [L]
+RewriteRule ^dashboard/admin/visits$  page_dashboard.php?EX=adminVisits [L]
+RewriteRule ^dashboard/admin/listMember$  page_dashboard.php?EX=showListMember [L]
+RewriteRule ^dashboard/admin/visits/([0-9]{1,})$  page_dashboard.php?EX=adminVisits&page=$1 [L]
+RewriteRule ^dashboard/profile/([0-9]{1,})$  page_dashboard.php?EX=showProfile&member=$1 [L]
+RewriteRule ^dashboard/profile$  page_dashboard.php?EX=showProfile [L]
+RewriteRule ^dashboard/profile/edit$  page_dashboard.php?EX=editProfile [L]
+RewriteRule ^dashboard/mail$  page_dashboard.php?EX=showConversation [L]
+RewriteRule ^dashboard/mail/(.*)$  page_dashboard.php?EX=showMessageConversation&id_conversation=$1\#last_msg [L]

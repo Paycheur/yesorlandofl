@@ -12,6 +12,8 @@ class BddMember extends CConnexion
 	private $Occupation = '';
 	private $Address = '';
 	private $Phone = '';
+	private $Admin = '';
+	private $LastName='';
 
 	/************** SETTERS *****************/
 
@@ -63,6 +65,16 @@ class BddMember extends CConnexion
 	function setPhone($v)
 	{
 		$this->Phone = $v;
+	}
+	
+	function setAdmin($v)
+	{
+		$this->Admin = $v;
+	}
+	
+	function setLastName($v)
+	{
+		$this->LastName = $v;
 	}
 
 	/************** GETTERS *****************/
@@ -116,6 +128,16 @@ class BddMember extends CConnexion
 	{
 		return $this->Phone;
 	}
+	
+	function getAdmin()
+	{
+		return $this->Admin;
+	}
+	
+	function getLastName()
+	{
+		return $this->LastName;
+	}
 
 	function __construct($valeurs = array())
 	{
@@ -158,6 +180,8 @@ class BddMember extends CConnexion
 		$champsRequete['occupation']		=	($this->Occupation != '')		? '\''. protegeChaine($this->getOccupation()) .'\'' : 'DEFAULT';
 		$champsRequete['address']		=	($this->Address != '')		? '\''. protegeChaine($this->getAddress()) .'\'' : 'DEFAULT';
 		$champsRequete['phone']		=	($this->Phone != '')		? '\''. protegeChaine($this->getPhone()) .'\'' : 'DEFAULT';
+		$champsRequete['admin']		=	($this->Admin != '')		? '\''. protegeChaine($this->getAdmin()) .'\'' : 'DEFAULT';
+		$champsRequete['last_name']		=	($this->LastName != '')		? '\''. protegeChaine($this->getLastName()) .'\'' : 'DEFAULT';
 		return $champsRequete; 	}
 
 	function load($row)
@@ -172,12 +196,13 @@ class BddMember extends CConnexion
 		$this->setOccupation($row['occupation']);
 		$this->setAddress($row['address']);
 		$this->setPhone($row['phone']);
-
+		$this->setAdmin($row['admin']);
+		$this->setLastName($row['last_name']);
 	}
 	function select($where = array(), $whereSpe=array(), $orderBy = array(), $limit = null)
 	{
 		// Clause SELECT
-		$req = 'SELECT id,id_facebook,name,email,password,date_register,company,occupation,address,phone '.
+		$req = 'SELECT id,id_facebook,name,email,password,date_register,company,occupation,address,phone, admin, last_name '.
 				'FROM member  ';
 				
 		// Clause WHERE

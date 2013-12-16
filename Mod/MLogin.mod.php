@@ -72,7 +72,8 @@ class MLogin
     	{
     		$this->dbMember->load($rows[0]);
     		$_SESSION['user']['id'] = $this->dbMember->getId();
-	    	$_SESSION['user']['name'] = $this->dbMember->getName();
+	    	$_SESSION['user']['name'] = $this->dbMember->getName().($this->dbMember->getLastName() != '' ? ' '.$this->dbMember->getLastName() : '');
+	    	$_SESSION['user']['admin'] = $this->dbMember->getAdmin();
 	    	$rep = true;
     	}
     	else

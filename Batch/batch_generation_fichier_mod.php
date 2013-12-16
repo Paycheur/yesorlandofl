@@ -12,7 +12,7 @@
 	foreach($tabRows as $table => $value) //on récupère toutes les tables de la base recherchée
 	{
 		
-		$value['table_name']= 'member_search'; //Récupérer une seule table de la base selectionnée. Ne pas oublié d'ajouté le "exit" à la fin
+		$value['table_name']= 'mp_message'; //Récupérer une seule table de la base selectionnée. Ne pas oublié d'ajouté le "exit" à la fin
 		$table_name = $value['table_name'];
 
 		$fileName= __DIR__.'/../Mod/Db/Db'.ucfirst($table_name).'.mod.php'; // CHEMIN ET NOM DU FICHIER QUI SERA CREE

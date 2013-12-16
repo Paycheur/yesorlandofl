@@ -34,7 +34,8 @@ if(isset($page['class']))
 
 <link href="/Assets/dashboard/css/style.css" rel="stylesheet">
 
-
+<!-- jquery ui -->
+<link href="/Assets/js/jquery-ui-1.8.23/css/ui-lightness/jquery-ui-1.8.23.custom.css" rel="stylesheet" />
 
 
 <!--[if lt IE 9]>
@@ -49,5 +50,99 @@ if(isset($page['class']))
 
 
 <?php
-require_once(dirname(__FILE__).'/../components/form-login.php'); ?>
-<?php require_once(dirname(__FILE__).'/../components/form-register.php'); ?>
+require_once(dirname(__FILE__).'/../components/dashboard/switchStatusVisitRequest.php');
+require_once(dirname(__FILE__).'/../components/dashboard/compose_mail.php');
+require_once(dirname(__FILE__).'/../components/form-login.php');
+require_once(dirname(__FILE__).'/../components/form-register.php'); 
+?>
+
+<section id="container" class="">
+<!--header start-->
+<header class="header white-bg">
+      <div class="sidebar-toggle-box">
+          <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
+      </div>
+      <!--logo start-->
+      <a href="go to front page" class="logo">
+		<img src="/Assets/dashboard/img/logo.png" alt="the portfolio group">
+      </a>
+      <!--logo end-->
+      <div class="top-nav ">
+          <!--search & user info start-->
+          <ul class="nav pull-right top-menu">
+
+              <!-- user login dropdown start-->
+              <li class="dropdown">
+                  <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                      <img alt="" src="Assets/dashboard/img/avatar1_small.jpg">
+                      <span class="username"><?=$_SESSION['user']['name'] ?></span>
+                      <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu extended logout">
+                      <div class="log-arrow-up"></div>
+                      <li><a href="/home"><i class=" icon-suitcase"></i>the website</a></li>
+                      <li><a href="/dashboard/profile"><i class="icon-cog"></i> profile</a></li>
+                      <li><a href="/dashboard/mail"><i class="icon-bell-alt"></i> message</a></li>
+                      <li><a href="/logout"><i class="icon-key"></i> Log Out</a></li>
+                  </ul>
+              </li>
+              <!-- user login dropdown end -->
+          </ul>
+          <!--search & user info end-->
+      </div>
+</header>
+<!--header end-->
+<!--sidebar start-->
+<aside>
+    <div id="sidebar"  class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu">
+            <li class="active">
+                <a class="" href="/dashboard">
+                    <i class="icon-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a class="" href="/dashboard/mail">
+                    <i class="icon-envelope"></i>
+                    <span>Mail </span>
+                    <span class="label label-danger pull-right mail-info">2</span>
+                </a>
+            </li>
+            <li>
+                <a class="" href="/dashboard/profile">
+                    <i class="icon-user"></i>
+                    <span>profile </span>
+                    <span class="label label-danger pull-right mail-info">2</span>
+                </a>
+            </li>
+			<?php 
+			if(isset($_SESSION['user']['admin']) && $_SESSION['user']['admin'] == 1)
+			{?>
+            <li>
+                <a class="" href="/dashboard/admin/visits">
+                    <i class="icon-bell-alt"></i>
+                    <span><small>admin</small> Visits </span>
+                    <span class="label label-danger pull-right mail-info">2</span>
+                </a>
+            </li>
+
+            <li>
+                <a class="" href="/dashboard/admin/listMember">
+                    <i class="icon-list"></i>
+                    <span><small>admin</small> Clients Listing </span>
+                </a>
+            </li>
+            <?php 
+			}?>
+        </ul>
+        <!-- sidebar menu end-->
+    </div>
+</aside>
+<!--sidebar end-->
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+
+    	<div class="row">

@@ -84,7 +84,7 @@ function recupFichier()
 	        $fh = fopen(dirname(__FILE__).'/'.$file_name, "w+");
 	
 	        
-	
+			$first = true;
 			$i=0;
 			$h_p = 0;
 			$h_s = 0;
@@ -124,8 +124,11 @@ function recupFichier()
 		
 		                // print filename headers as first line
 		                $fields_order = $rets->SearchGetFields($search);
-		                if($i <= 3)
+		        		if($first == true)
+		                {
 		                	fputcsv($fh, $fields_order);
+		                	$first = false;
+		                }
 		
 		                // process results
 		                while ($record = $rets->FetchRow($search)) {
