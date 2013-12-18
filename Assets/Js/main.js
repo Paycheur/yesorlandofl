@@ -301,6 +301,16 @@ var loadItem = {
     $('.selectpicker').selectpicker({
       'selectedText': 'cat'
     });
+    //http://www.eyecon.ro/bootstrap-datepicker/
+    var $dataPickerInput = $( "#dataPickerInput" );
+
+    if ( $dataPickerInput.length ) {
+
+        $dataPickerInput.datepicker();
+
+    }
+
+
     // --types
 //    var  residentialTypeBtn= $('#residential-type-btn'),
 //         residentialTypeBtn= $('#commercial-type-btn'),

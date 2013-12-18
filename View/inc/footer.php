@@ -110,12 +110,14 @@ else //le cas de Shérif
 	<!-- <script src="Assets/js/min/typeahead.min.js"></script>
 	-->
 	<script src="Assets/js/min/bootstrap-select.min.js"></script>
-	<script type="text/javascript" src="Assets/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
 
 
 	<script type="text/javascript" src="Assets/js/jquery.easing.1.3.js"></script>
 	<!-- price range -->
 	<script type="text/javascript" src="Assets/js/bootstrap-slider.js"></script>
+	<!-- http://www.eyecon.ro/bootstrap-datepicker/ -->
+	<script type="text/javascript" src="Assets/js/min/bootstrap-datepicker.min.js"></script>
+
 	<script src="Assets/js/main.js"></script>
 	<script src="Assets/js/app/login.js"></script>
 

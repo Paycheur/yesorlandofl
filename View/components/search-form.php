@@ -74,7 +74,7 @@ $arrayCityMore = array('Altamonte Springs','Apopka','Belle Isle','Casselberry','
         <div class="tab-pane active" id="tabOne">
 
             <label for="rangeInput" class="display-block"><b>What is your price range :</b></label>
-            <input type="text" class="display-block form-control " value="<?=(isset($_REQUEST['price']) ? $_REQUEST['price'] : '') ?>" name="price_sale" id="price-range"  data-slider-min="0" data-slider-max="10"  data-slider-value="[0,10]" data-slider-tooltip="hide">
+            <input type="text" class="display-block form-control " value="<?=(isset($_REQUEST['price']) ? $_REQUEST['price'] : '') ?>" name="price_sale" id="price-range"  data-slider-min="0" data-slider-max="1000000"  data-slider-step="10000" data-slider-value="[0,1000000]" data-slider-tooltip="hide">
             <label for="rangeInput" class="display-block padding-05em">From <b class="theMin">Any price</b> to <b class="theMax">Any price</b></label>
 
         </div>

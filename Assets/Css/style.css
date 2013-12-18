@@ -212,7 +212,7 @@ table {
   img {
     max-width: 100% !important;
   }
-  @page  {
+  @page {
     margin: 2cm .5cm;
   }
   p,
@@ -493,10 +493,8 @@ dd {
 .dl-horizontal dd:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .dl-horizontal dd:after {
   clear: both;
@@ -505,10 +503,8 @@ dd {
 .dl-horizontal dd:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .dl-horizontal dd:after {
   clear: both;
@@ -620,10 +616,8 @@ pre code {
 .container:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .container:after {
   clear: both;
@@ -632,10 +626,8 @@ pre code {
 .container:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .container:after {
   clear: both;
@@ -647,10 +639,8 @@ pre code {
 .row:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .row:after {
   clear: both;
@@ -659,10 +649,8 @@ pre code {
 .row:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .row:after {
   clear: both;
@@ -1264,7 +1252,6 @@ input[type="checkbox"] {
   margin: 4px 0 0;
   margin-top: 1px \9;
   /* IE8-9 */
-
   line-height: normal;
 }
 input[type="file"] {
@@ -1492,10 +1479,8 @@ textarea.input-small {
 .form-horizontal .form-group:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .form-horizontal .form-group:after {
   clear: both;
@@ -1504,10 +1489,8 @@ textarea.input-small {
 .form-horizontal .form-group:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .form-horizontal .form-group:after {
   clear: both;
@@ -2254,10 +2237,8 @@ button.close {
 .nav:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .nav:after {
   clear: both;
@@ -2266,10 +2247,8 @@ button.close {
 .nav:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .nav:after {
   clear: both;
@@ -2414,10 +2393,8 @@ button.close {
 .tabbable:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .tabbable:after {
   clear: both;
@@ -2426,10 +2403,8 @@ button.close {
 .tabbable:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .tabbable:after {
   clear: both;
@@ -2469,10 +2444,8 @@ button.close {
 .navbar:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .navbar:after {
   clear: both;
@@ -2481,10 +2454,8 @@ button.close {
 .navbar:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .navbar:after {
   clear: both;
@@ -2783,10 +2754,8 @@ button.close {
 .btn-toolbar:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .btn-toolbar:after {
   clear: both;
@@ -2795,10 +2764,8 @@ button.close {
 .btn-toolbar:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .btn-toolbar:after {
   clear: both;
@@ -3009,10 +2976,8 @@ button.close {
 .pager:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .pager:after {
   clear: both;
@@ -3021,10 +2986,8 @@ button.close {
 .pager:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .pager:after {
   clear: both;
@@ -3151,10 +3114,8 @@ button.close {
 .modal-footer:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .modal-footer:after {
   clear: both;
@@ -3163,10 +3124,8 @@ button.close {
 .modal-footer:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .modal-footer:after {
   clear: both;
@@ -4015,7 +3974,6 @@ a.list-group-item.active > .badge,
 }
 .bootstrap-select {
   /*width: 220px\9; IE8 and below*/
-
 }
 .bootstrap-select > .btn {
   width: 100%;
@@ -4271,7 +4229,6 @@ label {
   /*width: 640px;
   left: 10%;
   right: 10%;*/
-
 }
 .dropVid {
   opacity: 1;
@@ -4466,7 +4423,6 @@ input[type="range"]::-webkit-slider-thumb {
   padding: 8px 12px;
   /*font-size: 24px;
   line-height: 30px;*/
-
 }
 .typeahead {
   background-color: #fff;
@@ -5278,7 +5234,6 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
   -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
   box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);*/
-
   opacity: 1;
   border: 0px solid transparent;
 }
@@ -5318,12 +5273,10 @@ input[type="range"]::-webkit-slider-thumb {
   /*font-size: 5em;
     font-weight: 300;
     line-height: 1;*/
-
 }
 .cbp-so-section p {
   /*font-size: 2em;
     font-weight: 300;*/
-
 }
 /* Sides */
 .cbp-so-side {
@@ -5331,7 +5284,6 @@ input[type="range"]::-webkit-slider-thumb {
     float: left;
     margin: 0;
     padding: 3em 4%;*/
-
   overflow: hidden;
 }
 /* Clear floats of children */
@@ -5406,42 +5358,218 @@ input[type="range"]::-webkit-slider-thumb {
     max-width: 100%;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
-  
+/*!
+ * Datepicker for Bootstrap
+ *
+ * Copyright 2012 Stefan Petre
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ */
+.datepicker {
+  top: 0;
+  left: 0;
+  padding: 4px;
+  margin-top: 1px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  /*.dow {
+    border-top: 1px solid #ddd !important;
+  }*/
+}
+.datepicker:before {
+  content: '';
+  display: inline-block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: -7px;
+  left: 6px;
+}
+.datepicker:after {
+  content: '';
+  display: inline-block;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #ffffff;
+  position: absolute;
+  top: -6px;
+  left: 7px;
+}
+.datepicker > div {
+  display: none;
+}
+.datepicker table {
+  width: 100%;
+  margin: 0;
+}
+.datepicker td,
+.datepicker th {
+  text-align: center;
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.datepicker td.day:hover {
+  background: #eeeeee;
+  cursor: pointer;
+}
+.datepicker td.day.disabled {
+  color: #eeeeee;
+}
+.datepicker td.old,
+.datepicker td.new {
+  color: #999999;
+}
+.datepicker td.active,
+.datepicker td.active:hover {
+  color: #ffffff;
+  background-color: #006dcc;
+  background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+  background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+  background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+  background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+  border-color: #0044cc #0044cc #002a80;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #0044cc;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.datepicker td.active:hover,
+.datepicker td.active:hover:hover,
+.datepicker td.active:focus,
+.datepicker td.active:hover:focus,
+.datepicker td.active:active,
+.datepicker td.active:hover:active,
+.datepicker td.active.active,
+.datepicker td.active:hover.active,
+.datepicker td.active.disabled,
+.datepicker td.active:hover.disabled,
+.datepicker td.active[disabled],
+.datepicker td.active:hover[disabled] {
+  color: #ffffff;
+  background-color: #0044cc;
+  *background-color: #003bb3;
+}
+.datepicker td.active:active,
+.datepicker td.active:hover:active,
+.datepicker td.active.active,
+.datepicker td.active:hover.active {
+  background-color: #003399 \9;
+}
+.datepicker td span {
+  display: block;
+  width: 47px;
+  height: 54px;
+  line-height: 54px;
+  float: left;
+  margin: 2px;
+  cursor: pointer;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.datepicker td span:hover {
+  background: #eeeeee;
+}
+.datepicker td span.active {
+  color: #ffffff;
+  background-color: #006dcc;
+  background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+  background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+  background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+  background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0044cc', GradientType=0);
+  border-color: #0044cc #0044cc #002a80;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #0044cc;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.datepicker td span.active:hover,
+.datepicker td span.active:focus,
+.datepicker td span.active:active,
+.datepicker td span.active.active,
+.datepicker td span.active.disabled,
+.datepicker td span.active[disabled] {
+  color: #ffffff;
+  background-color: #0044cc;
+  *background-color: #003bb3;
+}
+.datepicker td span.active:active,
+.datepicker td span.active.active {
+  background-color: #003399 \9;
+}
+.datepicker td span.old {
+  color: #999999;
+}
+.datepicker th.switch {
+  width: 145px;
+}
+.datepicker th.next,
+.datepicker th.prev {
+  font-size: 21px;
+}
+.datepicker thead tr:first-child th {
+  cursor: pointer;
+}
+.datepicker thead tr:first-child th:hover {
+  background: #eeeeee;
+}
+.input-append.date .add-on i,
+.input-prepend.date .add-on i {
+  display: block;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
 }
 @media (min-width: 768px) {
   .navbar-wrapper .navbar {
     border-radius: 0;
   }
   /*	.navbar-inverse {
-  		//position: relative;
-  		&:after, &:before{
-  			display: block;
-  			content: '  ';
-  			height:50px;
-  			border-left:60px solid @brand-primary;
-  			position: absolute;
-  			z-index: 0;
-  			top:0;
-  			.skew();
-  		}
-  		&:after {
-  			left:-20px;
-  		}
-  
-  		&:before {
-  			right:-20px;
-  		}
-  	}*/
+		//position: relative;
+		&:after, &:before{
+			display: block;
+			content: '  ';
+			height:50px;
+			border-left:60px solid @brand-primary;
+			position: absolute;
+			z-index: 0;
+			top:0;
+			.skew();
+		}
+		&:after {
+			left:-20px;
+		}
+
+		&:before {
+			right:-20px;
+		}
+	}*/
 }
 @media (min-width: 992px) {
   /*.property-sidebar {
-  	  position: absolute;
-  	  height: 100%;
-  	  right: 0;
-  	  top: 0;
-  	}
-  */
+	  position: absolute;
+	  height: 100%;
+	  right: 0;
+	  top: 0;
+	}
+*/
 }
 .black,
 .hover-black:hover {
@@ -5881,10 +6009,8 @@ ul.dotted li:last-child {
 .clearfix:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .clearfix:after {
   clear: both;
@@ -5919,13 +6045,10 @@ ul.dotted li:last-child {
 .cssanimations .translate {
   opacity: 0;
   /* make things invisible upon start */
-
   animation: translate ease-in 1;
   /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-
   animation-fill-mode: forwards;
   /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-
   animation-duration: 1s;
   animation-delay: 1s;
   -webkit-transform: translate(0, -1em);
@@ -5961,7 +6084,6 @@ ul.dotted li:last-child {
   margin-right: 4px;
   animation: translatealways ease-in 1;
   /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-
   animation-duration: 600ms;
   animation-delay: 1s;
   -webkit-transform: translate(0, -0.5em);
@@ -5973,7 +6095,6 @@ ul.dotted li:last-child {
   animation-iteration-count: infinite;
   animation-play-state: running;
   /* Safari and Chrome: */
-
   -webkit-animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
@@ -6006,13 +6127,10 @@ ul.dotted li:last-child {
 .cssanimations .fade-in {
   opacity: 0;
   /* make things invisible upon start */
-
   animation: fadeIn ease-in 1;
   /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-
   animation-fill-mode: forwards;
   /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-
   animation-duration: 1s;
   animation-delay: 1s;
   -webkit-animation: fadeIn ease-in 1;
@@ -6047,7 +6165,6 @@ ul.dotted li:last-child {
   border: 0;
   overflow: hidden;
   /* IE 6/7 fallback */
-
   *text-indent: -9999px;
 }
 .ir:before {
@@ -6110,10 +6227,8 @@ ul.dotted li:last-child {
 .clearfix:after {
   content: " ";
   /* 1 */
-
   display: table;
   /* 2 */
-
 }
 .clearfix:after {
   clear: both;
