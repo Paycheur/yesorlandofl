@@ -54,6 +54,17 @@ require_once(dirname(__FILE__).'/../components/dashboard/switchStatusVisitReques
 require_once(dirname(__FILE__).'/../components/dashboard/compose_mail.php');
 require_once(dirname(__FILE__).'/../components/form-login.php');
 require_once(dirname(__FILE__).'/../components/form-register.php'); 
+require_once(dirname(__FILE__).'/../components/form-visit-request.php'); 
+
+$message = new MMessage($_SESSION['user']['admin']);
+$nbMessageNonLu = $message->getNbMessageNonLu();
+
+$visits = new BddVisitRequest();
+$resultVisitRequest = $visits->selectFunction(array('COUNT', '1'), array('status' => 0));
+if(isset($resultVisitRequest[0]['value']))
+	$nbVisitRequest =  $resultVisitRequest[0]['value'];
+else
+	$nbVisitRequest = 0;
 ?>
 
 <section id="container" class="">
@@ -74,7 +85,6 @@ require_once(dirname(__FILE__).'/../components/form-register.php');
               <!-- user login dropdown start-->
               <li class="dropdown">
                   <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                      <img alt="" src="Assets/dashboard/img/avatar1_small.jpg">
                       <span class="username"><?=$_SESSION['user']['name'] ?></span>
                       <b class="caret"></b>
                   </a>
@@ -97,41 +107,50 @@ require_once(dirname(__FILE__).'/../components/form-register.php');
     <div id="sidebar"  class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
-            <li class="active">
+            <li <?=($_SERVER['REQUEST_URI'] == '/dashboard' ? 'class="active"' : '') ?>>
                 <a class="" href="/dashboard">
                     <i class="icon-dashboard"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
-            <li>
+            <li <?=(strpos($_SERVER['REQUEST_URI'], '/dashboard/mail') !== false ? 'class="active"' : '') ?>>
                 <a class="" href="/dashboard/mail">
                     <i class="icon-envelope"></i>
                     <span>Mail </span>
-                    <span class="label label-danger pull-right mail-info">2</span>
+                    <?php 
+                    if($nbMessageNonLu > 0)
+                    {?>
+                    	<span class="label label-danger pull-right mail-info"><?=$nbMessageNonLu ?></span>
+                    <?php 
+                    }?>
                 </a>
             </li>
-            <li>
+            <li <?=(strpos($_SERVER['REQUEST_URI'], '/dashboard/profile') !== false ? 'class="active"' : '') ?>>
                 <a class="" href="/dashboard/profile">
                     <i class="icon-user"></i>
-                    <span>profile </span>
-                    <span class="label label-danger pull-right mail-info">2</span>
+                    <span>Profile </span>
                 </a>
             </li>
 			<?php 
 			if(isset($_SESSION['user']['admin']) && $_SESSION['user']['admin'] == 1)
 			{?>
-            <li>
+            <li <?=(strpos($_SERVER['REQUEST_URI'], '/dashboard/admin/visits') !== false ? 'class="active"' : '') ?>>
                 <a class="" href="/dashboard/admin/visits">
                     <i class="icon-bell-alt"></i>
-                    <span><small>admin</small> Visits </span>
-                    <span class="label label-danger pull-right mail-info">2</span>
+                    <span>Visits </span>
+                    <?php 
+                    if($nbVisitRequest > 0)
+                    {?>
+                    	<span class="label label-danger pull-right mail-info"><?=$nbVisitRequest ?></span>
+                    <?php 
+                    }?>
                 </a>
             </li>
 
-            <li>
+            <li <?=(strpos($_SERVER['REQUEST_URI'], '/dashboard/admin/listMember') !== false ? 'class="active"' : '') ?>>
                 <a class="" href="/dashboard/admin/listMember">
                     <i class="icon-list"></i>
-                    <span><small>admin</small> Clients Listing </span>
+                    <span>Clients Listing </span>
                 </a>
             </li>
             <?php 

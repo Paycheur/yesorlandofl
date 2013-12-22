@@ -1,5 +1,4 @@
 <?php
-
 class BddPropertiesViewed extends CConnexion
 {
 	private $IdProperty = '';
@@ -74,7 +73,8 @@ class BddPropertiesViewed extends CConnexion
 		$champsRequete['id_property']		=	($this->IdProperty != '')		? '\''. protegeChaine($this->getIdProperty()) .'\'' : 'DEFAULT';
 		$champsRequete['id_member']		=	($this->IdMember != '')		? '\''. protegeChaine($this->getIdMember()) .'\'' : 'DEFAULT';
 		$champsRequete['date']		=	($this->Date != '')		? '\''. protegeChaine($this->getDate()) .'\'' : 'DEFAULT';
-		return $champsRequete; 	}
+		return $champsRequete; 	
+	}
 
 	function load($row)
 	{

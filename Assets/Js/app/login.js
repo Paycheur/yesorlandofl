@@ -52,10 +52,8 @@
 				
 		$('#loginForm').on('submit', function(e)
 		{
-			console.log('test');
 			e.preventDefault();
 			var datas = $(this).serialize();
-			console.log('test');
 			$.ajax({
 	              url: '/page_login.php',
 	              type: 'POST',
@@ -66,7 +64,7 @@
 	              	
 	              		if(json.statut == 'KO')
 	              		{
-		              		$('.error_login').text('Login failed');
+		              		$('.error').text('Login failed');
 	              		}
 	              		else
 	              		{

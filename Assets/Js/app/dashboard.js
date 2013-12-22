@@ -123,6 +123,60 @@
 				}
 			});
 		});
+		
+		$('.send-mail').on('click', function(e)
+		{
+			e.preventDefault();
+			var email = $(this).attr('id');
+			$('#modalComposeMail').modal();
+			$('#modalComposeMail').find('input[name="email"]').val(email);
+		});
+		
+	    //http://www.eyecon.ro/bootstrap-datepicker/
+	    var $dataPickerInput = $( "#dataPickerInput" );
+	
+	    if ( $dataPickerInput.length ) {
+	    	
+	        $dataPickerInput.datepicker(
+	        		{
+	        			format : 'yyyy-mm-dd'
+	        		});
+	
+	        $dataPickerInput.focusin(function(e)
+	        {
+	        	$dataPickerInput.datepicker('show');
+	        });
+	    }
+	    
+	    $('.edit-request').on('click', function(e)
+	    {
+	    	var tr = $(this).parents('tr');
+	    	var id_request = $(tr).attr('id').split('-')[1];
+	    	
+	    	var date = $(tr).find('.request-date').text();
+	    	var hour = $(tr).find('.request-hour').text();
+	    	
+	    	$('#dataPickerInput').val(date);
+	    	$('input[name="visit_hour"]').val(hour);
+	    	
+	    	$('#formVisitRequest').submit(function(e)
+	    	{
+	    		e.preventDefault();
+	    		var data_serialize = $(this).serialize();
+	    		$.ajax({
+		              url: '/page_dashboard.php',
+		              type: 'POST',
+		              data: 'EX=editRequestVisit&id='+id_request+'&'+data_serialize,
+		              dataType: 'json',
+		              success: function(json) {
+						if(json == 'ok')
+							window.location.reload()
+						else
+							alert('An error has occurred');
+					}
+				});
+	    	});
+	    });
 	});
 	
 	

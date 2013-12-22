@@ -11,7 +11,7 @@ require ('Inc/require.inc.php');
 $EX = isset($_REQUEST['EX']) ? $_REQUEST['EX'] : 'home';
 
 if(isset($_SESSION['user']['id']) && !empty($_SESSION['user']['id']))
-	header('Location:dashboard.php');
+	header('Location:/dashboard');
 
 //Variables
 $page['error']='';
@@ -58,6 +58,7 @@ function home()
 
 function doLoginWithFacebook()
 {
+	$_SESSION['referer'] = $_SERVER['HTTP_REFERER'];
 	$facebook = new Facebook(array(
 	    'appId'  => '619730978046867',
 	    'secret' => 'aeaf097c3f422e59c7e21686f2a6fa3c',

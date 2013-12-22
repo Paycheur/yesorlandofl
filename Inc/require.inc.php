@@ -14,7 +14,7 @@ require (dirname(__FILE__).'/../Mod/Db/DbMember_search.mod.php');
 require (dirname(__FILE__).'/../Mod/Db/DbFavorite.mod.php');
 require (dirname(__FILE__).'/../Mod/Db/DbMp_conversation.mod.php');
 require (dirname(__FILE__).'/../Mod/Db/DbMp_message.mod.php');
-
+require (dirname(__FILE__).'/../Mod/Db/DbProperties_viewed.mod.php');
 
 
 //lib

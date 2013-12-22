@@ -15,8 +15,10 @@ $EX = isset($_REQUEST['EX']) ? $_REQUEST['EX'] : 'home';
 $page['error']='';
 $page['confirmation']='';
 if(!isset($_SESSION['user']['id']) || empty($_SESSION['user']['id']))
-	header('Location:login.php');
+	header('Location:/login');
 
+if(strpos($_SERVER["REQUEST_URI"], '/admin/') !== false && ((isset($_SESSION['user']['admin']) && $_SESSION['user']['admin'] != 1) || !isset($_SESSION['user']['admin'])))
+	header('Location:/dashboard');
 // Contr�leur
 switch ($EX)
 {
@@ -33,6 +35,7 @@ switch ($EX)
 	case 'showMessageConversation' : showMessageConversation(); break;
 	case 'listMemberAutocomplete' : listMemberAutocomplete(); exit;
 	case 'newConversation' : newConversation(); exit;
+	case 'editRequestVisit' : editRequestVisit(); exit;
 	case 'test' : test(); break;
 }
 
@@ -59,7 +62,7 @@ function home()
 
     
     $dashboard = new MDashboard($_SESSION['user']['admin']);
-    $allRequestVisit = $dashboard->getAllRequestVisit(20);
+    $allRequestVisit = $dashboard->getAllRequestVisit(30);
     $tab['allRequestVisit'] = $allRequestVisit;
     
     $favoritesProperties = $dashboard->getFavoritesProperties(4);
@@ -67,6 +70,9 @@ function home()
     
     $recentlyViewed = $dashboard->getPropertiesViewed(4);
     $tab['recentlyViewed'] = $recentlyViewed;
+    
+    $tab['nbMessageNonLu'] = nbMessageNonLu();
+    $tab['nbVisitsRequest'] = nbVisitsRequest();
     
     $page['title'] = 'DashBoard';
     $page['class'] = 'VDashBoard';
@@ -142,11 +148,24 @@ function adminVisits()
 	$n = ($nbParPage*$p)-$nbParPage;
 	$allRequestVisit = $dashboard->getAllRequestVisit($nbParPage, $n);
 	$nbTotalResult = $dashboard->getNbRequestVisit();
+	
+	$date = date('Y-m-d', time());
+	$allRequestsVisitsToday = $dashboard->getAllRequestVisitPerDate($date);
+	
+	
+	$dateEnd = date('Y-m-d', strtotime('+1 week'));
+	$allRequestsVisitsWeek = $dashboard->getAllRequestVisitPerDate($date, $dateEnd);
+	
+	$tab['allRequestVisitsToday'] = $allRequestsVisitsToday;
+	$tab['allRequestVisitsWeek'] = $allRequestsVisitsWeek;
     $tab['allRequestVisit'] = $allRequestVisit;
     $tab['nbTotalResult'] = $nbTotalResult;
     $tab['nbParPage'] = $nbParPage;
     $tab['nbPageMax'] = ceil($nbTotalResult/$nbParPage);
     $tab['pageActuel'] = $p;
+    
+    $tab['nbMessageNonLu'] = nbMessageNonLu();
+    
     $page['title'] = 'DashBoard';
     $page['class'] = 'VDashBoard';
     $page['method'] = 'adminShowAllVisitsRequest';
@@ -177,6 +196,8 @@ function showListMember()
     $tab['nbPageMax'] = ceil($nbTotalResult/$nbParPage);
     $tab['pageActuel'] = $p;
 
+    $tab['nbMessageNonLu'] = nbMessageNonLu();
+    
     $page['title'] = 'DashBoard';
     $page['class'] = 'VDashBoard';
     $page['method'] = 'showListMember';
@@ -206,6 +227,9 @@ function showProfile()
 	{
 		$tab['member'] = array();
 	}
+	
+	$tab['nbMessageNonLu'] = nbMessageNonLu();
+	
     $page['title'] = 'DashBoard';
     $page['class'] = 'VDashBoard';
     $page['method'] = 'showProfile';
@@ -335,6 +359,9 @@ function editProfile()
 	{
 		$tab['member'] = array();
 	}
+	
+	$tab['nbMessageNonLu'] = nbMessageNonLu();
+	
     $page['title'] = 'DashBoard';
     $page['class'] = 'VDashBoard';
     $page['method'] = 'editProfile';
@@ -359,21 +386,22 @@ function showConversation()
 
 	foreach($allConversation as $i => $conversation)
 	{
+		$messagePlusRecent = $message->getMessagePlusRecent($conversation['id_conversation']);
 		$type = '';
-		if($conversation['id_expediteur'] == $_SESSION['user']['id'])
+		if($messagePlusRecent['id_expediteur'] == $_SESSION['user']['id'])
 		{
 			$type = 'expediteur';
-			$idInterlocuteur = $conversation['id_destinataire'];
+			$idInterlocuteur = $messagePlusRecent['id_destinataire'];
 		}
 		else
 		{
 			$type = 'destinataire';
-			$idInterlocuteur = $conversation['id_expediteur'];
+			$idInterlocuteur = $messagePlusRecent['id_expediteur'];
 		}
 			
 		$estLu = 1;
 		$mp_message = new BddMpMessage();
-		$rows = $mp_message->select(array('id_message' => $conversation['id_message']));
+		$rows = $mp_message->select(array('id_message' => $messagePlusRecent['id_message']));
 		if(count($rows) > 0)
 		{
 			$mp_message->load($rows[0]);
@@ -399,6 +427,8 @@ function showConversation()
     $tab['nbPageMax'] = ceil($nbTotalConversation/$nbParPage);
     $tab['pageActuel'] = $p;
    
+    $tab['nbMessageNonLu'] = nbMessageNonLu();
+    
 	$page['title'] = 'DashBoard';
     $page['class'] = 'VDashBoard';
     $page['method'] = 'showConversation';
@@ -451,10 +481,26 @@ function showMessageConversation()
 				$tab['interlocuteur'] = $rows[0];
 			}
 		
+			
 	   		$objMessageConversation = new BddMpMessage();
 	   		$tab['messages'] = $objMessageConversation->select(array('id_conversation' => $_GET['id_conversation']), array(), array('date' => 'ASC'));
+	   		if(count($tab['messages']) > 0)
+	   		{
+		   		foreach($tab['messages'] as $msg)
+		   		{
+		   			$objMessageConversation->load($msg);
+		   			if($objMessageConversation->getIdDestinataire() == $_SESSION['user']['id']) //si c'est un message qui est destiné au membre actuel
+		   			{
+			   			$objMessageConversation->setLuDestinataire(1);
+			   			$objMessageConversation->update();
+		   			}
+		   		}
+	   		}
 
     	}
+    	
+    	$tab['nbMessageNonLu'] = nbMessageNonLu();
+    	
     	$page['title'] = 'DashBoard';
 	    $page['class'] = 'VDashBoard';
 	    $page['method'] = 'showMessage';
@@ -480,6 +526,7 @@ function listMemberAutocomplete()
 function newConversation()
 {
 	$erreur = '';
+	$member = new BddMember();
 	if(isset($_POST['message']) && !empty($_POST['message']))
 	{
 		if(isset($_POST['email']) AND !empty($_POST['email'])) //Si il y a une adresse mail renseigné
@@ -487,7 +534,7 @@ function newConversation()
 			$Syntaxe='#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$#';
 			if(preg_match($Syntaxe,$_POST['email']))
 			{
-				$member = new BddMember();
+				
 				$rows = $member->select(array('email' => $_POST['email']));
 				if(count($rows) > 0) //le membre recherché existe
 				{
@@ -528,7 +575,7 @@ function newConversation()
 			{
 				foreach($rows as $row) //on envoit à tous les admin
 				{
-					$membre->load($row);
+					$member->load($row);
 					$conversation = new BddMpConversation();
 					$idConversation = time().'-'.$member->getId().'-'.$_SESSION['user']['id'];
 					$conversation->setIdDestinataire($member->getId());
@@ -559,9 +606,61 @@ function newConversation()
 	echo $erreur;
 }
 
-function answerMessage()
+function nbMessageNonLu()
 {
-	
+	$message = new MMessage($_SESSION['user']['admin']);
+	$nb = $message->getNbMessageNonLu();
+	return $nb;
+}
+
+function nbVisitsRequest()
+{
+	$visits = new BddVisitRequest();
+	$nb = $visits->selectFunction(array('COUNT', '1'), array('status' => 0));
+	if(isset($nb[0]['value']))
+		return $nb[0]['value'];
+	else
+		return 0;
+}
+
+function editRequestVisit()
+{
+	$rep = '';
+	$visits = new BddVisitRequest();
+	$rows = array();
+	if(isset($_SESSION['user']['admin']) && $_SESSION['user']['admin']==1)
+	{
+		$rows = $visits->select(array('id' => $_POST['id']));
+		if(count($rows) > 0)
+		{
+			$visits->load($rows[0]);
+			$visits->setDate(date('Y-m-d', strtotime($_POST['visit_date'])));
+			$visits->setHour($_POST['visit_hour']);
+			$visits->update();
+			
+			$rep = 'ok';
+		
+		}
+	}
+	else
+	if(isset($_SESSION['user']['id']))
+	{
+		$rows = $visits->select(array('id' => $_POST['id'], 'id_member' => $_SESSION['user']['id']));
+		if(count($rows) > 0)
+		{
+			$visits->load($rows[0]);
+			$visits->setDate(date('Y-m-d', strtotime($_POST['visit_date'])));
+			$visits->setHour($_POST['visit_hour']);
+			$visits->setStatus(0);
+			$visitRequest->setDateInsert(date('Y-m-d H:i:s', time()));
+			$visits->update();
+			
+			$rep = 'ok';
+		
+		}
+	}
+
+	print json_encode($rep);
 }
 
 function test()
@@ -573,6 +672,8 @@ function test()
     $page['method'] = 'test';
     $page['arg'] = $tab;
 }
+
+
 
 
 

@@ -18,15 +18,16 @@ class VDashBoard
 		          <aside class="profile-nav alt green-border">
 		              <section class="panel">
 		                  <div class="user-heading alt green-bg">
-		                      <a href="#">
-		                          <img alt="" src="Assets/dashboard/img/profile-avatar.jpg">
-		                      </a>
 		                      <h1>Hello <?=$_SESSION['user']['name'] ?></h1>
 		                  </div>
 
 		                  <ul class="nav nav-pills nav-stacked">
-		                      <li><a href="javascript:;"> <i class="icon-bell-alt"></i> Visits <span class="label label-warning pull-right r-activity">03</span></a></li>
-		                      <li><a href="javascript:;"> <i class="icon-envelope-alt"></i> Message <span class="label label-success pull-right r-activity">10</span></a></li>
+		                  <?php if(isset($_SESSION['user']['admin']) && $_SESSION['user']['admin'] == 1)
+		                  {?>
+		                      <li><a href="/dashboard/admin/visits"> <i class="icon-bell-alt"></i> Visits <?php if($_value['nbVisitsRequest'] > 0){ ?><span class="label label-warning pull-right r-activity"><?=$_value['nbVisitsRequest'] ?></span><?php }?></a></li>
+		                  <?php 
+		                  }?>
+		                      <li><a href="/dashboard/mail"> <i class="icon-envelope-alt"></i> Message <?php if($_value['nbMessageNonLu'] > 0){ ?><span class="label label-success pull-right r-activity"><?=$_value['nbMessageNonLu'] ?></span><?php }?></a></li>
 		                  </ul>
 
 		              </section>
@@ -53,6 +54,8 @@ class VDashBoard
 		                      <div class="tab-pane active" id="popular">
 		                      <?php 
 		                      $i=0;
+		                      if(count($_value['favoritesProperties']) > 0)
+		                      {
 		                      foreach($_value['favoritesProperties'] as $prop)
 		                      {
 		                      	$allImg = $prop['img'];
@@ -73,7 +76,7 @@ class VDashBoard
 		                       if($i==3)
 		                       	break;
 		                      }
-		                      
+		                      }
 		                      if(count($_value['favoritesProperties']) > 3)
 		                      {?>
 		                          <a href="/dashboard/favorites" type="button" class="btn btn-success"><i class="icon-eye-open"></i> View more </a>
@@ -84,6 +87,8 @@ class VDashBoard
 		                      <div class="tab-pane " id="recent">
 		                          <?php 
 		                      $i=0;
+		                      if(count($_value['recentlyViewed']) > 0)
+		                      {
 		                      foreach($_value['recentlyViewed'] as $prop)
 		                      {
 		                      	$allImg = $prop['img'];
@@ -104,7 +109,7 @@ class VDashBoard
 		                       if($i==3)
 		                       	break;
 		                      }
-		                      
+		                      }
 		                      if(count($_value['recentlyViewed']) > 3)
 		                      {?>
 		                          <a href="/dashboard/recently_viewed" type="button" class="btn btn-success"><i class="icon-eye-open"></i> View more </a>
@@ -134,21 +139,24 @@ class VDashBoard
 						    </thead>
 						    <tbody>
 						    <?php 
+						    if(count($_value['allRequestVisit']) > 0)
+						    {
 						    foreach($_value['allRequestVisit'] as $requestVisit)
 						    {?>
-							    <tr>
+							    <tr id="request-<?=$requestVisit['id_visit_request']?>">
 							        <td><?=($requestVisit['type'] == 'vacant_land' ? 'Vacant Land' : ($requestVisit['type'] == 'commercial' ? 'Commercial' : ($requestVisit['type'] == 'rental' ? 'Rental' : ($requestVisit['type'] == 'residential' ? 'Residential' : ''))))?></td>
-							        <td class="hidden-phone"><?=$requestVisit['address'].', '.$requestVisit['city'].', '.$requestVisit['state'].' '.$requestVisit['postal_code'] ?></td>
-							        <td><?=$requestVisit['date'] ?></td>
-							        <td><?=$requestVisit['hour'] ?></td>
+							        <td class="hidden-phone"><a href="/property/<?=format_url($requestVisit['type'].'-'.$requestVisit['address'])?>/<?=$requestVisit['data_id'] ?>" target="_blank" ><?=$requestVisit['address'].', '.$requestVisit['city'].', '.$requestVisit['state'].' '.$requestVisit['postal_code'] ?></a></td>
+							        <td class="request-date"><?=date('Y-m-d', strtotime($requestVisit['date'])) ?></td>
+							        <td class="request-hour"><?=$requestVisit['hour'] ?></td>
 							        <td class="col_status"><span class="label <?=($requestVisit['status'] == 0 ? 'label-info' : ($requestVisit['status'] == 1 ? 'label-success' : ($requestVisit['status'] == 2 ? 'label-warning' : '')))?> label-mini" ><?=($requestVisit['status'] == 0 ? 'On confirmation' : ($requestVisit['status'] == 1 ? 'Approved' : ($requestVisit['status'] == 2 ? 'Suspended' : '')))?></span></td>
 							        <td>
 							            <a href="/property/<?=format_url($requestVisit['type'].'-'.$requestVisit['address'])?>/<?=$requestVisit['data_id'] ?>" target="_blank" class="btn btn-success btn-xs"><i class="icon-eye-open"></i></a>
-<!--							            <button class="btn btn-primary btn-xs"><i class="icon-pencil"></i></button>-->
+							            <button class="btn btn-primary btn-xs edit-request" data-toggle="modal" href="#modalVisitRequest"><i class="icon-pencil"></i></button>
 							            <button class="btn btn-danger btn-xs deleteVisitRequest"><i class="icon-trash "></i></button>
 							        </td>
 							    </tr>
 							 <?php 
+						    }
 						    }?>
 						    
 						    </tbody>
@@ -185,6 +193,8 @@ class VDashBoard
 						    </thead>
 						    <tbody>
 						    <?php 
+						    if(count($_value['recentlyViewed']) > 0)
+						    {
 						    foreach($_value['recentlyViewed'] as $prop)
 						    {?>
 							    <tr>
@@ -199,6 +209,7 @@ class VDashBoard
 							        </td>
 							    </tr>
 							 <?php 
+						    }
 						    }?>
 						    
 						    </tbody>
@@ -231,7 +242,9 @@ class VDashBoard
 						    </tr>
 						    </thead>
 						    <tbody>
-						    <?php 
+						    <?php
+						    if(count($_value['favoritesProperties']) > 0)
+						    { 
 						    foreach($_value['favoritesProperties'] as $prop)
 						    {?>
 							    <tr>
@@ -246,6 +259,7 @@ class VDashBoard
 							        </td>
 							    </tr>
 							 <?php 
+						    }
 						    }?>
 						    
 						    </tbody>
@@ -258,24 +272,116 @@ class VDashBoard
 	
 	public function adminShowAllVisitsRequest($_value)
 	{
-		if($_value['nbPageMax'] > 1)
-		{
-			if($_value['pageActuel'] > 1)
-			{
-				echo '<a href="/dashboard/admin/visits/'.($_value['pageActuel']-1).'"><= Previous Page</a>';
-			}
-			
-			if($_value['nbPageMax'] > $_value['pageActuel'])
-			{
-				echo '<a href="/dashboard/admin/visits/'.($_value['pageActuel']+1).'">Next Page =></a>';
-			}
-		}	
-		
+//		if($_value['nbPageMax'] > 1)
+//		{
+//			if($_value['pageActuel'] > 1)
+//			{
+//				echo '<a href="/dashboard/admin/visits/'.($_value['pageActuel']-1).'"><= Previous Page</a>';
+//			}
+//			
+//			if($_value['nbPageMax'] > $_value['pageActuel'])
+//			{
+//				echo '<a href="/dashboard/admin/visits/'.($_value['pageActuel']+1).'">Next Page =></a>';
+//			}
+//		}	
+
+					
 		?>
+		<div class="col-lg-5">
+            <section class="panel">
+              <header class="panel-heading">
+                  Visits approved today
+              </header>
+              <table class="table table-striped table-advance table-hover">
+                  <thead>
+                  <tr>
+                  		<th><i class="icon-user"></i> Property</th>
+                      <th><i class="icon-user"></i> Client name</th>
+                      <th><i class="icon-time"></i> Hour</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                 <?php 
+                 	if(count($_value['allRequestVisitsToday']) > 0)
+                 	{
+					    foreach($_value['allRequestVisitsToday'] as $requestVisit)
+					    {?>
+						    <tr id="request-<?=$requestVisit['id_visit_request']?>">
+						       <td class="hidden-phone"><a href="/property/<?=format_url($requestVisit['type'].'-'.$requestVisit['address'])?>/<?=$requestVisit['data_id'] ?>" target="_blank"><?=$requestVisit['address'].', '.$requestVisit['city'].', '.$requestVisit['state'].' '.$requestVisit['postal_code'] ?></a></td>
+						         <td><a target="_blank" href="/dashboard/profile/<?=$requestVisit['member_id']?>"><?=$requestVisit['name'] ?></a></td>
+						        <td class="request-hour"><?=$requestVisit['hour'] ?></td>
+						    </tr>
+						 <?php 
+					    }
+					 }?>
+                  
+                  </tbody>
+              </table>
+            </section>
+          </div>
+          <div class="col-lg-7">
+            <section class="panel">
+              <header class="panel-heading">
+                  Visits approved for the next 7 days
+              </header>
+              <table class="table table-striped table-advance table-hover">
+                  <thead>
+                  <tr>
+                  		<th><i class="icon-user"></i> Property</th>
+                      <th><i class="icon-user"></i> Client name</th>
+                      <th><i class="icon-time"></i> Hour</th>
+                      <th><i class="icon-time"></i> Date</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                 <?php 
+                 	if(count($_value['allRequestVisitsWeek']) > 0)
+                 	{
+					    foreach($_value['allRequestVisitsWeek'] as $requestVisit)
+					    {?>
+						    <tr id="request-<?=$requestVisit['id_visit_request']?>">
+						       <td class="hidden-phone"><a href="/property/<?=format_url($requestVisit['type'].'-'.$requestVisit['address'])?>/<?=$requestVisit['data_id'] ?>" target="_blank"><?=$requestVisit['address'].', '.$requestVisit['city'].', '.$requestVisit['state'].' '.$requestVisit['postal_code'] ?></a></td>
+						         <td><a target="_blank" href="/dashboard/profile/<?=$requestVisit['member_id']?>"><?=$requestVisit['name'] ?></a></td>
+						        <td class="request-hour"><?=$requestVisit['hour'] ?></td>
+						         <td class="request-date"><?=date('Y-m-d', strtotime($requestVisit['date'])) ?></td>
+						    </tr>
+						 <?php 
+					    }
+					 }?>
+                  
+                  </tbody>
+              </table>
+            </section>
+          </div>
+          <div style="clear:both"></div>
 		<div class="col-lg-12">
             <section class="panel">
               <header class="panel-heading">
                   Visits demands
+                  <?php
+                  if($_value['nbPageMax'] > 1)
+					{
+						?>
+                          <ul class="unstyled inbox-pagination">
+                              <li><span><?=(($_value['pageActuel']-1)*$_value['nbParPage'])+1 ?>-<?=(($_value['pageActuel'])*$_value['nbParPage']) ?> of <?=$_value['nbTotalResult'] ?></span></li>
+                             <?php 
+                             if($_value['pageActuel'] > 1)
+						{?>
+                              <li>
+                                  <a href="/dashboard/admin/visits/<?=($_value['pageActuel']-1)?>" class="np-btn btn-xs"><i class="icon-angle-left  pagination-left"></i></a>
+                              </li>
+                            <?php 
+						}
+						if($_value['nbPageMax'] > $_value['pageActuel'])	
+						{?>
+                              <li>
+                                  <a href="/dashboard/admin/visits/<?=($_value['pageActuel']+1)?>" class="np-btn btn-xs"><i class="icon-angle-right pagination-right"></i></a>
+                              </li>
+                            <?php 
+						}?>
+                          </ul>
+					<?php 
+					}?>
               </header>
               <table class="table table-striped table-advance table-hover">
                   <thead>
@@ -292,25 +398,31 @@ class VDashBoard
                   </thead>
                   <tbody>
                  <?php 
+                 if(count($_value['allRequestVisit']) > 0)
+                 {
 				    foreach($_value['allRequestVisit'] as $requestVisit)
 				    {?>
-					    <tr>
-					       <td class="hidden-phone"><?=$requestVisit['address'].', '.$requestVisit['city'].', '.$requestVisit['state'].' '.$requestVisit['postal_code'] ?></td>
-					         <td><?=$requestVisit['name'] ?></td>
+					    <tr id="request-<?=$requestVisit['id_visit_request']?>">
+					      <td class="hidden-phone"><a href="/property/<?=format_url($requestVisit['type'].'-'.$requestVisit['address'])?>/<?=$requestVisit['data_id'] ?>" target="_blank"><?=$requestVisit['address'].', '.$requestVisit['city'].', '.$requestVisit['state'].' '.$requestVisit['postal_code'] ?></a></td>
+					         <td><a target="_blank" href="/dashboard/profile/<?=$requestVisit['member_id']?>"><?=$requestVisit['name'] ?></a></td>
 					         <td><?=$requestVisit['email'] ?></td>
 					         <td><?=$requestVisit['phone'] ?></td>
-					        <td><?=$requestVisit['date'] ?></td>
-					        <td><?=$requestVisit['hour'] ?></td>
+					        <td class="request-date"><?=date('Y-m-d', strtotime($requestVisit['date'])) ?></td>
+					        <td class="request-hour"><?=$requestVisit['hour'] ?></td>
 					        <td class="col_status"><span class="switchStatusVisitRequest label <?=($requestVisit['status'] == 0 ? 'label-info' : ($requestVisit['status'] == 1 ? 'label-success' : ($requestVisit['status'] == 2 ? 'label-warning' : '')))?> label-mini" data-toggle="modal" href="#modalSwitchStatusVisitRequest" ><?=($requestVisit['status'] == 0 ? 'On confirmation' : ($requestVisit['status'] == 1 ? 'Approved' : ($requestVisit['status'] == 2 ? 'Suspended' : '')))?></span></td>
 					        <td>
 					        	<input type="hidden" class="id_visit_request" value="<?=$requestVisit['id_visit_request'] ?>" />
 					            <a href="/property/<?=format_url($requestVisit['type'].'-'.$requestVisit['address'])?>/<?=$requestVisit['data_id'] ?>" target="_blank" class="btn btn-success btn-xs"><i class="icon-eye-open"></i></a>
-					            <button class="btn btn-primary btn-xs"><i class="icon-pencil"></i></button>
+					            <button class="btn btn-primary btn-xs edit-request" data-toggle="modal" href="#modalVisitRequest"><i class="icon-pencil"></i></button>
 					            <button class="btn btn-danger btn-xs deleteVisitRequest"><i class="icon-trash "></i></button>
+					            <a id="<?=$requestVisit['email'] ?>" class="btn btn-warning btn-xs send-mail" href="#">
+									<i class="icon-envelope"></i>
+								</a>
 					        </td>
 					    </tr>
 					 <?php 
-				    }?>
+				    }
+				 }?>
                   
                   </tbody>
               </table>
@@ -321,23 +433,36 @@ class VDashBoard
 	
 	public function showListMember($_value)
 	{
-		if($_value['nbPageMax'] > 1)
-		{
-			if($_value['pageActuel'] > 1)
-			{
-				echo '<a href="/dashboard/admin/listMember/'.($_value['pageActuel']-1).'"><= Previous Page</a>';
-			}
-			
-			if($_value['nbPageMax'] > $_value['pageActuel'])
-			{
-				echo '<a href="/dashboard/admin/listMember/'.($_value['pageActuel']+1).'">Next Page =></a>';
-			}
-		}	
+
 		?>
             <div class="col-sm-12">
                 <section class="panel">
                     <header class="panel-heading">
                         List of all subscribed clients
+                        <?php
+	                  if($_value['nbPageMax'] > 1)
+						{
+							?>
+	                          <ul class="unstyled inbox-pagination">
+	                              <li><span><?=(($_value['pageActuel']-1)*$_value['nbParPage'])+1 ?>-<?=(($_value['pageActuel'])*$_value['nbParPage']) ?> of <?=$_value['nbTotalResult'] ?></span></li>
+	                             <?php 
+	                             if($_value['pageActuel'] > 1)
+							{?>
+	                              <li>
+	                                  <a href="/dashboard/admin/listMember/<?=($_value['pageActuel']-1)?>" class="np-btn btn-xs"><i class="icon-angle-left  pagination-left"></i></a>
+	                              </li>
+	                            <?php 
+							}
+							if($_value['nbPageMax'] > $_value['pageActuel'])	
+							{?>
+	                              <li>
+	                                  <a href="/dashboard/admin/listMember/<?=($_value['pageActuel']+1)?>" class="np-btn btn-xs"><i class="icon-angle-right pagination-right"></i></a>
+	                              </li>
+	                            <?php 
+							}?>
+	                          </ul>
+						<?php 
+						}?>
                     </header>
                     <table class="table table-striped">
                         <thead>
@@ -349,6 +474,7 @@ class VDashBoard
                             <th>Email</th>
                             <th>Mobile</th>
                             <th>Address</th>
+                            <th></th>
                           </tr>
                         </thead>
                         <tbody>
@@ -366,6 +492,13 @@ class VDashBoard
 		                           <td><?=$member['email'] ?></td>
 		                           <td><?=$member['phone'] ?></td>
 		                           <td><?=$member['address'] ?></td>
+		                           <td><a href="/dashboard/profile/<?=$member['id'] ?>" class="btn btn-success btn-xs"><i class="icon-eye-open"></i></a> 
+		                           <? if($member['email'] != '')
+		                           {
+		                           	?>
+		                           		<a href="#" id="<?=$member['email'] ?>" class="btn btn-warning btn-xs send-mail"><i class="icon-envelope"></i></a>
+		                           <?php 
+		                           }?></td>
 		                        </tr>
                         <?php 
 							}
@@ -387,18 +520,21 @@ class VDashBoard
             <aside class="profile-nav col-lg-3">
                 <section class="panel">
                     <div class="user-heading round">
-                        <a href="#">
-                            <img src="Assets/dashboard/img/profile-avatar.jpg" alt="">
-                        </a>
                         <h1><?=($_value['member']['name'] != '' ? $_value['member']['name'] : '') ?> <?=($_value['member']['last_name'] != '' ? $_value['member']['last_name'] : '') ?></h1>
                         <p><?=$_value['member']['email'] ?></p>
                     </div>
 
                     <ul class="nav nav-pills nav-stacked">
                         <li class="active"><a href="#"> <i class="icon-user"></i> Profile</a>
+                        
                         <? if($_SESSION['user']['id'] == $_value['member']['id'])
                         { ?>
                        	 <li><a href="/dashboard/profile/edit"> <i class="icon-edit"></i> Edit profile</a></li>
+                        <?php 
+                        }
+                        else if($_SESSION['user']['admin'] == 1 && $_value['member']['email'] != '')
+                        {?>
+                        	<li><a href="#" class="send-mail" id="<?=$_value['member']['email']?>"> <i class="icon-envelope"></i> Contact</a>
                         <?php 
                         }?>
                     </ul>
@@ -414,10 +550,10 @@ class VDashBoard
                         <h1>Bio Graph</h1>
                         <div class="row">
                             <div class="bio-row">
-                                <p><span>First Name </span>: <?=$_value['member']['name'] ?></p>
+                                <p><span>Last Name </span>: <?=$_value['member']['name'] ?></p>
                             </div>
                             <div class="bio-row">
-                                <p><span>Last Name </span>: <?=$_value['member']['last_name'] ?></p>
+                                <p><span>First Name </span>: <?=$_value['member']['last_name'] ?></p>
                             </div>
                             <div class="bio-row">
                                 <p><span>Company </span>: <?=$_value['member']['company'] ?></p>
@@ -453,9 +589,6 @@ class VDashBoard
                   <aside class="profile-nav col-lg-3">
                       <section class="panel">
                           <div class="user-heading round">
-                              <a href="#">
-                                  <img src="Assets/dashboard/img/profile-avatar.jpg" alt="">
-                              </a>
                                <h1><?=($_value['member']['name'] != '' ? $_value['member']['name'] : '') ?> <?=($_value['member']['last_name'] != '' ? $_value['member']['last_name'] : '') ?></h1>
                        		<p><?=$_value['member']['email'] ?></p>
                           </div>
@@ -477,13 +610,13 @@ class VDashBoard
                               <form class="form-horizontal" action="/dashboard/profile/edit" method="POST" role="form">
                                
                                   <div class="form-group">
-                                      <label class="col-lg-2 control-label">First Name</label>
+                                      <label class="col-lg-2 control-label">Last Name</label>
                                       <div class="col-lg-6">
                                           <input type="text" class="form-control" id="f-name" placeholder=" " name="name" value="<?=$_value['member']['name'] ?>">
                                       </div>
                                   </div>
                                   <div class="form-group">
-                                      <label class="col-lg-2 control-label">Last Name</label>
+                                      <label class="col-lg-2 control-label">First Name</label>
                                       <div class="col-lg-6">
                                           <input type="text" class="form-control" id="l-name" placeholder=" " name="last_name" value="<?=$_value['member']['last_name'] ?>">
                                       </div>
@@ -634,7 +767,7 @@ class VDashBoard
                       </div>
                       <ul class="inbox-nav inbox-divider">
                           <li class="active">
-                              <a href="#"><i class="icon-inbox"></i> Inbox <span class="label label-danger pull-right">2</span></a>
+                              <a href="/dashboard/mail"><i class="icon-inbox"></i> Inbox <?php if($_value['nbMessageNonLu'] > 0){?><span class="label label-danger pull-right"><?=$_value['nbMessageNonLu'] ?></span><?php }?></a>
 
                           </li>
 
@@ -657,17 +790,30 @@ class VDashBoard
                   <aside class="lg-side">
                       <div class="inbox-head">
                           <h3>Inbox</h3>
-
+						<?php
+						if($_value['nbPageMax'] > 1)
+						{
+							?>
                           <ul class="unstyled inbox-pagination">
-                              <li><span>1-50 of 234</span></li>
+                              <li><span><?=(($_value['pageActuel']-1)*$_value['nbParPage'])+1 ?>-<?=(($_value['pageActuel'])*$_value['nbParPage']) ?> of <?=$_value['nbTotalConversation'] ?></span></li>
+                             <?php 
+                             if($_value['pageActuel'] > 1)
+							{?>
                               <li>
-                                  <a href="#" class="np-btn"><i class="icon-angle-left  pagination-left"></i></a>
+                                  <a href="/dashboard/mail_<?=($_value['pageActuel']-1)?>" class="np-btn"><i class="icon-angle-left  pagination-left"></i></a>
                               </li>
+                            <?php 
+							}
+							if($_value['nbPageMax'] > $_value['pageActuel'])	
+							{?>
                               <li>
-                                  <a href="#" class="np-btn"><i class="icon-angle-right pagination-right"></i></a>
+                                  <a href="/dashboard/mail_<?=($_value['pageActuel']+1)?>" class="np-btn"><i class="icon-angle-right pagination-right"></i></a>
                               </li>
+                            <?php 
+							}?>
                           </ul>
-
+						<?php 
+						}?>
                       </div>
                       <div class="inbox-body">
                          <div class="mail-option">
@@ -677,18 +823,23 @@ class VDashBoard
                           <table class="table table-inbox table-hover">
                             <tbody>
                             <?
+                            if(count($_value['allConversation']) > 0)
+                            {
                             foreach($_value['allConversation'] as $conversation)
-                            { ?>
-                              <tr class="unread">
-                                  <td class="inbox-small-cells">
+                            { 
+                            	
+							?>
+                              <tr <?=($conversation['lu'] == 0 ? 'class="unread"' : '' )?>>
+                                  <td class="inbox-small-cells" style="width:20px;">
                                   		<input type="hidden" name="id_conversation" value="<?=$conversation['id_conversation'] ?>" />
                                       <input type="checkbox" class="mail-checkbox">
                                   </td>
-                                  <td class="view-message  dont-show"><?=$conversation['interlocuteur']['name'].($conversation['interlocuteur']['last_name'] != '' ? ' '.$conversation['interlocuteur']['last_name'] : '') ?></td>
-                                  <td class="view-message "><a href="/dashboard/mail/<?=$conversation['id_conversation']?>"><?=$conversation['titre'] ?></a></td>
+                                  <td class="view-message"><b><a href="/dashboard/mail/<?=$conversation['id_conversation']?>"><?=$conversation['interlocuteur']['name'].($conversation['interlocuteur']['last_name'] != '' ? ' '.$conversation['interlocuteur']['last_name'] : '') ?></a></b></td>
+                                  <td class="view-message"><a href="/dashboard/mail/<?=$conversation['id_conversation']?>"><?=$conversation['titre'] ?></a></td>
                                   <td class="view-message  text-right"><?=$conversation['date'] ?></td>
                               </tr>
                             <?php 
+                            }
                             }?>
                             
                           </tbody>
@@ -723,7 +874,7 @@ class VDashBoard
                       </div>
                       <ul class="inbox-nav inbox-divider">
                           <li class="active">
-                              <a href="#"><i class="icon-inbox"></i> Inbox <span class="label label-danger pull-right">2</span></a>
+                              <a href="/dashboard/mail"><i class="icon-inbox"></i> Inbox <?php if($_value['nbMessageNonLu'] > 0){?><span class="label label-danger pull-right"><?=$_value['nbMessageNonLu'] ?></span><?php }?></a>
 
                           </li>
                           <li>
@@ -750,10 +901,12 @@ class VDashBoard
 
                       </div>
                       <div class="inbox-body">
-                        	<h4><?=$_value['conversation']['titre'] ?></h4>
+                        	<h4 style="text-align:center;text-decoration:underline;font-weight:bold;">Subject : <?=$_value['conversation']['titre'] ?></h4>
                         	<?php 
                         	$nbMessage = count($_value['messages']);
                         	$i=1;
+                        	if(count($nbMessage) >0)
+                        	{
                         	foreach($_value['messages'] as $message)
                         	{
                         		
@@ -763,7 +916,7 @@ class VDashBoard
 										<p style="float:right">
 											<?=$message['date'] ?>
 										</p>
-										<p>
+										<p><b>
 										<?php 
 										if($_value['interlocuteur']['id'] == $message['id_expediteur'])
 										{?>
@@ -776,7 +929,7 @@ class VDashBoard
 											From you to <?=$_value['interlocuteur']['name'].($_value['interlocuteur']['last_name'] != '' ? ' '.$_value['interlocuteur']['last_name'] : '') ?>
 										<?php 
 										}?>
-										</p>
+										</b></p>
 										
 									</div>
 									<p><?=$message['message'] ?></p>
@@ -784,7 +937,8 @@ class VDashBoard
 								<hr/> 
 							<?php	
 								$i++;
-							}?>
+							}
+                        	}?>
 							
 
                            <form action="/dashboard/mail/<?=$_value['conversation']['id_conversation'] ?>" method="post" id="form_answer">
@@ -831,10 +985,7 @@ class VDashBoard
             <aside class="profile-nav col-lg-3">
                 <section class="panel">
                     <div class="user-heading round">
-                        <a href="#">
-                            <img src="Assets/dashboard/img/profile-avatar.jpg" alt="">
-                        </a>
-                        <h1>Jonathan Smith</h1>
+                        <h1><?=$_SESSION['user']['name'] ?></h1>
                         <p>jsmith@flatlab.com</p>
                     </div>
 

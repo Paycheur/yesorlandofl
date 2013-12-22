@@ -244,10 +244,10 @@ function searchAJAX() //JSON
 				$memberSearch = new BddMemberSearch();
 				$memberSearch->setBathroom($bathroom);
 				$memberSearch->setBed($beds);
-				$memberSearch->setCity($location);
+				$memberSearch->setCity(json_encode($location));
 				$memberSearch->setIdMember($_SESSION['user']['id']);
 				$memberSearch->setPrice($price);
-				$memberSearch->setStyle($style);
+				$memberSearch->setStyle(json_encode($style));
 				$memberSearch->setDate(date('Y-m-d H:i:s', time()));
 				$memberSearch->setNbResults($nbResultMax);
 				$memberSearch->insert('REPLACE');
@@ -273,6 +273,15 @@ function afficherProperty($data)
 
     $tab = array();
 
+	if(isset($_SESSION['user']['id']))
+	{
+		$propertieViewed = new BddPropertiesViewed();
+		$propertieViewed->setDate(date('Y-m-d H:i:s', time()));
+		$propertieViewed->setIdMember($_SESSION['user']['id']);
+		$propertieViewed->setIdProperty($data[0]['id']);
+		$propertieViewed->insert('REPLACE');
+	}
+	
     $search = new MSearch();
   	$tabGps = $search->getCoordGPS($data[0]['address'].', '.$data[0]['city'].', '.$data[0]['state'].' '.$data[0]['postal_code']);
 
@@ -451,6 +460,7 @@ function afficherProperty($data)
 	    $page['title'] = 'Vacant Land - '.$data[0]['address'].', '.$data[0]['city'].', '.$data[0]['state'].' '.$data[0]['postal_code'];
 	    $page['class'] = 'VPropertyVacantLand';
 	}
+	
     $page['method'] = 'showProperty';
     $page['arg'] = $tab;
 }
@@ -465,9 +475,10 @@ function ajaxSendVisitRequest() //return json
 		$id = $_GET['id_property'];
 
 		$visitRequest = new BddVisitRequest();
-		$visitRequest->setDate($date);
+		$visitRequest->setDate(date('Y-m-d', strtotime($date)));
 		$visitRequest->setHour($hour);
 		$visitRequest->setIdProperty($id);
+		$visitRequest->setDateInsert(date('Y-m-d H:i:s', time()));
 		$visitRequest->setIdMember($_SESSION['user']['id']);
 		$visitRequest->insert();
 		$statut = true;

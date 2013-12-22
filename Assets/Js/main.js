@@ -38,6 +38,10 @@
 
 var navLinks = $("a[rel='tab']");*/
 
+var url = document.location.href.split('/');
+if(url[3] == 'login')
+	$('#modalLogin').modal();
+
 
 /*==================================================
   Search
@@ -305,9 +309,16 @@ var loadItem = {
     var $dataPickerInput = $( "#dataPickerInput" );
 
     if ( $dataPickerInput.length ) {
+    	
+        $dataPickerInput.datepicker(
+        		{
+        			format : 'yyyy-mm-dd'
+        		});
 
-        $dataPickerInput.datepicker();
-
+        $dataPickerInput.focusin(function(e)
+        {
+        	$dataPickerInput.datepicker('show');
+        });
     }
 
 

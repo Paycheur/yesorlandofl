@@ -1,6 +1,6 @@
 <div class="row">
 
-	<?php  if ( ( isset ($csv['lease_rate']) || ($csv['public_remarks_new']) ) ) : ?>
+	<?php  if ( ( isset ($csv['lease_rate']) || isset($csv['public_remarks_new']) ) ) : ?>
 
 	<div class="col-lg-12 propety-data-group">
 		<h4 class="feature-title">PROPERTY DESCRIPTION: </h4>

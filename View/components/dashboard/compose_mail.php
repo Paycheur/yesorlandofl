@@ -8,12 +8,17 @@
                                       </div>
                                       <div class="modal-body">
                                           <form class="form-horizontal" role="form" id="compose_message">
+                                          <?php 
+                                          	if(isset($_SESSION['user']['admin']) && $_SESSION['user']['admin']== 1)
+                                          	{?>
                                               <div class="form-group">
                                                   <label class="col-lg-2 control-label">To</label>
                                                   <div class="col-lg-10">
                                                       <input type="text" class="form-control search_member" name="email" placeholder="">
                                                   </div>
                                               </div>
+                                             <?php 
+                                          	}?>
 <!--                                              <div class="form-group">-->
 <!--                                                  <label class="col-lg-2 control-label">Cc / Bcc</label>-->
 <!--                                                  <div class="col-lg-10">-->

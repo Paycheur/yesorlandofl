@@ -21,6 +21,7 @@
     <!--script for this page-->
     <script src="/Assets/dashboard/js/sparkline-chart.js"></script>
     <script src="/Assets/dashboard/js/easy-pie-chart.js"></script>
+    <script type="text/javascript" src="/Assets/js/bootstrap-datepicker.js"></script>
 
 <?php
 if(defined('JS_PAGE')) {

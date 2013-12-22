@@ -10,6 +10,7 @@ class BddVisitRequest extends CConnexion
 	private $IdProperty = '';
 	private $IdMember = '';
 	private $Status = '';
+	private $DateInsert = '';
 
 	/************** SETTERS *****************/
 
@@ -51,6 +52,11 @@ class BddVisitRequest extends CConnexion
 	function setStatus($v)
 	{
 		$this->Status = $v;
+	}
+	
+	function setDateInsert($v)
+	{
+		$this->DateInsert = $v;
 	}
 
 	/************** GETTERS *****************/
@@ -94,6 +100,11 @@ class BddVisitRequest extends CConnexion
 	{
 		return $this->Status;
 	}
+	
+	function getDateInsert()
+	{
+		return $this->DateInsert;
+	}
 
 	function __construct($valeurs = array())
 	{
@@ -134,6 +145,7 @@ class BddVisitRequest extends CConnexion
 		$champsRequete['id_property']		=	($this->IdProperty != '')		? '\''. protegeChaine($this->getIdProperty()) .'\'' : 'DEFAULT';
 		$champsRequete['id_member']		=	($this->IdMember != '')		? '\''. protegeChaine($this->getIdMember()) .'\'' : 'DEFAULT';
 		$champsRequete['status']		=	($this->Status != '')		? '\''. protegeChaine($this->getStatus()) .'\'' : 'DEFAULT';
+		$champsRequete['date_insert']		=	($this->DateInsert != '')		? '\''. protegeChaine($this->getDateInsert()) .'\'' : 'DEFAULT';
 		return $champsRequete; 	}
 
 	function load($row)
@@ -146,12 +158,12 @@ class BddVisitRequest extends CConnexion
 		$this->setIdProperty($row['id_property']);
 		$this->setIdMember($row['id_member']);
 		$this->setStatus($row['status']);
-
+		$this->setDateInsert($row['date_insert']);
 	}
 	function select($where = array(), $whereSpe=array(), $orderBy = array(), $limit = null)
 	{
 		// Clause SELECT
-		$req = 'SELECT id,date,hour,email,name,id_property,id_member, status '.
+		$req = 'SELECT id,date,hour,email,name,id_property,id_member, status, date_insert '.
 				'FROM visit_request  ';
 				
 		// Clause WHERE

@@ -10,7 +10,7 @@
 					<div class="form-group row-fluid padding-2em">
 						<label class="col-lg-3 control-label">Date : <i class="icon-calendar-empty"></i></label>
 						<div class="col-9">
-							<input type="text" name="visit_date" class="form-control"  id="dataPickerInput">
+							<input type="text" name="visit_date" class="form-control"  id="dataPickerInput" readonly>
 						</div>
 					</div>
 					<div class="form-group row-fluid padding-2em">

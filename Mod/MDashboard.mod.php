@@ -16,14 +16,42 @@ class MDashboard
     
     public function getAllRequestVisit($limit, $n=0)
     {
-    	$sql = 'SELECT type, data.address, city, postal_code, state, vr.date, vr.hour, vr.status, data.style, data.id as data_id, vr.id as id_visit_request, member.name, member.email, member.phone '.
+    	$sql = 'SELECT type, data.address, city, postal_code, state, vr.date, vr.hour, vr.status, data.style, data.id as data_id, vr.id as id_visit_request, member.name, member.email, member.phone, member.id as member_id '.
     			'FROM visit_request as vr, data, member '.
     			'WHERE vr.id_property = data.id AND member.id=vr.id_member ';
     	if($this->isAdmin == 0)
     	{
     		$sql .= ' AND vr.id_member = \''.$_SESSION['user']['id'].'\' ';
     	}
-    	$sql.= ' ORDER BY vr.id DESC LIMIT '.$n.', '.$limit.' ';
+    	$sql.= ' ORDER BY vr.date_insert DESC LIMIT '.$n.', '.$limit.' ';
+    	$tabRows =  array();
+		$res = $this->dbMember->getConnexion()->query($sql); //on récupère une connexion
+		if($res !== false)
+			$tabRows = $res->fetchAll(PDO::FETCH_ASSOC);
+        return $tabRows;
+        
+    }
+    
+	public function getAllRequestVisitPerDate($dateBegin, $dateEnd ='')
+    {
+
+
+    	$sql = 'SELECT type, data.address, city, postal_code, state, vr.date, vr.hour, vr.status, data.style, data.id as data_id, vr.id as id_visit_request, member.name, member.email, member.phone, member.id as member_id '.
+    			'FROM visit_request as vr, data, member '.
+    			'WHERE vr.id_property = data.id AND member.id=vr.id_member AND vr.status = 1 ';
+    	if($dateEnd == '')
+    	{
+    		$sql .= ' AND date = \''.$dateBegin.'\' ';
+    	}
+    	else 
+    	{
+    		$sql .= ' AND date >= \''.$dateBegin.'\' AND date <= \''.$dateEnd.'\' ';
+    	}
+    	if($this->isAdmin == 0)
+    	{
+    		$sql .= ' AND vr.id_member = \''.$_SESSION['user']['id'].'\' ';
+    	}
+    	$sql.= ' ORDER BY vr.date DESC ';
     	$tabRows =  array();
 		$res = $this->dbMember->getConnexion()->query($sql); //on récupère une connexion
 		if($res !== false)
