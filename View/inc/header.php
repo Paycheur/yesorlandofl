@@ -84,8 +84,8 @@ require_once(dirname(__FILE__).'/../components/form-login.php'); ?>
           <a href="<?php echo $burl ?>" class="dropdown-toggle" data-toggle="dropdown">Property search <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a rel="tab" href="/residential.php">residential</a></li>
-            <li><a rel="tab" href="<?php echo $burl ?>commercial.php">commercial</a></li>
-            <li><a rel="tab" href="<?php echo $burl.$l_central_fl ?>">central florida</a></li>
+            <li><a rel="tab" href="<?php echo $burl ?>commercial.php">Commercial</a></li>
+            <li><a rel="tab" href="<?php echo $burl ?>commercial.php">Central florida</a></li>
           </ul>
         </li>
         <li><a rel="tab" href="<?php echo $burl ?>sell-lease">Sell/Lease</a></li>
@@ -95,24 +95,30 @@ require_once(dirname(__FILE__).'/../components/form-login.php'); ?>
         <li><a rel="tab" href="<?php echo $burl ?>careers">Careers</a></li>
         <li><a rel="tab" href="<?php echo $burl ?>contact">Contact</a></li>
 
-        <li class="dropdown">
-          <a href="<?php echo $burl ?>" class="dropdown-toggle" data-toggle="dropdown">My Portfolio <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a data-toggle="modal" href="#modalLogin">Sing in / up</a></li>
-            <li><a href="<?php echo $burl ?>commercial.php">Mange portfolio</a></li>
-            <li><a href="<?php echo $burl.$l_central_fl ?>">enquirer more info</a></li>
-          </ul>
-        </li>
+        
         <?php
         if(isset($_SESSION['user']['id']))
         {?>
         	<li class="dropdown">
-        		<a href="<?php echo $burl ?>" class="dropdown-toggle" data-toggle="dropdown"><?=$_SESSION['user']['name'] ?> <b class="caret"></b></a>
+        		<a href="<?php echo $burl ?>" class="dropdown-toggle" data-toggle="dropdown">My Portfolio <b class="caret"></b></a>
         		<ul class="dropdown-menu">
+        			<li><a href="/dashboard">Manage portfolio</a></li>
+        			<li><a href="/dashboard/mail">Enquirer more info</a></li>
             		<li><a href="/logout">Logout</a></li>
             	</ul>
         	</li>
         <?php
+        }
+        else
+        {?>
+        	<li class="dropdown">
+	          <a href="<?php echo $burl ?>" class="dropdown-toggle" data-toggle="dropdown">My Portfolio <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	            <li><a data-toggle="modal" href="#modalLogin">Sign in / up</a></li>
+	            <li><a href="/contact">Enquirer more info</a></li>
+	          </ul>
+	        </li>
+       <?php 
         }?>
       </ul>
     </div>

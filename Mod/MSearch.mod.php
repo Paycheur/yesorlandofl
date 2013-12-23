@@ -275,7 +275,6 @@ class MSearch
 		{
 			$req .= ' AND sale_or_lease = \''.protegeChaine($option).'\' ';
 		}
-		
 		$tabRows =  array();
 		$res = $this->dbData->getConnexion()->query($req);
 		$tabRows = $res->fetchAll(PDO::FETCH_ASSOC);

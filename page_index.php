@@ -46,8 +46,7 @@ function home()
     $tab = array();
     
     $search = new MSearch();
-    $option = 'sale';
-	$nbResultMax = $search->countSearchForm('', '', '', '', $option, '');
+	$nbResultMax = $search->countSearchForm('', '', '', '', '', '');
 	$tab['nbResults'] = $nbResultMax;
 	
     $page['title'] = 'Orlando';

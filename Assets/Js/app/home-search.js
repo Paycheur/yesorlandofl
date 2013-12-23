@@ -25,11 +25,6 @@
 			    recherche(valeurs, 1);
 			});
 			
-			$('.slider-handle').mouseup(function() {
-				
-				var valeurs=$('#formSearch').serialize();
-			    recherche(valeurs, 1);
-			});
 			
 			$('.slider-handle').mouseup(function() {
 				var valeurs=$('#formSearch').serialize();

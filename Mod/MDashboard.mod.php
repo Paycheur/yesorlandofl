@@ -11,7 +11,7 @@ class MDashboard
     {
     	$this->dbMember = new BddMember();
     	$this->dbVisitRequest = new BddVisitRequest();
-    	$this->admin = $admin;
+    	$this->isAdmin = $admin;
     }
     
     public function getAllRequestVisit($limit, $n=0)

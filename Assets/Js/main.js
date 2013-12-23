@@ -74,7 +74,6 @@ var priceRange = {
               unite = $('.unite'),
               uniteVal = unite.text() ;
               unite.siblings('.orMore').hide();
-              console.log(ev.value);
            if ( theVal === theMax ) {
               maxSpan.text( theMax + ' ' + uniteVal  + ' or more' );
               unite.hide();
