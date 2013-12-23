@@ -111,7 +111,7 @@ class VPropertyCommercial
 									<!-- Nav tabs -->
 									<ul class="nav nav-pills padding-1em">
 									  <li class="active"><a href="#images-tab" data-toggle="tab"><i class="icon-camera translate-always"></i>  IMAGES</a></li>
-									  <li class="dropdown"><a href="#map-tab" data-toggle="tab"><i class="icon-map-marker size-20 translate-always"></i> WHAT'S IN THE AREA </a></li>
+									  <li class="dropdown"><a href="#map-tab" class="view-map" data-toggle="tab"><i class="icon-map-marker size-20 translate-always"></i> WHAT'S IN THE AREA </a></li>
 									</ul>
 								</div>
 								<div class="col-lg-6 text-right">
@@ -197,7 +197,6 @@ class VPropertyCommercial
 							 	    	<?php if(isset($_value['gps']['latitude']) && isset($_value['gps']['longitude']))
 							 	    	{?>
 
-							  			<iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.fr/maps?dg=opt&ie=UTF8&ll=<?=$_value['gps']['latitude'] ?>,<?=$_value['gps']['longitude'] ?>&q=<?=$_value['gps']['latitude'] ?>,<?=$_value['gps']['longitude'] ?>&spn=0.022904,0.042272&t=m&z=15&output=embed"></iframe>
 							  			<div id="googleMap">
 							  			</div>
 

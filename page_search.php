@@ -99,10 +99,10 @@ function home()
 				$memberSearch = new BddMemberSearch();
 				$memberSearch->setBathroom($bathroom);
 				$memberSearch->setBed($beds);
-				$memberSearch->setCity($location);
+				$memberSearch->setCity(json_encode($location));
 				$memberSearch->setIdMember($_SESSION['user']['id']);
 				$memberSearch->setPrice($price);
-				$memberSearch->setStyle($style);
+				$memberSearch->setStyle(json_encode($style));
 				$memberSearch->setDate(date('Y-m-d H:i:s', time()));
 				$memberSearch->setNbResults($nbResultMax);
 				$memberSearch->insert('REPLACE');
