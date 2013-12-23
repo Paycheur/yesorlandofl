@@ -54,7 +54,7 @@ require_once(dirname(__FILE__).'/../components/dashboard/switchStatusVisitReques
 require_once(dirname(__FILE__).'/../components/dashboard/compose_mail.php');
 require_once(dirname(__FILE__).'/../components/form-login.php');
 require_once(dirname(__FILE__).'/../components/form-register.php'); 
-require_once(dirname(__FILE__).'/../components/form-visit-request.php'); 
+require_once(dirname(__FILE__).'/../components/dashboard/form-visit-request.php'); 
 
 $message = new MMessage($_SESSION['user']['admin']);
 $nbMessageNonLu = $message->getNbMessageNonLu();

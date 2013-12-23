@@ -107,7 +107,7 @@ function showAllRecentlyViewed()
     $tab = array();
     
 	$dashboard = new MDashboard($_SESSION['user']['admin']);
-	$recentlyViewed = $dashboard->getPropertiesViewed(20);
+	$recentlyViewed = $dashboard->getPropertiesViewed(30);
     $tab['recentlyViewed'] = $recentlyViewed;
     
     $page['title'] = 'DashBoard';
@@ -123,7 +123,7 @@ function showAllFavoritesProperties()
     
 	$dashboard = new MDashboard($_SESSION['user']['admin']);
 
-	$favoritesProperties = $dashboard->getFavoritesProperties(100);
+	$favoritesProperties = $dashboard->getFavoritesProperties('');
     $tab['favoritesProperties'] = $favoritesProperties;
     
     $page['title'] = 'DashBoard';

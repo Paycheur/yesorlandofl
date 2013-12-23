@@ -78,8 +78,9 @@ class MDashboard
     	$sql = 'SELECT type, address, city, postal_code, state, sqft, price, bed, bathroom, data.id, img '.
     			'FROM favorite, data '.
     			'WHERE favorite.id_property = data.id '.
-    			' AND actif=1 AND favorite.id_member = \''.$_SESSION['user']['id'].'\' '.
-    			' ORDER BY price DESC LIMIT '.$n.', '.$limit.' ';
+    			' AND actif=1 AND favorite.id_member = \''.$_SESSION['user']['id'].'\' ';
+    	if($limit != '')
+    		$sql .= ' ORDER BY price DESC LIMIT '.$n.', '.$limit.' ';
     	
     	$tabRows =  array();
 		$res = $this->dbMember->getConnexion()->query($sql); //on récupère une connexion
@@ -107,8 +108,9 @@ class MDashboard
     	$sql = 'SELECT type, address, city, postal_code, state, sqft, price, bed, bathroom, data.id, img '.
     			'FROM properties_viewed, data '.
     			'WHERE properties_viewed.id_property = data.id '.
-    			' AND actif=1 AND properties_viewed.id_member = \''.$_SESSION['user']['id'].'\' '.
-    			' ORDER BY date DESC LIMIT '.$limit.' ';
+    			' AND actif=1 AND properties_viewed.id_member = \''.$_SESSION['user']['id'].'\' ';
+    	if($limit != '')
+    		$sql .= ' ORDER BY date DESC LIMIT '.$limit.' ';
     	
     	$tabRows =  array();
 		$res = $this->dbMember->getConnexion()->query($sql); //on récupère une connexion
