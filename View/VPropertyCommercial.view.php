@@ -180,7 +180,7 @@ class VPropertyCommercial
 									  		  	 	?>
 
 									  		  	    <li data-target="#property-carousel" data-slide-to="<?=$i?>" class="<?=($first== true ? ' active' : '' )?>">
-									  		  	    	<img src="<?=$url ?>" alt="">
+									  		  	    	<img src="<?=$url ?>" alt="" class="img_property">
 									  		  	    </li>
 
 									  		  	   	<?php
